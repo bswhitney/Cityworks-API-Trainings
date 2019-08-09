@@ -1,0 +1,17 @@
+{
+    "$schema": "plugin-configuration.schema.json",
+    "Version": "1.0",
+    "Name": "WOPortal",
+    "Description": "A simple application to create work orders.",
+    "Uid": "92faddd66e03c8315e890e7acf14e0d465e9d5a5e7efaf84",
+    "Main": "index.html",
+    "Route": "wo-portal-bw",
+    "Icons": {
+        "Small": "images/plugin-icon-sm.png",
+        "Large": "images/plugin-icon-lg.png"
+    },
+    "CityworksVersions": [
+        { "Version": "15.4"}
+    ]
+}
+

@@ -1,0 +1,15 @@
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\bin\Debug\Examples.exe.config
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\bin\Debug\Examples.exe
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\bin\Debug\Examples.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\bin\Debug\Cityworks.Parser.dll
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\bin\Debug\Cityworks.Parser.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\obj\Debug\Examples.LoginForm.resources
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\obj\Debug\Examples.WoForm.resources
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\obj\Debug\Examples.Properties.Resources.resources
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\obj\Debug\Examples.csproj.GenerateResource.Cache
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\obj\Debug\Examples.exe
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\obj\Debug\Examples.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\obj\Debug\Examples.csprojResolveAssemblyReference.cache

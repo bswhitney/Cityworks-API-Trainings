@@ -1,0 +1,143 @@
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\bin\Debug\Examples.exe.config
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\obj\Debug\Examples.exe
+C:\Users\pw\Documents\Visual Studio 2015\Projects\Examples\Examples\obj\Debug\Examples.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\bin\Debug\Examples.exe.config
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\obj\Debug\Examples.exe
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\obj\Debug\Examples.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\bin\Debug\Examples.exe
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\bin\Debug\Examples.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\bin\Debug\Cityworks.Parser.dll
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\bin\Debug\Cityworks.Parser.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\obj\Debug\API Example.csprojResolveAssemblyReference.cache
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\obj\Debug\Examples.LoginForm.resources
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\obj\Debug\Examples.WoForm.resources
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\obj\Debug\Examples.Properties.Resources.resources
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example\Examples\obj\Debug\API Example.csproj.GenerateResource.Cache
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\bin\Debug\Examples.exe.config
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\obj\Debug\Examples.exe
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\obj\Debug\Examples.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\bin\Debug\Examples.exe
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\bin\Debug\Examples.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\bin\Debug\Cityworks.Parser.pdb
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\obj\Debug\Examples.LoginForm.resources
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\obj\Debug\Examples.WoForm.resources
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\obj\Debug\Examples.Properties.Resources.resources
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\obj\Debug\API Example.csproj.GenerateResource.Cache
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\bin\Debug\Cityworks.Parser.dll
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pw\Documents\Visual Studio 2015\Projects\API Example - Finished\Examples\obj\Debug\API Example.csprojResolveAssemblyReference.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\bin\Debug\Examples.exe.config
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\bin\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\bin\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\bin\Debug\Cityworks.Parser.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\obj\Debug\Examples.LoginForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\obj\Debug\Examples.WoForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\obj\Debug\Examples.Properties.Resources.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\obj\Debug\API Example.csproj.GenerateResource.Cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\obj\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\obj\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\bin\Debug\Cityworks.Parser.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Finished\Examples\obj\Debug\API Example.csprojResolveAssemblyReference.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\bin\Debug\Examples.exe.config
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\bin\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\bin\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\bin\Debug\Cityworks.Parser.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\bin\Debug\Cityworks.Parser.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\obj\Debug\API Example.csprojResolveAssemblyReference.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\obj\Debug\Examples.LoginForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\obj\Debug\Examples.WoForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\obj\Debug\Examples.Properties.Resources.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\obj\Debug\API Example.csproj.GenerateResource.Cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\obj\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - HardCode - Copy\Examples\obj\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\bin\Debug\Examples.exe.config
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\bin\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\bin\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\bin\Debug\Cityworks.Parser.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\bin\Debug\Cityworks.Parser.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\obj\Debug\Examples.LoginForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\obj\Debug\Examples.WoForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\obj\Debug\Examples.Properties.Resources.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\obj\Debug\API Example.csproj.GenerateResource.Cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\obj\Debug\API Example.csproj.CoreCompileInputs.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\obj\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API Example - Complete\Examples\obj\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\bin\Debug\Examples.exe.config
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\bin\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\bin\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\obj\Debug\Examples.LoginForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\obj\Debug\Examples.WoForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\obj\Debug\Examples.Properties.Resources.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\obj\Debug\API Example.csproj.GenerateResource.Cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\obj\Debug\API Example.csproj.CoreCompileInputs.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\obj\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\obj\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\bin\Debug\Examples.exe.config
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\bin\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\bin\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\obj\Debug\Examples.LoginForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\obj\Debug\Examples.WoForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\obj\Debug\Examples.Properties.Resources.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\obj\Debug\API Example.csproj.GenerateResource.Cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\obj\Debug\API Example.csproj.CoreCompileInputs.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\obj\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\obj\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\bin\Debug\Cityworks.Parser.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\bin\Debug\Cityworks.Parser.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Research\Examples\obj\Debug\API Example.csprojResolveAssemblyReference.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\bin\Debug\Examples.exe.config
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\bin\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\bin\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\bin\Debug\Cityworks.Parser.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\bin\Debug\Cityworks.Parser.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\obj\Debug\Examples.LoginForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\obj\Debug\Examples.WoForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\obj\Debug\Examples.Properties.Resources.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\obj\Debug\API Example.csproj.GenerateResource.Cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\obj\Debug\API Example.csproj.CoreCompileInputs.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\obj\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\obj\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Research\Examples\obj\Debug\API Example.csprojResolveAssemblyReference.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\bin\Debug\Examples.exe.config
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\bin\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\bin\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\bin\Debug\Cityworks.Parser.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\bin\Debug\Cityworks.Parser.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\obj\Debug\API Example.csprojResolveAssemblyReference.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\obj\Debug\Examples.LoginForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\obj\Debug\Examples.WoForm.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\obj\Debug\Examples.Properties.Resources.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\obj\Debug\API Example.csproj.GenerateResource.Cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\obj\Debug\API Example.csproj.CoreCompileInputs.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\obj\Debug\Examples.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\Future\API Example - Complete\Examples\obj\Debug\Examples.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\bin\Debug\Cityworks.Parser.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\bin\Debug\Newtonsoft.Json.xml
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\obj\Debug\API Example.csprojAssemblyReference.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\API - Live\API Example - Complete\Examples\obj\Debug\API Example.csproj.CopyComplete

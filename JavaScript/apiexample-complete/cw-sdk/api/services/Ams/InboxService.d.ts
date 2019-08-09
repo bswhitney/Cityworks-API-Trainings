@@ -1,0 +1,34 @@
+import { PromiseTypes } from '../../../core/promise';
+import { IApiService } from '../../../http/api-service';
+import { InboxServiceTypes as SvcDef } from '../../interfaces/Ams/InboxService';
+import AbortablePromise = PromiseTypes.AbortablePromise;
+import Requests = SvcDef.Requests;
+import Responses = SvcDef.Responses;
+import IInboxService = SvcDef.IInboxService;
+export * from '../../../http/api-service';
+export * from '../../interfaces/Ams/InboxService';
+export declare class InboxService implements IInboxService {
+    private _service;
+    constructor(service: IApiService);
+    CopyWidgetContainerTab(request: Requests.CopyWidgetContainerTab): AbortablePromise<Responses.CopyWidgetContainerTab>;
+    CreateWidget(request: Requests.CreateWidget): AbortablePromise<Responses.CreateWidget>;
+    CreateWidgetContainer(request: Requests.CreateWidgetContainer): AbortablePromise<Responses.CreateWidgetContainer>;
+    CreateWidgetContainerTab(request: Requests.CreateWidgetContainerTab): AbortablePromise<Responses.CreateWidgetContainerTab>;
+    CreateWidgetZone(request: Requests.CreateWidgetZone): AbortablePromise<Responses.CreateWidgetZone>;
+    DeleteWidget(request: Requests.DeleteWidget): AbortablePromise<Responses.DeleteWidget>;
+    DeleteWidgetContainer(request: Requests.DeleteWidgetContainer): AbortablePromise<Responses.DeleteWidgetContainer>;
+    DeleteWidgetContainerTab(request: Requests.DeleteWidgetContainerTab): AbortablePromise<Responses.DeleteWidgetContainerTab>;
+    DeleteWidgetZone(request: Requests.DeleteWidgetZone): AbortablePromise<Responses.DeleteWidgetZone>;
+    MoveWidget(request: Requests.MoveWidget): AbortablePromise<Responses.MoveWidget>;
+    MoveWidgetContainerTab(request: Requests.MoveWidgetContainerTab): AbortablePromise<Responses.MoveWidgetContainerTab>;
+    MoveWidgetZone(request: Requests.MoveWidgetZone): AbortablePromise<Responses.MoveWidgetZone>;
+    UpdateChartWidget(request: Requests.UpdateChartWidget): AbortablePromise<Responses.UpdateChartWidget>;
+    UpdateHtmlWidget(request: Requests.UpdateHtmlWidget): AbortablePromise<Responses.UpdateHtmlWidget>;
+    UpdateNotesWidget(request: Requests.UpdateNotesWidget): AbortablePromise<Responses.UpdateNotesWidget>;
+    UpdateReportLinksWidget(request: Requests.UpdateReportLinksWidget): AbortablePromise<Responses.UpdateReportLinksWidget>;
+    UpdateSearchResultsWidget(request: Requests.UpdateSearchResultsWidget): AbortablePromise<Responses.UpdateSearchResultsWidget>;
+    UpdateWeatherWidget(request: Requests.UpdateWeatherWidget): AbortablePromise<Responses.UpdateWeatherWidget>;
+    UpdateWidgetContainer(request: Requests.UpdateWidgetContainer): AbortablePromise<Responses.UpdateWidgetContainer>;
+    UpdateWidgetContainerTab(request: Requests.UpdateWidgetContainerTab): AbortablePromise<Responses.UpdateWidgetContainerTab>;
+    UpdateWidgetZone(request: Requests.UpdateWidgetZone): AbortablePromise<Responses.UpdateWidgetZone>;
+}

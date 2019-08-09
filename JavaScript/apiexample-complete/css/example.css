@@ -1,0 +1,38 @@
+
+div {
+    font-weight: 600;
+    color: black;
+}
+
+
+.clicked {
+    background: lightblue;
+}
+
+.not-clicked {
+    background: grey;
+}
+
+
+ul, .callback-wrapper {
+    height: 20vh;
+    overflow: auto;
+    background: grey;
+    padding:20px;
+    text-align:center;
+}
+
+li {
+    padding: 20px;
+    list-style-type: none;
+    color: navy;
+}
+
+li div {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+button:hover {
+    background: purple;
+}

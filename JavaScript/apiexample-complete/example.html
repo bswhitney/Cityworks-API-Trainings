@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Example WO</title>
+
+	<!--<link rel="stylesheet" href="./css/reset.css" type="text/css">-->
+	<link rel="stylesheet" href="./css/example.css" type="text/css">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script src="./scripts/require.js"></script>
+	<script>
+		require(["./scripts/prewritten.js"])
+		require(["./scripts/example.js"])
+	</script>
+</head>
+
+<body>
+	<h1>Work Orders</h1>
+
+	<div class="col-xs-12">
+		<div class="col-xs-6">
+			<form>
+				<h2>Create Work Order</h2>
+				<div class="form-group">
+					<label class="control-label" for="entity-group">Entity Group:</label>
+					<select id="entity-group" class="form-control" onchange="entityTypes()"></select>
+
+					<label for="entity-type">Entity Type:</label>
+					<select id="entity-type" class="form-control" onchange="workOrderTemplateSearch()"></select>
+
+					<label for="template-id">Template ID:</label>
+					<select id="template-id" class="form-control"><option value="0"></option></select>
+
+					<label for="street-name">Street Name:</label>
+					<input id="street-name" class="form-control" placeholder="Street Name" type="text" />
+
+					<label for="city">City:</label>
+					<input id="city" class="form-control" placeholder="City" type="text" />
+
+					<label for="inspection-id">Inspection ID (optional):</label>
+					<input id="inspection-id" class="form-control" placeholder="Inspection ID" type="number" />
+				</div>
+			</form>
+			<button class="btn btn-default" onclick="workOrderCreate()">Create Work Order</button>
+		</div>
+
+		<div class="col-xs-6">
+			<h2>View Work Orders</h2>
+			<ul id="work-orders"></ul>
+			<button class="btn btn-default" onclick="workOrderSearch()">Refresh</button>
+			<input id="wo-number" class="form-control" placeholder="number of WO's" type="number" />
+		</div>
+	</div>
+
+	<div class="col-xs-12">
+		<div class="col-xs-6">
+			<h2>Inspections</h2>
+			<ul id="inspections"></ul>
+			<button class="btn btn-default" onclick="inspectionSearch()">Refresh</button>
+			<button class="btn btn-default" onclick="activityLinkAdd()">Attach Inspection to Selected Work Order</button>
+		</div>
+
+		<div class="col-xs-6">
+			<h2>Callback Notes</h2>
+			<div class="callback-wrapper">
+				<div id="callback-notes"></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
