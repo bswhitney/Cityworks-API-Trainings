@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Important Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Work Order Portal</title>
+    <!-- Links to Bootstrap, Local CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Load in RequireJS, load prewrittenJS and exampleJS -->
+    <script src="scripts/require.js"></script>
+	<script>
+		//require(["scripts/prewritten.js"])
+		require(["scripts/login.js"])
+	</script>
+</head>
+<body>
+    <!-- Page headline -->
+    <div class="floating-head">
+        <h1 class="head-text">Cityworks</h1>
+        <h3 class="head-text">Work Order Portal</h3>
+    </div>
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Authentication Status Indicator -->
+        <div class="panel">
+            <h3 class="head-text">Cityworks Login</h3>
+            <!-- Text Field for Address -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Username:</span>
+                </div>
+                <input id="username" type="text" class="form-control">
+            </div>
+            <!-- Text Field for Comments (Text1) -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Password:</span>
+                </div>
+                <input id="password" type="password" class="form-control">
+            </div>
+            <!-- Buttons -->
+            <div class="button-group head-text">
+                <!-- Create Button -->
+                <button class="btn" onclick="authenticate()">Login</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
