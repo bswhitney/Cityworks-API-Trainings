@@ -1,0 +1,51 @@
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\bin\Debug\StoreroomMain.exe.config
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\bin\Debug\StoreroomMain.exe
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\bin\Debug\StoreroomMain.pdb
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\bin\Debug\Cityworks.Parser.dll
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\bin\Debug\Newtonsoft.Json.xml
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\obj\Debug\StoreroomMain.csprojAssemblyReference.cache
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\obj\Debug\StoreroomMain.Login.resources
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\obj\Debug\StoreroomMain.MainStoreroom.resources
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\obj\Debug\StoreroomMain.Properties.Resources.resources
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\obj\Debug\StoreroomMain.csproj.GenerateResource.cache
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\obj\Debug\StoreroomMain.csproj.CoreCompileInputs.cache
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\obj\Debug\StoreroomMain.csproj.CopyComplete
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\obj\Debug\StoreroomMain.exe
+C:\Users\CWTraining\source\repos\StoreroomMain\StoreroomMain\obj\Debug\StoreroomMain.pdb
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\bin\Debug\StoreroomMain.exe.config
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\bin\Debug\StoreroomMain.exe
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\bin\Debug\StoreroomMain.pdb
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\bin\Debug\Cityworks.Parser.dll
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\bin\Debug\Newtonsoft.Json.xml
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.csprojAssemblyReference.cache
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.Login.resources
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.MainStoreroom.resources
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.Properties.Resources.resources
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.csproj.GenerateResource.cache
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.csproj.CoreCompileInputs.cache
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.csproj.CopyComplete
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.exe
+C:\Users\CWTraining\Desktop\CSharp\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\bin\Debug\StoreroomMain.exe.config
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\bin\Debug\StoreroomMain.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\bin\Debug\StoreroomMain.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\bin\Debug\Cityworks.Core.SDK.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.csprojAssemblyReference.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.Login.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.MainStoreroom.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.Properties.Resources.resources
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.csproj.GenerateResource.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.csproj.CoreCompileInputs.cache
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.csproj.CopyComplete
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.exe
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\obj\Debug\StoreroomMain.pdb
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\bin\Debug\Cityworks.Core.SDK.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\bin\Debug\Cityworks.Parser.dll
+C:\Users\CWTraining\Documents\Visual Studio 2017\Projects\StoreroomMain-complete\StoreroomMain\bin\Debug\Newtonsoft.Json.xml
