@@ -2,7 +2,7 @@
 Current Cityworks API training samples for the Cityworks API courses.
 
 ## File and Folder Explanations
-**JavaScript** houses all files and folders related to the JavaScript sections of the API course, including the installation of a Cityworks Plugin, while **CSharp** houses all files and folders related to the C# sections of the API course. The **QuestionsFromCourses** is a resource to help answer questions that have been asked before in training and required research to answer.
+**JavaScript** houses all files and folders related to the JavaScript sections of the API course, including the installation of a Cityworks Plugin, while **CSharp** houses all files and folders related to the C# sections of the API course, and the **Python** folder contains the sample project for the Python course and needed files. The **QuestionsFromCourses** is a resource to help answer questions that have been asked before in training and required research to answer.
 
 The **Conference2019** folder is specific to the API courses offered during the 2019 Cityworks User Conference in Salt Lake City, Utah.
 

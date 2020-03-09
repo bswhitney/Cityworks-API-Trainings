@@ -10,4 +10,4 @@ The **apiexample-start** folder contains a stand alone web app that is built usi
 The sample projects in **apiexample-complete** and **apiexample-start** are up to date with Cityworks 15.4. Note that projects may or may not work for other versions of the software.
 
 ## Disclaimer
-Azteca Systems, its products, and its employees are not responsible for your implementation of this code. This code is to simply illustrate how the C# SDK can be interacted with rather than provide a ready-built program for your production environment.
+Azteca Systems, its products, and its employees are not responsible for your implementation of this code. This code is to simply illustrate how the JavaScript SDK can be interacted with rather than provide a ready-built program for your production environment.
