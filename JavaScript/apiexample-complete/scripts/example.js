@@ -6,12 +6,12 @@ var selectedWorkOrder, selectedInspection;
 // Use Require.JS's define function to load needed modules from the SDK.
 define([ // First argument is an array of module locations.
     '../cw-sdk/api/services/general/authenticationservice', // Authentication Service
-    '../cw-sdk/api/services/ams/workorderservice', // Work Order Service
+    '../cw-sdk/api/services/general/activitylinkservice', // Activity Link Service
     '../cw-sdk/api/services/ams/inspectionservice', // Inspection Service
-    '../cw-sdk/api/services/general/activitylinkservice' // Activity Link Service
+    '../cw-sdk/api/services/ams/workorderservice', // Work Order Service
     ],
     // Second argument is a function that takes arguments for each module.
-    function (api, wo, inspection, link) {
+    function (api, link, inspection, wo) {
         // Define the global API service variable.
         apiService = new api.ApiService("https://training.cityworks.com/cityworks", token);
         // Define the global variables for the various services using the API service variable.
@@ -24,10 +24,15 @@ define([ // First argument is an array of module locations.
     }
 );
 
+/*
+    1. Gather up all data into a data object (JSON).
+            let data = {};
+    2. Global Service variable, Method, pass in data object, .then.
+            woService.Search(data).then(<callbackFunction>);
+*/
+
 // Function to make the Authentication/Validate API call.
 function validate() {
-    // Get the token saved in local storage.
-    let token = localStorage.getItem('token');
     // Declare the data object and populate it with the token.
     let data = { Token: token };
     // Make the API call and assign the response a callback function.
@@ -38,7 +43,7 @@ function validate() {
 function validateCallback(response) {
     // Check the status and value of the response.
     // If the token is invalid or the status is bad...
-    if (!response.Value || response.Status !== 0) {
+    if (response.Status !== 0 || !response.Value) {
         // Redirect the user to the login page.
         window.location = 'login.html';
     }
@@ -46,22 +51,28 @@ function validateCallback(response) {
 
 // Function to make the WorkOrder/Search API call.
 function workOrderSearch() {
-    // Get the number of work order search results from the document.
+    // Get the number of work order search results from the document and create a list of statuses.
     let max = document.getElementById('wo-number').value;
+    let statuses = ["open"];
     // Declare the data object and populate it with needed parameters.
-    let data = { MaxResults: max, ActualFinishDateIsNull: true };
+    let data = { MaxResults: max, Status: statuses };
     // Make the API call and assign the response to a callback function.
     woService.Search(data).then(workOrderByIds);
 }
 
 // Callback function for the WorkOrder/Search API call to make the WorkOrder/ByIds API call.
 function workOrderByIds(response) {
-    // Get the list of work order IDs from the response.
-    let workOrderIds = response.Value;
-    // Declare the data object and populate it the list of work order IDs.
-    let data = { WorkOrderIds: workOrderIds };
-    // Make the API call and assign the response to a callback function.
-    woService.ByIds(data).then(workOrderByIdsCallback);
+    // Check the status of the response.
+    // If the status is good...
+    if (response.Status === 0) {
+        // Declare the data object and populate it the list of work order IDs.
+        let data = { WorkOrderIds: response.Value };
+        // Make the API call and assign the response to a callback function.
+        woService.ByIds(data).then(workOrderByIdsCallback);
+    } else {
+        // If the status is bad, inform the user.
+        alert("Failed API call: WorkOrder/Search.");
+    }
 }
 
 // Callback function for the WorkOrder/ByIds API call to display work order objects.
@@ -91,11 +102,11 @@ function workOrderByIdsCallback(response) {
                 `Submitted To: ${wo.SubmitTo}\n` +
                 `Date Created: ${format1}\n` +
                 `Projected Finish: ${format2}\n` +
-                `Status: ${wo.Status}\n` +
+                `SID: ${wo.WorkOrderSid}\n` +
                 `Attached: ${!wo.Unattached}\n` +
                 `Coords: ${wo.WOXCoordinate}, ${wo.WOYCoordinate}`;
             // Set the global selected work order variable to the work order ID.
-            selectedWorkOrder = wo.WorkOrderId;
+            selectedWorkOrder = wo.WorkOrderSid;
         });
         // Display the work order ID, description, and entity type in the list box.
         document.getElementById('work-orders').appendChild(li);
@@ -108,19 +119,24 @@ function workOrderByIdsCallback(response) {
 // Function to make the Inspection/Search API call.
 function inspectionSearch() {
     // Declare the data object and populate it with needed parameters.
-    let data = { ActualFinishDateIsNull: true };
+    let data = { Status: ["open"] };
     // Make the API call and assign the response to a callback function.
     inspectionService.Search(data).then(inspectionByIds);
 }
 
 // Callback function for the Inspection/Search API call to make the Inspection/ByIds API call.
 function inspectionByIds(response) {
-    // Get the list of inspection IDs from the response.
-    let inspectionIds = response.Value;
-    // Declare the data object and populate it the list of inspection IDs.
-    let data = { InspectionIds: inspectionIds };
-    // Make the API call and assign the response to a callback function.
-    inspectionService.ByIds(data).then(inspectionByIdsCallback);
+    // Check the status of the response.
+    // If the status is good...
+    if (response.Status === 0) {
+        // Declare the data object and populate it the list of inspection IDs.
+        let data = { InspectionIds: response.Value };
+        // Make the API call and assign the response to a callback function.
+        inspectionService.ByIds(data).then(inspectionByIdsCallback);
+    } else {
+        // If the status is bad, inform the user.
+        alert("Failed API call: Inspection/Search.");
+    }
 };
 
 // byIds callback function
@@ -159,13 +175,12 @@ function inspectionByIdsCallback(response) {
 function activityLinkAdd() {
     // Declare the data object and populate it with needed parameters.
     let data = {
-        // Links for ActivityLinkActivityType and ActivityLinkType documentation:
-            // https://<host>/<site>/apidpcs/#/enum-info;enumType=ActivityLinkActivityType
-            // https://<host>/<site>/apidocs/#/enum-info;enumType=ActivityLinkType
         // Make the destination the work order. Include the destination ID and type.
-        DestId: selectedWorkOrder.toString(), DestType: 4,
+        DestSid: selectedWorkOrder,
+        DestType: 4,
         // Make the source the inspection. Include the source ID and type.
-        SourceId: selectedInspection.toString(), SourceType: 2,
+        SourceSid: selectedInspection,
+        SourceType: 2,
         // Set the link type to related.
         LinkType: 2
     };
@@ -179,14 +194,18 @@ function activityLinkAddCallback(response) {
     // If the response is bad...
     if (response.Status !== 0) {
         // Inform the user of the error.
-        alert(response.ErrorMessages[0].Name);
+        document.getElementById('callback-notes').innerText = "Failed to link the selected activities";
     }
     // If the response is good...
     else {
-        // Inform the user of a successful link between the selected work activities.
-        document.getElementById('callback-notes').innerText =
-            `Work Order ${response.Value.DestId} and Inspection ${response.Value.SourceId} ` +
-            `have successfully been linked.`
+        // Check to see if the Value is null.
+        if (response.Value === null) {
+            // If it's null, inform the user that a link already exists.
+            document.getElementById('callback-notes').innerText = "A link may already exist between the selected work activities.";
+        } else {
+            // If not null, inform the user of a successful link between the selected work activities.
+            document.getElementById('callback-notes').innerText = `Work Order ${response.Value.DestId} and Inspection ${response.Value.SourceId} have successfully been linked.`;
+        }
     }
 }
 
@@ -195,16 +214,16 @@ function workOrderCreate() {
     // Declare the data object.
     let data;
     // Get the inspection ID from the document.
-    let inspectionid = document.getElementById('inspection-id').value;
+    let inspectionId = document.getElementById('inspection-id').value;
     // Check the inspection ID.
     // If an inspection ID is not provided...
-    if (!inspectionid) {
+    if (!inspectionId) {
         // Populate the data object with needed parameters.
         data = {
             EntityType: document.getElementById('entity-type').value,
             WOTemplateId: document.getElementById('template-id').value,
             StreetName: document.getElementById('street-name').value,
-            City: document.getElementById('city').value,
+            City: document.getElementById('city').value
         };
         // Make the API call and assign the response to a callback function.
         woService.Create(data).then(workOrderCreateCallback);
@@ -217,7 +236,7 @@ function workOrderCreate() {
             WOTemplateId: document.getElementById('template-id').value,
             StreetName: document.getElementById('street-name').value,
             City: document.getElementById('city').value,
-            InspectionId: document.getElementById('inspection-id').value,
+            InspectionId: inspectionId
         };
         // Make the API call and assign the response to a callback function.
         woService.CreateFromInspection(data).then(workOrderCreateCallback);
@@ -230,10 +249,15 @@ function workOrderCreateCallback(response) {
     // If the response is bad...
     if (response.Status !== 0) {
         // Inform the user of the error.
-        alert(response.ErrorMessages[0]);
+        document.getElementById('callback-notes').innerText = "Failed to create a new work order.";
     } else {
         // Inform the user of successful work order creation.
-        document.getElementById('callback-notes').innerText =
-            `Work Order ${response.Value[0].WorkOrderId} has successfully been created`
+        document.getElementById('callback-notes').innerText = `Successfully created Work Order ${response.Value[0].WorkOrderId}.`;
     }
+        
 };
+
+// Function to move the user to the App Switcher page.
+function appSwitcher() {
+    window.location = " https://training.cityworks.com/cityworks/AppSwitcher.aspx";
+}
