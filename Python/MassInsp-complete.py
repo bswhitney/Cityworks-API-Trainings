@@ -3,7 +3,7 @@
 import json, os, datetime, sys, requests
 
 # Load data from the json file.
-json_path = 'C:/Users/CWTraining/Desktop/CwPyRND/config.json'
+json_path = 'C:/Users/CWTraining/Documents/CwPythonTraining/config.json'
 with open(json_path) as json_file:
     config_file = json.load(json_file)
 
