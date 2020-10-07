@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Important Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Work Order Portal</title>
+    <!-- Links to Bootstrap, Local CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Load in RequireJS, load prewrittenJS and exampleJS -->
+    <script src="scripts/require.js"></script>
+	<script>
+		require(["scripts/prewritten.js"])
+		require(["scripts/main.js"])
+	</script>
+</head>
+<body>
+    <!-- Page headline -->
+    <div class="floating-head">
+        <h1 class="head-text">Cityworks</h1>
+        <h3 class="head-text">Work Order Portal</h3>
+    </div>
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- Work Order Create Panel -->
+        <div class="panel">
+            <h3 class="head-text">Work Order Creation</h3>
+            <!-- Dropdown for Entity Type -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Entity Type:</span>
+                </div>
+                <select id="entityType" class="custom-select" onchange="workOrderTemplateNames()"></select>
+            </div>
+            <!-- Dropdown for Work Order Template -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Template:</span>
+                </div>
+                <select id="woTemplate" class="custom-select"></select>
+            </div>
+            <!-- Text Field for Address -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Location:</span>
+                </div>
+                <input id="location" type="text" class="form-control" placeholder="Address, Plus Code, etc.">
+            </div>
+            <!-- Text Field for Comments (Text1) -->
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Comments:</span>
+                </div>
+                <input id="commentText" type="text" class="form-control" placeholder="Additional information">
+            </div>
+            <!-- Buttons -->
+            <div class="button-group head-text">
+                <!-- Create Button -->
+                <button class="btn" onclick="workOrderCreate()">Create</button>
+            </div>
+        </div>
+        <!-- Information Panel-->
+        <div class="panel">
+            <h3 class="head-text">Creation Log</h3>
+            <div id="notes" class="info-area"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">TITLE</span>
+        </div>
+        <input id="ID" type="TYPE" class="form-control">
+    </div>
+-->

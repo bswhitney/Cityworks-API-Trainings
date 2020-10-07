@@ -1,0 +1,37 @@
+import { PromiseTypes } from '../../../core/promise';
+import { IApiService } from '../../../http/api-service';
+import { TvInspectionServiceTypes as SvcDef } from '../../interfaces/Ams/TvInspectionService';
+import AbortablePromise = PromiseTypes.AbortablePromise;
+import Requests = SvcDef.Requests;
+import Responses = SvcDef.Responses;
+import ITvInspectionService = SvcDef.ITvInspectionService;
+export * from '../../../http/api-service';
+export * from '../../interfaces/Ams/TvInspectionService';
+export declare class TvInspectionService implements ITvInspectionService {
+    private _service;
+    constructor(service: IApiService);
+    AddObservation(request: Requests.AddObservation): AbortablePromise<Responses.AddObservation>;
+    ById(request: Requests.ById): AbortablePromise<Responses.ById>;
+    ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
+    ByWorkOrder(request: Requests.ByWorkOrder): AbortablePromise<Responses.ByWorkOrder>;
+    CctvObservationCodeTypes(request: Requests.CctvObservationCodeTypes): AbortablePromise<Responses.CctvObservationCodeTypes>;
+    ChangeCustomFieldCategory(request: Requests.ChangeCustomFieldCategory): AbortablePromise<Responses.ChangeCustomFieldCategory>;
+    CodeDescriptions(request: Requests.CodeDescriptions): AbortablePromise<Responses.CodeDescriptions>;
+    ConfirmDyeLeaks(request: Requests.ConfirmDyeLeaks): AbortablePromise<Responses.ConfirmDyeLeaks>;
+    ConfirmSmokeTests(request: Requests.ConfirmSmokeTests): AbortablePromise<Responses.ConfirmSmokeTests>;
+    Create(request: Requests.Create): AbortablePromise<Responses.Create>;
+    CreateFromPacp(request: Requests.CreateFromPacp): AbortablePromise<Responses.CreateFromPacp>;
+    CreateSearchDefinition(request: Requests.CreateSearchDefinition): AbortablePromise<Responses.CreateSearchDefinition>;
+    DescriptionScores(request: Requests.DescriptionScores): AbortablePromise<Responses.DescriptionScores>;
+    DownstreamNode(request: Requests.DownstreamNode): AbortablePromise<Responses.DownstreamNode>;
+    InspectedBy(request: Requests.InspectedBy): AbortablePromise<Responses.InspectedBy>;
+    Observation(request: Requests.Observation): AbortablePromise<Responses.Observation>;
+    ObservationCauseCodeDescriptions(request: Requests.ObservationCauseCodeDescriptions): AbortablePromise<Responses.ObservationCauseCodeDescriptions>;
+    ObservationCodeTypes(request: Requests.ObservationCodeTypes): AbortablePromise<Responses.ObservationCodeTypes>;
+    Observations(request: Requests.Observations): AbortablePromise<Responses.Observations>;
+    Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    UnitsOfMeasure(request: Requests.UnitsOfMeasure): AbortablePromise<Responses.UnitsOfMeasure>;
+    Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    UpdateObservation(request: Requests.UpdateObservation): AbortablePromise<Responses.UpdateObservation>;
+    UpstreamNode(request: Requests.UpstreamNode): AbortablePromise<Responses.UpstreamNode>;
+}

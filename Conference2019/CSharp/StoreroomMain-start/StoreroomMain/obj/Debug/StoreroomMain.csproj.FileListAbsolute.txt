@@ -32,3 +32,11 @@ C:\Users\CWTraining\Desktop\StoreroomMain-start\StoreroomMain\obj\Debug\Storeroo
 C:\Users\CWTraining\Desktop\StoreroomMain-start\StoreroomMain\obj\Debug\StoreroomMain.csproj.CopyComplete
 C:\Users\CWTraining\Desktop\StoreroomMain-start\StoreroomMain\obj\Debug\StoreroomMain.exe
 C:\Users\CWTraining\Desktop\StoreroomMain-start\StoreroomMain\obj\Debug\StoreroomMain.pdb
+C:\Users\bwhitney\Documents\GitHub\Cityworks-API-Trainings\Conference2019\CSharp\StoreroomMain-start\StoreroomMain\obj\Debug\StoreroomMain.csprojAssemblyReference.cache
+C:\Users\bwhitney\Documents\GitHub\Cityworks-API-Trainings\Conference2019\CSharp\StoreroomMain-start\StoreroomMain\obj\Debug\StoreroomMain.Login.resources
+C:\Users\bwhitney\Documents\GitHub\Cityworks-API-Trainings\Conference2019\CSharp\StoreroomMain-start\StoreroomMain\obj\Debug\StoreroomMain.MainStoreroom.resources
+C:\Users\bwhitney\Documents\GitHub\Cityworks-API-Trainings\Conference2019\CSharp\StoreroomMain-start\StoreroomMain\obj\Debug\StoreroomMain.Properties.Resources.resources
+C:\Users\bwhitney\Documents\GitHub\Cityworks-API-Trainings\Conference2019\CSharp\StoreroomMain-start\StoreroomMain\obj\Debug\StoreroomMain.csproj.GenerateResource.cache
+C:\Users\bwhitney\Documents\GitHub\Cityworks-API-Trainings\Conference2019\CSharp\StoreroomMain-start\StoreroomMain\obj\Debug\StoreroomMain.csproj.CoreCompileInputs.cache
+C:\Users\bwhitney\Documents\GitHub\Cityworks-API-Trainings\Conference2019\CSharp\StoreroomMain-start\StoreroomMain\obj\Debug\StoreroomMain.exe
+C:\Users\bwhitney\Documents\GitHub\Cityworks-API-Trainings\Conference2019\CSharp\StoreroomMain-start\StoreroomMain\obj\Debug\StoreroomMain.pdb
