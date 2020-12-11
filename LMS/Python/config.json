@@ -1,0 +1,19 @@
+{
+	"site": "https://training.cityworks.com/cityworks",
+	"username": "cwadmin",
+	"password": "Training1",
+	"logFolder": "C:/Users/CWTraining/Desktop/",
+	"entities": [{
+			"code": "WMETER",
+			"desc": "Water Meter"
+		},
+		{
+			"code": "DSTORAGEBASIN",
+			"desc": "Storm Storage Basin"
+		},
+		{
+			"code": "SCLEANOUTSTRUCTURE",
+			"desc": "Sewer Cleanout"
+		}
+	]
+}
