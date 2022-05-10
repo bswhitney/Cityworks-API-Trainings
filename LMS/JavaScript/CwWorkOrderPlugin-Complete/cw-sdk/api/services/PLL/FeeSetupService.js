@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var FeeSetupService = /** @class */ (function () {
         function FeeSetupService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         FeeSetupService.prototype.All = function (request) {

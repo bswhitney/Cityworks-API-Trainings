@@ -27,10 +27,10 @@ export namespace ReadingServiceTypes {
         }
     }
     export namespace Responses {
-        export interface Add extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.EntityReading> {}
-        export interface ByEntity extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.EntityReading[]> {}
-        export interface Configuration extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.EntityReadingConfiguration[]> {}
-        export interface Update extends ServiceTypes.CoreResponseBase_obsolete {}
+        export interface Add extends ServiceTypes.CoreResponseBase_<CoreTypes.EntityReading> {}
+        export interface ByEntity extends ServiceTypes.CoreResponseBase_<CoreTypes.EntityReading[]> {}
+        export interface Configuration extends ServiceTypes.CoreResponseBase_<CoreTypes.EntityReadingConfiguration[]> {}
+        export interface Update extends ServiceTypes.CoreResponseBase {}
     }
     export interface IReadingService {
         Add?: (request: Requests.Add) => AbortablePromise<Responses.Add>;

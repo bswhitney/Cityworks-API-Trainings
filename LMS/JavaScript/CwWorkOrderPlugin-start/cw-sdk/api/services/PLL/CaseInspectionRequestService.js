@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var CaseInspectionRequestService = /** @class */ (function () {
         function CaseInspectionRequestService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         CaseInspectionRequestService.prototype.Add = function (request) {

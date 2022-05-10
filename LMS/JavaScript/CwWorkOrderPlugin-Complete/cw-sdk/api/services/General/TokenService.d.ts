@@ -11,4 +11,6 @@ export declare class TokenService implements ITokenService {
     private _service;
     constructor(service: IApiService);
     RevokeUser(request: Requests.RevokeUser): AbortablePromise<Responses.RevokeUser>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

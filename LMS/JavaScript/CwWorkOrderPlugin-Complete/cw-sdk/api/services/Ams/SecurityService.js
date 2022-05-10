@@ -7,13 +7,24 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var SecurityService = /** @class */ (function () {
         function SecurityService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
+        SecurityService.prototype.AreContractPermissionsEnabled = function (request) {
+            return this._service.call(request, 'Ams/Security/AreContractPermissionsEnabled');
+        };
+        SecurityService.prototype.AreProjectPermissionsEnabled = function (request) {
+            return this._service.call(request, 'Ams/Security/AreProjectPermissionsEnabled');
+        };
         SecurityService.prototype.Contract = function (request) {
             return this._service.call(request, 'Ams/Security/Contract');
         };
         SecurityService.prototype.Contracts = function (request) {
             return this._service.call(request, 'Ams/Security/Contracts');
+        };
+        SecurityService.prototype.Employee = function (request) {
+            return this._service.call(request, 'Ams/Security/Employee');
         };
         SecurityService.prototype.Inspection = function (request) {
             return this._service.call(request, 'Ams/Security/Inspection');
@@ -33,6 +44,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         SecurityService.prototype.Problems = function (request) {
             return this._service.call(request, 'Ams/Security/Problems');
         };
+        SecurityService.prototype.Projects = function (request) {
+            return this._service.call(request, 'Ams/Security/Projects');
+        };
         SecurityService.prototype.Search = function (request) {
             return this._service.call(request, 'Ams/Security/Search');
         };
@@ -41,6 +55,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         SecurityService.prototype.ServiceRequests = function (request) {
             return this._service.call(request, 'Ams/Security/ServiceRequests');
+        };
+        SecurityService.prototype.StoreroomAccess = function (request) {
+            return this._service.call(request, 'Ams/Security/StoreroomAccess');
         };
         SecurityService.prototype.WorkOrder = function (request) {
             return this._service.call(request, 'Ams/Security/WorkOrder');

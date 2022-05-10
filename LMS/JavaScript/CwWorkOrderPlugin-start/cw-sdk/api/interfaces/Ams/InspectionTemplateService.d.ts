@@ -70,6 +70,9 @@ export namespace InspectionTemplateServiceTypes {
         export interface QA extends ServiceTypes.CoreRequestBase {
             InspTemplateIds: number[];
         }
+        export interface QuestionConditions extends ServiceTypes.CoreRequestBase {
+            InspTemplateIds: number[];
+        }
         export interface Search extends ServiceTypes.CoreRequestBase {
             CycleFrom?: number[];
             CycleIncludeWeekends?: boolean;
@@ -140,6 +143,7 @@ export namespace InspectionTemplateServiceTypes {
         export interface CreateSearchDefinition extends ServiceTypes.CoreResponseBase_<CoreTypes.SearchDefinition> {}
         export interface EntityTypes extends ServiceTypes.CoreResponseBase_<CoreTypes.InspTempEntityBase[]> {}
         export interface QA extends ServiceTypes.CoreResponseBase_<CoreTypes.InspTemplateQA[]> {}
+        export interface QuestionConditions extends ServiceTypes.CoreResponseBase_<{[key: number]: CoreTypes.ConditionalQuestionConfig[]}> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface Templates extends ServiceTypes.CoreResponseBase_<CoreTypes.InspTemplateBase[]> {}
         export interface TestTypes extends ServiceTypes.CoreResponseBase_<{[key: string]: CoreTypes.TestType[]}> {}
@@ -149,6 +153,7 @@ export namespace InspectionTemplateServiceTypes {
         CreateSearchDefinition?: (request: Requests.CreateSearchDefinition) => AbortablePromise<Responses.CreateSearchDefinition>;
         EntityTypes?: (request: Requests.EntityTypes) => AbortablePromise<Responses.EntityTypes>;
         QA?: (request: Requests.QA) => AbortablePromise<Responses.QA>;
+        QuestionConditions?: (request: Requests.QuestionConditions) => AbortablePromise<Responses.QuestionConditions>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;
         Templates?: (request: Requests.Templates) => AbortablePromise<Responses.Templates>;
         TestTypes?: (request: Requests.TestTypes) => AbortablePromise<Responses.TestTypes>;

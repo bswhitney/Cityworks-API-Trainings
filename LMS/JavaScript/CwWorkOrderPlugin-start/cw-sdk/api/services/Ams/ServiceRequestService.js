@@ -7,6 +7,29 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var ServiceRequestService = /** @class */ (function () {
         function ServiceRequestService(service) {
+            this.ErrorCodes = {
+                UnknownError: 1,
+                InvalidRequestId: 2,
+                NotAuthorizedToViewRequest: 3,
+                NotAuthorizedToUpdateRequest: 4,
+                NotAuthorizedToCreateRequest: 5,
+                NotAuthorizedToCancelRequest: 6,
+                NotAuthorizedToDeleteRequest: 7,
+                InvalidActivityMapLogicXY: 9,
+                InvalidField: 30,
+                ErrorStatusCantBeClosed: 31,
+                ErrorStatusCantBeCanceled: 32,
+                ErrorRequiredFields: 33,
+                ErrorRequiredCustomFields: 34,
+                ErrorItemNotFound: 35,
+                CannotCombineToClosedRequest: 90,
+                CannotCombineToCanceledRequest: 91,
+                CannotCombineFromClosedRequest: 92
+            };
+            this.WarningCodes = {
+                WarningItemNotFound: 60,
+                WarningEmptyOrNullField: 61
+            };
             this._service = service;
         }
         ServiceRequestService.prototype.AddComments = function (request) {
@@ -14,6 +37,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         ServiceRequestService.prototype.AllStreetCode = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/AllStreetCode');
+        };
+        ServiceRequestService.prototype.AuditLog = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/AuditLog');
         };
         ServiceRequestService.prototype.ById = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/ById');
@@ -32,6 +58,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         ServiceRequestService.prototype.ChangeCustomFieldCategory = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/ChangeCustomFieldCategory');
+        };
+        ServiceRequestService.prototype.ChangeProblem = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequest/ChangeProblem');
         };
         ServiceRequestService.prototype.Close = function (request) {
             return this._service.call(request, 'Ams/ServiceRequest/Close');

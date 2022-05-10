@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var InspectionTimeBlockService = /** @class */ (function () {
         function InspectionTimeBlockService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         InspectionTimeBlockService.prototype.Add = function (request) {

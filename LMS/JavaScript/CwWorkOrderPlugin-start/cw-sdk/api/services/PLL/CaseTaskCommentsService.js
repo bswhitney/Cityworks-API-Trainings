@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var CaseTaskCommentsService = /** @class */ (function () {
         function CaseTaskCommentsService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         CaseTaskCommentsService.prototype.Add = function (request) {

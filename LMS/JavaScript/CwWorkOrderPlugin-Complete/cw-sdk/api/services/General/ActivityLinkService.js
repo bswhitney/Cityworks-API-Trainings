@@ -7,6 +7,16 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var ActivityLinkService = /** @class */ (function () {
         function ActivityLinkService(service) {
+            this.ErrorCodes = {
+                CannotLinkToSelf: 2,
+                DeleteFailed: 3,
+                MissingField: 4,
+                ActivityDoesNotExist: 5,
+                InvalidActivityId: 6,
+                CannotAddParentLinks: 7,
+                CannotDeleteParentLinks: 8
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         ActivityLinkService.prototype.Add = function (request) {

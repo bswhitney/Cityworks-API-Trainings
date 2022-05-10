@@ -60,6 +60,10 @@ export namespace EmployeeServiceTypes {
         export interface ByIds extends ServiceTypes.CoreRequestBase {
             EmployeeSids: number[];
         }
+        export interface CustomDataFields extends ServiceTypes.CoreRequestBase {
+            CustFieldIds?: number[];
+            EmployeeSid: number;
+        }
         export interface Delete extends ServiceTypes.CoreRequestBase {
             EmployeeSids?: number[];
         }
@@ -135,6 +139,7 @@ export namespace EmployeeServiceTypes {
         export interface ByGroupId extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeBase[]> {}
         export interface ById extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeBase> {}
         export interface ByIds extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeBase[]> {}
+        export interface CustomDataFields extends ServiceTypes.CoreResponseBase_<CoreTypes.CwCustField[]> {}
         export interface Delete extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface DeleteLicensedItems extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface Groups extends ServiceTypes.CoreResponseBase_<CoreTypes.CwGroupEmployees[]> {}
@@ -149,6 +154,7 @@ export namespace EmployeeServiceTypes {
         ByGroupId?: (request: Requests.ByGroupId) => AbortablePromise<Responses.ByGroupId>;
         ById?: (request: Requests.ById) => AbortablePromise<Responses.ById>;
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
+        CustomDataFields?: (request: Requests.CustomDataFields) => AbortablePromise<Responses.CustomDataFields>;
         Delete?: (request: Requests.Delete) => AbortablePromise<Responses.Delete>;
         DeleteLicensedItems?: (request: Requests.DeleteLicensedItems) => AbortablePromise<Responses.DeleteLicensedItems>;
         Groups?: (request: Requests.Groups) => AbortablePromise<Responses.Groups>;

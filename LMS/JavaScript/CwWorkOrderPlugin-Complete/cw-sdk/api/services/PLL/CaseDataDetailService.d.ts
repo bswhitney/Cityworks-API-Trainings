@@ -13,5 +13,9 @@ export declare class CaseDataDetailService implements ICaseDataDetailService {
     Add(request: Requests.Add): AbortablePromise<Responses.Add>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     SearchObject(request: Requests.SearchObject): AbortablePromise<Responses.SearchObject>;
+    Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    UpdateLock(request: Requests.UpdateLock): AbortablePromise<Responses.UpdateLock>;
     WIPAdd(request: Requests.WIPAdd): AbortablePromise<Responses.Add>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

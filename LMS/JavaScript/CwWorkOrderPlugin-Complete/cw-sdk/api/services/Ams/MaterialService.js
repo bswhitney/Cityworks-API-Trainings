@@ -7,8 +7,24 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var MaterialService = /** @class */ (function () {
         function MaterialService(service) {
+            this.ErrorCodes = {
+                InvalidMaterialSid: 3,
+                Unauthorized: 9,
+                ErrorDeletingMaterial: 12,
+                InvalidField: 14,
+                ErrorNotAuthorizedToAddMaterial: 15,
+                ErrorNotAuthorizedToUpdateMaterial: 16,
+                ErrorAddingMaterial: 17,
+                ErrorUpdatingMaterial: 18,
+                InvalidCustomFieldConfiguration: 19,
+                InvalidCustomFieldValues: 20
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
+        MaterialService.prototype.Add = function (request) {
+            return this._service.call(request, 'Ams/Material/Add');
+        };
         MaterialService.prototype.All = function (request) {
             return this._service.call(request, 'Ams/Material/All');
         };
@@ -27,6 +43,12 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         MaterialService.prototype.ByStoreroomAndId = function (request) {
             return this._service.call(request, 'Ams/Material/ByStoreroomAndId');
         };
+        MaterialService.prototype.CustomDataFields = function (request) {
+            return this._service.call(request, 'Ams/Material/CustomDataFields');
+        };
+        MaterialService.prototype.Delete = function (request) {
+            return this._service.call(request, 'Ams/Material/Delete');
+        };
         MaterialService.prototype.Keywords = function (request) {
             return this._service.call(request, 'Ams/Material/Keywords');
         };
@@ -41,6 +63,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         MaterialService.prototype.Search = function (request) {
             return this._service.call(request, 'Ams/Material/Search');
+        };
+        MaterialService.prototype.Update = function (request) {
+            return this._service.call(request, 'Ams/Material/Update');
         };
         return MaterialService;
     }());

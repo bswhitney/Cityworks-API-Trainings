@@ -45,6 +45,7 @@ export namespace TasksServiceTypes {
         }
         export interface TaskCodes extends ServiceTypes.CoreRequestBase {
             TaskSid: number;
+            TaskSids?: number[];
         }
         export interface TaskNodes extends ServiceTypes.CoreRequestBase {
             DisplayTextDelimeter?: string;

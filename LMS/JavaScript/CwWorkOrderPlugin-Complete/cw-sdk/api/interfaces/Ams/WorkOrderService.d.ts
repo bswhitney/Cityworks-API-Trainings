@@ -11,9 +11,15 @@ export namespace WorkOrderServiceTypes {
         export interface AddEntities extends ServiceTypes.CoreRequestBase {
             EntityType: string;
             EntityUids: string[];
+            Facility_Id?: string;
+            Level_Id?: string;
             UpdateXY?: boolean;
             WorkOrderId: string;
             WorkOrderSid: number;
+        }
+        export interface AuditLog extends ServiceTypes.CoreRequestBase {
+            WorkOrderId?: string;
+            WorkOrderSid?: number;
         }
         export interface ById extends ServiceTypes.CoreRequestBase {
             WorkOrderId: string;
@@ -33,10 +39,18 @@ export namespace WorkOrderServiceTypes {
             WorkOrderIds: string[];
         }
         export interface Categories extends ServiceTypes.CoreRequestBase {
+            ActiveStatus?: Enums.IsActiveStatus;
         }
         export interface ChangeCustomFieldCategory extends ServiceTypes.CoreRequestBase {
             CategoryId: number;
             WorkOrderIds: string[];
+        }
+        export interface ChangeWOTemplate extends ServiceTypes.CoreRequestBase {
+            Description?: string;
+            EntityType?: string;
+            UpdateApplyToEntity?: boolean;
+            WorkOrderSid: number;
+            WOTemplateId: string;
         }
         export interface Close extends ServiceTypes.CoreRequestBase {
             WorkOrderIds: string[];
@@ -53,6 +67,7 @@ export namespace WorkOrderServiceTypes {
             WorkOrderIds: string[];
         }
         export interface Create extends ServiceTypes.CoreRequestBase {
+            ActivityZone?: string;
             Address?: string;
             City?: string;
             Comments?: string;
@@ -63,9 +78,12 @@ export namespace WorkOrderServiceTypes {
             Date4?: Date;
             Date5?: Date;
             District?: string;
+            DomainId?: number;
             Entities?: CoreTypes.WorkOrderEntity[];
             EntityType: string;
             ExpenseType?: string;
+            Facility_Id?: string;
+            GeocodeAddress?: boolean;
             GetGisData?: boolean;
             GroupEntities?: boolean;
             InitiateDate?: Date;
@@ -73,6 +91,7 @@ export namespace WorkOrderServiceTypes {
             InitiatedBySid?: number;
             InspectionIds?: number[];
             Instructions?: string;
+            Level_Id?: string;
             Location?: string;
             MapPage?: string;
             Num1?: number;
@@ -80,6 +99,7 @@ export namespace WorkOrderServiceTypes {
             Num3?: number;
             Num4?: number;
             Num5?: number;
+            PerformanceBudgetId?: number;
             Priority?: string;
             ProjectedStartDate?: Date;
             ProjectSid?: number;
@@ -116,14 +136,20 @@ export namespace WorkOrderServiceTypes {
             Text8?: string;
             Text9?: string;
             TileNo?: string;
+            VcsWKID?: number;
             WebServiceRequestId?: string;
+            WKID?: number;
+            WKT?: string;
+            WOCategory?: string;
             WOCustFieldCatId?: number;
             WOTemplateId: string;
             X?: number;
             Y?: number;
+            Z?: number;
             Zip?: string;
         }
         export interface CreateFromInspection extends ServiceTypes.CoreRequestBase {
+            ActivityZone?: string;
             Address?: string;
             Comments?: string;
             CustomFieldValues?: {[key: number]: string};
@@ -132,9 +158,12 @@ export namespace WorkOrderServiceTypes {
             Date3?: Date;
             Date4?: Date;
             Date5?: Date;
+            District?: string;
+            DomainId?: number;
             Entities?: CoreTypes.WorkOrderEntity[];
             EntityType: string;
             ExpenseType?: string;
+            Facility_Id?: string;
             GetGisData?: boolean;
             GroupEntities?: boolean;
             InitiateDate?: Date;
@@ -142,18 +171,22 @@ export namespace WorkOrderServiceTypes {
             InitiatedBySid?: number;
             InspectionId: number;
             Instructions?: string;
+            Level_Id?: string;
             Location?: string;
+            MapPage?: string;
             Num1?: number;
             Num2?: number;
             Num3?: number;
             Num4?: number;
             Num5?: number;
+            PerformanceBudgetId?: number;
             Priority?: string;
             ProjectedStartDate?: Date;
             ProjectSid?: number;
             Reactive?: boolean;
             RequestedBy?: number;
             RequestedBySid?: number;
+            Shop?: string;
             Stage?: string;
             Status?: string;
             SubmitTo?: number;
@@ -180,11 +213,14 @@ export namespace WorkOrderServiceTypes {
             Text7?: string;
             Text8?: string;
             Text9?: string;
+            TileNo?: string;
             WebServiceRequestId?: string;
+            WOCategory?: string;
             WOCustFieldCatId?: number;
             WOTemplateId: string;
         }
         export interface CreateFromParent extends ServiceTypes.CoreRequestBase {
+            ActivityZone?: string;
             Address?: string;
             Comments?: string;
             CustomFieldValues?: {[key: number]: string};
@@ -193,27 +229,34 @@ export namespace WorkOrderServiceTypes {
             Date3?: Date;
             Date4?: Date;
             Date5?: Date;
+            District?: string;
+            DomainId?: number;
             Entities?: CoreTypes.WorkOrderEntity[];
             EntityType: string;
             ExpenseType?: string;
+            Facility_Id?: string;
             GetGisData?: boolean;
             GroupEntities?: boolean;
             InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             Instructions?: string;
+            Level_Id?: string;
             Location?: string;
+            MapPage?: string;
             Num1?: number;
             Num2?: number;
             Num3?: number;
             Num4?: number;
             Num5?: number;
+            PerformanceBudgetId?: number;
             Priority?: string;
             ProjectedStartDate?: Date;
             ProjectSid?: number;
             Reactive?: boolean;
             RequestedBy?: number;
             RequestedBySid?: number;
+            Shop?: string;
             Stage?: string;
             Status?: string;
             SubmitTo?: number;
@@ -240,13 +283,16 @@ export namespace WorkOrderServiceTypes {
             Text7?: string;
             Text8?: string;
             Text9?: string;
+            TileNo?: string;
             WebServiceRequestId?: string;
+            WOCategory?: string;
             WOCustFieldCatId?: number;
             WorkOrderId: string;
             WorkOrderSid: number;
             WOTemplateId: string;
         }
         export interface CreateFromServiceRequest extends ServiceTypes.CoreRequestBase {
+            ActivityZone?: string;
             Address?: string;
             Comments?: string;
             CustomFieldValues?: {[key: number]: string};
@@ -255,21 +301,27 @@ export namespace WorkOrderServiceTypes {
             Date3?: Date;
             Date4?: Date;
             Date5?: Date;
+            District?: string;
+            DomainId?: number;
             Entities?: CoreTypes.WorkOrderEntity[];
             EntityType: string;
             ExpenseType?: string;
+            Facility_Id?: string;
             GetGisData?: boolean;
             GroupEntities?: boolean;
             InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             Instructions?: string;
+            Level_Id?: string;
             Location?: string;
+            MapPage?: string;
             Num1?: number;
             Num2?: number;
             Num3?: number;
             Num4?: number;
             Num5?: number;
+            PerformanceBudgetId?: number;
             Priority?: string;
             ProjectedStartDate?: Date;
             ProjectSid?: number;
@@ -277,6 +329,7 @@ export namespace WorkOrderServiceTypes {
             RequestedBy?: number;
             RequestedBySid?: number;
             RequestId: number;
+            Shop?: string;
             Stage?: string;
             Status?: string;
             SubmitTo?: number;
@@ -303,7 +356,9 @@ export namespace WorkOrderServiceTypes {
             Text7?: string;
             Text8?: string;
             Text9?: string;
+            TileNo?: string;
             WebServiceRequestId?: string;
+            WOCategory?: string;
             WOCustFieldCatId?: number;
             WOTemplateId: string;
         }
@@ -452,6 +507,7 @@ export namespace WorkOrderServiceTypes {
             EntityUids?: string[];
             ExpenseType?: number[];
             Extent?: CoreTypes.GISExtent;
+            Facility_Id?: string[];
             FeatureType?: string;
             FeatureUids?: string[];
             FromDateBegin?: Date;
@@ -480,6 +536,7 @@ export namespace WorkOrderServiceTypes {
             InitiatedBySidIsInList?: boolean;
             IsReactive?: boolean;
             LegalBillable?: boolean;
+            Level_Id?: string[];
             Location?: string[];
             MapPage?: string[];
             MaxResults?: number;
@@ -704,14 +761,17 @@ export namespace WorkOrderServiceTypes {
             WorkOrderId: string;
         }
         export interface Move extends ServiceTypes.CoreRequestBase {
+            VcsWKID?: number;
             WKID?: number;
             WKT?: string;
             WorkOrderId: string;
             WorkOrderSid: number;
             X: number;
             Y: number;
+            Z?: number;
         }
         export interface Priorities extends ServiceTypes.CoreRequestBase {
+            ActiveStatus?: Enums.IsActiveStatus;
         }
         export interface RemoveEntities extends ServiceTypes.CoreRequestBase {
             EntityType?: string;
@@ -868,6 +928,7 @@ export namespace WorkOrderServiceTypes {
             EntityUids?: string[];
             ExpenseType?: number[];
             Extent?: CoreTypes.GISExtent;
+            Facility_Id?: string[];
             FeatureType?: string;
             FeatureUids?: string[];
             FromDateBegin?: Date;
@@ -896,6 +957,7 @@ export namespace WorkOrderServiceTypes {
             InitiatedBySidIsInList?: boolean;
             IsReactive?: boolean;
             LegalBillable?: boolean;
+            Level_Id?: string[];
             Location?: string[];
             MapPage?: string[];
             MaxResults?: number;
@@ -1223,6 +1285,7 @@ export namespace WorkOrderServiceTypes {
             EntityUids?: string[];
             ExpenseType?: number[];
             Extent?: CoreTypes.GISExtent;
+            Facility_Id?: string[];
             FeatureType?: string;
             FeatureUids?: string[];
             FromDateBegin?: Date;
@@ -1251,6 +1314,7 @@ export namespace WorkOrderServiceTypes {
             InitiatedBySidIsInList?: boolean;
             IsReactive?: boolean;
             LegalBillable?: boolean;
+            Level_Id?: string[];
             Location?: string[];
             MapPage?: string[];
             MaxResults?: number;
@@ -1440,6 +1504,7 @@ export namespace WorkOrderServiceTypes {
         export interface Stages extends ServiceTypes.CoreRequestBase {
         }
         export interface Statuses extends ServiceTypes.CoreRequestBase {
+            ActiveStatus?: Enums.IsActiveStatus;
         }
         export interface SubmitTos extends ServiceTypes.CoreRequestBase {
             DomainIds?: number[];
@@ -1450,6 +1515,7 @@ export namespace WorkOrderServiceTypes {
             IncludeInactiveEmployees?: boolean;
         }
         export interface Template extends ServiceTypes.CoreRequestBase {
+            DomainId?: number;
             WOTemplateId: string;
         }
         export interface TemplateCustomFields extends ServiceTypes.CoreRequestBase {
@@ -1458,6 +1524,7 @@ export namespace WorkOrderServiceTypes {
         export interface Templates extends ServiceTypes.CoreRequestBase {
             CanCreate?: boolean;
             Category?: string;
+            DomainId?: number;
             EntityType: string;
             EntityTypes: string[];
             WOTemplateIds?: string[];
@@ -1475,6 +1542,7 @@ export namespace WorkOrderServiceTypes {
         }
         export interface Update extends ServiceTypes.CoreRequestBase {
             Account?: string;
+            ActivityZone?: string;
             ActualFinishDate?: Date;
             ActualStartDate?: Date;
             Address?: string;
@@ -1503,6 +1571,7 @@ export namespace WorkOrderServiceTypes {
             District?: string;
             Effort?: number;
             ExpenseType?: string;
+            Facility_Id?: string;
             FromDate?: Date;
             InitiateDate?: Date;
             InitiatedByApp?: string;
@@ -1510,6 +1579,7 @@ export namespace WorkOrderServiceTypes {
             InspectionIds?: number[];
             Instructions?: string;
             LegalBillable?: boolean;
+            Level_Id?: string;
             Location?: string;
             MapPage?: string;
             Num1?: number;
@@ -1517,6 +1587,7 @@ export namespace WorkOrderServiceTypes {
             Num3?: number;
             Num4?: number;
             Num5?: number;
+            PerformanceBudgetId?: number;
             PrimaryContractId?: number;
             Priority?: string;
             Project?: number;
@@ -1573,6 +1644,8 @@ export namespace WorkOrderServiceTypes {
         export interface UpdateEntity extends ServiceTypes.CoreRequestBase {
             EntityType: string;
             EntityUid: string;
+            Facility_Id?: string;
+            Level_Id?: string;
             WorkComplete?: boolean;
             WorkOrderId: string;
             WorkOrderSid: number;
@@ -1591,6 +1664,7 @@ export namespace WorkOrderServiceTypes {
     export namespace Responses {
         export interface AddComments extends ServiceTypes.CoreResponseBase_<string> {}
         export interface AddEntities extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderEntity[]> {}
+        export interface AuditLog extends ServiceTypes.CoreResponseBase_<CoreTypes.CWMetaData[]> {}
         export interface ById extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase> {}
         export interface ByIds extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
         export interface BySid extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase> {}
@@ -1598,6 +1672,7 @@ export namespace WorkOrderServiceTypes {
         export interface Cancel extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
         export interface Categories extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDesc[]> {}
         export interface ChangeCustomFieldCategory extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
+        export interface ChangeWOTemplate extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase> {}
         export interface Close extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
         export interface Combine extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderBase[]> {}
         export interface Comments extends ServiceTypes.CoreResponseBase_<string> {}
@@ -1645,6 +1720,7 @@ export namespace WorkOrderServiceTypes {
     export interface IWorkOrderService {
         AddComments?: (request: Requests.AddComments) => AbortablePromise<Responses.AddComments>;
         AddEntities?: (request: Requests.AddEntities) => AbortablePromise<Responses.AddEntities>;
+        AuditLog?: (request: Requests.AuditLog) => AbortablePromise<Responses.AuditLog>;
         ById?: (request: Requests.ById) => AbortablePromise<Responses.ById>;
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
         BySid?: (request: Requests.BySid) => AbortablePromise<Responses.BySid>;
@@ -1652,6 +1728,7 @@ export namespace WorkOrderServiceTypes {
         Cancel?: (request: Requests.Cancel) => AbortablePromise<Responses.Cancel>;
         Categories?: (request: Requests.Categories) => AbortablePromise<Responses.Categories>;
         ChangeCustomFieldCategory?: (request: Requests.ChangeCustomFieldCategory) => AbortablePromise<Responses.ChangeCustomFieldCategory>;
+        ChangeWOTemplate?: (request: Requests.ChangeWOTemplate) => AbortablePromise<Responses.ChangeWOTemplate>;
         Close?: (request: Requests.Close) => AbortablePromise<Responses.Close>;
         Combine?: (request: Requests.Combine) => AbortablePromise<Responses.Combine>;
         Comments?: (request: Requests.Comments) => AbortablePromise<Responses.Comments>;

@@ -12,12 +12,15 @@ export declare class InspectionService implements IInspectionService {
     constructor(service: IApiService);
     AddEntity(request: Requests.AddEntity): AbortablePromise<Responses.AddEntity>;
     Answers(request: Requests.Answers): AbortablePromise<Responses.Answers>;
+    AuditLog(request: Requests.AuditLog): AbortablePromise<Responses.AuditLog>;
     ById(request: Requests.ById): AbortablePromise<Responses.ById>;
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
     ByWorkOrderIds(request: Requests.ByWorkOrderIds): AbortablePromise<Responses.ByWorkOrderIds>;
     Cancel(request: Requests.Cancel): AbortablePromise<Responses.Cancel>;
     Close(request: Requests.Close): AbortablePromise<Responses.Close>;
     Create(request: Requests.Create): AbortablePromise<Responses.Create>;
+    CreateFromCase(request: Requests.CreateFromCase): AbortablePromise<Responses.CreateFromCase>;
+    CreateFromEntities(request: Requests.CreateFromEntities): AbortablePromise<Responses.CreateFromEntities>;
     CreateFromParent(request: Requests.CreateFromParent): AbortablePromise<Responses.CreateFromParent>;
     CreateFromServiceRequest(request: Requests.CreateFromServiceRequest): AbortablePromise<Responses.CreateFromServiceRequest>;
     CreateFromWorkOrder(request: Requests.CreateFromWorkOrder): AbortablePromise<Responses.CreateFromWorkOrder>;
@@ -35,6 +38,7 @@ export declare class InspectionService implements IInspectionService {
     QA(request: Requests.QA): AbortablePromise<Responses.QA>;
     Questions(request: Requests.Questions): AbortablePromise<Responses.Questions>;
     RemoveEntity(request: Requests.RemoveEntity): AbortablePromise<Responses.RemoveEntity>;
+    Reopen(request: Requests.Reopen): AbortablePromise<Responses.Reopen>;
     Resolutions(request: Requests.Resolutions): AbortablePromise<Responses.Resolutions>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     SearchObject(request: Requests.SearchObject): AbortablePromise<Responses.SearchObject>;
@@ -42,5 +46,35 @@ export declare class InspectionService implements IInspectionService {
     Statuses(request: Requests.Statuses): AbortablePromise<Responses.Statuses>;
     SubmitTos(request: Requests.SubmitTos): AbortablePromise<Responses.SubmitTos>;
     Templates(request: Requests.Templates): AbortablePromise<Responses.Templates>;
+    Uncancel(request: Requests.Uncancel): AbortablePromise<Responses.Uncancel>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {
+        UnknownError: number;
+        InvalidInspectionId: number;
+        NotAuthorizedToViewInspection: number;
+        NotAuthorizedToUpdateInspection: number;
+        NotAuthorizedToCreateInspection: number;
+        NotAuthorizedToCancelInspection: number;
+        NotAuthorizedToDeleteInspection: number;
+        NotAuthorizedToCloseInspection: number;
+        InvalidActivityMapLogicXY: number;
+        ErrorNoUidSetForEntityType: number;
+        ErrorProjectedFinishDateBeforeStartDate: number;
+        ErrorUnknownEntityType: number;
+        ErrorActivityFieldValidation: number;
+        InvalidField: number;
+        ErrorStatusCantBeClosed: number;
+        ErrorStatusCantBeCanceled: number;
+        ErrorItemNotFound: number;
+        ErrorRequiredAttachedAsset: number;
+        ErrorLinkToParentFailed: number;
+        MoveInvalidCityworksWkid: number;
+    };
+    WarningCodes: {
+        WarningItemNotFound: number;
+        WarningEmptyOrNullField: number;
+        WarningLinkNotCreated: number;
+        WarningGeocodeIssue: number;
+        WarningActivityFieldValidation: number;
+    };
 }

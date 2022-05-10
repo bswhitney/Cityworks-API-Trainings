@@ -14,4 +14,6 @@ export declare class TaskResultFeeInsertService implements ITaskResultFeeInsertS
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     DeleteByTaskId(request: Requests.DeleteByTaskId): AbortablePromise<Responses.DeleteByTaskId>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

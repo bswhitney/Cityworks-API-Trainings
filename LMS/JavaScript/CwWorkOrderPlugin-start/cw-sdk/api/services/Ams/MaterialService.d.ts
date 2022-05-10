@@ -10,15 +10,32 @@ export * from '../../interfaces/Ams/MaterialService';
 export declare class MaterialService implements IMaterialService {
     private _service;
     constructor(service: IApiService);
+    Add(request: Requests.Add): AbortablePromise<Responses.Add>;
     All(request: Requests.All): AbortablePromise<Responses.All>;
     ById(request: Requests.ById): AbortablePromise<Responses.ById>;
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
     ByParent(request: Requests.ByParent): AbortablePromise<Responses.ByParent>;
     ByStoreroom(request: Requests.ByStoreroom): AbortablePromise<Responses.ByStoreroom>;
     ByStoreroomAndId(request: Requests.ByStoreroomAndId): AbortablePromise<Responses.ByStoreroomAndId>;
+    CustomDataFields(request: Requests.CustomDataFields): AbortablePromise<Responses.CustomDataFields>;
+    Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     Keywords(request: Requests.Keywords): AbortablePromise<Responses.Keywords>;
     MaterialBom(request: Requests.MaterialBom): AbortablePromise<Responses.MaterialBom>;
     MaterialCategories(request: Requests.MaterialCategories): AbortablePromise<Responses.MaterialCategories>;
     MaterialNodes(request: Requests.MaterialNodes): AbortablePromise<Responses.MaterialNodes>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {
+        InvalidMaterialSid: number;
+        Unauthorized: number;
+        ErrorDeletingMaterial: number;
+        InvalidField: number;
+        ErrorNotAuthorizedToAddMaterial: number;
+        ErrorNotAuthorizedToUpdateMaterial: number;
+        ErrorAddingMaterial: number;
+        ErrorUpdatingMaterial: number;
+        InvalidCustomFieldConfiguration: number;
+        InvalidCustomFieldValues: number;
+    };
+    WarningCodes: {};
 }

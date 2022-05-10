@@ -18,4 +18,20 @@ export declare class GISServiceService implements IGISServiceService {
     GISServiceDefinitions(request: Requests.GISServiceDefinitions): AbortablePromise<Responses.GISServiceDefinitions>;
     UpdateGISServiceEndPointSecurity(request: Requests.UpdateGISServiceEndPointSecurity): AbortablePromise<Responses.UpdateGISServiceEndPointSecurity>;
     ValidateServiceSecurity(request: Requests.ValidateServiceSecurity): AbortablePromise<Responses.ValidateServiceSecurity>;
+    ErrorCodes: {
+        UnauthorizedUser: number;
+        InvalidServiceName: number;
+        InvalidService: number;
+        InvalidServiceId: number;
+        DatabaseError: number;
+        InvalidServiceIds: number;
+        InvalidSecurityIds: number;
+        InvalidDefinitionName: number;
+        InvalidDefinitionId: number;
+        InvalidDefinitionIds: number;
+    };
+    WarningCodes: {
+        WarningEmptyOrNullField: number;
+        WarningInvalidField: number;
+    };
 }

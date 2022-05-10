@@ -11,8 +11,10 @@ export declare class CaseObjectService implements ICaseObjectService {
     private _service;
     constructor(service: IApiService);
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
-    CreateCaseFromServiceRequest(request: Requests.CreateCaseFromServiceRequest): AbortablePromise<Responses.CreateCase>;
+    CreateCaseFromServiceRequest(request: Requests.CreateCaseFromServiceRequest): AbortablePromise<Responses.CreateCaseFromServiceRequest>;
     DeleteCase(request: Requests.DeleteCase): AbortablePromise<Responses.DeleteCase>;
     Move(request: Requests.Move): AbortablePromise<Responses.Move>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

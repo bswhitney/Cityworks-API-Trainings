@@ -172,6 +172,10 @@ export namespace DesignerServiceTypes {
             GroupName?: string;
             MapServiceId?: number;
         }
+        export interface UpdatePreference extends ServiceTypes.CoreRequestBase {
+            Preference?: string;
+            Value?: string;
+        }
         export interface UserRoles extends ServiceTypes.CoreRequestBase {
             EmployeeSids?: number[];
         }
@@ -222,6 +226,7 @@ export namespace DesignerServiceTypes {
         export interface UpdateDescScore extends ServiceTypes.CoreResponseBase_<CoreTypes.DescScore> {}
         export interface UpdateDomain extends ServiceTypes.CoreResponseBase_<CoreTypes.CWDomain> {}
         export interface UpdateGroup extends ServiceTypes.CoreResponseBase_<CoreTypes.CWGroup> {}
+        export interface UpdatePreference extends ServiceTypes.CoreResponseBase_<CoreTypes.DomainPreference> {}
         export interface UserRoles extends ServiceTypes.CoreResponseBase_<{[key: number]: string[]}> {}
         export interface UsersInRole extends ServiceTypes.CoreResponseBase_<string[]> {}
         export interface UserStatus extends ServiceTypes.CoreResponseBase_<{[key: number]: CoreTypes.CwUserStatus}> {}
@@ -266,6 +271,7 @@ export namespace DesignerServiceTypes {
         UpdateDescScore?: (request: Requests.UpdateDescScore) => AbortablePromise<Responses.UpdateDescScore>;
         UpdateDomain?: (request: Requests.UpdateDomain) => AbortablePromise<Responses.UpdateDomain>;
         UpdateGroup?: (request: Requests.UpdateGroup) => AbortablePromise<Responses.UpdateGroup>;
+        UpdatePreference?: (request: Requests.UpdatePreference) => AbortablePromise<Responses.UpdatePreference>;
         UserRoles?: (request: Requests.UserRoles) => AbortablePromise<Responses.UserRoles>;
         UsersInRole?: (request: Requests.UsersInRole) => AbortablePromise<Responses.UsersInRole>;
         UserStatus?: (request: Requests.UserStatus) => AbortablePromise<Responses.UserStatus>;

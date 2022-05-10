@@ -7,6 +7,12 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var EquipmentService = /** @class */ (function () {
         function EquipmentService(service) {
+            this.ErrorCodes = {
+                NotAuthorizedToCreateEquipment: 5,
+                InvalidField: 30,
+                ErrorCreatingEquipment: 31
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         EquipmentService.prototype.Add = function (request) {
@@ -20,6 +26,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         EquipmentService.prototype.ByIds = function (request) {
             return this._service.call(request, 'Ams/Equipment/ByIds');
+        };
+        EquipmentService.prototype.CustomDataFields = function (request) {
+            return this._service.call(request, 'Ams/Equipment/CustomDataFields');
         };
         EquipmentService.prototype.Delete = function (request) {
             return this._service.call(request, 'Ams/Equipment/Delete');

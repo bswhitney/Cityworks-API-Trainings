@@ -16,4 +16,6 @@ export declare class CaseInstrumentService implements ICaseInstrumentService {
     DeleteByCaObjectId(request: Requests.DeleteByCaObjectId): AbortablePromise<Responses.DeleteByCaObjectId>;
     GetList(request: Requests.GetList): AbortablePromise<Responses.GetList>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

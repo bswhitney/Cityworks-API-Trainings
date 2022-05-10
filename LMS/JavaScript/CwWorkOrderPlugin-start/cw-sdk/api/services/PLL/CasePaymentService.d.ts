@@ -15,5 +15,10 @@ export declare class CasePaymentService implements ICasePaymentService {
     ByCaObjectId(request: Requests.ByCaObjectId): AbortablePromise<Responses.ByCaObjectId>;
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     DeleteByCaObjectId(request: Requests.DeleteByCaObjectId): AbortablePromise<Responses.DeleteByCaObjectId>;
+    DownloadReceipt(request: Requests.DownloadReceipt): AbortablePromise<Responses.DownloadReceipt>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    SearchObject(request: Requests.SearchObject): AbortablePromise<Responses.SearchObject>;
+    Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

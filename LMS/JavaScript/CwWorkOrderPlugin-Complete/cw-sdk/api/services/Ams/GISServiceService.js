@@ -7,6 +7,22 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var GISServiceService = /** @class */ (function () {
         function GISServiceService(service) {
+            this.ErrorCodes = {
+                UnauthorizedUser: 1,
+                InvalidServiceName: 3,
+                InvalidService: 4,
+                InvalidServiceId: 5,
+                DatabaseError: 6,
+                InvalidServiceIds: 7,
+                InvalidSecurityIds: 9,
+                InvalidDefinitionName: 14,
+                InvalidDefinitionId: 15,
+                InvalidDefinitionIds: 16
+            };
+            this.WarningCodes = {
+                WarningEmptyOrNullField: 61,
+                WarningInvalidField: 62
+            };
             this._service = service;
         }
         GISServiceService.prototype.AddGISServiceDefinition = function (request) {

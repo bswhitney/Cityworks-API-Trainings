@@ -7,6 +7,14 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var CustomerCallService = /** @class */ (function () {
         function CustomerCallService(service) {
+            this.ErrorCodes = {
+                InvalidRequestId: 2,
+                NotAuthorizedToUpdateRequest: 4,
+                FromAndToRequestIdsAreTheSame: 5,
+                ErrorItemNotFound: 35,
+                CallerDoesNotBelongToRequest: 94
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         CustomerCallService.prototype.AddToRequest = function (request) {
@@ -17,6 +25,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         CustomerCallService.prototype.ByRequestId = function (request) {
             return this._service.call(request, 'Ams/CustomerCall/ByRequestId');
+        };
+        CustomerCallService.prototype.ByRequestIds = function (request) {
+            return this._service.call(request, 'Ams/CustomerCall/ByRequestIds');
         };
         CustomerCallService.prototype.CallerQuestions = function (request) {
             return this._service.call(request, 'Ams/CustomerCall/CallerQuestions');

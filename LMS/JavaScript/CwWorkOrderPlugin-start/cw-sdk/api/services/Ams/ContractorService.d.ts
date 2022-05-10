@@ -14,9 +14,12 @@ export declare class ContractorService implements IContractorService {
     AddKeywords(request: Requests.AddKeywords): AbortablePromise<Responses.AddKeywords>;
     All(request: Requests.All): AbortablePromise<Responses.All>;
     ById(request: Requests.ById): AbortablePromise<Responses.ById>;
+    CustomDataFields(request: Requests.CustomDataFields): AbortablePromise<Responses.CustomDataFields>;
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     DeleteKeywords(request: Requests.DeleteKeywords): AbortablePromise<Responses.DeleteKeywords>;
     Keywords(request: Requests.Keywords): AbortablePromise<Responses.Keywords>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

@@ -7,6 +7,11 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var EquipmentChangeOutService = /** @class */ (function () {
         function EquipmentChangeOutService(service) {
+            this.ErrorCodes = {
+                InvalidField: 30,
+                UnauthorizedUser: 40
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         EquipmentChangeOutService.prototype.AddChangeOutRead = function (request) {

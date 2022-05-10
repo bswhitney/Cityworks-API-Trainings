@@ -37,6 +37,9 @@ export namespace UniversalCustomFieldServiceTypes {
             Direction: number;
             FieldId: number;
         }
+        export interface Project extends ServiceTypes.CoreRequestBase {
+            DomainIds?: number[];
+        }
         export interface ServiceRequest extends ServiceTypes.CoreRequestBase {
             DomainIds?: number[];
         }
@@ -61,6 +64,7 @@ export namespace UniversalCustomFieldServiceTypes {
         export interface Delete extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface Inspection extends ServiceTypes.CoreResponseBase_<CoreTypes.CWField[]> {}
         export interface MoveField extends ServiceTypes.CoreResponseBase_<CoreTypes.CWField> {}
+        export interface Project extends ServiceTypes.CoreResponseBase_<CoreTypes.CWField[]> {}
         export interface ServiceRequest extends ServiceTypes.CoreResponseBase_<CoreTypes.CWField[]> {}
         export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.CWField> {}
         export interface WorkOrder extends ServiceTypes.CoreResponseBase_<CoreTypes.CWField[]> {}
@@ -74,6 +78,7 @@ export namespace UniversalCustomFieldServiceTypes {
         Delete?: (request: Requests.Delete) => AbortablePromise<Responses.Delete>;
         Inspection?: (request: Requests.Inspection) => AbortablePromise<Responses.Inspection>;
         MoveField?: (request: Requests.MoveField) => AbortablePromise<Responses.MoveField>;
+        Project?: (request: Requests.Project) => AbortablePromise<Responses.Project>;
         ServiceRequest?: (request: Requests.ServiceRequest) => AbortablePromise<Responses.ServiceRequest>;
         Update?: (request: Requests.Update) => AbortablePromise<Responses.Update>;
         WorkOrder?: (request: Requests.WorkOrder) => AbortablePromise<Responses.WorkOrder>;

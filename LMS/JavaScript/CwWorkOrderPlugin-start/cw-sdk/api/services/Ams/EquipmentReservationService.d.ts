@@ -19,4 +19,6 @@ export declare class EquipmentReservationService implements IEquipmentReservatio
     Reserve(request: Requests.Reserve): AbortablePromise<Responses.Reserve>;
     Status(request: Requests.Status): AbortablePromise<Responses.Status>;
     UpdateReservation(request: Requests.UpdateReservation): AbortablePromise<Responses.UpdateReservation>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

@@ -9,6 +9,9 @@ export namespace ServiceRequestServiceTypes {
         }
         export interface AllStreetCode extends ServiceTypes.CoreRequestBase {
         }
+        export interface AuditLog extends ServiceTypes.CoreRequestBase {
+            RequestId: number;
+        }
         export interface ById extends ServiceTypes.CoreRequestBase {
             RequestId: number;
         }
@@ -30,6 +33,10 @@ export namespace ServiceRequestServiceTypes {
         export interface ChangeCustomFieldCategory extends ServiceTypes.CoreRequestBase {
             CategoryId: number;
             RequestIds: number[];
+        }
+        export interface ChangeProblem extends ServiceTypes.CoreRequestBase {
+            ProblemSid: number;
+            RequestId: number;
         }
         export interface Close extends ServiceTypes.CoreRequestBase {
             RequestIds: number[];
@@ -90,15 +97,20 @@ export namespace ServiceRequestServiceTypes {
             Date3?: Date;
             Date4?: Date;
             Date5?: Date;
+            DateInvtDone?: Date;
             DateTimeInit?: Date;
             Details?: string;
             DispatchTo?: number;
             DispatchToSid?: number;
             District?: string;
+            Facility_Id?: string;
+            FieldInvtDone?: boolean;
+            GeocodeAddress?: boolean;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             InspectionIds?: number[];
             Landmark?: string;
+            Level_Id?: string;
             Location?: string;
             MapPage?: string;
             Num1?: number;
@@ -109,6 +121,7 @@ export namespace ServiceRequestServiceTypes {
             OtherSystemId?: string;
             Priority?: string;
             ProblemSid: number;
+            ProjectSid?: number;
             ReqCustFieldCatId?: number;
             Shop?: string;
             State?: string;
@@ -137,9 +150,14 @@ export namespace ServiceRequestServiceTypes {
             Text8?: string;
             Text9?: string;
             TileNo?: string;
+            VcsWKID?: number;
+            WKID?: number;
+            WKT?: string;
+            WONeeded?: boolean;
             WorkOrderIds?: string[];
             X?: number;
             Y?: number;
+            Z?: number;
             Zip?: string;
         }
         export interface CreateSearchDefinition extends ServiceTypes.CoreRequestBase {
@@ -277,6 +295,7 @@ export namespace ServiceRequestServiceTypes {
             EnableEurl?: boolean;
             Excursion?: boolean;
             Extent?: CoreTypes.GISExtent;
+            Facility_Id?: string[];
             FieldInvtDone?: boolean;
             HasAttachment?: boolean;
             HasCase?: boolean;
@@ -293,6 +312,7 @@ export namespace ServiceRequestServiceTypes {
             LaborCostMinValue?: number;
             LaborCostRangeType?: number;
             LaborCostValues?: number[];
+            Level_Id?: string[];
             MapPage?: string[];
             MaxResults?: number;
             Num1IncludeNulls?: boolean;
@@ -436,10 +456,12 @@ export namespace ServiceRequestServiceTypes {
         }
         export interface Move extends ServiceTypes.CoreRequestBase {
             RequestId: number;
+            VcsWKID?: number;
             WKID?: number;
             WKT?: string;
             X: number;
             Y: number;
+            Z?: number;
         }
         export interface Priorities extends ServiceTypes.CoreRequestBase {
             ProblemSids: number[];
@@ -614,6 +636,7 @@ export namespace ServiceRequestServiceTypes {
             EffortValues?: number[];
             Excursion?: boolean;
             Extent?: CoreTypes.GISExtent;
+            Facility_Id?: string[];
             FieldInvtDone?: boolean;
             HasAttachment?: boolean;
             HasCase?: boolean;
@@ -630,6 +653,7 @@ export namespace ServiceRequestServiceTypes {
             LaborCostMinValue?: number;
             LaborCostRangeType?: number;
             LaborCostValues?: number[];
+            Level_Id?: string[];
             MapPage?: string[];
             MaxResults?: number;
             Num1IncludeNulls?: boolean;
@@ -782,10 +806,14 @@ export namespace ServiceRequestServiceTypes {
             District?: string;
             Effort?: number;
             Emergency?: boolean;
+            Facility_Id?: string;
+            FieldInvtDone?: boolean;
             InitiatedByApp?: string;
+            InitiatedBySid?: number;
             InitiatedDate?: Date;
             InspectionIds?: number[];
             Investigation?: boolean;
+            Level_Id?: string;
             MapPage?: string;
             Num1?: number;
             Num2?: number;
@@ -839,12 +867,14 @@ export namespace ServiceRequestServiceTypes {
     export namespace Responses {
         export interface AddComments extends ServiceTypes.CoreResponseBase_<string> {}
         export interface AllStreetCode extends ServiceTypes.CoreResponseBase_<CoreTypes.StreetCode[]> {}
+        export interface AuditLog extends ServiceTypes.CoreResponseBase_<CoreTypes.CWMetaData[]> {}
         export interface ById extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase> {}
         export interface ByIds extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
         export interface ByIncidentAndEmail extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase> {}
         export interface ByOtherSystemId extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase> {}
         export interface Cancel extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
         export interface ChangeCustomFieldCategory extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
+        export interface ChangeProblem extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase> {}
         export interface Close extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
         export interface Combine extends ServiceTypes.CoreResponseBase_<CoreTypes.RequestBase[]> {}
         export interface Comments extends ServiceTypes.CoreResponseBase_<string> {}
@@ -883,12 +913,14 @@ export namespace ServiceRequestServiceTypes {
     export interface IServiceRequestService {
         AddComments?: (request: Requests.AddComments) => AbortablePromise<Responses.AddComments>;
         AllStreetCode?: (request: Requests.AllStreetCode) => AbortablePromise<Responses.AllStreetCode>;
+        AuditLog?: (request: Requests.AuditLog) => AbortablePromise<Responses.AuditLog>;
         ById?: (request: Requests.ById) => AbortablePromise<Responses.ById>;
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
         ByIncidentAndEmail?: (request: Requests.ByIncidentAndEmail) => AbortablePromise<Responses.ByIncidentAndEmail>;
         ByOtherSystemId?: (request: Requests.ByOtherSystemId) => AbortablePromise<Responses.ByOtherSystemId>;
         Cancel?: (request: Requests.Cancel) => AbortablePromise<Responses.Cancel>;
         ChangeCustomFieldCategory?: (request: Requests.ChangeCustomFieldCategory) => AbortablePromise<Responses.ChangeCustomFieldCategory>;
+        ChangeProblem?: (request: Requests.ChangeProblem) => AbortablePromise<Responses.ChangeProblem>;
         Close?: (request: Requests.Close) => AbortablePromise<Responses.Close>;
         Combine?: (request: Requests.Combine) => AbortablePromise<Responses.Combine>;
         Comments?: (request: Requests.Comments) => AbortablePromise<Responses.Comments>;

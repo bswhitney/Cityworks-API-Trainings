@@ -11,8 +11,15 @@ export declare class RecentActivityService implements IRecentActivityService {
     private _service;
     constructor(service: IApiService);
     CaseViewed(request: Requests.CaseViewed): AbortablePromise<Responses.CaseViewed>;
+    Clear(request: Requests.Clear): AbortablePromise<Responses.Clear>;
     InspectionViewed(request: Requests.InspectionViewed): AbortablePromise<Responses.InspectionViewed>;
+    ManholeInspectionViewed(request: Requests.ManholeInspectionViewed): AbortablePromise<Responses.ManholeInspectionViewed>;
     RequestViewed(request: Requests.RequestViewed): AbortablePromise<Responses.RequestViewed>;
+    TvInspectionViewed(request: Requests.TvInspectionViewed): AbortablePromise<Responses.TvInspectionViewed>;
     User(request: Requests.User): AbortablePromise<Responses.User>;
     WorkOrderViewed(request: Requests.WorkOrderViewed): AbortablePromise<Responses.WorkOrderViewed>;
+    ErrorCodes: {
+        ErrorMustBeDomainAdmin: number;
+    };
+    WarningCodes: {};
 }

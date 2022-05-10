@@ -16,10 +16,24 @@ export declare class EmployeeService implements IEmployeeService {
     ByGroupId(request: Requests.ByGroupId): AbortablePromise<Responses.ByGroupId>;
     ById(request: Requests.ById): AbortablePromise<Responses.ById>;
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
+    CustomDataFields(request: Requests.CustomDataFields): AbortablePromise<Responses.CustomDataFields>;
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     DeleteLicensedItems(request: Requests.DeleteLicensedItems): AbortablePromise<Responses.DeleteLicensedItems>;
     Groups(request: Requests.Groups): AbortablePromise<Responses.Groups>;
     NamesAreUnique(request: Requests.NamesAreUnique): AbortablePromise<Responses.NamesAreUnique>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {
+        UnknownError: number;
+        NotAuthorizedToCreateEmployee: number;
+        NotAuthorizedToUpdateDomain: number;
+        UniqueNameIsNotUnique: number;
+        InvalidField: number;
+        ErrorCreatingEmployee: number;
+        ErrorUpdatingEmployee: number;
+    };
+    WarningCodes: {
+        WarningItemNotFound: number;
+        WarningEmptyOrNullField: number;
+    };
 }

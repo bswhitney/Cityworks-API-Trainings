@@ -8,10 +8,12 @@ export namespace StoreroomServiceTypes {
         }
         export interface AddAudit extends ServiceTypes.CoreRequestBase {
             AcctNum?: string;
+            AuditReason?: string;
             Comments?: string;
             MaterialSid: number;
             NewQuant: number;
             NewUnitCost: number;
+            SerialNumbersLost?: string[];
             StoreRm: string;
             TagNum?: string;
         }
@@ -24,6 +26,7 @@ export namespace StoreroomServiceTypes {
             MaterialCostId?: number;
             MaterialSid: number;
             Quantity: number;
+            SerialNumbers?: string[];
             Source: string;
             TagNum?: string;
             TransDateTime?: Date;
@@ -38,6 +41,7 @@ export namespace StoreroomServiceTypes {
             Destination: string;
             InvoiceNum?: string;
             MaterialCostId?: number;
+            MaterialSerials?: CoreTypes.MaterialSerial[];
             MaterialSid: number;
             PoNum?: string;
             Quantity: number;
@@ -53,6 +57,7 @@ export namespace StoreroomServiceTypes {
         export interface AddRequisition extends ServiceTypes.CoreRequestBase {
             Comments?: string;
             Complete?: boolean;
+            DomainId?: number;
             ExpDeliveryDate?: Date;
             PoNumber?: string;
             ReqType?: string;
@@ -60,6 +65,7 @@ export namespace StoreroomServiceTypes {
         }
         export interface AddRequisitionItem extends ServiceTypes.CoreRequestBase {
             Complete?: boolean;
+            DomainId?: number;
             ItemCost?: number;
             Justification?: string;
             MaterialSid: number;
@@ -76,6 +82,7 @@ export namespace StoreroomServiceTypes {
             City?: string;
             ContactPerson?: string;
             ContactPerson2?: string;
+            DomainId?: number;
             Name: string;
             State?: string;
             SupplierEmail?: string;
@@ -91,6 +98,7 @@ export namespace StoreroomServiceTypes {
         export interface AddSupplierMaterial extends ServiceTypes.CoreRequestBase {
             CatalogNum?: string;
             ContractNum?: string;
+            DomainId?: number;
             InfoDate?: Date;
             LeadTime?: number;
             LeadTimeUnit?: number;
@@ -111,6 +119,7 @@ export namespace StoreroomServiceTypes {
             MaterialSid: number;
             Quantity: number;
             RequestedBySid?: number;
+            SerialNumbers?: string[];
             Source: string;
             TagNum?: string;
             TransDateTime?: Date;
@@ -123,6 +132,7 @@ export namespace StoreroomServiceTypes {
         export interface BuildAssemblyMaterial extends ServiceTypes.CoreRequestBase {
             AcctNum?: string;
             ChildMaterialQuantities?: {[key: number]: number};
+            ChildMaterialSerialMap?: {[key: number]: string[]};
             Comments?: string;
             ParentMaterialSid: number;
             Quantity: number;
@@ -147,17 +157,24 @@ export namespace StoreroomServiceTypes {
             WhereClause?: CoreTypes.FilterCondition[];
         }
         export interface RequisitionItems extends ServiceTypes.CoreRequestBase {
+            DomainId?: number;
             RequisitionSid: number;
         }
         export interface Requisitions extends ServiceTypes.CoreRequestBase {
+            DomainId?: number;
             RequisitionSids: number[];
         }
         export interface SearchSuppliersByUid extends ServiceTypes.CoreRequestBase {
             SupplierUid?: string;
         }
+        export interface StoreDomainsByEmployee extends ServiceTypes.CoreRequestBase {
+            EmployeeSid: number;
+        }
         export interface Storerooms extends ServiceTypes.CoreRequestBase {
             CanIssue?: boolean;
             CanReceive?: boolean;
+            DomainId?: number;
+            IsActive?: boolean;
         }
         export interface StoreroomSecurity extends ServiceTypes.CoreRequestBase {
             EmployeeSid?: number;
@@ -178,6 +195,7 @@ export namespace StoreroomServiceTypes {
             Cancel?: boolean;
             Comments?: string;
             Complete?: boolean;
+            DomainId?: number;
             ExpDeliveryDate?: Date;
             PoNumber?: string;
             ReceiveStoreroom?: string;
@@ -190,6 +208,7 @@ export namespace StoreroomServiceTypes {
             BinLocation?: string;
             CycleIntervalNum?: number;
             CycleIntervalUnit?: number;
+            DomainId?: number;
             MaterialSid: number;
             MaxQuantity?: number;
             MinQuantity?: number;
@@ -203,6 +222,7 @@ export namespace StoreroomServiceTypes {
             City?: string;
             ContactPerson?: string;
             ContactPerson2?: string;
+            DomainId?: number;
             IsActive?: boolean;
             Name?: string;
             State?: string;
@@ -219,6 +239,7 @@ export namespace StoreroomServiceTypes {
         export interface UpdateSupplierMaterial extends ServiceTypes.CoreRequestBase {
             CatalogNum?: string;
             ContractNum?: string;
+            DomainId?: number;
             InfoDate?: Date;
             LeadTime?: number;
             LeadTimeUnit?: number;
@@ -251,6 +272,7 @@ export namespace StoreroomServiceTypes {
         export interface RequisitionItems extends ServiceTypes.CoreResponseBase_<CoreTypes.RequisitionItem[]> {}
         export interface Requisitions extends ServiceTypes.CoreResponseBase_<CoreTypes.Requisition[]> {}
         export interface SearchSuppliersByUid extends ServiceTypes.CoreResponseBase_<CoreTypes.Supplier[]> {}
+        export interface StoreDomainsByEmployee extends ServiceTypes.CoreResponseBase_<CoreTypes.StoreDomainBase[]> {}
         export interface Storerooms extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDesc[]> {}
         export interface StoreroomSecurity extends ServiceTypes.CoreResponseBase_<CoreTypes.StoreroomSecurityBase> {}
         export interface StoreroomStocks extends ServiceTypes.CoreResponseBase_<CoreTypes.StorermStock[]> {}
@@ -278,6 +300,7 @@ export namespace StoreroomServiceTypes {
         RequisitionItems?: (request: Requests.RequisitionItems) => AbortablePromise<Responses.RequisitionItems>;
         Requisitions?: (request: Requests.Requisitions) => AbortablePromise<Responses.Requisitions>;
         SearchSuppliersByUid?: (request: Requests.SearchSuppliersByUid) => AbortablePromise<Responses.SearchSuppliersByUid>;
+        StoreDomainsByEmployee?: (request: Requests.StoreDomainsByEmployee) => AbortablePromise<Responses.StoreDomainsByEmployee>;
         Storerooms?: (request: Requests.Storerooms) => AbortablePromise<Responses.Storerooms>;
         StoreroomSecurity?: (request: Requests.StoreroomSecurity) => AbortablePromise<Responses.StoreroomSecurity>;
         StoreroomStocks?: (request: Requests.StoreroomStocks) => AbortablePromise<Responses.StoreroomStocks>;

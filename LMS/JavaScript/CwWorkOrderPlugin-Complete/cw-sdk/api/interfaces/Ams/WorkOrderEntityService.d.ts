@@ -7,6 +7,14 @@ export namespace WorkOrderEntityServiceTypes {
             GetGisData?: boolean;
             ObjectIds: number[];
         }
+        export interface ByWorkOrderIds extends ServiceTypes.CoreRequestBase {
+            GetGisData?: boolean;
+            WorkOrderIds: string[];
+        }
+        export interface ByWorkOrderSids extends ServiceTypes.CoreRequestBase {
+            GetGisData?: boolean;
+            WorkOrderSids: number[];
+        }
         export interface CreateSearchDefinition extends ServiceTypes.CoreRequestBase {
             Address?: string[];
             EnableEurl?: boolean;
@@ -29,6 +37,7 @@ export namespace WorkOrderEntityServiceTypes {
             EquipmentCostRangeType?: number;
             EquipmentCostValues?: number[];
             Extent?: CoreTypes.GISExtent;
+            Facility_Id?: string[];
             FeatureId?: number[];
             FeatureIdIncludeNulls?: boolean;
             FeatureIdIsInList?: boolean;
@@ -48,6 +57,7 @@ export namespace WorkOrderEntityServiceTypes {
             LaborCostRangeType?: number;
             LaborCostValues?: number[];
             LegacyId?: string[];
+            Level_Id?: string[];
             LineItemCostIncludeNulls?: boolean;
             LineItemCostIsMaxValueExclusive?: boolean;
             LineItemCostIsMinValueExclusive?: boolean;
@@ -286,6 +296,7 @@ export namespace WorkOrderEntityServiceTypes {
             EquipmentCostRangeType?: number;
             EquipmentCostValues?: number[];
             Extent?: CoreTypes.GISExtent;
+            Facility_Id?: string[];
             FeatureId?: number[];
             FeatureIdIncludeNulls?: boolean;
             FeatureIdIsInList?: boolean;
@@ -305,6 +316,7 @@ export namespace WorkOrderEntityServiceTypes {
             LaborCostRangeType?: number;
             LaborCostValues?: number[];
             LegacyId?: string[];
+            Level_Id?: string[];
             LineItemCostIncludeNulls?: boolean;
             LineItemCostIsMaxValueExclusive?: boolean;
             LineItemCostIsMinValueExclusive?: boolean;
@@ -519,15 +531,27 @@ export namespace WorkOrderEntityServiceTypes {
             WoText9?: string[];
             WoWOTemplateId?: string[];
         }
+        export interface Update extends ServiceTypes.CoreRequestBase {
+            Facility_Id?: string;
+            Level_Id?: string;
+            ObjectIds?: number[];
+            WorkCompleted?: boolean;
+        }
     }
     export namespace Responses {
         export interface ByIds extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderEntity[]> {}
+        export interface ByWorkOrderIds extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderEntity[]> {}
+        export interface ByWorkOrderSids extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderEntity[]> {}
         export interface CreateSearchDefinition extends ServiceTypes.CoreResponseBase_<CoreTypes.SearchDefinition> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<number[]> {}
+        export interface Update extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
     }
     export interface IWorkOrderEntityService {
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
+        ByWorkOrderIds?: (request: Requests.ByWorkOrderIds) => AbortablePromise<Responses.ByWorkOrderIds>;
+        ByWorkOrderSids?: (request: Requests.ByWorkOrderSids) => AbortablePromise<Responses.ByWorkOrderSids>;
         CreateSearchDefinition?: (request: Requests.CreateSearchDefinition) => AbortablePromise<Responses.CreateSearchDefinition>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;
+        Update?: (request: Requests.Update) => AbortablePromise<Responses.Update>;
     }
 }

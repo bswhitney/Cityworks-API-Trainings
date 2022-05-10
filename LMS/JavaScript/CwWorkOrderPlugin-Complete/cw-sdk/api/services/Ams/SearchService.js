@@ -7,6 +7,10 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var SearchService = /** @class */ (function () {
         function SearchService(service) {
+            this.ErrorCodes = {
+                InvalidField: 30
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         SearchService.prototype.AssetCalculationResultSaved = function (request) {

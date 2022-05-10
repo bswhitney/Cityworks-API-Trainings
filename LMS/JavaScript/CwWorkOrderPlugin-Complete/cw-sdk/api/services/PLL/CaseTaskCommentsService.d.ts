@@ -15,4 +15,6 @@ export declare class CaseTaskCommentsService implements ICaseTaskCommentsService
     ByCaTaskIds(request: Requests.ByCaTaskIds): AbortablePromise<Responses.ByCaTaskIds>;
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

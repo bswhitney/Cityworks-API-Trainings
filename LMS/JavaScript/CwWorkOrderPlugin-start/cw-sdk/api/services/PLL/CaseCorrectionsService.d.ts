@@ -14,4 +14,6 @@ export declare class CaseCorrectionsService implements ICaseCorrectionsService {
     ByCaTaskIds(request: Requests.ByCaTaskIds): AbortablePromise<Responses.ByCaTaskIds>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

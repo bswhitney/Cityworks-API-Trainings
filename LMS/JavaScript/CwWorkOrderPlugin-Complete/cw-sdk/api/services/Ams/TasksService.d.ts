@@ -22,4 +22,6 @@ export declare class TasksService implements ITasksService {
     Template(request: Requests.Template): AbortablePromise<Responses.Template>;
     Templates(request: Requests.Templates): AbortablePromise<Responses.Templates>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

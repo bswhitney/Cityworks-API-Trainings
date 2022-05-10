@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var PavementInspectionService = /** @class */ (function () {
         function PavementInspectionService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         PavementInspectionService.prototype.AddDistress = function (request) {

@@ -12,12 +12,14 @@ export declare class ServiceRequestService implements IServiceRequestService {
     constructor(service: IApiService);
     AddComments(request: Requests.AddComments): AbortablePromise<Responses.AddComments>;
     AllStreetCode(request: Requests.AllStreetCode): AbortablePromise<Responses.AllStreetCode>;
+    AuditLog(request: Requests.AuditLog): AbortablePromise<Responses.AuditLog>;
     ById(request: Requests.ById): AbortablePromise<Responses.ById>;
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
     ByIncidentAndEmail(request: Requests.ByIncidentAndEmail): AbortablePromise<Responses.ByIncidentAndEmail>;
     ByOtherSystemId(request: Requests.ByOtherSystemId): AbortablePromise<Responses.ByOtherSystemId>;
     Cancel(request: Requests.Cancel): AbortablePromise<Responses.Cancel>;
     ChangeCustomFieldCategory(request: Requests.ChangeCustomFieldCategory): AbortablePromise<Responses.ChangeCustomFieldCategory>;
+    ChangeProblem(request: Requests.ChangeProblem): AbortablePromise<Responses.ChangeProblem>;
     Close(request: Requests.Close): AbortablePromise<Responses.Close>;
     Combine(request: Requests.Combine): AbortablePromise<Responses.Combine>;
     Comments(request: Requests.Comments): AbortablePromise<Responses.Comments>;
@@ -52,4 +54,27 @@ export declare class ServiceRequestService implements IServiceRequestService {
     UnlinkInspections(request: Requests.UnlinkInspections): AbortablePromise<Responses.UnlinkInspections>;
     UnlinkWorkOrders(request: Requests.UnlinkWorkOrders): AbortablePromise<Responses.UnlinkWorkOrders>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {
+        UnknownError: number;
+        InvalidRequestId: number;
+        NotAuthorizedToViewRequest: number;
+        NotAuthorizedToUpdateRequest: number;
+        NotAuthorizedToCreateRequest: number;
+        NotAuthorizedToCancelRequest: number;
+        NotAuthorizedToDeleteRequest: number;
+        InvalidActivityMapLogicXY: number;
+        InvalidField: number;
+        ErrorStatusCantBeClosed: number;
+        ErrorStatusCantBeCanceled: number;
+        ErrorRequiredFields: number;
+        ErrorRequiredCustomFields: number;
+        ErrorItemNotFound: number;
+        CannotCombineToClosedRequest: number;
+        CannotCombineToCanceledRequest: number;
+        CannotCombineFromClosedRequest: number;
+    };
+    WarningCodes: {
+        WarningItemNotFound: number;
+        WarningEmptyOrNullField: number;
+    };
 }

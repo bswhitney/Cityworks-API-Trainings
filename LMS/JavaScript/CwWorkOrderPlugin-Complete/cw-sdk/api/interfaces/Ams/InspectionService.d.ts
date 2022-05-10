@@ -7,12 +7,17 @@ export namespace InspectionServiceTypes {
             Entity?: CoreTypes.WorkOrderEntityBase;
             EntityType: string;
             EntityUid: string;
+            Facility_Id?: string;
             InspectionId: number;
+            Level_Id?: string;
             UpdateXY?: boolean;
         }
         export interface Answers extends ServiceTypes.CoreRequestBase {
             InspectionId: number;
             InspectionIds: number[];
+        }
+        export interface AuditLog extends ServiceTypes.CoreRequestBase {
+            InspectionId: number;
         }
         export interface ById extends ServiceTypes.CoreRequestBase {
             InspectionId: number;
@@ -33,28 +38,40 @@ export namespace InspectionServiceTypes {
         }
         export interface Create extends ServiceTypes.CoreRequestBase {
             Address?: string;
+            Answers?: CoreTypes.InspectionAnswer[];
+            Comments?: string;
             Date1?: Date;
             Date2?: Date;
             Date3?: Date;
             Date4?: Date;
             Date5?: Date;
             District?: string;
+            DomainId?: number;
             Entity?: CoreTypes.WorkOrderEntity;
             EntityType: string;
+            Facility_Id?: string;
+            ForemanRecomnd?: string;
+            GeocodeAddress?: boolean;
             GetGisData?: boolean;
             InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             InspTemplateId: number;
+            Level_Id?: string;
             Location?: string;
             MapPage?: string;
+            Metadata?: string;
             Num1?: number;
             Num2?: number;
             Num3?: number;
             Num4?: number;
             Num5?: number;
+            ObservationSum?: string;
             Priority?: string;
             PrjStartDate?: Date;
+            ProjectSid?: number;
+            Questions?: CoreTypes.InspectionQuestionDetails[];
+            RepairsMade?: string;
             Shop?: string;
             Status?: string;
             StreetName?: string;
@@ -70,28 +87,151 @@ export namespace InspectionServiceTypes {
             Text8?: string;
             Text9?: string;
             TileNo?: string;
+            VcsWKID?: number;
+            WKID?: number;
+            WKT?: string;
             X?: number;
             Y?: number;
+            Z?: number;
         }
-        export interface CreateFromParent extends ServiceTypes.CoreRequestBase {
+        export interface CreateFromCase extends ServiceTypes.CoreRequestBase {
+            Answers?: CoreTypes.InspectionAnswer[];
+            CaseId: number;
+            Comments?: string;
             Date1?: Date;
             Date2?: Date;
             Date3?: Date;
             Date4?: Date;
             Date5?: Date;
+            District?: string;
+            DomainId?: number;
             Entity?: CoreTypes.WorkOrderEntity;
             EntityType: string;
+            Facility_Id?: string;
+            ForemanRecomnd?: string;
+            GetGisData?: boolean;
+            InitiateDate?: Date;
+            InitiatedByApp?: string;
+            InitiatedBySid?: number;
+            InspTemplateId: number;
+            Level_Id?: string;
+            Location?: string;
+            MapPage?: string;
+            Metadata?: string;
+            Num1?: number;
+            Num2?: number;
+            Num3?: number;
+            Num4?: number;
+            Num5?: number;
+            ObservationSum?: string;
+            ProjectSid?: number;
+            Questions?: CoreTypes.InspectionQuestionDetails[];
+            RepairsMade?: string;
+            Shop?: string;
+            Status?: string;
+            StreetName?: string;
+            SubmitToEmployeeSid?: number;
+            Text1?: string;
+            Text10?: string;
+            Text2?: string;
+            Text3?: string;
+            Text4?: string;
+            Text5?: string;
+            Text6?: string;
+            Text7?: string;
+            Text8?: string;
+            Text9?: string;
+            TileNo?: string;
+        }
+        export interface CreateFromEntities extends ServiceTypes.CoreRequestBase {
+            Address?: string;
+            Answers?: CoreTypes.InspectionAnswer[];
+            Comments?: string;
+            Date1?: Date;
+            Date2?: Date;
+            Date3?: Date;
+            Date4?: Date;
+            Date5?: Date;
+            District?: string;
+            DomainId?: number;
+            Entities?: CoreTypes.WorkOrderEntity[];
+            Entity?: CoreTypes.WorkOrderEntity;
+            EntityType: string;
+            Facility_Id?: string;
+            ForemanRecomnd?: string;
+            GeocodeAddress?: boolean;
+            GetGisData?: boolean;
+            InitiateDate?: Date;
+            InitiatedByApp?: string;
+            InitiatedBySid?: number;
+            InspTemplateId: number;
+            Level_Id?: string;
+            Location?: string;
+            MapPage?: string;
+            Metadata?: string;
+            Num1?: number;
+            Num2?: number;
+            Num3?: number;
+            Num4?: number;
+            Num5?: number;
+            ObservationSum?: string;
+            Priority?: string;
+            PrjStartDate?: Date;
+            ProjectSid?: number;
+            Questions?: CoreTypes.InspectionQuestionDetails[];
+            RepairsMade?: string;
+            Shop?: string;
+            Status?: string;
+            StreetName?: string;
+            SubmitToEmployeeSid?: number;
+            Text1?: string;
+            Text10?: string;
+            Text2?: string;
+            Text3?: string;
+            Text4?: string;
+            Text5?: string;
+            Text6?: string;
+            Text7?: string;
+            Text8?: string;
+            Text9?: string;
+            TileNo?: string;
+            VcsWKID?: number;
+            WKID?: number;
+            WKT?: string;
+            X?: number;
+            Y?: number;
+            Z?: number;
+        }
+        export interface CreateFromParent extends ServiceTypes.CoreRequestBase {
+            Answers?: CoreTypes.InspectionAnswer[];
+            Comments?: string;
+            Date1?: Date;
+            Date2?: Date;
+            Date3?: Date;
+            Date4?: Date;
+            Date5?: Date;
+            DomainId?: number;
+            Entity?: CoreTypes.WorkOrderEntity;
+            EntityType: string;
+            Facility_Id?: string;
+            ForemanRecomnd?: string;
             GetGisData?: boolean;
             InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             InspectionId?: number;
             InspTemplateId: number;
+            Level_Id?: string;
+            Metadata?: string;
             Num1?: number;
             Num2?: number;
             Num3?: number;
             Num4?: number;
             Num5?: number;
+            ObservationSum?: string;
+            ProjectSid?: number;
+            Questions?: CoreTypes.InspectionQuestionDetails[];
+            RepairsMade?: string;
             Status?: string;
             SubmitToEmployeeSid?: number;
             Text1?: string;
@@ -106,23 +246,34 @@ export namespace InspectionServiceTypes {
             Text9?: string;
         }
         export interface CreateFromServiceRequest extends ServiceTypes.CoreRequestBase {
+            Answers?: CoreTypes.InspectionAnswer[];
+            Comments?: string;
             Date1?: Date;
             Date2?: Date;
             Date3?: Date;
             Date4?: Date;
             Date5?: Date;
+            DomainId?: number;
             Entity?: CoreTypes.WorkOrderEntity;
             EntityType: string;
+            Facility_Id?: string;
+            ForemanRecomnd?: string;
             GetGisData?: boolean;
             InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             InspTemplateId: number;
+            Level_Id?: string;
+            Metadata?: string;
             Num1?: number;
             Num2?: number;
             Num3?: number;
             Num4?: number;
             Num5?: number;
+            ObservationSum?: string;
+            ProjectSid?: number;
+            Questions?: CoreTypes.InspectionQuestionDetails[];
+            RepairsMade?: string;
             RequestId: number;
             Status?: string;
             SubmitToEmployeeSid?: number;
@@ -138,24 +289,35 @@ export namespace InspectionServiceTypes {
             Text9?: string;
         }
         export interface CreateFromWorkOrder extends ServiceTypes.CoreRequestBase {
+            Answers?: CoreTypes.InspectionAnswer[];
+            Comments?: string;
             Date1?: Date;
             Date2?: Date;
             Date3?: Date;
             Date4?: Date;
             Date5?: Date;
+            DomainId?: number;
             Entity?: CoreTypes.WorkOrderEntity;
             EntityType: string;
+            Facility_Id?: string;
+            ForemanRecomnd?: string;
             GetGisData?: boolean;
             InitiateDate?: Date;
             InitiatedByApp?: string;
             InitiatedBySid?: number;
             InspTemplateId: number;
+            Level_Id?: string;
+            Metadata?: string;
             Num1?: number;
             Num2?: number;
             Num3?: number;
             Num4?: number;
             Num5?: number;
+            ObservationSum?: string;
             ProjectedStartDate?: Date;
+            ProjectSid?: number;
+            Questions?: CoreTypes.InspectionQuestionDetails[];
+            RepairsMade?: string;
             Status?: string;
             SubmitToEmployeeSid?: number;
             Text1?: string;
@@ -299,6 +461,7 @@ export namespace InspectionServiceTypes {
             EntityType?: string;
             EntityUids?: string[];
             Extent?: CoreTypes.GISExtent;
+            Facility_Id?: string[];
             FeatureIdIncludeNulls?: boolean;
             FeatureIdIsMaxValueExclusive?: boolean;
             FeatureIdIsMinValueExclusive?: boolean;
@@ -358,6 +521,7 @@ export namespace InspectionServiceTypes {
             InspTemplateIdIsInList?: boolean;
             InspTemplateName?: string[];
             IsAttached?: boolean;
+            Level_Id?: string[];
             Location?: string[];
             MapPage?: string[];
             MaxResults?: number;
@@ -469,10 +633,12 @@ export namespace InspectionServiceTypes {
         }
         export interface Move extends ServiceTypes.CoreRequestBase {
             InspectionId: number;
+            VcsWKID?: number;
             WKID?: number;
             WKT?: string;
             X: number;
             Y: number;
+            Z?: number;
         }
         export interface Priorities extends ServiceTypes.CoreRequestBase {
         }
@@ -485,7 +651,9 @@ export namespace InspectionServiceTypes {
         }
         export interface RemoveEntity extends ServiceTypes.CoreRequestBase {
             InspectionIds: number[];
-            UpdateXY?: boolean;
+        }
+        export interface Reopen extends ServiceTypes.CoreRequestBase {
+            InspectionIds: number[];
         }
         export interface Resolutions extends ServiceTypes.CoreRequestBase {
         }
@@ -616,6 +784,7 @@ export namespace InspectionServiceTypes {
             EntityType?: string;
             EntityUids?: string[];
             Extent?: CoreTypes.GISExtent;
+            Facility_Id?: string[];
             FeatureIdIncludeNulls?: boolean;
             FeatureIdIsMaxValueExclusive?: boolean;
             FeatureIdIsMinValueExclusive?: boolean;
@@ -675,6 +844,7 @@ export namespace InspectionServiceTypes {
             InspTemplateIdIsInList?: boolean;
             InspTemplateName?: string[];
             IsAttached?: boolean;
+            Level_Id?: string[];
             Location?: string[];
             MapPage?: string[];
             MaxResults?: number;
@@ -779,6 +949,9 @@ export namespace InspectionServiceTypes {
             MinimumDateModified?: Date;
             TemplateIds?: number[];
         }
+        export interface Uncancel extends ServiceTypes.CoreRequestBase {
+            InspectionIds: number[];
+        }
         export interface Update extends ServiceTypes.CoreRequestBase {
             ActualFinishDate?: Date;
             Answers?: CoreTypes.InspectionAnswer[];
@@ -796,6 +969,7 @@ export namespace InspectionServiceTypes {
             DateSubmitTo?: Date;
             District?: string;
             Effort?: number;
+            Facility_Id?: string;
             ForemanRecomnd?: string;
             FromDate?: Date;
             InitiateDate?: Date;
@@ -804,8 +978,10 @@ export namespace InspectionServiceTypes {
             InspectedBySid?: number;
             InspectionDate?: Date;
             InspectionId: number;
+            Level_Id?: string;
             Location?: string;
             MapPage?: string;
+            Metadata?: string;
             Num1?: number;
             Num2?: number;
             Num3?: number;
@@ -815,6 +991,7 @@ export namespace InspectionServiceTypes {
             Priority?: string;
             ProjectedFinishDate?: Date;
             ProjectedStartDate?: Date;
+            ProjectSid?: number;
             Questions?: CoreTypes.InspectionQuestionDetails[];
             RepairsMade?: string;
             RequestId?: number;
@@ -843,12 +1020,15 @@ export namespace InspectionServiceTypes {
     export namespace Responses {
         export interface AddEntity extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderEntity> {}
         export interface Answers extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionAnswer[]> {}
+        export interface AuditLog extends ServiceTypes.CoreResponseBase_<CoreTypes.CWMetaData[]> {}
         export interface ById extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase> {}
         export interface ByIds extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase[]> {}
         export interface ByWorkOrderIds extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase[]> {}
         export interface Cancel extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase[]> {}
         export interface Close extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase[]> {}
         export interface Create extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase> {}
+        export interface CreateFromCase extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase> {}
+        export interface CreateFromEntities extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase[]> {}
         export interface CreateFromParent extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase> {}
         export interface CreateFromServiceRequest extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase> {}
         export interface CreateFromWorkOrder extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase> {}
@@ -866,6 +1046,7 @@ export namespace InspectionServiceTypes {
         export interface QA extends ServiceTypes.CoreResponseBase_<CoreTypes.InspTemplateQA> {}
         export interface Questions extends ServiceTypes.CoreResponseBase_<CoreTypes.InspQuestion[]> {}
         export interface RemoveEntity extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
+        export interface Reopen extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase[]> {}
         export interface Resolutions extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDesc[]> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface SearchObject extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase[]> {}
@@ -873,17 +1054,21 @@ export namespace InspectionServiceTypes {
         export interface Statuses extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDesc[]> {}
         export interface SubmitTos extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeNameId[]> {}
         export interface Templates extends ServiceTypes.CoreResponseBase_<CoreTypes.InspTemplateBase[]> {}
+        export interface Uncancel extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase[]> {}
         export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.InspectionBase> {}
     }
     export interface IInspectionService {
         AddEntity?: (request: Requests.AddEntity) => AbortablePromise<Responses.AddEntity>;
         Answers?: (request: Requests.Answers) => AbortablePromise<Responses.Answers>;
+        AuditLog?: (request: Requests.AuditLog) => AbortablePromise<Responses.AuditLog>;
         ById?: (request: Requests.ById) => AbortablePromise<Responses.ById>;
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
         ByWorkOrderIds?: (request: Requests.ByWorkOrderIds) => AbortablePromise<Responses.ByWorkOrderIds>;
         Cancel?: (request: Requests.Cancel) => AbortablePromise<Responses.Cancel>;
         Close?: (request: Requests.Close) => AbortablePromise<Responses.Close>;
         Create?: (request: Requests.Create) => AbortablePromise<Responses.Create>;
+        CreateFromCase?: (request: Requests.CreateFromCase) => AbortablePromise<Responses.CreateFromCase>;
+        CreateFromEntities?: (request: Requests.CreateFromEntities) => AbortablePromise<Responses.CreateFromEntities>;
         CreateFromParent?: (request: Requests.CreateFromParent) => AbortablePromise<Responses.CreateFromParent>;
         CreateFromServiceRequest?: (request: Requests.CreateFromServiceRequest) => AbortablePromise<Responses.CreateFromServiceRequest>;
         CreateFromWorkOrder?: (request: Requests.CreateFromWorkOrder) => AbortablePromise<Responses.CreateFromWorkOrder>;
@@ -901,6 +1086,7 @@ export namespace InspectionServiceTypes {
         QA?: (request: Requests.QA) => AbortablePromise<Responses.QA>;
         Questions?: (request: Requests.Questions) => AbortablePromise<Responses.Questions>;
         RemoveEntity?: (request: Requests.RemoveEntity) => AbortablePromise<Responses.RemoveEntity>;
+        Reopen?: (request: Requests.Reopen) => AbortablePromise<Responses.Reopen>;
         Resolutions?: (request: Requests.Resolutions) => AbortablePromise<Responses.Resolutions>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;
         SearchObject?: (request: Requests.SearchObject) => AbortablePromise<Responses.SearchObject>;
@@ -908,6 +1094,7 @@ export namespace InspectionServiceTypes {
         Statuses?: (request: Requests.Statuses) => AbortablePromise<Responses.Statuses>;
         SubmitTos?: (request: Requests.SubmitTos) => AbortablePromise<Responses.SubmitTos>;
         Templates?: (request: Requests.Templates) => AbortablePromise<Responses.Templates>;
+        Uncancel?: (request: Requests.Uncancel) => AbortablePromise<Responses.Uncancel>;
         Update?: (request: Requests.Update) => AbortablePromise<Responses.Update>;
     }
 }

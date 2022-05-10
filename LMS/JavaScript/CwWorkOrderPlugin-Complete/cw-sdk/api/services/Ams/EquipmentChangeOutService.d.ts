@@ -29,4 +29,9 @@ export declare class EquipmentChangeOutService implements IEquipmentChangeOutSer
     Replace(request: Requests.Replace): AbortablePromise<Responses.Replace>;
     UpdateChangeOutRead(request: Requests.UpdateChangeOutRead): AbortablePromise<Responses.UpdateChangeOutRead>;
     UpdateOperation(request: Requests.UpdateOperation): AbortablePromise<Responses.UpdateOperation>;
+    ErrorCodes: {
+        InvalidField: number;
+        UnauthorizedUser: number;
+    };
+    WarningCodes: {};
 }

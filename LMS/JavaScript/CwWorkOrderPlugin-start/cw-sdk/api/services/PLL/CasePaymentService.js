@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var CasePaymentService = /** @class */ (function () {
         function CasePaymentService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         CasePaymentService.prototype.Add = function (request) {
@@ -24,8 +26,17 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         CasePaymentService.prototype.DeleteByCaObjectId = function (request) {
             return this._service.call(request, 'PLL/CasePayment/DeleteByCaObjectId');
         };
+        CasePaymentService.prototype.DownloadReceipt = function (request) {
+            return this._service.call(request, 'PLL/CasePayment/DownloadReceipt');
+        };
         CasePaymentService.prototype.Search = function (request) {
             return this._service.call(request, 'PLL/CasePayment/Search');
+        };
+        CasePaymentService.prototype.SearchObject = function (request) {
+            return this._service.call(request, 'PLL/CasePayment/SearchObject');
+        };
+        CasePaymentService.prototype.Update = function (request) {
+            return this._service.call(request, 'PLL/CasePayment/Update');
         };
         return CasePaymentService;
     }());

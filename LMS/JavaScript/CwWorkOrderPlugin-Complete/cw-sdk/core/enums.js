@@ -24,6 +24,7 @@ define(["require", "exports"], function (require, exports) {
             ActivityLinkActivityType[ActivityLinkActivityType["Inspection"] = 2] = "Inspection";
             ActivityLinkActivityType[ActivityLinkActivityType["ServiceRequest"] = 3] = "ServiceRequest";
             ActivityLinkActivityType[ActivityLinkActivityType["WorkOrder"] = 4] = "WorkOrder";
+            ActivityLinkActivityType[ActivityLinkActivityType["WIPCase"] = 5] = "WIPCase";
         })(ActivityLinkActivityType = Enums.ActivityLinkActivityType || (Enums.ActivityLinkActivityType = {}));
         var ActivityLinkType;
         (function (ActivityLinkType) {
@@ -62,11 +63,113 @@ define(["require", "exports"], function (require, exports) {
             ApiVersionEnum[ApiVersionEnum["V15_4_1"] = 26] = "V15_4_1";
             ApiVersionEnum[ApiVersionEnum["V15_4_2"] = 27] = "V15_4_2";
             ApiVersionEnum[ApiVersionEnum["V15_4_3"] = 28] = "V15_4_3";
-            ApiVersionEnum[ApiVersionEnum["V15_5"] = 29] = "V15_5";
-            ApiVersionEnum[ApiVersionEnum["V15_5_1"] = 30] = "V15_5_1";
-            ApiVersionEnum[ApiVersionEnum["V15_5_2"] = 31] = "V15_5_2";
-            ApiVersionEnum[ApiVersionEnum["V15_5_3"] = 32] = "V15_5_3";
-            ApiVersionEnum[ApiVersionEnum["V15_5_4"] = 33] = "V15_5_4";
+            ApiVersionEnum[ApiVersionEnum["V15_4_4"] = 29] = "V15_4_4";
+            ApiVersionEnum[ApiVersionEnum["V15_4_5"] = 30] = "V15_4_5";
+            ApiVersionEnum[ApiVersionEnum["V15_4_6"] = 31] = "V15_4_6";
+            ApiVersionEnum[ApiVersionEnum["V15_4_7"] = 32] = "V15_4_7";
+            ApiVersionEnum[ApiVersionEnum["V15_5"] = 33] = "V15_5";
+            ApiVersionEnum[ApiVersionEnum["V15_5_1"] = 34] = "V15_5_1";
+            ApiVersionEnum[ApiVersionEnum["V15_5_2"] = 35] = "V15_5_2";
+            ApiVersionEnum[ApiVersionEnum["V15_5_3"] = 36] = "V15_5_3";
+            ApiVersionEnum[ApiVersionEnum["V15_5_4"] = 37] = "V15_5_4";
+            ApiVersionEnum[ApiVersionEnum["V15_5_5"] = 38] = "V15_5_5";
+            ApiVersionEnum[ApiVersionEnum["V15_5_6"] = 39] = "V15_5_6";
+            ApiVersionEnum[ApiVersionEnum["V15_5_7"] = 40] = "V15_5_7";
+            ApiVersionEnum[ApiVersionEnum["V15_6"] = 41] = "V15_6";
+            ApiVersionEnum[ApiVersionEnum["V15_6_1"] = 42] = "V15_6_1";
+            ApiVersionEnum[ApiVersionEnum["V15_6_2"] = 43] = "V15_6_2";
+            ApiVersionEnum[ApiVersionEnum["V15_6_3"] = 44] = "V15_6_3";
+            ApiVersionEnum[ApiVersionEnum["V15_6_4"] = 45] = "V15_6_4";
+            ApiVersionEnum[ApiVersionEnum["V16_0"] = 46] = "V16_0";
+            ApiVersionEnum[ApiVersionEnum["V16_1_0"] = 47] = "V16_1_0";
+            ApiVersionEnum[ApiVersionEnum["V16_1_1"] = 48] = "V16_1_1";
+            ApiVersionEnum[ApiVersionEnum["V16_4_0"] = 49] = "V16_4_0";
+            ApiVersionEnum[ApiVersionEnum["V16_8_0"] = 50] = "V16_8_0";
+            ApiVersionEnum[ApiVersionEnum["V16_9_0"] = 51] = "V16_9_0";
+            ApiVersionEnum[ApiVersionEnum["V16_10_0"] = 52] = "V16_10_0";
+            ApiVersionEnum[ApiVersionEnum["V16_11_0"] = 53] = "V16_11_0";
+            ApiVersionEnum[ApiVersionEnum["V16_11_2"] = 54] = "V16_11_2";
+            ApiVersionEnum[ApiVersionEnum["V16_11_6"] = 55] = "V16_11_6";
+            ApiVersionEnum[ApiVersionEnum["V16_13_0"] = 56] = "V16_13_0";
+            ApiVersionEnum[ApiVersionEnum["V16_13_1"] = 57] = "V16_13_1";
+            ApiVersionEnum[ApiVersionEnum["V16_13_2"] = 58] = "V16_13_2";
+            ApiVersionEnum[ApiVersionEnum["V16_13_4"] = 59] = "V16_13_4";
+            ApiVersionEnum[ApiVersionEnum["V16_13_5"] = 60] = "V16_13_5";
+            ApiVersionEnum[ApiVersionEnum["V16_13_8"] = 61] = "V16_13_8";
+            ApiVersionEnum[ApiVersionEnum["V16_13_10"] = 62] = "V16_13_10";
+            ApiVersionEnum[ApiVersionEnum["V16_13_11"] = 63] = "V16_13_11";
+            ApiVersionEnum[ApiVersionEnum["V16_14_0"] = 64] = "V16_14_0";
+            ApiVersionEnum[ApiVersionEnum["V16_14_3"] = 65] = "V16_14_3";
+            ApiVersionEnum[ApiVersionEnum["V16_14_4"] = 66] = "V16_14_4";
+            ApiVersionEnum[ApiVersionEnum["V16_15_0"] = 67] = "V16_15_0";
+            ApiVersionEnum[ApiVersionEnum["V16_17_0"] = 68] = "V16_17_0";
+            ApiVersionEnum[ApiVersionEnum["V16_17_13"] = 69] = "V16_17_13";
+            ApiVersionEnum[ApiVersionEnum["V16_18_0"] = 70] = "V16_18_0";
+            ApiVersionEnum[ApiVersionEnum["V16_19_0"] = 71] = "V16_19_0";
+            ApiVersionEnum[ApiVersionEnum["V16_20_0"] = 72] = "V16_20_0";
+            ApiVersionEnum[ApiVersionEnum["V17_7_0"] = 73] = "V17_7_0";
+            ApiVersionEnum[ApiVersionEnum["V17_8_0"] = 74] = "V17_8_0";
+            ApiVersionEnum[ApiVersionEnum["V17_10_0"] = 75] = "V17_10_0";
+            ApiVersionEnum[ApiVersionEnum["V17_12_0"] = 76] = "V17_12_0";
+            ApiVersionEnum[ApiVersionEnum["V17_15_2"] = 77] = "V17_15_2";
+            ApiVersionEnum[ApiVersionEnum["V17_17_0"] = 78] = "V17_17_0";
+            ApiVersionEnum[ApiVersionEnum["V17_18_0"] = 79] = "V17_18_0";
+            ApiVersionEnum[ApiVersionEnum["V17_20_0"] = 80] = "V17_20_0";
+            ApiVersionEnum[ApiVersionEnum["V17_20_1"] = 81] = "V17_20_1";
+            ApiVersionEnum[ApiVersionEnum["V17_22_0"] = 82] = "V17_22_0";
+            ApiVersionEnum[ApiVersionEnum["V17_23_0"] = 83] = "V17_23_0";
+            ApiVersionEnum[ApiVersionEnum["V17_24_0"] = 84] = "V17_24_0";
+            ApiVersionEnum[ApiVersionEnum["V17_25_0"] = 85] = "V17_25_0";
+            ApiVersionEnum[ApiVersionEnum["V17_26_0"] = 86] = "V17_26_0";
+            ApiVersionEnum[ApiVersionEnum["V17_27_0"] = 87] = "V17_27_0";
+            ApiVersionEnum[ApiVersionEnum["V17_27_1"] = 88] = "V17_27_1";
+            ApiVersionEnum[ApiVersionEnum["V17_31_0"] = 89] = "V17_31_0";
+            ApiVersionEnum[ApiVersionEnum["V17_33_0"] = 90] = "V17_33_0";
+            ApiVersionEnum[ApiVersionEnum["V17_33_6"] = 91] = "V17_33_6";
+            ApiVersionEnum[ApiVersionEnum["V17_34_0"] = 92] = "V17_34_0";
+            ApiVersionEnum[ApiVersionEnum["V17_34_1"] = 93] = "V17_34_1";
+            ApiVersionEnum[ApiVersionEnum["V17_36_0"] = 94] = "V17_36_0";
+            ApiVersionEnum[ApiVersionEnum["V17_38_0"] = 95] = "V17_38_0";
+            ApiVersionEnum[ApiVersionEnum["V17_42_0"] = 96] = "V17_42_0";
+            ApiVersionEnum[ApiVersionEnum["V17_44_0"] = 97] = "V17_44_0";
+            ApiVersionEnum[ApiVersionEnum["V17_45_0"] = 98] = "V17_45_0";
+            ApiVersionEnum[ApiVersionEnum["V17_46_0"] = 99] = "V17_46_0";
+            ApiVersionEnum[ApiVersionEnum["V17_47_0"] = 100] = "V17_47_0";
+            ApiVersionEnum[ApiVersionEnum["V17_51_0"] = 101] = "V17_51_0";
+            ApiVersionEnum[ApiVersionEnum["V17_52_0"] = 102] = "V17_52_0";
+            ApiVersionEnum[ApiVersionEnum["V17_54_0"] = 103] = "V17_54_0";
+            ApiVersionEnum[ApiVersionEnum["V17_57_0"] = 104] = "V17_57_0";
+            ApiVersionEnum[ApiVersionEnum["V17_58_0"] = 105] = "V17_58_0";
+            ApiVersionEnum[ApiVersionEnum["V17_59_0"] = 106] = "V17_59_0";
+            ApiVersionEnum[ApiVersionEnum["V17_60_1"] = 107] = "V17_60_1";
+            ApiVersionEnum[ApiVersionEnum["V17_61_0"] = 108] = "V17_61_0";
+            ApiVersionEnum[ApiVersionEnum["V17_62_0"] = 109] = "V17_62_0";
+            ApiVersionEnum[ApiVersionEnum["V17_63_0"] = 110] = "V17_63_0";
+            ApiVersionEnum[ApiVersionEnum["V17_65_0"] = 111] = "V17_65_0";
+            ApiVersionEnum[ApiVersionEnum["V17_69_0"] = 112] = "V17_69_0";
+            ApiVersionEnum[ApiVersionEnum["V17_70_0"] = 113] = "V17_70_0";
+            ApiVersionEnum[ApiVersionEnum["V17_71_0"] = 114] = "V17_71_0";
+            ApiVersionEnum[ApiVersionEnum["V17_71_2"] = 115] = "V17_71_2";
+            ApiVersionEnum[ApiVersionEnum["V17_73_0"] = 116] = "V17_73_0";
+            ApiVersionEnum[ApiVersionEnum["V17_74_0"] = 117] = "V17_74_0";
+            ApiVersionEnum[ApiVersionEnum["V17_75_0"] = 118] = "V17_75_0";
+            ApiVersionEnum[ApiVersionEnum["V17_77_0"] = 119] = "V17_77_0";
+            ApiVersionEnum[ApiVersionEnum["V17_78_1"] = 120] = "V17_78_1";
+            ApiVersionEnum[ApiVersionEnum["V17_79_0"] = 121] = "V17_79_0";
+            ApiVersionEnum[ApiVersionEnum["V17_81_0"] = 122] = "V17_81_0";
+            ApiVersionEnum[ApiVersionEnum["V17_81_1"] = 123] = "V17_81_1";
+            ApiVersionEnum[ApiVersionEnum["V17_83_0"] = 124] = "V17_83_0";
+            ApiVersionEnum[ApiVersionEnum["V17_88_0"] = 125] = "V17_88_0";
+            ApiVersionEnum[ApiVersionEnum["V17_90_1"] = 126] = "V17_90_1";
+            ApiVersionEnum[ApiVersionEnum["V17_92_0"] = 127] = "V17_92_0";
+            ApiVersionEnum[ApiVersionEnum["V17_94_2"] = 128] = "V17_94_2";
+            ApiVersionEnum[ApiVersionEnum["V17_102_0"] = 129] = "V17_102_0";
+            ApiVersionEnum[ApiVersionEnum["V17_106_0"] = 130] = "V17_106_0";
+            ApiVersionEnum[ApiVersionEnum["V17_106_3"] = 131] = "V17_106_3";
+            ApiVersionEnum[ApiVersionEnum["V17_107_0"] = 132] = "V17_107_0";
+            ApiVersionEnum[ApiVersionEnum["V17_108_0"] = 133] = "V17_108_0";
+            ApiVersionEnum[ApiVersionEnum["V17_109_0"] = 134] = "V17_109_0";
+            ApiVersionEnum[ApiVersionEnum["V17_109_2"] = 135] = "V17_109_2";
         })(ApiVersionEnum = Enums.ApiVersionEnum || (Enums.ApiVersionEnum = {}));
         var ApplyLevel;
         (function (ApplyLevel) {
@@ -75,6 +178,11 @@ define(["require", "exports"], function (require, exports) {
             ApplyLevel[ApplyLevel["Group"] = 2] = "Group";
             ApplyLevel[ApplyLevel["User"] = 3] = "User";
         })(ApplyLevel = Enums.ApplyLevel || (Enums.ApplyLevel = {}));
+        var AssetAliasType;
+        (function (AssetAliasType) {
+            AssetAliasType[AssetAliasType["Layer"] = 0] = "Layer";
+            AssetAliasType[AssetAliasType["Group"] = 1] = "Group";
+        })(AssetAliasType = Enums.AssetAliasType || (Enums.AssetAliasType = {}));
         var AssetRatingMethod;
         (function (AssetRatingMethod) {
             AssetRatingMethod[AssetRatingMethod["Null"] = 0] = "Null";
@@ -86,7 +194,20 @@ define(["require", "exports"], function (require, exports) {
         (function (AttachmentFileType) {
             AttachmentFileType[AttachmentFileType["ATTACHMENT"] = 0] = "ATTACHMENT";
             AttachmentFileType[AttachmentFileType["SIGNATURE"] = 1] = "SIGNATURE";
+            AttachmentFileType[AttachmentFileType["URL"] = 2] = "URL";
         })(AttachmentFileType = Enums.AttachmentFileType || (Enums.AttachmentFileType = {}));
+        var AttachmentType;
+        (function (AttachmentType) {
+            AttachmentType[AttachmentType["None"] = 0] = "None";
+            AttachmentType[AttachmentType["Contract"] = 1] = "Contract";
+            AttachmentType[AttachmentType["Request"] = 2] = "Request";
+            AttachmentType[AttachmentType["WorkOrder"] = 3] = "WorkOrder";
+            AttachmentType[AttachmentType["Inspection"] = 4] = "Inspection";
+            AttachmentType[AttachmentType["Project"] = 5] = "Project";
+            AttachmentType[AttachmentType["Transaction"] = 6] = "Transaction";
+            AttachmentType[AttachmentType["TvInspection"] = 7] = "TvInspection";
+            AttachmentType[AttachmentType["TvObservation"] = 8] = "TvObservation";
+        })(AttachmentType = Enums.AttachmentType || (Enums.AttachmentType = {}));
         var ChangeOutOp;
         (function (ChangeOutOp) {
             ChangeOutOp[ChangeOutOp["DETACH"] = 0] = "DETACH";
@@ -109,6 +230,9 @@ define(["require", "exports"], function (require, exports) {
             CommentActivityType[CommentActivityType["CaTask"] = 3] = "CaTask";
             CommentActivityType[CommentActivityType["CaObject"] = 4] = "CaObject";
             CommentActivityType[CommentActivityType["CaCorrection"] = 5] = "CaCorrection";
+            CommentActivityType[CommentActivityType["Project"] = 6] = "Project";
+            CommentActivityType[CommentActivityType["Contract"] = 7] = "Contract";
+            CommentActivityType[CommentActivityType["Inspection"] = 8] = "Inspection";
         })(CommentActivityType = Enums.CommentActivityType || (Enums.CommentActivityType = {}));
         var ContractorRateType;
         (function (ContractorRateType) {
@@ -158,6 +282,13 @@ define(["require", "exports"], function (require, exports) {
             DashboardChartWidgetType[DashboardChartWidgetType["Line"] = 3] = "Line";
             DashboardChartWidgetType[DashboardChartWidgetType["HorizBar"] = 4] = "HorizBar";
         })(DashboardChartWidgetType = Enums.DashboardChartWidgetType || (Enums.DashboardChartWidgetType = {}));
+        var DashboardNumberFormat;
+        (function (DashboardNumberFormat) {
+            DashboardNumberFormat[DashboardNumberFormat["Null"] = 0] = "Null";
+            DashboardNumberFormat[DashboardNumberFormat["Numeric"] = 1] = "Numeric";
+            DashboardNumberFormat[DashboardNumberFormat["Currency"] = 2] = "Currency";
+            DashboardNumberFormat[DashboardNumberFormat["Percent"] = 3] = "Percent";
+        })(DashboardNumberFormat = Enums.DashboardNumberFormat || (Enums.DashboardNumberFormat = {}));
         var DateGroupByOption;
         (function (DateGroupByOption) {
             DateGroupByOption[DateGroupByOption["Day"] = 0] = "Day";
@@ -195,6 +326,12 @@ define(["require", "exports"], function (require, exports) {
             DistressSeverity[DistressSeverity["H"] = 2] = "H";
             DistressSeverity[DistressSeverity["NA"] = 3] = "NA";
         })(DistressSeverity = Enums.DistressSeverity || (Enums.DistressSeverity = {}));
+        var DocumentActivityType;
+        (function (DocumentActivityType) {
+            DocumentActivityType[DocumentActivityType["Case"] = 0] = "Case";
+            DocumentActivityType[DocumentActivityType["Task"] = 1] = "Task";
+            DocumentActivityType[DocumentActivityType["Payment"] = 2] = "Payment";
+        })(DocumentActivityType = Enums.DocumentActivityType || (Enums.DocumentActivityType = {}));
         var EquipChangeOutType;
         (function (EquipChangeOutType) {
             EquipChangeOutType[EquipChangeOutType["AddRelationship"] = 0] = "AddRelationship";
@@ -227,6 +364,20 @@ define(["require", "exports"], function (require, exports) {
             EventSourceType[EventSourceType["SMS"] = 8] = "SMS";
             EventSourceType[EventSourceType["CaTaskItem"] = 9] = "CaTaskItem";
             EventSourceType[EventSourceType["WoTask"] = 10] = "WoTask";
+            EventSourceType[EventSourceType["RequestAttachment"] = 11] = "RequestAttachment";
+            EventSourceType[EventSourceType["WorkOrderAttachment"] = 12] = "WorkOrderAttachment";
+            EventSourceType[EventSourceType["InspectionAttachment"] = 13] = "InspectionAttachment";
+            EventSourceType[EventSourceType["CaRelDocs"] = 14] = "CaRelDocs";
+            EventSourceType[EventSourceType["InspectionLabor"] = 15] = "InspectionLabor";
+            EventSourceType[EventSourceType["InspectionEquipment"] = 16] = "InspectionEquipment";
+            EventSourceType[EventSourceType["WorkOrderEquipment"] = 17] = "WorkOrderEquipment";
+            EventSourceType[EventSourceType["WorkOrderMaterial"] = 18] = "WorkOrderMaterial";
+            EventSourceType[EventSourceType["RequestCaller"] = 19] = "RequestCaller";
+            EventSourceType[EventSourceType["CaAddressItem"] = 20] = "CaAddressItem";
+            EventSourceType[EventSourceType["CaFeesItem"] = 21] = "CaFeesItem";
+            EventSourceType[EventSourceType["Projects"] = 22] = "Projects";
+            EventSourceType[EventSourceType["ProjectAttachment"] = 23] = "ProjectAttachment";
+            EventSourceType[EventSourceType["ContractAttachment"] = 24] = "ContractAttachment";
         })(EventSourceType = Enums.EventSourceType || (Enums.EventSourceType = {}));
         var EventTriggerType;
         (function (EventTriggerType) {
@@ -281,6 +432,7 @@ define(["require", "exports"], function (require, exports) {
             GISServiceType[GISServiceType["ROUTING"] = 16] = "ROUTING";
             GISServiceType[GISServiceType["VECTORTILE"] = 17] = "VECTORTILE";
             GISServiceType[GISServiceType["MOBILEMAPPACKAGE"] = 18] = "MOBILEMAPPACKAGE";
+            GISServiceType[GISServiceType["WEBSCENE"] = 19] = "WEBSCENE";
         })(GISServiceType = Enums.GISServiceType || (Enums.GISServiceType = {}));
         var InspQuestionType;
         (function (InspQuestionType) {
@@ -288,6 +440,12 @@ define(["require", "exports"], function (require, exports) {
             InspQuestionType[InspQuestionType["Multiple"] = 1] = "Multiple";
             InspQuestionType[InspQuestionType["Assets"] = 2] = "Assets";
         })(InspQuestionType = Enums.InspQuestionType || (Enums.InspQuestionType = {}));
+        var IsActiveStatus;
+        (function (IsActiveStatus) {
+            IsActiveStatus[IsActiveStatus["Active"] = 0] = "Active";
+            IsActiveStatus[IsActiveStatus["Inactive"] = 1] = "Inactive";
+            IsActiveStatus[IsActiveStatus["All"] = 2] = "All";
+        })(IsActiveStatus = Enums.IsActiveStatus || (Enums.IsActiveStatus = {}));
         var LaborCategory;
         (function (LaborCategory) {
             LaborCategory[LaborCategory["Employee"] = 0] = "Employee";
@@ -340,6 +498,9 @@ define(["require", "exports"], function (require, exports) {
             LicensedFeature[LicensedFeature["RespondTaskManager"] = 25] = "RespondTaskManager";
             LicensedFeature[LicensedFeature["RespondWorkOrder"] = 26] = "RespondWorkOrder";
             LicensedFeature[LicensedFeature["Workload"] = 27] = "Workload";
+            LicensedFeature[LicensedFeature["OpX"] = 28] = "OpX";
+            LicensedFeature[LicensedFeature["TrimbleUnityMobile"] = 29] = "TrimbleUnityMobile";
+            LicensedFeature[LicensedFeature["TrimbleVegetationManager"] = 30] = "TrimbleVegetationManager";
         })(LicensedFeature = Enums.LicensedFeature || (Enums.LicensedFeature = {}));
         var MaterialCostType;
         (function (MaterialCostType) {
@@ -347,6 +508,7 @@ define(["require", "exports"], function (require, exports) {
             MaterialCostType[MaterialCostType["CURRENT"] = 2] = "CURRENT";
             MaterialCostType[MaterialCostType["FIFO"] = 3] = "FIFO";
             MaterialCostType[MaterialCostType["LIFO"] = 4] = "LIFO";
+            MaterialCostType[MaterialCostType["SERIAL"] = 5] = "SERIAL";
         })(MaterialCostType = Enums.MaterialCostType || (Enums.MaterialCostType = {}));
         var NativeAppWorkActivityType;
         (function (NativeAppWorkActivityType) {
@@ -355,6 +517,20 @@ define(["require", "exports"], function (require, exports) {
             NativeAppWorkActivityType[NativeAppWorkActivityType["ServiceRequest"] = 3] = "ServiceRequest";
             NativeAppWorkActivityType[NativeAppWorkActivityType["WorkOrder"] = 4] = "WorkOrder";
         })(NativeAppWorkActivityType = Enums.NativeAppWorkActivityType || (Enums.NativeAppWorkActivityType = {}));
+        var NotificationActivityType;
+        (function (NotificationActivityType) {
+            NotificationActivityType[NotificationActivityType["Null"] = 0] = "Null";
+            NotificationActivityType[NotificationActivityType["Case"] = 1] = "Case";
+            NotificationActivityType[NotificationActivityType["CaseTask"] = 2] = "CaseTask";
+        })(NotificationActivityType = Enums.NotificationActivityType || (Enums.NotificationActivityType = {}));
+        var NotificationEventType;
+        (function (NotificationEventType) {
+            NotificationEventType[NotificationEventType["Null"] = 0] = "Null";
+            NotificationEventType[NotificationEventType["CommentMention"] = 1] = "CommentMention";
+            NotificationEventType[NotificationEventType["AttachmentAdded"] = 2] = "AttachmentAdded";
+            NotificationEventType[NotificationEventType["PaymentMade"] = 3] = "PaymentMade";
+            NotificationEventType[NotificationEventType["AllFeesPaid"] = 4] = "AllFeesPaid";
+        })(NotificationEventType = Enums.NotificationEventType || (Enums.NotificationEventType = {}));
         var NumericValueMode;
         (function (NumericValueMode) {
             NumericValueMode[NumericValueMode["Nulls"] = 0] = "Nulls";
@@ -371,6 +547,11 @@ define(["require", "exports"], function (require, exports) {
             PacpMappingDirection[PacpMappingDirection["Import"] = 1] = "Import";
             PacpMappingDirection[PacpMappingDirection["ExportImport"] = 2] = "ExportImport";
         })(PacpMappingDirection = Enums.PacpMappingDirection || (Enums.PacpMappingDirection = {}));
+        var PipeInOut;
+        (function (PipeInOut) {
+            PipeInOut[PipeInOut["I"] = 0] = "I";
+            PipeInOut[PipeInOut["O"] = 1] = "O";
+        })(PipeInOut = Enums.PipeInOut || (Enums.PipeInOut = {}));
         var PWCodeType;
         (function (PWCodeType) {
             PWCodeType[PWCodeType["ACTGCODE"] = 0] = "ACTGCODE";
@@ -407,8 +588,42 @@ define(["require", "exports"], function (require, exports) {
             PWCodeType[PWCodeType["WOPRINT"] = 31] = "WOPRINT";
             PWCodeType[PWCodeType["STORERM"] = 32] = "STORERM";
             PWCodeType[PWCodeType["CONSTAT"] = 33] = "CONSTAT";
-            PWCodeType[PWCodeType["AEMPSKIL"] = 34] = "AEMPSKIL";
-            PWCodeType[PWCodeType["CONTFUND"] = 35] = "CONTFUND";
+            PWCodeType[PWCodeType["CONTRACTPHASE"] = 34] = "CONTRACTPHASE";
+            PWCodeType[PWCodeType["CONTSUBMITTYPE"] = 35] = "CONTSUBMITTYPE";
+            PWCodeType[PWCodeType["CONTTYPE"] = 36] = "CONTTYPE";
+            PWCodeType[PWCodeType["AEMPSKIL"] = 37] = "AEMPSKIL";
+            PWCodeType[PWCodeType["CONTFUND"] = 38] = "CONTFUND";
+            PWCodeType[PWCodeType["TECHUSED"] = 39] = "TECHUSED";
+            PWCodeType[PWCodeType["FLWCONTRL"] = 40] = "FLWCONTRL";
+            PWCodeType[PWCodeType["PACPINSTAT"] = 41] = "PACPINSTAT";
+            PWCodeType[PWCodeType["PIPEUSE"] = 42] = "PIPEUSE";
+            PWCodeType[PWCodeType["PRJTSTAT"] = 43] = "PRJTSTAT";
+            PWCodeType[PWCodeType["SSHAPE"] = 44] = "SSHAPE";
+            PWCodeType[PWCodeType["CTMETHOD"] = 45] = "CTMETHOD";
+            PWCodeType[PWCodeType["PRECLEAN"] = 46] = "PRECLEAN";
+            PWCodeType[PWCodeType["WEATHER"] = 47] = "WEATHER";
+            PWCodeType[PWCodeType["LOCATIONCODE"] = 48] = "LOCATIONCODE";
+            PWCodeType[PWCodeType["PROJECTCAT"] = 49] = "PROJECTCAT";
+            PWCodeType[PWCodeType["ACCOUNT"] = 50] = "ACCOUNT";
+            PWCodeType[PWCodeType["REQPRINT"] = 51] = "REQPRINT";
+            PWCodeType[PWCodeType["UNITMEAS"] = 52] = "UNITMEAS";
+            PWCodeType[PWCodeType["CONTRACTCAT"] = 53] = "CONTRACTCAT";
+            PWCodeType[PWCodeType["SDAREA"] = 54] = "SDAREA";
+            PWCodeType[PWCodeType["SLMETHOD"] = 55] = "SLMETHOD";
+            PWCodeType[PWCodeType["SPIPEMT"] = 56] = "SPIPEMT";
+            PWCodeType[PWCodeType["STVREASN"] = 57] = "STVREASN";
+            PWCodeType[PWCodeType["SMHPART"] = 58] = "SMHPART";
+            PWCodeType[PWCodeType["SACCESS"] = 59] = "SACCESS";
+            PWCodeType[PWCodeType["SBNCHMT"] = 60] = "SBNCHMT";
+            PWCodeType[PWCodeType["SCHANLMT"] = 61] = "SCHANLMT";
+            PWCodeType[PWCodeType["SCONEMT"] = 62] = "SCONEMT";
+            PWCodeType[PWCodeType["SFRAMEMT"] = 63] = "SFRAMEMT";
+            PWCodeType[PWCodeType["SLIDMT"] = 64] = "SLIDMT";
+            PWCodeType[PWCodeType["SBRLMT"] = 65] = "SBRLMT";
+            PWCodeType[PWCodeType["SRING"] = 66] = "SRING";
+            PWCodeType[PWCodeType["SSTEPMT"] = 67] = "SSTEPMT";
+            PWCodeType[PWCodeType["SMHTYPE"] = 68] = "SMHTYPE";
+            PWCodeType[PWCodeType["SSURFC"] = 69] = "SSURFC";
         })(PWCodeType = Enums.PWCodeType || (Enums.PWCodeType = {}));
         var QASequenceModel;
         (function (QASequenceModel) {
@@ -520,6 +735,7 @@ define(["require", "exports"], function (require, exports) {
             SearchType[SearchType["AssetSplitRecord"] = 28] = "AssetSplitRecord";
             SearchType[SearchType["PavementInsp"] = 29] = "PavementInsp";
             SearchType[SearchType["TvInspection"] = 30] = "TvInspection";
+            SearchType[SearchType["Projects"] = 31] = "Projects";
         })(SearchType = Enums.SearchType || (Enums.SearchType = {}));
         var SearchView;
         (function (SearchView) {
@@ -595,6 +811,56 @@ define(["require", "exports"], function (require, exports) {
             SourceEventType[SourceEventType["RequestUncanceled"] = 63] = "RequestUncanceled";
             SourceEventType[SourceEventType["InspectionReopened"] = 64] = "InspectionReopened";
             SourceEventType[SourceEventType["InspectionUncanceled"] = 65] = "InspectionUncanceled";
+            SourceEventType[SourceEventType["CaTaskItemAdded"] = 66] = "CaTaskItemAdded";
+            SourceEventType[SourceEventType["CaTaskItemDeleted"] = 67] = "CaTaskItemDeleted";
+            SourceEventType[SourceEventType["CaTaskItemAvailable"] = 68] = "CaTaskItemAvailable";
+            SourceEventType[SourceEventType["CaObjectAttachmentAdded"] = 69] = "CaObjectAttachmentAdded";
+            SourceEventType[SourceEventType["CaObjectAttachmentDeleted"] = 70] = "CaObjectAttachmentDeleted";
+            SourceEventType[SourceEventType["InspectionAttachmentAdded"] = 71] = "InspectionAttachmentAdded";
+            SourceEventType[SourceEventType["InspectionAttachmentDeleted"] = 72] = "InspectionAttachmentDeleted";
+            SourceEventType[SourceEventType["RequestAttachmentAdded"] = 73] = "RequestAttachmentAdded";
+            SourceEventType[SourceEventType["RequestAttachmentDeleted"] = 74] = "RequestAttachmentDeleted";
+            SourceEventType[SourceEventType["WorkOrderAttachmentAdded"] = 75] = "WorkOrderAttachmentAdded";
+            SourceEventType[SourceEventType["WorkOrderAttachmentDeleted"] = 76] = "WorkOrderAttachmentDeleted";
+            SourceEventType[SourceEventType["InspectionLaborAdded"] = 77] = "InspectionLaborAdded";
+            SourceEventType[SourceEventType["InspectionLaborDeleted"] = 78] = "InspectionLaborDeleted";
+            SourceEventType[SourceEventType["InspectionEquipmentAdded"] = 79] = "InspectionEquipmentAdded";
+            SourceEventType[SourceEventType["InspectionEquipmentDeleted"] = 80] = "InspectionEquipmentDeleted";
+            SourceEventType[SourceEventType["WorkOrderEquipmentAdded"] = 81] = "WorkOrderEquipmentAdded";
+            SourceEventType[SourceEventType["WorkOrderEquipmentDeleted"] = 82] = "WorkOrderEquipmentDeleted";
+            SourceEventType[SourceEventType["WorkOrderMaterialAdded"] = 83] = "WorkOrderMaterialAdded";
+            SourceEventType[SourceEventType["WorkOrderMaterialDeleted"] = 84] = "WorkOrderMaterialDeleted";
+            SourceEventType[SourceEventType["RequestCallerAdded"] = 85] = "RequestCallerAdded";
+            SourceEventType[SourceEventType["RequestCallerDeleted"] = 86] = "RequestCallerDeleted";
+            SourceEventType[SourceEventType["InspectionCommentAdded"] = 87] = "InspectionCommentAdded";
+            SourceEventType[SourceEventType["InspectionCommentUpdated"] = 88] = "InspectionCommentUpdated";
+            SourceEventType[SourceEventType["InspectionCommentDeleted"] = 89] = "InspectionCommentDeleted";
+            SourceEventType[SourceEventType["CaAddressItemAdded"] = 90] = "CaAddressItemAdded";
+            SourceEventType[SourceEventType["CaAddressItemDeleted"] = 91] = "CaAddressItemDeleted";
+            SourceEventType[SourceEventType["CaFeesItemAdded"] = 92] = "CaFeesItemAdded";
+            SourceEventType[SourceEventType["CaFeesItemWaiveFeeChanged"] = 93] = "CaFeesItemWaiveFeeChanged";
+            SourceEventType[SourceEventType["CaFeesItemInvoicedChanged"] = 94] = "CaFeesItemInvoicedChanged";
+            SourceEventType[SourceEventType["CaFeesItemDeleted"] = 95] = "CaFeesItemDeleted";
+            SourceEventType[SourceEventType["ProjectAdded"] = 96] = "ProjectAdded";
+            SourceEventType[SourceEventType["ProjectDeleted"] = 97] = "ProjectDeleted";
+            SourceEventType[SourceEventType["ProjectStatusChanged"] = 98] = "ProjectStatusChanged";
+            SourceEventType[SourceEventType["ProjectAssignedToChanged"] = 99] = "ProjectAssignedToChanged";
+            SourceEventType[SourceEventType["ProjectApprovedByChanged"] = 100] = "ProjectApprovedByChanged";
+            SourceEventType[SourceEventType["ProjectAttachmentAdded"] = 101] = "ProjectAttachmentAdded";
+            SourceEventType[SourceEventType["ProjectAttachmentDeleted"] = 102] = "ProjectAttachmentDeleted";
+            SourceEventType[SourceEventType["ProjectCommentAdded"] = 103] = "ProjectCommentAdded";
+            SourceEventType[SourceEventType["ProjectCommentUpdated"] = 104] = "ProjectCommentUpdated";
+            SourceEventType[SourceEventType["ProjectCommentDeleted"] = 105] = "ProjectCommentDeleted";
+            SourceEventType[SourceEventType["WorkOrderProjectAdded"] = 106] = "WorkOrderProjectAdded";
+            SourceEventType[SourceEventType["WorkOrderProjectRemoved"] = 107] = "WorkOrderProjectRemoved";
+            SourceEventType[SourceEventType["RequestProjectAdded"] = 108] = "RequestProjectAdded";
+            SourceEventType[SourceEventType["RequestProjectRemoved"] = 109] = "RequestProjectRemoved";
+            SourceEventType[SourceEventType["InspectionProjectAdded"] = 110] = "InspectionProjectAdded";
+            SourceEventType[SourceEventType["InspectionProjectRemoved"] = 111] = "InspectionProjectRemoved";
+            SourceEventType[SourceEventType["CaObjectProjectAdded"] = 112] = "CaObjectProjectAdded";
+            SourceEventType[SourceEventType["CaObjectProjectRemoved"] = 113] = "CaObjectProjectRemoved";
+            SourceEventType[SourceEventType["ContractAttachmentAdded"] = 114] = "ContractAttachmentAdded";
+            SourceEventType[SourceEventType["ContractAttachmentDeleted"] = 115] = "ContractAttachmentDeleted";
         })(SourceEventType = Enums.SourceEventType || (Enums.SourceEventType = {}));
         var StandardInspTableName;
         (function (StandardInspTableName) {
@@ -608,6 +874,18 @@ define(["require", "exports"], function (require, exports) {
             StandardInspTableName[StandardInspTableName["WHYDDEVINSP"] = 7] = "WHYDDEVINSP";
             StandardInspTableName[StandardInspTableName["SSTINLETINSP"] = 8] = "SSTINLETINSP";
         })(StandardInspTableName = Enums.StandardInspTableName || (Enums.StandardInspTableName = {}));
+        var TemplateMapLayerSourceType;
+        (function (TemplateMapLayerSourceType) {
+            TemplateMapLayerSourceType[TemplateMapLayerSourceType["Invalid"] = 0] = "Invalid";
+            TemplateMapLayerSourceType[TemplateMapLayerSourceType["Inspection"] = 1] = "Inspection";
+            TemplateMapLayerSourceType[TemplateMapLayerSourceType["Case"] = 2] = "Case";
+            TemplateMapLayerSourceType[TemplateMapLayerSourceType["Request"] = 3] = "Request";
+            TemplateMapLayerSourceType[TemplateMapLayerSourceType["WorkOrder"] = 4] = "WorkOrder";
+            TemplateMapLayerSourceType[TemplateMapLayerSourceType["InspectionTemplate"] = 5] = "InspectionTemplate";
+            TemplateMapLayerSourceType[TemplateMapLayerSourceType["BusCaseTemplate"] = 6] = "BusCaseTemplate";
+            TemplateMapLayerSourceType[TemplateMapLayerSourceType["RequestTemplate"] = 7] = "RequestTemplate";
+            TemplateMapLayerSourceType[TemplateMapLayerSourceType["WorkOrderTemplate"] = 8] = "WorkOrderTemplate";
+        })(TemplateMapLayerSourceType = Enums.TemplateMapLayerSourceType || (Enums.TemplateMapLayerSourceType = {}));
         var TimeIntervalUnit;
         (function (TimeIntervalUnit) {
             TimeIntervalUnit[TimeIntervalUnit["HOUR"] = 0] = "HOUR";
@@ -664,6 +942,8 @@ define(["require", "exports"], function (require, exports) {
             UniversalCustomFieldTable[UniversalCustomFieldTable["INSPECTION"] = 2] = "INSPECTION";
             UniversalCustomFieldTable[UniversalCustomFieldTable["REQUEST"] = 3] = "REQUEST";
             UniversalCustomFieldTable[UniversalCustomFieldTable["WORKORDER"] = 4] = "WORKORDER";
+            UniversalCustomFieldTable[UniversalCustomFieldTable["PROJECT"] = 5] = "PROJECT";
+            UniversalCustomFieldTable[UniversalCustomFieldTable["STVINSPECTION"] = 6] = "STVINSPECTION";
         })(UniversalCustomFieldTable = Enums.UniversalCustomFieldTable || (Enums.UniversalCustomFieldTable = {}));
         var VerificationStatus;
         (function (VerificationStatus) {
@@ -744,6 +1024,23 @@ define(["require", "exports"], function (require, exports) {
             WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["GetUtcDateTimeString"] = 68] = "GetUtcDateTimeString";
             WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CurrentUserSid"] = 69] = "CurrentUserSid";
             WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CurrentUserUniqueName"] = 70] = "CurrentUserUniqueName";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["SiteBaseUrl"] = 71] = "SiteBaseUrl";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["UserIdToEmployeeSid"] = 72] = "UserIdToEmployeeSid";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CaseInspectionIds"] = 73] = "CaseInspectionIds";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CaseRequestIds"] = 74] = "CaseRequestIds";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CaseWorkOrderIds"] = 75] = "CaseWorkOrderIds";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CaseWorkOrderSids"] = 76] = "CaseWorkOrderSids";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InspectionCaObjectIds"] = 77] = "InspectionCaObjectIds";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InspectionRequestIds"] = 78] = "InspectionRequestIds";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InspectionWorkOrderIds"] = 79] = "InspectionWorkOrderIds";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["InspectionWorkOrderSids"] = 80] = "InspectionWorkOrderSids";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["RequestCaObjectIds"] = 81] = "RequestCaObjectIds";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["RequestInspectionIds"] = 82] = "RequestInspectionIds";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["RequestWorkOrderSids"] = 83] = "RequestWorkOrderSids";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["WorkOrderCaObjectIds"] = 84] = "WorkOrderCaObjectIds";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["WorkOrderInspectionIds"] = 85] = "WorkOrderInspectionIds";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CategoryCustomFieldName"] = 86] = "CategoryCustomFieldName";
+            WebHookCustomPacketTemplateFlag[WebHookCustomPacketTemplateFlag["CategoryCustomFieldValue"] = 87] = "CategoryCustomFieldValue";
         })(WebHookCustomPacketTemplateFlag = Enums.WebHookCustomPacketTemplateFlag || (Enums.WebHookCustomPacketTemplateFlag = {}));
         var WebHookOutputType;
         (function (WebHookOutputType) {
@@ -769,6 +1066,7 @@ define(["require", "exports"], function (require, exports) {
         (function (WOEvent) {
             WOEvent[WOEvent["CLOSE"] = 1] = "CLOSE";
             WOEvent[WOEvent["INITIATE"] = 2] = "INITIATE";
+            WOEvent[WOEvent["ADDENTITY"] = 3] = "ADDENTITY";
         })(WOEvent = Enums.WOEvent || (Enums.WOEvent = {}));
         var WOExpenseType;
         (function (WOExpenseType) {
@@ -799,5 +1097,12 @@ define(["require", "exports"], function (require, exports) {
             WOStage[WOStage["PROPOSED"] = 0] = "PROPOSED";
             WOStage[WOStage["ACTUAL"] = 1] = "ACTUAL";
         })(WOStage = Enums.WOStage || (Enums.WOStage = {}));
+        var WritePdf;
+        (function (WritePdf) {
+            WritePdf[WritePdf["Fees"] = 0] = "Fees";
+            WritePdf[WritePdf["Escrow"] = 1] = "Escrow";
+            WritePdf[WritePdf["Deposit"] = 2] = "Deposit";
+            WritePdf[WritePdf["EscrowPayment"] = 3] = "EscrowPayment";
+        })(WritePdf = Enums.WritePdf || (Enums.WritePdf = {}));
     })(Enums = exports.Enums || (exports.Enums = {}));
 });

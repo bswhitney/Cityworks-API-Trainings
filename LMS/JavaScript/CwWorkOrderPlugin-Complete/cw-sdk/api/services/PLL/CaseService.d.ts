@@ -12,4 +12,9 @@ export declare class CaseService implements ICaseService {
     constructor(service: IApiService);
     Create(request: Requests.Create): AbortablePromise<Responses.Create>;
     CreateChild(request: Requests.CreateChild): AbortablePromise<Responses.CreateChild>;
+    CreateFromIntake(request: Requests.CreateFromIntake): AbortablePromise<Responses.CreateFromIntake>;
+    CreateFromWorkOrder(request: Requests.CreateFromWorkOrder): AbortablePromise<Responses.CreateFromWorkOrder>;
+    GetDefaultItems(request: Requests.GetDefaultItems): AbortablePromise<Responses.GetDefaultItems>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

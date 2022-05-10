@@ -4,6 +4,7 @@ import AbortablePromise = PromiseTypes.AbortablePromise;
 export namespace GISServiceServiceTypes { 
     export namespace Requests {
         export interface AddGISServiceDefinition extends ServiceTypes.CoreRequestBase {
+            DashboardUse?: boolean;
             DomainId?: number;
             Name: string;
             ServiceEndPointIds?: number[];
@@ -40,6 +41,7 @@ export namespace GISServiceServiceTypes {
             ServiceIds: number[];
         }
         export interface GISServiceDefinitions extends ServiceTypes.CoreRequestBase {
+            DashboardUse?: boolean;
             DefinitionId?: number;
             DefinitionIds?: number[];
             DomainId?: number;

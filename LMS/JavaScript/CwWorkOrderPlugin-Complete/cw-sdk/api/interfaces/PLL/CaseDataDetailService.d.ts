@@ -66,6 +66,43 @@ export namespace CaseDataDetailServiceTypes {
             ValueFlag?: string;
             YesNoFlag?: string;
         }
+        export interface Update extends ServiceTypes.CoreRequestBase {
+            CaDataDetailId: number;
+            CaDataGroupId?: number;
+            CalcRateFlag?: string;
+            CaseDataDetailId?: number;
+            ColumnSequence?: string;
+            CommentFlag?: string;
+            CommentValue?: string;
+            CurrencyFlag?: string;
+            CurrencyValue?: number;
+            DateCountFlag?: string;
+            DateCountValue?: string;
+            DateFlag?: string;
+            DateValue?: Date;
+            DetailCode?: string;
+            DetailDesc?: string;
+            DetailSequence?: number;
+            ListValue?: string;
+            ListValuesFlag?: string;
+            NumberFlag?: string;
+            NumberValue?: number;
+            Q1Q2Q3Flag?: string;
+            Q2Value?: number;
+            Q3Value?: number;
+            Quantity?: number;
+            Rate?: number;
+            TextFlag?: string;
+            TextValue?: string;
+            Value?: number;
+            ValueFlag?: string;
+            YesNoFlag?: string;
+            YesNoValue?: string;
+        }
+        export interface UpdateLock extends ServiceTypes.CoreRequestBase {
+            CaDataDetailId: number;
+            Lock: boolean;
+        }
         export interface WIPAdd extends ServiceTypes.CoreRequestBase {
             CaDataGroupId: number;
             CalcRateFlag?: string;
@@ -103,11 +140,15 @@ export namespace CaseDataDetailServiceTypes {
         export interface Add extends ServiceTypes.CoreResponseBase_<CoreTypes.CaDataDetailItemBase> {}
         export interface Search extends ServiceTypes.CoreResponseBase_obsolete_<number[]> {}
         export interface SearchObject extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CaDataDetailItemBase[]> {}
+        export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.CaDataDetailItem> {}
+        export interface UpdateLock extends ServiceTypes.CoreResponseBase_<CoreTypes.CaDataDetailItem> {}
     }
     export interface ICaseDataDetailService {
         Add?: (request: Requests.Add) => AbortablePromise<Responses.Add>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;
         SearchObject?: (request: Requests.SearchObject) => AbortablePromise<Responses.SearchObject>;
+        Update?: (request: Requests.Update) => AbortablePromise<Responses.Update>;
+        UpdateLock?: (request: Requests.UpdateLock) => AbortablePromise<Responses.UpdateLock>;
         WIPAdd?: (request: Requests.WIPAdd) => AbortablePromise<Responses.Add>;
     }
 }

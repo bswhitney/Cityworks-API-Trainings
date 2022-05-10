@@ -403,11 +403,13 @@ export namespace EquipmentChangeOutServiceTypes {
             EntityType: string;
             EntityUids: string[];
             ReadableValues?: boolean;
+            ReturnGeometry?: boolean;
         }
         export interface Entity extends ServiceTypes.CoreRequestBase {
             EntitySid?: number;
             EntityType?: string;
             EntityUid?: string;
+            ReturnGeometry?: boolean;
         }
         export interface History extends ServiceTypes.CoreRequestBase {
             EntityType?: string;

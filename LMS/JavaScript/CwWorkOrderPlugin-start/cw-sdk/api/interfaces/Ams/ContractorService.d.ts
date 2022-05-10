@@ -66,6 +66,10 @@ export namespace ContractorServiceTypes {
         export interface ById extends ServiceTypes.CoreRequestBase {
             ContractorSid: number;
         }
+        export interface CustomDataFields extends ServiceTypes.CoreRequestBase {
+            ContractorSid: number;
+            CustFieldIds?: number[];
+        }
         export interface Delete extends ServiceTypes.CoreRequestBase {
             ContractorSids?: number[];
         }
@@ -139,6 +143,7 @@ export namespace ContractorServiceTypes {
         export interface AddKeywords extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractorKeywordBase[]> {}
         export interface All extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractorBase[]> {}
         export interface ById extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractorBase> {}
+        export interface CustomDataFields extends ServiceTypes.CoreResponseBase_<CoreTypes.CwCustField[]> {}
         export interface Delete extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface DeleteKeywords extends ServiceTypes.CoreResponseBase {}
         export interface Keywords extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractorKeywordBase[]> {}
@@ -150,6 +155,7 @@ export namespace ContractorServiceTypes {
         AddKeywords?: (request: Requests.AddKeywords) => AbortablePromise<Responses.AddKeywords>;
         All?: (request: Requests.All) => AbortablePromise<Responses.All>;
         ById?: (request: Requests.ById) => AbortablePromise<Responses.ById>;
+        CustomDataFields?: (request: Requests.CustomDataFields) => AbortablePromise<Responses.CustomDataFields>;
         Delete?: (request: Requests.Delete) => AbortablePromise<Responses.Delete>;
         DeleteKeywords?: (request: Requests.DeleteKeywords) => AbortablePromise<Responses.DeleteKeywords>;
         Keywords?: (request: Requests.Keywords) => AbortablePromise<Responses.Keywords>;

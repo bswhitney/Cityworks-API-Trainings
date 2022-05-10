@@ -13,4 +13,6 @@ export declare class CaseCorrStatusService implements ICaseCorrStatusService {
     Add(request: Requests.Add): AbortablePromise<Responses.Add>;
     ByCaCorrectionsIds(request: Requests.ByCaCorrectionsIds): AbortablePromise<Responses.ByCaCorrectionsIds>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

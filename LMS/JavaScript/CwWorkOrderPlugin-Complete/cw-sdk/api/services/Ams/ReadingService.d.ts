@@ -14,4 +14,9 @@ export declare class ReadingService implements IReadingService {
     ByEntity(request: Requests.ByEntity): AbortablePromise<Responses.ByEntity>;
     Configuration(request: Requests.Configuration): AbortablePromise<Responses.Configuration>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {
+        ErrorDeletingReading: number;
+        ReadingIdsRequired: number;
+    };
+    WarningCodes: {};
 }

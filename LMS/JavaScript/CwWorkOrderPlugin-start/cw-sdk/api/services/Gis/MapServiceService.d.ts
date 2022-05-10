@@ -18,4 +18,6 @@ export declare class MapServiceService implements IMapServiceService {
     ServiceRequestConfiguration(request: Requests.ServiceRequestConfiguration): AbortablePromise<Responses.ServiceRequestConfiguration>;
     User(request: Requests.User): AbortablePromise<Responses.User>;
     WorkOrderConfiguration(request: Requests.WorkOrderConfiguration): AbortablePromise<Responses.WorkOrderConfiguration>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

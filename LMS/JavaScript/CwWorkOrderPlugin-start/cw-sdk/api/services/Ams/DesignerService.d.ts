@@ -49,7 +49,26 @@ export declare class DesignerService implements IDesignerService {
     UpdateDescScore(request: Requests.UpdateDescScore): AbortablePromise<Responses.UpdateDescScore>;
     UpdateDomain(request: Requests.UpdateDomain): AbortablePromise<Responses.UpdateDomain>;
     UpdateGroup(request: Requests.UpdateGroup): AbortablePromise<Responses.UpdateGroup>;
+    UpdatePreference(request: Requests.UpdatePreference): AbortablePromise<Responses.UpdatePreference>;
     UserRoles(request: Requests.UserRoles): AbortablePromise<Responses.UserRoles>;
     UsersInRole(request: Requests.UsersInRole): AbortablePromise<Responses.UsersInRole>;
     UserStatus(request: Requests.UserStatus): AbortablePromise<Responses.UserStatus>;
+    ErrorCodes: {
+        MustBeUniqueError: number;
+        UnknownError: number;
+        ErrorCannotBeNullOrEmpty: number;
+        ErrorCannotBeNull: number;
+        ErrorPreferenceCannotBeChanged: number;
+        ErrorInvalidPreference: number;
+        ErrorMustBeNumeric: number;
+        ErrorNumericRange: number;
+        ErrorNotInList: number;
+        InvalidField: number;
+        NotAuthorizedToViewPage: number;
+        MustBeCityworksAdministrator: number;
+        MustBeDomainAdministrator: number;
+    };
+    WarningCodes: {
+        WarningItemNotFound: number;
+    };
 }

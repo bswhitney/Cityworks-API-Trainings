@@ -9,6 +9,7 @@ export namespace CaseTaskServiceTypes {
             EndPoint: number;
             HearingTypeId?: number;
             InsertBeforeStartPoint?: boolean;
+            LocationNotes?: string;
             ResponsibleDeptId?: number;
             ResponsibleDivId?: number;
             ResponsibleUserId?: number;
@@ -16,6 +17,7 @@ export namespace CaseTaskServiceTypes {
             TargetEndDate?: Date;
             TaskId: number;
             TaskSequence?: number;
+            Unit?: string;
         }
         export interface ByCaObjectId extends ServiceTypes.CoreRequestBase {
             CaObjectId: number;
@@ -56,6 +58,7 @@ export namespace CaseTaskServiceTypes {
             ExpiredFlag?: string;
             HearingTypeId?: number;
             IsInsertBetweenLevel?: boolean;
+            LocationNotes?: string;
             LoginId?: string;
             ResponsibleDeptId?: number;
             ResponsibleDivId?: number;
@@ -71,6 +74,7 @@ export namespace CaseTaskServiceTypes {
             TaskCompleteFlag?: string;
             TaskGeoFlag?: string;
             TaskSequence?: number;
+            Unit?: string;
         }
     }
     export namespace Responses {

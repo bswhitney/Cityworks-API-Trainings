@@ -15,4 +15,9 @@ export declare class ServiceRequestTemplateService implements IServiceRequestTem
     QA(request: Requests.QA): AbortablePromise<Responses.QA>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     Templates(request: Requests.Templates): AbortablePromise<Responses.Templates>;
+    WorkOrderTemplates(request: Requests.WorkOrderTemplates): AbortablePromise<Responses.WorkOrderTemplates>;
+    ErrorCodes: {};
+    WarningCodes: {
+        WarningEmptyOrNullField: number;
+    };
 }

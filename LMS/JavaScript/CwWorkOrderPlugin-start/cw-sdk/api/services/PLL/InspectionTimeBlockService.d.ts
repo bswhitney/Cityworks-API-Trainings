@@ -11,4 +11,6 @@ export declare class InspectionTimeBlockService implements IInspectionTimeBlockS
     private _service;
     constructor(service: IApiService);
     Add(request: Requests.Add): AbortablePromise<Responses.Add>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

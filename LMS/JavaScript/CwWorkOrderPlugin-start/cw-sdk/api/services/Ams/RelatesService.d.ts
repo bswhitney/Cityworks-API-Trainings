@@ -10,6 +10,8 @@ export * from '../../interfaces/Ams/RelatesService';
 export declare class RelatesService implements IRelatesService {
     private _service;
     constructor(service: IApiService);
+    AreContractPermissionsEnabled(request: Requests.AreContractPermissionsEnabled): AbortablePromise<Responses.AreContractPermissionsEnabled>;
+    AreProjectPermissionsEnabled(request: Requests.AreProjectPermissionsEnabled): AbortablePromise<Responses.AreProjectPermissionsEnabled>;
     ByTableName(request: Requests.ByTableName): AbortablePromise<Responses.ByTableName>;
     EquipChangeOutChangedBy(request: Requests.EquipChangeOutChangedBy): AbortablePromise<Responses.EmployeeRelates>;
     InspectionCancelledBy(request: Requests.InspectionCancelledBy): AbortablePromise<Responses.EmployeeRelates>;
@@ -18,6 +20,8 @@ export declare class RelatesService implements IRelatesService {
     InspectionInitiatedBy(request: Requests.InspectionInitiatedBy): AbortablePromise<Responses.EmployeeRelates>;
     InspectionInspectedBy(request: Requests.InspectionInspectedBy): AbortablePromise<Responses.EmployeeRelates>;
     InspectionSubmitTo(request: Requests.InspectionSubmitTo): AbortablePromise<Responses.EmployeeRelates>;
+    IsNegativeStockEnabled(request: Requests.IsNegativeStockEnabled): AbortablePromise<Responses.IsNegativeStockEnabled>;
+    IsStoreroomEnabled(request: Requests.IsStoreroomEnabled): AbortablePromise<Responses.IsStoreroomEnabled>;
     ProblemLeafDispatchTo(request: Requests.ProblemLeafDispatchTo): AbortablePromise<Responses.EmployeeRelates>;
     ProblemLeafSubmitTo(request: Requests.ProblemLeafSubmitTo): AbortablePromise<Responses.EmployeeRelates>;
     ProjectApprovedBy(request: Requests.ProjectApprovedBy): AbortablePromise<Responses.EmployeeRelates>;
@@ -41,4 +45,6 @@ export declare class RelatesService implements IRelatesService {
     WorkOrderRequestedBy(request: Requests.WorkOrderRequestedBy): AbortablePromise<Responses.EmployeeRelates>;
     WorkOrderSubmitTo(request: Requests.WorkOrderSubmitTo): AbortablePromise<Responses.EmployeeRelates>;
     WorkOrderSupervisors(request: Requests.WorkOrderSupervisors): AbortablePromise<Responses.EmployeeRelates>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

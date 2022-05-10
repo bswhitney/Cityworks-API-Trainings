@@ -10,8 +10,20 @@ export declare namespace Types {
         SourceSid?: number;
         SourceType?: Enums.ActivityLinkActivityType;
     }
+    interface ActivityNotificationItem {
+        ActivityId?: number;
+        ActivityNotificationId?: number;
+        ActivityType?: Enums.NotificationActivityType;
+        DateCreated?: Date;
+        EmployeeSid?: number;
+        EventType?: Enums.NotificationEventType;
+        Message?: string;
+        ParentId?: number;
+        UserRead?: boolean;
+    }
     interface AliasAsset {
         Alias?: string;
+        AliasType?: Enums.AssetAliasType;
         Assets?: string[];
     }
     interface AssemblyMaterial {
@@ -32,17 +44,26 @@ export declare namespace Types {
     }
     interface AssetAlias {
         AliasNames?: string[];
+        AliasType?: Enums.AssetAliasType;
         AssetName?: string;
+    }
+    interface AssetCostSummary {
+        EntityType?: string;
+        EntityUid?: string;
+        Inspection?: Types.InspCostSummary[];
+        WorkOrder?: Types.WorkOrderCostSummary[];
     }
     interface AssetIdField {
         CondScoreDateField?: string;
         CondScoreField?: string;
         DateModified?: Date;
         EntityUidField?: string;
+        FacilityIdField?: string;
         IdField?: string;
         ImageNameField?: string;
         ImagePath?: string;
         IsFeatClass?: boolean;
+        LevelIdField?: string;
         TableName?: string;
     }
     interface AssetSplitRecord {
@@ -59,13 +80,28 @@ export declare namespace Types {
         AssetId?: string;
         AssetType?: string;
     }
+    interface AttachmentActivityTagsItem {
+        ActivityType?: string;
+        AttachmentId?: number;
+        AttachmentTagId?: number;
+        CreatedBy?: number;
+        DateCreated?: Date;
+        DateModified?: Date;
+        ModifiedBy?: number;
+        TagId?: number;
+        TagText?: string;
+    }
     interface AttachmentBase {
-        AttachedBy?: string;
         AttachedBySid?: number;
         Attachment?: string;
+        AttachmentType?: Enums.AttachmentFileType;
         Comments?: string;
         DateTimeAttached?: Date;
-        Id?: number;
+    }
+    interface AttachmentExtendedBase extends Types.AttachmentBase {
+        AttachedBy?: string;
+        Description?: string;
+        Title?: string;
     }
     interface AttachmentMapping extends Types.CoreDomainBase {
         Alias?: string;
@@ -79,10 +115,77 @@ export declare namespace Types {
         NewUnitCost?: number;
         OldQuant?: number;
         OldUnitCost?: number;
+        Reason?: string;
+        SerialNumbersLost?: string[];
         StoreRm?: string;
     }
     interface AuthToken {
         Token?: string;
+    }
+    interface BusinessCaseItem {
+        AnonymousFlag?: string;
+        AssignedTo?: number;
+        AutoNumberFlag?: string;
+        BLicenseFlag?: string;
+        BusCaseCode?: string;
+        BusCaseDesc?: string;
+        BusCaseId?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeExpiredFlag?: string;
+        CaseTypeId?: number;
+        CheckQuickCreate?: string;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        ExpiredFlag?: string;
+        FirstName?: string;
+        InfoFlag?: string;
+        InfoText?: string;
+        InitialCaseStatusId?: number;
+        LastName?: string;
+        LoginId?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        RegisteredFlag?: string;
+        ShowQuickCreate?: string;
+        SubType?: string;
+        SubTypeDefaultText?: string;
+        SubTypeDesc?: string;
+        SubTypeExpiredFlag?: string;
+        SubTypeId?: number;
+        TermsFlag?: string;
+        TermsText?: string;
+    }
+    interface CaAddressItem extends Types.CaAddressItemBase {
+        CaObjectLocation?: string;
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusId?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CreatedByLoginId?: string;
+        FeatureFlagOn?: string;
+        FormatedAddress?: string;
+        InspectionArea?: string;
+        IsSingleEntry?: boolean;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        StateName?: string;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        TempTableName?: string;
+        UniqueKeyForAdvQry?: number;
     }
     interface CaAddressItemBase {
         Address?: string;
@@ -99,10 +202,12 @@ export declare namespace Types {
         DateExpired?: Date;
         DateModified?: Date;
         ExpiredFlag?: string;
+        Facility_Id?: string;
         FeatureAssetId?: string;
         FeatureClass?: string;
         FeatureObjectId?: number;
         LegacyId?: string;
+        Level_Id?: string;
         LndObjectId?: number;
         Location?: string;
         MasterFlag?: string;
@@ -119,6 +224,7 @@ export declare namespace Types {
         TileNo?: string;
         XCoord?: number;
         YCoord?: number;
+        ZCoord?: number;
         ZipCode?: string;
     }
     interface CaAssetItemBase {
@@ -150,6 +256,34 @@ export declare namespace Types {
         DateModified?: Date;
         ModifiedBy?: number;
     }
+    interface CaConditionItem extends Types.CaConditionItemBase {
+        AnonymousFlag?: string;
+        AppliedByLoginId?: string;
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CompletedByLoginId?: string;
+        ConditionCode?: string;
+        ConditionDesc?: string;
+        CreatedByLoginId?: string;
+        DisciplineCode?: string;
+        DisciplineDesc?: string;
+        IsSingleEntry?: boolean;
+        ModifiedByLoginId?: string;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        RegisteredFlag?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        TableName?: string;
+        TaskCode?: string;
+        TaskDesc?: string;
+    }
     interface CaConditionItemBase {
         AppliedBy?: number;
         CaConditionId?: number;
@@ -167,6 +301,29 @@ export declare namespace Types {
         Notes?: string;
         PrePostExistFlag?: string;
         TaskId?: number;
+    }
+    interface CaContractorItem extends Types.CaContractorItemBase {
+        AvailableEscrowAmount?: number;
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusID?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        EscrowAmount?: number;
+        IsSingleEntry?: boolean;
+        Location?: string;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        TableName?: string;
+        TempTableName?: string;
+        UniqueKeyForAdvQry?: number;
     }
     interface CaContractorItemBase {
         AddressLine1?: string;
@@ -241,6 +398,58 @@ export declare namespace Types {
         DateModified?: Date;
         ModifiedBy?: number;
     }
+    interface CaDataDetailChanges {
+        CaDataDetailId?: number;
+        DetailDesc?: string;
+        EntityType?: string;
+        EntityUid?: string;
+        NewValue?: string;
+        OldValue?: string;
+    }
+    interface CaDataDetailItem extends Types.CaDataDetailItemBase {
+        CaListValues?: string[];
+        CaObjectId?: number;
+        CaseDataDetailCode?: string;
+        CaseDataGroupId?: number;
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusID?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CheckboxFlag?: string;
+        CollapseFlag?: string;
+        CreatedByLoginId?: string;
+        DefaultQuantity?: number;
+        DefaultRate?: number;
+        DefaultValue?: number;
+        GroupCode?: string;
+        GroupDesc?: string;
+        GroupDetailFlag?: string;
+        GroupSum?: number;
+        ImageName?: string;
+        IntakeFlag?: string;
+        IsSingleEntry?: boolean;
+        ItemValue?: string[];
+        ListValues?: string[];
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        PAHelpQuestion?: string;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        Q1LabelText?: string;
+        Q2LabelText?: string;
+        Q3LabelText?: string;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        SumFlag?: string;
+        TempTableName?: string;
+        UniqueKeyForAdvQry?: number;
+    }
     interface CaDataDetailItemBase {
         CaDataDetailId?: number;
         CaDataGroupId?: number;
@@ -261,8 +470,10 @@ export declare namespace Types {
         DetailCode?: string;
         DetailDesc?: string;
         DetailSequence?: number;
+        GISUpdateFlag?: string;
         ListValue?: string;
         ListValuesFlag?: string;
+        LockFlag?: string;
         ModifiedBy?: number;
         NumberFlag?: string;
         NumberValue?: number;
@@ -277,6 +488,22 @@ export declare namespace Types {
         ValueFlag?: string;
         YesNoFlag?: string;
         YesNoValue?: string;
+    }
+    interface CaDataGroupItem extends Types.CaDataGroupItemBase {
+        CaseDataGroupCode?: string;
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CollapseFlag?: string;
+        CreatedByLoginId?: string;
+        IsSingleEntry?: boolean;
+        ModifiedByLoginId?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        TempTableName?: string;
     }
     interface CaDataGroupItemBase {
         CaDataGroupId?: number;
@@ -299,6 +526,42 @@ export declare namespace Types {
         DateModified?: Date;
         ListValue?: string;
         ModifiedBy?: number;
+    }
+    interface CaDepositItem extends Types.CaDepositItemBase {
+        AccountCode?: string;
+        AmountDue?: number;
+        CaseDateCreated?: Date;
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusID?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CreatedByLoginId?: string;
+        CreditAmount?: number;
+        DepositCode?: string;
+        DepositDesc?: string;
+        DepositTypeCode?: string;
+        DepositTypeDesc?: string;
+        DepositTypeId?: number;
+        FeesDepositAmount?: number;
+        IsSingleEntry?: boolean;
+        Location?: string;
+        ModifiedByLoginId?: string;
+        PaymentAmount?: number;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        TempTableName?: string;
+        TotalCreditAmount?: number;
+        TotalDepositAmount?: number;
+        TotalDueAmount?: number;
+        TotalPaymentAmount?: number;
     }
     interface CaDepositItemBase {
         Amount?: number;
@@ -333,6 +596,48 @@ export declare namespace Types {
         ModifiedBy?: number;
         Sequence?: number;
     }
+    interface CaFeesItem extends Types.CaFeesItemBase {
+        AmountDue?: number;
+        CaDataDetailArry?: Types.CaDataDetailItem[];
+        CaDataDetailIdArry?: number[];
+        CaDataGroupArry?: Types.CaDataGroupItem[];
+        CaDataGroupIdArry?: number[];
+        CaseDataDetailId?: number;
+        CaseDataDetailIdArry?: number[];
+        CaseDataGroupId?: number;
+        CaseDataGroupIdArry?: number[];
+        CaseDateCreated?: Date;
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusID?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CreatedByLoginId?: string;
+        CreditAmount?: number;
+        DetailCode?: string;
+        FeeTypeCode?: string;
+        GrandSumFlag?: string;
+        GroupCode?: string;
+        Location?: string;
+        ModifiedByLoginId?: string;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        Sum?: number;
+        TableName?: string;
+        TempTableName?: string;
+        TotalCreditAmount?: number;
+        TotalDueAmount?: number;
+        TotalFeeAmount?: number;
+        TotalPaymentAmount?: number;
+        Value?: number;
+    }
     interface CaFeesItemBase {
         Amount?: number;
         AutoRecalculate?: string;
@@ -359,6 +664,35 @@ export declare namespace Types {
         RecalcCreateDate?: string;
         WaiveFee?: string;
     }
+    interface CaFlagsItem extends Types.CaFlagsItemBase {
+        AnonymousFlag?: string;
+        AppliedByLoginId?: string;
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusID?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CompletedByLoginId?: string;
+        CreatedByLoginId?: string;
+        DisciplineCode?: string;
+        DisciplineDesc?: string;
+        Flag?: string;
+        FlagDesc?: string;
+        IsSingleEntry?: boolean;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        RegisteredFlag?: string;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        TableName?: string;
+    }
     interface CaFlagsItemBase {
         AppliedBy?: number;
         CaFlagId?: number;
@@ -374,6 +708,33 @@ export declare namespace Types {
         ModifiedBy?: number;
         Notes?: string;
         Severity?: string;
+    }
+    interface CaInspectionRequestItem extends Types.CaInspectionRequestItemBase {
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusID?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CaTaskId?: number;
+        CreatedByLoginId?: string;
+        ModifiedByLoginId?: string;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        ResponsibleUserId?: number;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        TargetEndDate?: Date;
+        TargetStartDate?: Date;
+        TaskCode?: string;
+        TaskDesc?: string;
+        TaskId?: number;
+        TaskType?: string;
+        UniqueKeyForAdvQry?: number;
     }
     interface CaInspectionRequestItemBase {
         CaObjectId?: number;
@@ -404,6 +765,7 @@ export declare namespace Types {
         ReleasedBy?: number;
     }
     interface CaInstrumentItem extends Types.CaInstrumentItemBase {
+        AmountReleased?: number;
         CaseName?: string;
         CaseNumber?: string;
         CaseStatus?: string;
@@ -450,6 +812,12 @@ export declare namespace Types {
         StateCode?: string;
         ZipCode?: string;
     }
+    interface CaLicenseItem extends Types.CaLicenseItemBase {
+        CaseNumber?: string;
+        CaseType?: string;
+        CaseTypeId?: number;
+        IsSingleEntry?: boolean;
+    }
     interface CaLicenseItemBase {
         CaFeeId?: number;
         CaLicenseId?: number;
@@ -466,6 +834,29 @@ export declare namespace Types {
         LicenseNumber?: number;
         ModifiedBy?: number;
         StatusCode?: string;
+    }
+    interface CaNotesItem extends Types.CaNotesItemBase {
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusID?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CommentCode?: string;
+        CreatedByLoginId?: string;
+        IsSingleEntry?: boolean;
+        Location?: string;
+        ModifiedByLoginId?: string;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        Sequence?: number;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        UniqueKeyForAdvQry?: number;
     }
     interface CaNotesItemBase {
         CaNotesId?: number;
@@ -486,9 +877,11 @@ export declare namespace Types {
         DateCreated?: Date;
         DateModified?: Date;
         ModifiedBy?: number;
+        PAVisibleFlag?: string;
     }
     interface CaObjectItem extends Types.CaObjectItemBase {
         AcceptedByLoginId?: string;
+        AmountDue?: number;
         AnonymousFlag?: string;
         CaseGroup?: string;
         CloneCaseRelation?: string;
@@ -516,6 +909,8 @@ export declare namespace Types {
         AssignedToLastName?: string;
         AssignedToLoginId?: string;
         BLicenseFlag?: string;
+        BusCaseDesc?: string;
+        BusCaseId?: number;
         BusinessCategory?: string;
         BusinessName?: string;
         BusinessOrgType?: string;
@@ -530,6 +925,7 @@ export declare namespace Types {
         CreatedBy?: number;
         CX?: number;
         CY?: number;
+        CZ?: number;
         DateAccepted?: Date;
         DateCreated?: Date;
         DateEntered?: Date;
@@ -538,9 +934,11 @@ export declare namespace Types {
         DateModified?: Date;
         EnteredBy?: number;
         ExpiredFlag?: string;
+        Facility_Id?: string;
         FedTaxId?: string;
         IssuedBy?: number;
         IssuedFlag?: string;
+        Level_Id?: string;
         Location?: string;
         ModifiedBy?: number;
         OrgId?: number;
@@ -549,12 +947,43 @@ export declare namespace Types {
         ProjectCode?: string;
         ProjectDesc?: string;
         ProjectId?: number;
+        ProjectSid?: number;
         StateTaxId?: string;
         StatusCode?: string;
         SubType?: string;
         SubTypeDefaultText?: string;
         SubTypeDesc?: string;
         SubTypeId?: number;
+    }
+    interface CaPaymentItem extends Types.CaPaymentItemBase {
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusID?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CreatedByLoginId?: string;
+        DepositDesc?: string;
+        EscrowPaymentId?: number;
+        FeeDesc?: string;
+        FeeSetupId?: number;
+        isCaseObjectUpdated?: boolean;
+        Location?: string;
+        ModifiedByLoginId?: string;
+        OverPaymentFlag?: string;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        ReceivedByLoginId?: string;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        TempTableName?: string;
+        TenderDesc?: string;
+        VersionNo?: string;
+        VoidedByLoginId?: string;
     }
     interface CaPaymentItemBase {
         CaDepositId?: number;
@@ -581,6 +1010,7 @@ export declare namespace Types {
         ReferenceInfo?: string;
         TenderType?: string;
         TenderTypeId?: number;
+        Voided?: string;
         VoidedBy?: number;
     }
     interface CaPaymentRefundItemBase {
@@ -590,7 +1020,37 @@ export declare namespace Types {
         Comments?: string;
         CreatedBy?: number;
         DateCreated?: Date;
+        DateVoided?: Date;
         RefundAmount?: number;
+        Voided?: string;
+        VoidedBy?: number;
+    }
+    interface CaPeopleItem extends Types.CaPeopleItemBase {
+        AddToPeople?: boolean;
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusID?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CountryName?: string;
+        CreatedByLoginId?: string;
+        IsSingleEntry?: boolean;
+        Location?: string;
+        ModifiedByLoginId?: string;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        Roles?: Types.CaPeopleRoleItem[];
+        StateName?: string;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        TempTableName?: string;
+        UniqueKeyForAdvQry?: number;
+        VersionNo?: string;
     }
     interface CaPeopleItemBase {
         AddressLine1?: string;
@@ -614,21 +1074,69 @@ export declare namespace Types {
         PhoneMobile?: string;
         PhoneWork?: string;
         PhoneWorkExt?: string;
-        RoleCode?: string;
-        RoleDesc?: string;
-        RoleId?: number;
         StateCode?: string;
         WebSiteUrl?: string;
         ZipCode?: string;
     }
+    interface CaPeopleRoleItem extends Types.CaPeopleRoleItemBase {
+        CreatedByLoginId?: string;
+        ModifiedByLoginId?: string;
+        RequiredFields?: string;
+        RoleCode?: string;
+        RoleDesc?: string;
+        TableName?: string;
+    }
+    interface CaPeopleRoleItemBase {
+        CaPeopleId?: number;
+        CaPeopleRoleId?: number;
+        CreatedBy?: number;
+        DateCreated?: Date;
+        DateModified?: Date;
+        ModifiedBy?: number;
+        RoleId?: number;
+    }
+    interface CaReceiptItem {
+        AddressLine1?: string;
+        AddressLine2?: string;
+        AddressLine3?: string;
+        AmountBalance?: number;
+        CaReceiptId?: number;
+        CityName?: string;
+        CommentText?: string;
+        FaxNumber?: string;
+        GenerateReceipt?: Enums.WritePdf;
+        LoginId?: string;
+        OrgCode?: string;
+        OrgDesc?: string;
+        OrgId?: number;
+        PhoneNumber?: string;
+        ReceiptDate?: Date;
+        ReceiptFileName?: string;
+        StateCode?: string;
+        TempTableName?: string;
+        TotalAmountDue?: number;
+        TotalAmountTendered?: number;
+        UserId?: number;
+        WebSiteUrl?: string;
+        ZipCode?: string;
+    }
+    interface CaRelDocsItem extends Types.CaRelDocsItemBase {
+        IsSingleEntry?: boolean;
+        TempTableName?: string;
+        UserDefinedLocation?: boolean;
+    }
     interface CaRelDocsItemBase {
         CaObjectId?: number;
+        CaReceiptId?: number;
         CaRelDocId?: number;
+        CaTaskId?: number;
         CommentText?: string;
         CreatedBy?: number;
         CreatedByLoginId?: string;
         DateCreated?: Date;
         DateModified?: Date;
+        Description?: string;
+        DocActivityType?: Enums.DocumentActivityType;
         DocContentInString?: string;
         DocName?: string;
         DocumentContent?: number[];
@@ -636,6 +1144,93 @@ export declare namespace Types {
         Location?: string;
         LocationType?: string;
         ModifiedBy?: number;
+        Tags?: Types.AttachmentActivityTagsItem[];
+        Title?: string;
+    }
+    interface CaseCommentRecord extends Types.CommentRecord {
+        PAVisibleFlag?: string;
+    }
+    interface CaseData {
+        BusCaseId?: number;
+        Conditions?: Types.CaConditionItem[];
+        DataGroup?: Types.CaDataGroupItem[];
+        Deposit?: Types.CaDepositItem[];
+        Fee?: Types.CaFeesItem[];
+        Flags?: Types.CaFlagsItem[];
+        Object?: Types.CaObjectItem;
+        People?: Types.CaPeopleItem[];
+        Tasks?: Types.CaTaskItem[];
+    }
+    interface CaseStatusItem {
+        CaseStatus?: string;
+        CaseStatusId?: number;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        ExpiredFlag?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        StatusCode?: string;
+        StatusDesc?: string;
+    }
+    interface CaseTypeItem {
+        AnonymousFlag?: string;
+        AutoExtExprFromInsp?: number;
+        AutoNumberFlag?: string;
+        BLicenseFlag?: string;
+        CaseGroup?: string;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        DepartmentCode?: string;
+        DepartmentId?: number;
+        DepartmentName?: string;
+        DivisionCode?: string;
+        DivisionId?: number;
+        DivisionName?: string;
+        ExpirationTypeCode?: string;
+        ExpirationTypeDesc?: string;
+        ExpiredFlag?: string;
+        IncrementBy?: number;
+        InitialCaseStatusCode?: string;
+        InitialCaseStatusId?: number;
+        IntakeExpirationTypeId?: number;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        NumberingGroupCode?: string;
+        NumberingGroupId?: number;
+        OrgId?: number;
+        PrefixYyyymmdd?: string;
+        RecalcExpirationStatus?: number;
+        RecalcExpirationStatusCode?: string;
+        RecalcExpirationType?: string;
+        RecalcExpirationTypeId?: number;
+        RegisteredFlag?: string;
+        RemoveTempCharacterStatusId?: number;
+        RemoveTempCharCaseStatus?: string;
+        StartWith?: number;
+        StatusCode?: string;
+        TableName?: string;
+        TaskCode?: string;
+        TaskDesc?: string;
+        UseTempCharacter?: string;
+    }
+    interface CaTaskCommentsItem extends Types.CaTaskCommentsItemBase {
+        CaseNumber?: string;
+        CaseType?: string;
+        CaseTypeId?: number;
+        GeneralComment?: string;
+        IsDBValue?: string;
+        IsSingleEntry?: boolean;
+        UserFlag?: string;
     }
     interface CaTaskCommentsItemBase {
         CaObjectId?: number;
@@ -649,6 +1244,83 @@ export declare namespace Types {
         DateModified?: Date;
         ModifiedBy?: number;
         ModifiedByLoginId?: string;
+    }
+    interface CaTaskItem extends Types.CaTaskItemBase {
+        AcceptedEndPoint?: number;
+        AcceptedStartPoint?: number;
+        AnonymousFlag?: string;
+        AutoSchduleInspDays?: number;
+        AutoSchduleInspTime?: number;
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusID?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CaTaskCommentsItemList?: Types.CaTaskCommentsItem[];
+        CaTaskCommentsJsonString?: string;
+        CaTaskTimeAccountingItemList?: Types.CaTaskTimeAccountingItem[];
+        CloseTaskFlag?: string;
+        ConfirmationId?: number;
+        CorrGroupCode?: string;
+        CorrGroupDesc?: string;
+        CreatedByLoginId?: string;
+        CX?: number;
+        CY?: number;
+        CZ?: number;
+        Db2BAdjustedFrom?: number;
+        DepartmentCode?: string;
+        DepartmentName?: string;
+        DisciplineCode?: string;
+        DisciplineDesc?: string;
+        DivisionCode?: string;
+        DivisionName?: string;
+        ExtendExpirationDateFlag?: string;
+        FirstName?: string;
+        GeoArea?: string;
+        GeoAreaDesc?: string;
+        GeoDetail?: string;
+        GeoDetailDesc?: string;
+        HasComments?: boolean;
+        HasCorrections?: boolean;
+        HasRelDocs?: boolean;
+        HasSignature?: boolean;
+        HasTimeAccounting?: boolean;
+        HearingDesc?: string;
+        HearingType?: string;
+        InsertFlag?: string;
+        IsCaseObjectChanged?: boolean;
+        IsChangedUserAcceptedValues?: boolean;
+        IsDBAdjusted?: boolean;
+        IsInsertBetweenLevel?: boolean;
+        IsScheduler?: boolean;
+        IsSingleEntry?: boolean;
+        LastName?: string;
+        Location?: string;
+        LoginId?: string;
+        ModifiedByLoginId?: string;
+        NextTaskFlag?: string;
+        OrgId?: number;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        RegisteredFlag?: string;
+        ReInsertFlag?: string;
+        ReqCorrectionsFlag?: string;
+        ResultDisplay?: string;
+        ShowSignatureFlag?: string;
+        SkipTaskFlag?: string;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        TableName?: string;
+        TaskCompletedByFirstName?: string;
+        TaskCompletedByLastName?: string;
+        TaskCompletedByLoginID?: string;
+        TaskSequence?: number;
+        UniqueKeyForAdvQry?: number;
     }
     interface CaTaskItemBase {
         ActualEndDate?: Date;
@@ -671,6 +1343,7 @@ export declare namespace Types {
         GeoDetailId?: number;
         HearingTypeId?: number;
         LeadDays?: number;
+        LocationNotes?: string;
         ModifiedBy?: number;
         RescheduleAfterDays?: number;
         ResponsibleDeptId?: number;
@@ -694,6 +1367,7 @@ export declare namespace Types {
         TaskId?: number;
         TaskType?: string;
         TimeCut?: number;
+        Unit?: string;
         WorkUnit?: number;
     }
     interface CaTaskResultsItem extends Types.CaTaskResultsItemBase {
@@ -717,6 +1391,30 @@ export declare namespace Types {
         ResultID?: number;
         ResultSetID?: number;
         SkipTaskFlag?: string;
+    }
+    interface CaTaskTimeAccountingItem {
+        CaObjectId?: number;
+        CaseNumber?: string;
+        CaseType?: string;
+        CaseTypeId?: number;
+        CaTaskId?: number;
+        CaTaskTimeAccountingId?: number;
+        CommentText?: string;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateModified?: Date;
+        DateTimeSpent?: Date;
+        IsDBValue?: string;
+        IsSingleEntry?: boolean;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        TimeAccountingCode?: string;
+        TimeAccountingDesc?: string;
+        TimeAccountingId?: number;
+        TimeSpent?: number;
+        TimeSpentBy?: number;
+        TimeSpentByLoginId?: string;
     }
     interface CategoryComment {
         ApplyTo?: Enums.WorkType;
@@ -742,6 +1440,36 @@ export declare namespace Types {
         SequenceId?: number;
         UseCodeDesc?: string;
         UseCodeForDisplay?: boolean;
+    }
+    interface CaViolationsItem extends Types.CaViolationsItemBase {
+        CaseName?: string;
+        CaseNumber?: string;
+        CaseStatus?: string;
+        CaseStatusID?: number;
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CompletedByLoginId?: string;
+        CreatedByLoginId?: string;
+        FeeCode?: string;
+        FeeDesc?: string;
+        FeeSetupId?: number;
+        IsSingleEntry?: boolean;
+        IssuedByLoginId?: string;
+        Location?: string;
+        ModifiedByLoginId?: string;
+        ProjectCode?: string;
+        ProjectDesc?: string;
+        ProjectId?: number;
+        StatusCode?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        TableName?: string;
+        TaskCode?: string;
+        TaskDesc?: string;
+        ViolationDesc?: string;
+        ViolationType?: string;
     }
     interface CaViolationsItemBase {
         CaFeeId?: number;
@@ -853,12 +1581,21 @@ export declare namespace Types {
         Settings?: Types.ChartWidgetSettings;
         WidgetZoneId?: number;
     }
+    interface ChartWidgetFormatOptions {
+        ChartColor?: string;
+        MainBackgroundColor?: string;
+        MainTextColor?: string;
+        NameColor?: string;
+        PieChartPallet?: number;
+    }
     interface ChartWidgetOptions extends Types.WidgetOptions {
         AggregateByField?: string;
         AggregationType?: Enums.DashboardAggregationType;
         ChartType?: Enums.DashboardChartWidgetType;
         DateGroupBy?: Enums.DateGroupByOption;
+        FormatOptions?: Types.ChartWidgetFormatOptions;
         GroupByField?: string;
+        NumberFormat?: Enums.DashboardNumberFormat;
         QueryId?: number;
     }
     interface ChartWidgetSettings {
@@ -883,6 +1620,10 @@ export declare namespace Types {
         Format?: string;
         GdbFieldName?: string;
         SeqId?: number;
+    }
+    interface Choice {
+        Description?: string;
+        Value?: Object;
     }
     interface CityworksOnlineAuthToken {
         Token?: string;
@@ -915,6 +1656,21 @@ export declare namespace Types {
         LastModifiedByName?: string;
         LastModifiedBySid?: number;
     }
+    interface ConditionalQuestion {
+        AnswerFormat?: Enums.QuestAnswerFormat;
+        Answers?: Types.ConditionalQuestionAnswer[];
+        ConditionQuestionId?: number;
+    }
+    interface ConditionalQuestionAnswer {
+        AnswerId?: number;
+        Condition?: string;
+    }
+    interface ConditionalQuestionConfig {
+        AnswerCondition?: string;
+        AnswerId?: number;
+        Id?: number;
+        QuestionId?: number;
+    }
     interface ConditionHistory {
         ActivityId?: string;
         ActivitySid?: number;
@@ -943,11 +1699,12 @@ export declare namespace Types {
         ContractSubcontractors?: Types.ContractSubcontractor[];
         ContractSubmittals?: Types.ContractSubmittal[];
     }
-    interface ContractAttachment extends Types.AttachmentBase {
+    interface ContractAttachment extends Types.AttachmentExtendedBase {
         Contract?: Types.Contract;
         ContractId?: number;
+        Id?: number;
     }
-    interface ContractBase {
+    interface ContractBase extends Types.UniversalCustomFieldsBase {
         Accountant?: string;
         AccountantSid?: number;
         AcctManager?: string;
@@ -962,6 +1719,7 @@ export declare namespace Types {
         BidDepositPercent?: number;
         BondReleased?: boolean;
         BondReleaseDate?: Date;
+        Category?: string;
         City?: string;
         Comments?: string;
         ContractId?: number;
@@ -970,11 +1728,7 @@ export declare namespace Types {
         ContractorSid?: number;
         ContractTemplateId?: number;
         ContractType?: string;
-        Date1?: Date;
-        Date2?: Date;
-        Date3?: Date;
-        Date4?: Date;
-        Date5?: Date;
+        CustFieldCatId?: number;
         DateTimeModified?: Date;
         Description?: string;
         DesignDate?: Date;
@@ -988,14 +1742,10 @@ export declare namespace Types {
         FundingSource?: string;
         GuaranteeInspDate?: Date;
         GuaranteePLInspDate?: Date;
+        InitiatedBySid?: number;
         IsTemplate?: boolean;
         Location?: string;
         NextWOSeqId?: number;
-        Num1?: number;
-        Num2?: number;
-        Num3?: number;
-        Num4?: number;
-        Num5?: number;
         OptionalPeriods?: number;
         PaymentBondPercent?: number;
         PerformanceBondDate?: Date;
@@ -1005,21 +1755,14 @@ export declare namespace Types {
         StartDate?: Date;
         State?: string;
         Status?: string;
-        Text1?: string;
-        Text10?: string;
-        Text2?: string;
-        Text3?: string;
-        Text4?: string;
-        Text5?: string;
-        Text6?: string;
-        Text7?: string;
-        Text8?: string;
-        Text9?: string;
         TransmitDate?: Date;
         UseInspDate?: Date;
         UsePLInspDate?: Date;
         Viewable?: boolean;
         WOPrefix?: string;
+        X?: number;
+        Y?: number;
+        Z?: number;
         Zip?: string;
     }
     interface ContractClaim extends Types.ContractClaimBase {
@@ -1037,23 +1780,49 @@ export declare namespace Types {
         Units?: number;
     }
     interface ContractFundSource {
+        Amount?: number;
         ContractId?: number;
         Description?: string;
+        FiscalYear?: number;
         FundSource?: string;
         FundSourceId?: number;
+        Notes?: string;
     }
     interface ContractGroupRight extends Types.GroupRightBase {
         Contract?: Types.Contract;
         ContractId?: number;
+    }
+    interface ContractInvoice {
+        AccountingDate?: Date;
+        Attachment?: string;
+        CheckIssuedDate?: Date;
+        Comments?: string;
+        Contract?: Types.Contract;
+        ContractId?: number;
+        CoverSentDate?: Date;
+        Description?: string;
+        EAODate?: Date;
+        InvoiceId?: number;
+        InvoiceItems?: Types.InvoiceItem[];
+        InvoiceNumber?: string;
+        OffialInvoiceReceivedDate?: Date;
+        PencilInvoiceReceivedDate?: Date;
+        PencilInvoiceReviewedDate?: Date;
+        ValidateInvoiceDate?: Date;
     }
     interface ContractLineItem extends Types.LineItem {
         ActualBudget?: number;
         Contract?: Types.Contract;
         ContractId?: number;
         ContractLineItemId?: number;
+        ContractorSid?: number;
         ContractPeriod?: number;
+        EmployeeSid?: number;
         EstimatedBudget?: number;
+        FundSourceId?: number;
+        Phase?: string;
         PrjUnitPrice?: number;
+        PrjUnits?: number;
         UnitPrice?: number;
         Units?: number;
         UnitsUsed?: number;
@@ -1143,9 +1912,64 @@ export declare namespace Types {
         WorkersCompExpireDate?: Date;
         Zip?: string;
     }
+    interface ContractorItem {
+        AddressLine1?: string;
+        AddressLine2?: string;
+        AddressLine3?: string;
+        AvailableEscrowAmount?: number;
+        BusinessName?: string;
+        CityName?: string;
+        CommentText?: string;
+        ContractorId?: number;
+        CountryCode?: string;
+        CountryName?: string;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        Email?: string;
+        EscrowAmount?: number;
+        ExpiredFlag?: string;
+        FaxNumber?: string;
+        FirstName?: string;
+        GenLiability?: string;
+        GenLiabilityExpDate?: Date;
+        HoldFlag?: string;
+        LastName?: string;
+        LoginId?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        PhoneHome?: string;
+        PhoneMobile?: string;
+        PhoneWork?: string;
+        PhoneWorkExtension?: string;
+        StateCode?: string;
+        StateName?: string;
+        UserId?: number;
+        WcLiabilityCompany?: string;
+        WcLiabilityExpireDate?: Date;
+        ZipCode?: string;
+    }
     interface ContractorKeywordBase {
         ContractorSid?: number;
         Keyword?: string;
+    }
+    interface ContractorTypeItem {
+        ContractorDesc?: string;
+        ContractorType?: string;
+        ContractorTypeId?: number;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        ExpiredFlag?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        TableName?: string;
     }
     interface ContractPermit {
         Contract?: Types.Contract;
@@ -1153,22 +1977,30 @@ export declare namespace Types {
         PermitSid?: number;
     }
     interface ContractSecurity {
+        CanAdd?: boolean;
+        CanAddAssets?: boolean;
         CanAddAttachment?: boolean;
         CanAddClaim?: boolean;
+        CanAddComment?: boolean;
         CanAddInvoice?: boolean;
         CanAddLineItems?: boolean;
         CanAddPermit?: boolean;
         CanAddSubcontractor?: boolean;
         CanDelete?: boolean;
+        CanDeleteAssets?: boolean;
         CanDeleteAttachment?: boolean;
         CanDeleteClaim?: boolean;
+        CanDeleteComment?: boolean;
         CanDeleteInvoice?: boolean;
         CanDeleteLineItems?: boolean;
         CanDeletePermit?: boolean;
         CanDeleteSubcontractor?: boolean;
+        CanSetSecurity?: boolean;
+        CanTransferOwnership?: boolean;
         CanUpdate?: boolean;
         CanUpdateAttachment?: boolean;
         CanUpdateClaim?: boolean;
+        CanUpdateComment?: boolean;
         CanUpdateInvoice?: boolean;
         CanUpdateLineItems?: boolean;
         CanUpdatePermit?: boolean;
@@ -1203,6 +2035,7 @@ export declare namespace Types {
         Description?: string;
         ReceiveDate?: Date;
         SubmittalId?: number;
+        SubType?: string;
     }
     interface CoreDomainBase {
         Id?: number;
@@ -1212,13 +2045,35 @@ export declare namespace Types {
         Description?: string;
         SequenceId?: number;
     }
+    interface CostSummaryBase {
+        ActivityType?: string;
+        AssetGroup?: string;
+        AssetId?: string;
+        AssetType?: string;
+        CloseDate?: Date;
+        EquipmentCost?: number;
+        LaborCost?: number;
+        LineItemCost?: number;
+        MaterialCost?: number;
+        StartDate?: Date;
+        Status?: string;
+        TotalHours?: number;
+    }
     interface CountWidgetColumn {
         Field?: string;
         Title?: string;
     }
+    interface CountWidgetFormatOptions {
+        MainBackgroundColor?: string;
+        MainTextColor?: string;
+        NameColor?: string;
+        UnitTextColor?: string;
+    }
     interface CountWidgetOption extends Types.WidgetOptions {
         Column?: Types.CountWidgetColumn;
         CountWidgetType?: number;
+        FormatOptions?: Types.CountWidgetFormatOptions;
+        NumberFormat?: Enums.DashboardNumberFormat;
         QueryId?: number;
         Units?: string;
     }
@@ -1249,28 +2104,6 @@ export declare namespace Types {
         Description?: string;
         IsActive?: boolean;
     }
-    interface CustFieldsBase {
-        Date1?: Date;
-        Date2?: Date;
-        Date3?: Date;
-        Date4?: Date;
-        Date5?: Date;
-        Num1?: number;
-        Num2?: number;
-        Num3?: number;
-        Num4?: number;
-        Num5?: number;
-        Text1?: string;
-        Text10?: string;
-        Text2?: string;
-        Text3?: string;
-        Text4?: string;
-        Text5?: string;
-        Text6?: string;
-        Text7?: string;
-        Text8?: string;
-        Text9?: string;
-    }
     interface CustomerAcct {
         AcctNum?: string;
         AcctSid?: number;
@@ -1299,6 +2132,7 @@ export declare namespace Types {
         CallerType?: string;
         CCX?: number;
         CCY?: number;
+        CCZ?: number;
         CellPhone?: string;
         Comments?: string;
         CustAddress?: string;
@@ -1340,6 +2174,13 @@ export declare namespace Types {
         Description?: string;
         Module?: string;
     }
+    interface CwCustField {
+        CustFieldId?: number;
+        CustFieldName?: string;
+        CustFieldValue?: string;
+        TableName?: string;
+        TableObjectId?: number;
+    }
     interface CWDomain {
         Description?: string;
         DomainId?: number;
@@ -1373,6 +2214,17 @@ export declare namespace Types {
     interface CwGroupEmployees extends Types.CWGroup {
         EmployeeSids?: number[];
     }
+    interface CWMetaData {
+        CWId?: string;
+        CwSid?: number;
+        DateModified?: Date;
+        FieldName?: string;
+        LoginName?: string;
+        NewValue?: string;
+        ObjectId?: number;
+        OldValue?: string;
+        TableName?: string;
+    }
     interface CWUser {
         ADDomain?: string;
         Districts?: string[];
@@ -1388,7 +2240,6 @@ export declare namespace Types {
         IsDomainSuperuser?: boolean;
         IsPAGuestUser?: boolean;
         IsPARegisteredUser?: boolean;
-        IsStoreDomainSuperuser?: boolean;
         IsWindowsIdentity?: boolean;
         LoginId?: string;
         LoginName?: string;
@@ -1408,7 +2259,6 @@ export declare namespace Types {
     interface CwUserStatus {
         IsApproved?: boolean;
         IsLockedOut?: boolean;
-        IsOnline?: boolean;
     }
     interface DateFieldValue {
         DateEnd?: Date;
@@ -1426,6 +2276,32 @@ export declare namespace Types {
         LastStart?: Date;
         NextEnd?: Date;
         NextStart?: Date;
+    }
+    interface DepartmentItem {
+        AddressLine1?: string;
+        AddressLine2?: string;
+        AddressLine3?: string;
+        CityName?: string;
+        CountryCode?: string;
+        CountryName?: string;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        DepartmentCode?: string;
+        DepartmentId?: number;
+        DepartmentName?: string;
+        ExpiredFlag?: string;
+        FaxNumber?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        PhoneNumber?: string;
+        PhoneNumberExt?: string;
+        StateCode?: string;
+        StateName?: string;
+        ZipCode?: string;
     }
     interface DepositItemBase {
         AccountCode?: string;
@@ -1446,6 +2322,25 @@ export declare namespace Types {
         Description?: string;
         Score?: number;
     }
+    interface DisciplineItem {
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        DisciplineCode?: string;
+        DisciplineDesc?: string;
+        DisciplineId?: number;
+        ExpiredFlag?: string;
+        InspectorFirstName?: string;
+        InspectorId?: number;
+        InspectorLastName?: string;
+        InspectorLoginID?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        UserId?: number;
+    }
     interface DistressCode {
         Description?: string;
         Distress?: number;
@@ -1453,6 +2348,53 @@ export declare namespace Types {
         RoadUse?: string;
         SeverityApply?: string;
         SurfaceType?: string;
+    }
+    interface DivisionItem {
+        AddressLine1?: string;
+        AddressLine2?: string;
+        AddressLine3?: string;
+        CityName?: string;
+        CountryCode?: string;
+        CountryName?: string;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        DepartmentCode?: string;
+        DepartmentId?: number;
+        DepartmentName?: string;
+        DivisionCode?: string;
+        DivisionId?: number;
+        DivisionName?: string;
+        ExpiredFlag?: string;
+        FaxNumber?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        PhoneNumber?: string;
+        PhoneNumberExt?: string;
+        StateCode?: string;
+        StateName?: string;
+        ZipCode?: string;
+    }
+    interface DomainPreference extends Types.Preference {
+        DomainId?: number;
+    }
+    interface DownloadReceiptBase {
+        Content?: number[];
+        Name?: string;
+    }
+    interface DynamicObject {
+    }
+    interface DynamicResponseDefinition extends Types.DynamicObject {
+        Item?: Object;
+    }
+    interface DynamicSearchResult extends Types.DynamicObject {
+        Item?: Object;
+    }
+    interface DynamicVariableMap extends Types.DynamicObject {
+        Item?: Object;
     }
     interface EmployeeBase {
         AdDomain?: string;
@@ -1488,6 +2430,7 @@ export declare namespace Types {
         ShiftDiffType?: Enums.RateAddMethod;
         StandbyRate?: number;
         StandbyType?: Enums.RateAddMethod;
+        StoreroomDomainId?: number;
         Title?: string;
         UniqueName?: string;
         WorkPhone?: string;
@@ -1503,6 +2446,46 @@ export declare namespace Types {
         EmployeeSid?: number;
         RelateName?: string;
     }
+    interface EmployeeSecurity {
+        ContractCanAccountant?: boolean;
+        ContractCanAcctManager?: boolean;
+        ContractCanCreate?: boolean;
+        EmployeeSid?: number;
+        EquipmentChangeOutCanChange?: boolean;
+        InspectionCanCancel?: boolean;
+        InspectionCanClose?: boolean;
+        InspectionCanCreate?: boolean;
+        InspectionCanEditAfterClose?: boolean;
+        InspectionCanInspect?: boolean;
+        InspectionCanSubmitTo?: boolean;
+        ProblemLeafCanDispatchTo?: boolean;
+        ProblemLeafCanSubmitTo?: boolean;
+        ProjectCanApprovedBy?: boolean;
+        ProjectCanAssignedTo?: boolean;
+        ProjectCanInitiate?: boolean;
+        RequestCanCancel?: boolean;
+        RequestCanClose?: boolean;
+        RequestCanCreate?: boolean;
+        RequestCanDispatchTo?: boolean;
+        RequestCanEditAfterClose?: boolean;
+        RequestCanSubmitTo?: boolean;
+        SearchCanViewContractCost?: boolean;
+        SearchCanViewSrLaborCost?: boolean;
+        SearchCanViewWoEquipmentCost?: boolean;
+        SearchCanViewWoLaborCost?: boolean;
+        SearchCanViewWoLineItemCost?: boolean;
+        SearchCanViewWoMaterialCost?: boolean;
+        StoreroomTransferCanRequest?: boolean;
+        TaskCanAssignTo?: boolean;
+        WorkOrderCanCancel?: boolean;
+        WorkOrderCanClose?: boolean;
+        WorkOrderCanComplete?: boolean;
+        WorkOrderCanCreate?: boolean;
+        WorkOrderCanEditAfterClose?: boolean;
+        WorkOrderCanRequest?: boolean;
+        WorkOrderCanSubmitTo?: boolean;
+        WorkOrderCanSupervise?: boolean;
+    }
     interface EmpRelTableField {
         FieldName?: string;
         Module?: string;
@@ -1513,6 +2496,7 @@ export declare namespace Types {
         CondScoreField?: string;
         EntityType?: string;
         EntityUidField?: string;
+        FacilityIdField?: string;
         FieldAlias?: string;
         FieldBackColor?: string;
         FieldFontBold?: boolean;
@@ -1526,6 +2510,7 @@ export declare namespace Types {
         IsPrintable?: boolean;
         IsRequired?: boolean;
         IsVisible?: boolean;
+        LevelIdField?: string;
         ReservedCWFieldName?: string;
         SequenceId?: number;
         TableName?: string;
@@ -1549,7 +2534,14 @@ export declare namespace Types {
         Id?: string;
         Inspected?: Date;
         Kind?: string;
+        Sid?: number;
         Status?: string;
+    }
+    interface EntityIdentifier {
+        EntityType?: string;
+        EntityUid?: string;
+        Id?: number;
+        Identifier?: string;
     }
     interface EntityReading {
         ActionType?: Enums.ReadingActionType;
@@ -1575,6 +2567,12 @@ export declare namespace Types {
         EntityUid?: string;
         Message?: string;
         Success?: boolean;
+    }
+    interface EntityUrlInfo {
+        BaseUrl?: string;
+        ConfigDetails?: Types.GISServiceAssetDetails;
+        Id?: number;
+        IsSecure?: boolean;
     }
     interface EquipChangeOut extends Types.EquipChangeOutBase {
         ChangeOutOperations?: Types.ChangeOutOperation[];
@@ -1622,6 +2620,7 @@ export declare namespace Types {
         WorkOrderSid?: number;
     }
     interface EquipmentBase {
+        Category?: string;
         DefaultImgPath?: string;
         Description?: string;
         EquipmentSid?: number;
@@ -1692,6 +2691,47 @@ export declare namespace Types {
         WorkOrderId?: string;
         WorkOrderSid?: number;
     }
+    interface Error {
+        ErrorType?: string;
+    }
+    interface EscrowPaymentItem {
+        AvailableAmount?: number;
+        BusinessName?: string;
+        CommentText?: string;
+        ContractorId?: number;
+        CreatedBy?: number;
+        DateCreated?: Date;
+        DateModified?: Date;
+        DateReceived?: Date;
+        DateVoided?: Date;
+        EscrowPaymentId?: number;
+        EscrowPaymentReceiptId?: number;
+        FileName?: string;
+        ModifiedBy?: number;
+        PaymentAccount?: string;
+        PaymentAmount?: number;
+        PaymentDate?: Date;
+        ReceivedBy?: number;
+        ReceivedByUser?: string;
+        ReferenceInfo?: string;
+        TenderType?: string;
+        TenderTypeDesc?: string;
+        TenderTypeId?: number;
+        Voided?: string;
+        VoidedBy?: number;
+    }
+    interface EscrowPaymentReceiptItem {
+        AmountBalance?: number;
+        CommentText?: string;
+        EscrowPaymentReceiptId?: number;
+        LoginId?: string;
+        OrgId?: number;
+        ReceiptDate?: Date;
+        ReceiptFileName?: string;
+        TotalAmountDue?: number;
+        TotalAmountTendered?: number;
+        UserId?: number;
+    }
     interface EsriAddUpdate {
         features?: Types.EsriRecord[];
     }
@@ -1729,11 +2769,14 @@ export declare namespace Types {
         DisplayName?: string;
         IsFeature?: boolean;
         LayerId?: number;
+        SubTypeIdField?: string;
+        SubTypes?: Types.EsriSubType[];
         TableName?: string;
     }
     interface EsriEntityTypeRequest {
         IncludeFeatures?: boolean;
         IncludeObjects?: boolean;
+        IncludeSubTypes?: boolean;
         ServiceId?: number;
         ServiceSecurityId?: number;
     }
@@ -1742,11 +2785,6 @@ export declare namespace Types {
         Message?: string;
         Status?: Enums.CoreResponseStatus;
     }
-    interface EsriError {
-        code?: string;
-        description?: string;
-        message?: string;
-    }
     interface EsriExtent {
         isEmpty?: boolean;
         spatialReference?: Types.EsriSpatialReference;
@@ -1754,6 +2792,10 @@ export declare namespace Types {
         xmin?: number;
         ymax?: number;
         ymin?: number;
+        zmax?: number;
+        zmin?: number;
+    }
+    interface EsriMapPointRecord extends Types.EsriRecord {
     }
     interface EsriQueryParams extends Types.EsriQueryParamsBase {
         cityworksCurrentUserValue?: number;
@@ -1768,7 +2810,6 @@ export declare namespace Types {
     interface EsriQueryParamsBase {
         callback?: string;
         definitionExpression?: string;
-        distance?: number;
         domainId?: number;
         f?: string;
         gdbVersion?: string;
@@ -1777,50 +2818,41 @@ export declare namespace Types {
         geometryType?: string;
         groupByFieldsForStatistics?: string;
         havingClause?: string;
-        historicMoment?: number;
         inSR?: string;
         isSample?: boolean;
         layerId?: number;
         layers?: string;
+        localDates?: boolean;
         mapExtent?: Types.EsriExtent;
         maxAllowableOffset?: number;
-        multipatchOption?: string;
         objectIds?: string;
         orderByFields?: string;
         outFields?: string;
         outSR?: string;
         outStatistics?: string;
         pretty?: boolean;
-        quantizationParameters?: string;
-        relationParam?: string;
         relationshipId?: number;
         resultOffset?: number;
         resultRecordCount?: number;
-        resultType?: string;
-        returnCentroid?: boolean;
         returnCountOnly?: boolean;
         returnDistinctValues?: boolean;
         returnExtentOnly?: boolean;
         returnGeometry?: boolean;
         returnIdsOnly?: boolean;
         returnM?: boolean;
-        returnTrueCurves?: boolean;
-        returnUpdates?: boolean;
         returnZ?: boolean;
         serviceName?: string;
         spatialRel?: string;
-        sqlFormat?: string;
         sr?: number;
         text?: string;
-        time?: number[];
         tolerance?: number;
-        units?: string;
         where?: string;
     }
     interface EsriQueryResult {
         count?: number;
         displayFieldName?: string;
         exceededTransferLimit?: boolean;
+        extent?: Types.EsriExtent;
         features?: Types.EsriRecord[];
         fieldAliases?: {
             [key: string]: string;
@@ -1839,6 +2871,7 @@ export declare namespace Types {
     }
     interface EsriRelatedEntityTypeRequest {
         EntityType?: string;
+        Role?: string;
     }
     interface EsriRelatedRecordBase {
         exceededTransferLimit?: boolean;
@@ -1857,6 +2890,11 @@ export declare namespace Types {
         layers?: Types.EsriServiceLayerDescription[];
         spatialReference?: Types.EsriSpatialReference;
         tables?: Types.EsriServiceLayerDescription[];
+    }
+    interface EsriServiceErrorBase {
+        code?: number;
+        description?: string;
+        message?: string;
     }
     interface EsriServiceLayerAttribute {
         alias?: string;
@@ -1888,6 +2926,10 @@ export declare namespace Types {
         wkt?: string;
     }
     interface EsriSubType {
+        code?: Object;
+        defaultValues?: {
+            [key: string]: Object;
+        };
         domains?: {
             [key: string]: Types.EsriDomain;
         };
@@ -1904,7 +2946,7 @@ export declare namespace Types {
         userId?: string;
     }
     interface EsriUpdateResult {
-        error?: Types.EsriError;
+        error?: Types.EsriServiceErrorBase;
         globalId?: string;
         objectId?: number;
         success?: boolean;
@@ -1952,6 +2994,28 @@ export declare namespace Types {
         UserId?: number;
         XField?: string;
         YField?: string;
+        ZField?: string;
+    }
+    interface ExpirationTypeItem {
+        AfterDays?: number;
+        AfterMonths?: number;
+        AfterYear?: number;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        EomFlag?: string;
+        ExpirationTypeCode?: string;
+        ExpirationTypeDesc?: string;
+        ExpirationTypeId?: number;
+        ExpiredFlag?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        RenewalMargin?: number;
+        SpecificMonthDay?: string;
+        VersionNo?: string;
     }
     interface FeeSetupItemBase {
         AccountCode?: string;
@@ -1983,12 +3047,38 @@ export declare namespace Types {
         FilterOperator?: string;
         FilterValue?: string;
     }
+    interface FilterRecordToWorkOrderEntitiyRequest {
+        Id?: number;
+        Name?: string;
+        Records?: Types.EsriMapPointRecord[];
+    }
+    interface FilterRecordToWorkOrderEntityResult {
+        Configurations?: Types.EntityConfiguration[];
+        ErrorIndexes?: number[];
+        Id?: number;
+        Name?: string;
+        WorkOrderEntities?: Types.WorkOrderEntityBase[];
+    }
     interface FiveNumberStatistic {
         FirstQuartile?: number;
         Maximum?: number;
         Median?: number;
         Minimum?: number;
         ThirdQuartile?: number;
+    }
+    interface GeneralCommentsItem {
+        CommentCode?: string;
+        CommentId?: number;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        ExpiredFlag?: string;
+        GeneralComment?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
     }
     interface GeocodeRequest {
         Address?: string;
@@ -2042,22 +3132,40 @@ export declare namespace Types {
         ParentUid?: string;
         ParentUidFieldName?: string;
     }
+    interface GISErrorBase {
+        Error?: string;
+        HasErrors?: boolean;
+    }
     interface GISExtent {
         XMax?: number;
         XMin?: number;
         YMax?: number;
         YMin?: number;
+        ZMax?: number;
+        ZMin?: number;
+    }
+    interface GISNode {
+        Children?: Types.GISNode[];
+        Entity?: Types.WorkOrderEntity;
+        Generation?: number;
+    }
+    interface GISParentChild {
+        Child?: Types.WorkOrderEntity;
+        ParentFeature?: Types.WorkOrderEntity;
+        Path?: Types.WorkOrderEntity[];
+        PathOrder?: string;
     }
     interface GISPoint {
         Tag?: Object;
         X?: number;
         Y?: number;
+        Z?: number;
     }
     interface GisQueryTypeInfo extends Types.QueryTypeInfo {
         Entity?: Types.PWEntity;
         Module?: Types.PWModule;
     }
-    interface GISResult extends Types.GISResultBase {
+    interface GISResult extends Types.GISErrorBase {
         Alias?: string;
         EntityType?: string;
         Fields?: Types.EsriServiceLayerAttribute[];
@@ -2069,11 +3177,7 @@ export declare namespace Types {
         Types?: Types.EsriSubType[];
         UidFieldName?: string;
     }
-    interface GISResultBase {
-        Error?: string;
-        HasErrors?: boolean;
-    }
-    interface GISResultTable extends Types.GISResultBase {
+    interface GISResultTable extends Types.GISErrorBase {
         EntityType?: string;
         Fields?: Types.EsriServiceLayerAttribute[];
         Rows?: Types.GISResultTableRow[];
@@ -2084,7 +3188,11 @@ export declare namespace Types {
     interface GISResultTableRow {
         Values?: Object[];
     }
+    interface GISServiceAssetDetails {
+        Filter?: Types.NameValue[];
+    }
     interface GISServiceDefinitionBase {
+        DashboardUse?: boolean;
         DefinitionId?: number;
         DomainId?: number;
         Name?: string;
@@ -2142,6 +3250,19 @@ export declare namespace Types {
         GroupName?: string;
         TableName?: string;
     }
+    interface HolidaysItem {
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateModified?: Date;
+        HalfDayFlag?: string;
+        HolidayDate?: Date;
+        HolidayDesc?: string;
+        HolidayId?: number;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+    }
     interface HtmlWidget {
         Header?: string;
         Height?: string;
@@ -2152,7 +3273,11 @@ export declare namespace Types {
         Url?: string;
         WidgetZoneId?: number;
     }
+    interface HtmlWidgetFormatOptions {
+        NameColor?: string;
+    }
     interface HtmlWidgetOption extends Types.WidgetOptions {
+        FormatOptions?: Types.HtmlWidgetFormatOptions;
         Html?: string;
         Url?: string;
     }
@@ -2160,8 +3285,78 @@ export declare namespace Types {
         extent?: Types.EsriExtent;
         spatialReference?: Types.EsriSpatialReference;
     }
-    interface InspAttachment extends Types.AttachmentBase {
-        AttachmentType?: Enums.AttachmentFileType;
+    interface ImportInspectionData {
+        BranchId?: string;
+        BranchIdField?: string;
+        Comments?: string;
+        InspectedBy?: string;
+        InspectedBySid?: number;
+        InspectedSurface?: string;
+        InspectionDate?: Date;
+        IsDirty?: boolean;
+        NetworkId?: string;
+        PavementSamples?: Types.PavementSample[];
+        SectionClassName?: string;
+        SectionUid?: string;
+        TotalSamples?: number;
+        WorkOrderId?: string;
+    }
+    interface ImportInventoryData {
+        ConditionDateFieldName?: string;
+        ConditionScoreFieldName?: string;
+        ConstructionDateFieldName?: string;
+        FieldAliases?: {
+            [key: string]: string;
+        };
+        Items?: Types.ImportInventoryItem[];
+        SurfaceMaterialFieldName?: string;
+    }
+    interface ImportInventoryItem {
+        Attributes?: {
+            [key: string]: Object;
+        };
+        BranchId?: string;
+        Comments?: string;
+        EntityType?: string;
+        EntityUid?: string;
+        From?: string;
+        NetworkId?: string;
+        To?: string;
+    }
+    interface ImportProjectData {
+        Comments?: string;
+        EstimatedBudget?: number;
+        ProjectFinishDate?: Date;
+        ProjectName?: string;
+        ProjectStartDate?: Date;
+        Title?: string;
+    }
+    interface ImportRecommendedWorkData {
+        BranchId?: string;
+        Comments?: string;
+        Cost?: number;
+        Description?: string;
+        Entities?: Types.ImportRecommendedWorkDataEntity[];
+        GetGisData?: boolean;
+        GroupEntities?: boolean;
+        InitiatedByApp?: string;
+        NetworkId?: string;
+        ProjectedStartDate?: Date;
+        ProjectName?: string;
+        ProjectSid?: number;
+        SectionId?: string;
+        Stage?: string;
+        WOTemplateId?: string;
+    }
+    interface ImportRecommendedWorkDataEntity {
+        EntityType?: string;
+        EntityUid?: string;
+    }
+    interface InspAttachment extends Types.AttachmentExtendedBase {
+        Id?: number;
+        InspectionId?: number;
+    }
+    interface InspCostSummary extends Types.CostSummaryBase {
         InspectionId?: number;
     }
     interface InspCustField extends Types.CategoryCustField {
@@ -2175,7 +3370,7 @@ export declare namespace Types {
         InspectionId?: number;
         QuestionId?: number;
     }
-    interface InspectionBase {
+    interface InspectionBase extends Types.UniversalCustomFieldsBase {
         ActFinishDate?: Date;
         Cancel?: boolean;
         CancelledBy?: string;
@@ -2191,11 +3386,6 @@ export declare namespace Types {
         CycleIntervalNum?: number;
         CycleIntervalUnit?: Enums.RepeatIntervalUnit;
         CycleType?: Enums.RepeatType;
-        Date1?: Date;
-        Date2?: Date;
-        Date3?: Date;
-        Date4?: Date;
-        Date5?: Date;
         DateCancelled?: Date;
         DateClosed?: Date;
         DateSubmitTo?: Date;
@@ -2205,6 +3395,7 @@ export declare namespace Types {
         EntitySid?: number;
         EntityType?: string;
         EntityUid?: string;
+        Facility_Id?: string;
         FeatureId?: number;
         FeatureType?: string;
         FeatureUid?: string;
@@ -2222,19 +3413,19 @@ export declare namespace Types {
         InspTemplateName?: string;
         InspX?: number;
         InspY?: number;
+        InspZ?: number;
         IsClosed?: boolean;
+        Level_Id?: string;
         Location?: string;
         MapPage?: string;
-        Num1?: number;
-        Num2?: number;
-        Num3?: number;
-        Num4?: number;
-        Num5?: number;
+        Metadata?: string;
         ObservationSum?: string;
         ParentInspId?: number;
         Priority?: string;
         PrjFinishDate?: Date;
         PrjStartDate?: Date;
+        ProjectPhaseId?: number;
+        ProjectSid?: number;
         RepairsMade?: string;
         RequestId?: number;
         Resolution?: string;
@@ -2245,21 +3436,66 @@ export declare namespace Types {
         SubmitToEmployeeSid?: number;
         SubmitToName?: string;
         SubmitToSid?: number;
-        Text1?: string;
-        Text10?: string;
-        Text2?: string;
-        Text3?: string;
-        Text4?: string;
-        Text5?: string;
-        Text6?: string;
-        Text7?: string;
-        Text8?: string;
-        Text9?: string;
         TileNo?: string;
         UpdateMap?: boolean;
         WorkOrderId?: string;
     }
+    interface InspectionEquipmentCost {
+        AcctNum?: string;
+        Cost?: number;
+        Description?: string;
+        DomainId?: number;
+        EntityType?: string;
+        EntityUid?: string;
+        EquipmentCostId?: number;
+        EquipmentSid?: number;
+        EquipmentUid?: string;
+        FinishDate?: Date;
+        HoursRequired?: number;
+        InspectionId?: number;
+        RateType?: Enums.EquipmentRateType;
+        ReserveTransId?: number;
+        Source?: string;
+        StartDate?: Date;
+        TransDate?: Date;
+        UnitsRequired?: number;
+        UsageType?: Enums.CostUsage;
+    }
+    interface InspectionLaborCost {
+        AcctNum?: string;
+        BenefitCost?: number;
+        ContractorNumber?: string;
+        Cost?: number;
+        Description?: string;
+        DomainId?: number;
+        EntityType?: string;
+        EntityUid?: string;
+        FinishDate?: Date;
+        GroupName?: string;
+        HolidayCost?: number;
+        Hours?: number;
+        InspectionId?: number;
+        LaborCostDetails?: Types.LaborCostDetail[];
+        LaborCostId?: number;
+        LaborName?: string;
+        LaborSid?: number;
+        LaborType?: Enums.LaborCategory;
+        OccupationCode?: string;
+        OccupationId?: number;
+        OtherCost?: number;
+        OverheadCost?: number;
+        OvertimeCost?: number;
+        RateType?: Enums.LaborRateType;
+        RegularCost?: number;
+        ShiftDiffCost?: number;
+        StandbyCost?: number;
+        StartDate?: Date;
+        TimesheetId?: number;
+        TransDate?: Date;
+        UsageType?: Enums.CostUsage;
+    }
     interface InspectionQuestionDetails {
+        Description?: string;
         Explanation?: string;
         Instruction?: string;
         QuestionId?: number;
@@ -2269,11 +3505,24 @@ export declare namespace Types {
         RelatedInspectionId?: number;
     }
     interface InspectionSecurity {
+        CanAddEquipment?: boolean;
+        CanAddLabor?: boolean;
         CanCancel?: boolean;
         CanClose?: boolean;
         CanDelete?: boolean;
+        CanDeleteComment?: boolean;
+        CanDeleteEquipment?: boolean;
+        CanDeleteLabor?: boolean;
         CanUpdate?: boolean;
+        CanUpdateComment?: boolean;
+        CanUpdateEquipment?: boolean;
+        CanUpdateLabor?: boolean;
         CanView?: boolean;
+        CanViewCosts?: boolean;
+        CanViewEquipment?: boolean;
+        CanViewEquipmentCost?: boolean;
+        CanViewLabor?: boolean;
+        CanViewLaborCost?: boolean;
         InspectionId?: number;
     }
     interface InspectionTemplateSecurity {
@@ -2290,6 +3539,13 @@ export declare namespace Types {
         LabelText?: string;
         ModifiedBy?: number;
         StartTime?: string;
+    }
+    interface InspectionZoneValues {
+        District?: string;
+        MapLayers?: Types.InstanceMapLayer[];
+        MapPage?: string;
+        Shop?: string;
+        TileNo?: string;
     }
     interface InspQuestAnswer {
         Answer?: string;
@@ -2308,6 +3564,7 @@ export declare namespace Types {
     }
     interface InspQuestion {
         Answer?: string;
+        Description?: string;
         Explanation?: string;
         InspectionId?: number;
         InspQuestionId?: number;
@@ -2332,6 +3589,7 @@ export declare namespace Types {
     interface InspTemplateBase {
         AllowSignature?: boolean;
         CalculateConditionScore?: boolean;
+        Comments?: string;
         CycleFrom?: Enums.RepeatFromDate;
         CycleIncludeWeekends?: boolean;
         CycleIntervalNum?: number;
@@ -2339,6 +3597,7 @@ export declare namespace Types {
         CycleType?: Enums.RepeatType;
         DateModified?: Date;
         Description?: string;
+        DomainId?: number;
         Duration?: number;
         DurationUnit?: Enums.WorkDurationUnit;
         Effort?: number;
@@ -2352,17 +3611,23 @@ export declare namespace Types {
         RequireAssetOnClose?: boolean;
         SubmitToEmployeeSid?: number;
         SubmitToName?: string;
+        UpdateXY?: boolean;
         WorkMonth?: string;
     }
     interface InspTemplateQA {
         Answers?: Types.InspQuestAnswer[];
         BranchingModel?: boolean;
+        ConditionalQuestions?: {
+            [key: number]: Types.ConditionalQuestion;
+        };
         InspTemplateId?: number;
         Panels?: Types.InspQuestionPanelBase[];
         Questions?: Types.InspTempQuestion[];
     }
     interface InspTempQuestion {
+        AllAnswersVisible?: boolean;
         CalculateConditionScore?: boolean;
+        Description?: string;
         InspTemplateId?: number;
         PanelId?: number;
         Question?: string;
@@ -2385,6 +3650,67 @@ export declare namespace Types {
         TaskCode?: string;
         TaskDesc?: string;
         TaskId?: number;
+    }
+    interface InstanceMapLayer {
+        Id?: number;
+        InstanceId?: number;
+        InstanceUid?: string;
+        MapLayer?: string;
+        MapLayerField?: string;
+        SourceType?: Enums.TemplateMapLayerSourceType;
+        TemplateMapLayerId?: number;
+        Value?: string;
+    }
+    interface InvoiceItem extends Types.LineItemCost {
+        ContractInvoice?: Types.ContractInvoice;
+        InvoiceId?: number;
+        InvoiceItemId?: number;
+    }
+    interface IResponseFieldSchema {
+        Choices?: Types.Choice[];
+        DeprecatedRemovalAtVersion?: string;
+        DeprecationComments?: string;
+        Description?: string;
+        DisplayName?: string;
+        FieldType?: string;
+        IsDeprecated?: boolean;
+        Name?: string;
+    }
+    interface IResponseSchema {
+        ChildSchemas?: {
+            [key: string]: {
+                [key: string]: Types.IResponseFieldSchema;
+            };
+        };
+        ResponseFields?: {
+            [key: string]: Types.IResponseFieldSchema;
+        };
+    }
+    interface ISchema {
+        Name?: string;
+        PrimarySearchFieldName?: string;
+        Response?: Types.IResponseSchema;
+        Search?: Types.ISearchSchema;
+    }
+    interface ISearchFieldSchema {
+        Choices?: Types.Choice[];
+        DeprecatedRemovalAtVersion?: string;
+        DeprecationComments?: string;
+        Description?: string;
+        DisplayName?: string;
+        FieldType?: string;
+        IsDeprecated?: boolean;
+        Name?: string;
+    }
+    interface ISearchSchema {
+        ChildSchemas?: {
+            [key: string]: {
+                [key: string]: Types.ISearchFieldSchema;
+            };
+        };
+        SearchFields?: {
+            [key: string]: Types.ISearchFieldSchema;
+        };
     }
     interface Issue extends Types.Transaction {
         AcctNum?: string;
@@ -2462,12 +3788,15 @@ export declare namespace Types {
     interface LineItemCost {
         AssetId?: string;
         AssetType?: string;
+        CheckIssuedDate?: Date;
         Comments?: string;
         ContractId?: number;
         ContractLineItemId?: number;
         ContractNumber?: string;
+        ContractorSid?: number;
         Cost?: number;
         Description?: string;
+        EmployeeSid?: number;
         ItemNumber?: string;
         LineItemCostId?: number;
         LineItemId?: number;
@@ -2476,6 +3805,7 @@ export declare namespace Types {
         TaskName?: string;
         TransDate?: Date;
         UnitsUsed?: number;
+        UpdatedCost?: number;
         UsageType?: Enums.CostUsage;
         Verification?: Enums.VerificationStatus;
         WorkOrderId?: string;
@@ -2484,6 +3814,7 @@ export declare namespace Types {
         WOTaskId?: number;
     }
     interface LocalizationSettings {
+        CurrencyCode?: string;
         CurrencySymbol?: string;
         DateSeparator?: string;
         DecimalSymbol?: string;
@@ -2502,14 +3833,81 @@ export declare namespace Types {
         Use12HourTime?: boolean;
         XYPrecision?: number;
     }
+    interface ManholeInsp extends Types.ManholeInspBase {
+        InspcustFields?: Types.InspCustField[];
+        SMhInspImgs?: Types.SMhInspImg[];
+        SMhiObservs?: Types.SMhiObserv[];
+        SPipeInManholes?: Types.SPipeInManhole[];
+    }
+    interface ManholeInspBase extends Types.StandardInspBase {
+        AccessType?: string;
+        BarrelDiam?: number;
+        BenchMaterial?: string;
+        ChannelMaterial?: string;
+        CondRating?: number;
+        ConeMaterial?: string;
+        Depth?: number;
+        DepthOfDebris?: number;
+        DepthOfFlow?: number;
+        DepthOfSurchrg?: number;
+        DistToHydrant?: number;
+        FacilityId?: string;
+        FeatureType?: string;
+        FlowType?: string;
+        FlowTypeScore?: number;
+        ForemanRecomnd?: string;
+        FrmMaterial?: string;
+        GroundCond?: string;
+        GroundCondScore?: number;
+        HydRating?: number;
+        InspCustFieldCatId?: number;
+        InspDate?: Date;
+        InspectedBy?: string;
+        InspectedBySid?: number;
+        InspectionId?: number;
+        LidDiameter?: number;
+        LidMaterial?: string;
+        Location?: string;
+        MapNumber?: string;
+        MhLength?: number;
+        MhMaterial?: string;
+        MhWidth?: number;
+        ObservationSum?: string;
+        Ponding?: string;
+        PondingScore?: number;
+        PrecipType?: string;
+        PrecipTypeScore?: number;
+        RepairsMade?: string;
+        RingMaterial?: string;
+        Spot?: string;
+        SpotScore?: number;
+        StepMaterial?: string;
+        StructRating?: number;
+        SubType?: string;
+        SuperAprvlComnts?: string;
+        SurfaceType?: string;
+        TribArea?: number;
+        UpdateMap?: boolean;
+        WorkOrderId?: string;
+        WorkOrderSid?: number;
+        Xcoordinate?: number;
+        Ycoordinate?: number;
+        Zcoordinate?: number;
+    }
     interface MapViewExtent {
         XMax?: number;
         XMin?: number;
         YMax?: number;
         YMin?: number;
     }
+    interface MapWidgetFormatOptions {
+        MainBackgroundColor?: string;
+        NameColor?: string;
+    }
     interface MapWidgetOption extends Types.WidgetOptions {
         FeatureLayerUrl?: string;
+        FormatOptions?: Types.MapWidgetFormatOptions;
+        GisServiceDefinitionId?: number;
         QueryDefinitionId?: number;
         QueryId?: number;
     }
@@ -2533,6 +3931,7 @@ export declare namespace Types {
         GdbSubtype?: string;
         GdbTableName?: string;
         IsAssembly?: boolean;
+        IsSerialized?: boolean;
         JustificationRequired?: boolean;
         Manufacturer?: string;
         MaterialSid?: number;
@@ -2577,6 +3976,16 @@ export declare namespace Types {
     }
     interface MaterialNode extends Types.NodeBase {
     }
+    interface MaterialSerial {
+        DateTimeInit?: Date;
+        ExpirationDate?: Date;
+        Id?: number;
+        MaterialSid?: number;
+        SerialNumber?: string;
+        Storeroom?: string;
+        UnitCost?: number;
+        WarrantyDate?: Date;
+    }
     interface MobileMapCache {
         DateModified?: Date;
         Description?: string;
@@ -2584,9 +3993,29 @@ export declare namespace Types {
         FileSize?: number;
         MobileMapCacheId?: number;
     }
+    interface MobilePreferences {
+        Inspection?: Types.MobilePreferenceSection;
+        PLL?: Types.MobilePreferenceSection;
+        ServiceRequest?: Types.MobilePreferenceSection;
+        WorkOrder?: Types.MobilePreferenceSection;
+    }
+    interface MobilePreferenceSection {
+        CompleteStatus?: string;
+        QueryIds?: number[];
+        Searches?: Types.SearchDefinitionName[];
+    }
     interface NameValue {
         Name?: string;
         Value?: Object;
+    }
+    interface NewMaterialSerial {
+        DateTimeInit?: Date;
+        ExpirationDate?: Date;
+        MaterialSid?: number;
+        SerialNumber?: string;
+        Storeroom?: string;
+        UnitCost?: number;
+        WarrantyDate?: Date;
     }
     interface NodeBase {
         Description?: string;
@@ -2606,6 +4035,78 @@ export declare namespace Types {
         Notes?: string;
         Position?: number;
         WidgetZoneId?: number;
+    }
+    interface NotificationCaseItem {
+        CaseCreatedInternalEmail?: string;
+        CaseDesc?: string;
+        CaseStatusInternalEmail?: string;
+        CaseType?: string;
+        CaseTypeId?: number;
+        ContrNotificationCategory?: string;
+        ContrNotificationTypeCode?: string;
+        ContrNotificationTypeDesc?: string;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        EventFlag?: string;
+        EventFlagValue?: string;
+        ExpiredFlag?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        NotificationCaseId?: number;
+        NotificationTypeIdContractr?: number;
+        NotificationTypeIdPeople?: number;
+        NotifyContractorFlag?: string;
+        NotifyPeopleRoleFlag?: string;
+        RoleNotificationCategory?: string;
+        RoleNotificationTypeCode?: string;
+        RoleNotificationTypeDesc?: string;
+    }
+    interface NotificationTypeItem {
+        CreatedBy?: number;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        EmailSubjectLine?: string;
+        ExpiredFlag?: string;
+        FileName?: string;
+        ModifiedBy?: number;
+        NotificationBodyText?: string;
+        NotificationCategory?: string;
+        NotificationTypeCode?: string;
+        NotificationTypeDesc?: string;
+        NotificationTypeId?: number;
+        OrgId?: number;
+        ReportId?: number;
+        ReportName?: string;
+    }
+    interface NumberingGroupItem {
+        CaseType?: string;
+        CaseTypeDesc?: string;
+        CaseTypeId?: number;
+        CreatedBy?: number;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        ExpiredFlag?: string;
+        IncrementBy?: number;
+        LastNum?: number;
+        LastNumDate?: Date;
+        MaskedPaddedLength?: number;
+        ModifiedBy?: number;
+        NumberingGroupCode?: string;
+        NumberingGroupDesc?: string;
+        NumberingGroupId?: number;
+        OrganizationCode?: string;
+        OrganizationDesc?: string;
+        OrganizationId?: number;
+        PrefixYyyymmdd?: string;
+        ResetYearEndFlag?: string;
+        Separator?: string;
+        StartWith?: number;
+        VersionNo?: string;
     }
     interface NumericFieldValue {
         FieldValueList?: string[];
@@ -2686,6 +4187,155 @@ export declare namespace Types {
         SampleSizeUnit?: string;
         SampleType?: string;
     }
+    interface PaverAssetUpdates {
+        BranchUpdates?: {
+            [key: string]: Types.PaverUpdate[];
+        };
+        NetworkUpdates?: {
+            [key: string]: Types.PaverUpdate[];
+        };
+        SectionUpdates?: {
+            [key: string]: Types.PaverUpdate[];
+        };
+    }
+    interface PaverDataFile {
+        Content?: string;
+        Extension?: string;
+        Name?: string;
+    }
+    interface PaverInspectionUpdates {
+        Distresses?: {
+            [key: string]: Types.PaverUpdate[];
+        };
+        Inspections?: {
+            [key: string]: Types.PaverUpdate[];
+        };
+        Samples?: {
+            [key: string]: Types.PaverUpdate[];
+        };
+        SectionHistory?: Types.PaverUpdate[];
+    }
+    interface PaverUpdate {
+        Field?: string;
+        Value?: string;
+    }
+    interface PaverWorkCodeTemplate {
+        ApplyToEntity?: string;
+        Description?: string;
+        DomainId?: number;
+        WorkCategory?: string;
+        WorkCode?: string;
+        WOTemplateId?: string;
+    }
+    interface PeopleItem {
+        AddressLine1?: string;
+        AddressLine2?: string;
+        AddressLine3?: string;
+        CityName?: string;
+        CommentText?: string;
+        CompanyName?: string;
+        CountryCode?: string;
+        CountryName?: string;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        Email?: string;
+        ExpiredFlag?: string;
+        FaxNumber?: string;
+        LoginId?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        Name?: string;
+        OrgId?: number;
+        PeopleId?: number;
+        PhoneHome?: string;
+        PhoneMobile?: string;
+        PhoneWork?: string;
+        PhoneWorkExt?: string;
+        Roles?: Types.PeopleRoleItemItem[];
+        StateCode?: string;
+        StateName?: string;
+        TableName?: string;
+        UserId?: number;
+        WebSiteUrl?: string;
+        ZipCode?: string;
+    }
+    interface PeopleRoleItem {
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        ExpiredFlag?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        RequiredFields?: string;
+        RoleCode?: string;
+        RoleDesc?: string;
+        RoleId?: number;
+        TableName?: string;
+    }
+    interface PeopleRoleItemItem extends Types.PeopleRoleItemItemBase {
+        CreatedByLoginId?: string;
+        ModifiedByLoginId?: string;
+        RoleCode?: string;
+        RoleDesc?: string;
+    }
+    interface PeopleRoleItemItemBase {
+        CreatedBy?: number;
+        DateCreated?: Date;
+        DateModified?: Date;
+        ModifiedBy?: number;
+        PeopleId?: number;
+        PeopleRoleItemId?: number;
+        RoleId?: number;
+    }
+    interface PermitBase extends Types.UniversalCustomFieldsBase3 {
+        Address?: string;
+        AddressType?: string;
+        ApplicationDate?: Date;
+        ApprovedBy?: string;
+        AssignedTo?: string;
+        City?: string;
+        Comments?: string;
+        DateExpires?: Date;
+        DateIssued?: Date;
+        Description?: string;
+        ExtensionApprovedDate?: Date;
+        ExtensionExpirationDate?: Date;
+        ExtensionRequestedDate?: Date;
+        FinalGuaranteeDate?: Date;
+        FinalInspectionDate?: Date;
+        InitiateDate?: Date;
+        InitiatedGuaranteeDate?: Date;
+        IssuedBy?: string;
+        Location?: string;
+        ParentPermitNumber?: string;
+        PendingBy?: string;
+        PermitCost?: number;
+        PermitNumber?: string;
+        PermitSid?: number;
+        PermitType?: string;
+        ProjectName?: string;
+        ProjectSid?: number;
+        RequestedBy?: string;
+        Source?: string;
+        State?: string;
+        Status?: string;
+        Viewable?: boolean;
+        WorkApprovedBy?: string;
+        Zip?: string;
+    }
+    interface PermitType {
+        Comments?: string;
+        Description?: string;
+        PermitCost?: number;
+        PermitName?: string;
+        Source?: string;
+    }
     interface PllPreferenceItem {
         Name?: string;
         OrgId?: number;
@@ -2702,10 +4352,37 @@ export declare namespace Types {
         DefaultValue?: string;
         Element?: string;
     }
+    interface PriorityBase {
+        Description?: string;
+        Duration?: number;
+        DurationUnit?: Enums.WorkDurationUnit;
+        Priority?: string;
+        PriorityId?: number;
+        PriorityOrder?: number;
+    }
+    interface ProbGroupRight extends Types.GroupRightBase {
+        CanViewCost?: boolean;
+        ProblemLeaf?: Types.ProblemLeaf;
+        ProblemSid?: number;
+    }
+    interface ProblemAttachment {
+        Attachment?: string;
+        ProblemLeaf?: Types.ProblemLeaf;
+        ProblemSid?: number;
+    }
     interface ProblemComment {
         Comments?: string;
         ObjectId?: number;
         ProblemSid?: number;
+    }
+    interface ProblemLeaf extends Types.ProblemLeafBase {
+        ProbGroupRights?: Types.ProbGroupRight[];
+        ProblemAttachments?: Types.ProblemAttachment[];
+        ProblemComments?: Types.ProblemComment[];
+        ProblemMapLayers?: Types.TemplateMapLayer[];
+        ProblemPriorities?: Types.ProblemPriority[];
+        ProblemQuestions?: Types.ProblemQuestion[];
+        ProblemWOTemplates?: Types.ProblemWOTemplate[];
     }
     interface ProblemLeafBase {
         AutoClose?: boolean;
@@ -2747,11 +4424,18 @@ export declare namespace Types {
     interface ProblemNode extends Types.NodeBase {
         Cancel?: boolean;
     }
+    interface ProblemPriority extends Types.PriorityBase {
+        ProblemLeaf?: Types.ProblemLeaf;
+        ProblemSid?: number;
+    }
     interface ProblemQA {
         Answers?: Types.QuestionAnswerBase[];
         BranchingModel?: boolean;
         ProblemSid?: number;
         Questions?: Types.ProblemQuestionBase[];
+    }
+    interface ProblemQuestion extends Types.ProblemQuestionBase {
+        QuestionAnswers?: Types.QuestionAnswerBase[];
     }
     interface ProblemQuestionBase {
         ProblemSid?: number;
@@ -2763,23 +4447,42 @@ export declare namespace Types {
         CanCreate?: boolean;
         ProblemSid?: number;
     }
+    interface ProblemWOTemplate extends Types.ProblemWOTemplateBase {
+        ProblemLeaf?: Types.ProblemLeaf;
+    }
     interface ProblemWOTemplateBase {
         ApplyToEntity?: string;
         Description?: string;
         ProblemSid?: number;
         WOTemplateId?: string;
     }
-    interface ProjectBase {
+    interface ProjectBase extends Types.UniversalCustomFieldsBase {
+        ActualEquipmentCost?: number;
+        ActualLaborCost?: number;
+        ActualMaterialCost?: number;
+        ActualRevenue?: number;
+        ActualTotalCost?: number;
         ApprovedBy?: string;
         ApprovedBySid?: number;
         AssignedTo?: string;
         AssignedToSid?: number;
         Cancel?: boolean;
+        CancelledBySid?: number;
+        Category?: string;
+        ClosedBySid?: number;
         Comments?: string;
+        DateCancelled?: Date;
+        DateClosed?: Date;
         DateTimeModified?: Date;
         Description?: string;
         DomainId?: number;
         EstimatedBudget?: number;
+        EstimatedEquipmentCost?: number;
+        EstimatedLaborCost?: number;
+        EstimatedMaterialCost?: number;
+        EstimatedRevenue?: number;
+        EstimatedTotalCost?: number;
+        FiscalYear?: number;
         InitiateDate?: Date;
         InitiatedBy?: string;
         InitiatedBySid?: number;
@@ -2791,6 +4494,22 @@ export declare namespace Types {
         ProjectStartDate?: Date;
         QuickView?: boolean;
         Status?: string;
+        X?: number;
+        Y?: number;
+        Z?: number;
+    }
+    interface ProjectEntity {
+        EntitySid?: number;
+        EntityType?: string;
+        EntityUid?: string;
+        FeatureId?: number;
+        FeatureType?: string;
+        FeatureUid?: string;
+        Id?: number;
+        ProjectSid?: number;
+        X?: number;
+        Y?: number;
+        Z?: number;
     }
     interface ProjectNameDescription {
         Description?: string;
@@ -2800,6 +4519,23 @@ export declare namespace Types {
         ProjectSid?: number;
         QuickView?: boolean;
         Status?: string;
+    }
+    interface ProjectSecurity {
+        CanAddAssets?: boolean;
+        CanAddAttachments?: boolean;
+        CanAddComments?: boolean;
+        CanCreateChild?: boolean;
+        CanDelete?: boolean;
+        CanDeleteAssets?: boolean;
+        CanDeleteAttachments?: boolean;
+        CanDeleteComments?: boolean;
+        CanSetSecurity?: boolean;
+        CanTransferOwnership?: boolean;
+        CanUpdate?: boolean;
+        CanUpdateAttachments?: boolean;
+        CanUpdateComments?: boolean;
+        CanView?: boolean;
+        ProjectId?: number;
     }
     interface PWEntity {
         Code?: string;
@@ -2812,10 +4548,19 @@ export declare namespace Types {
         Module?: string;
         ModuleName?: string;
     }
+    interface QueryResult {
+        HasMore?: boolean;
+        Page?: number;
+        Results?: Types.DynamicSearchResult[];
+        TotalRecordCount?: number;
+    }
     interface QueryTypeInfo {
         DynamicType?: string;
         QueryType?: string;
         SchemaName?: string;
+        XFieldName?: string;
+        YFieldName?: string;
+        ZFieldName?: string;
     }
     interface QuestionAnswerBase {
         Answer?: string;
@@ -2862,6 +4607,7 @@ export declare namespace Types {
     }
     interface Receive extends Types.Transaction {
         AcctNum?: string;
+        DamagedQuantity?: number;
         Destination?: string;
         EmployeeSid?: number;
         InvoiceNum?: string;
@@ -2906,21 +4652,17 @@ export declare namespace Types {
     interface ReqCustField extends Types.CategoryCustField {
         RequestId?: number;
     }
-    interface RequestAttachment extends Types.AttachmentBase {
+    interface RequestAttachment extends Types.AttachmentExtendedBase {
+        Id?: number;
         RequestId?: number;
     }
-    interface RequestBase {
+    interface RequestBase extends Types.UniversalCustomFieldsBase2 {
         Cancel?: boolean;
         CancelledBy?: string;
         CancelledBySid?: number;
         CancelReason?: string;
         ClosedBy?: string;
         ClosedBySid?: number;
-        Date1?: Date;
-        Date2?: Date;
-        Date3?: Date;
-        Date4?: Date;
-        Date5?: Date;
         DateCancelled?: Date;
         DateDispatchOpen?: Date;
         DateDispatchTo?: Date;
@@ -2938,19 +4680,16 @@ export declare namespace Types {
         DomainId?: number;
         Effort?: number;
         Excursion?: boolean;
+        Facility_Id?: string;
         FieldInvtDone?: boolean;
         InitiatedBy?: string;
         InitiatedByApp?: string;
         InitiatedBySid?: number;
         IsClosed?: boolean;
         LaborCost?: number;
+        Level_Id?: string;
         LockedByDesktopUser?: string;
         MapPage?: string;
-        Num1?: number;
-        Num2?: number;
-        Num3?: number;
-        Num4?: number;
-        Num5?: number;
         OtherSystemCode?: string;
         OtherSystemDesc?: string;
         OtherSystemDesc2?: string;
@@ -2970,6 +4709,7 @@ export declare namespace Types {
         ProbState?: string;
         ProbZip?: string;
         ProjectName?: string;
+        ProjectPhaseId?: number;
         ProjectSid?: number;
         ReqCategory?: string;
         ReqCustFieldCatId?: number;
@@ -2978,6 +4718,7 @@ export declare namespace Types {
         Shop?: string;
         SRX?: number;
         SRY?: number;
+        SRZ?: number;
         Status?: string;
         StreetName?: string;
         SubmitTo?: string;
@@ -2987,26 +4728,6 @@ export declare namespace Types {
         SubmitToPager?: string;
         SubmitToPhone?: string;
         SubmitToSid?: number;
-        Text1?: string;
-        Text10?: string;
-        Text11?: string;
-        Text12?: string;
-        Text13?: string;
-        Text14?: string;
-        Text15?: string;
-        Text16?: string;
-        Text17?: string;
-        Text18?: string;
-        Text19?: string;
-        Text2?: string;
-        Text20?: string;
-        Text3?: string;
-        Text4?: string;
-        Text5?: string;
-        Text6?: string;
-        Text7?: string;
-        Text8?: string;
-        Text9?: string;
         TileNo?: string;
         WONeeded?: boolean;
         WorkOrderId?: string;
@@ -3101,6 +4822,13 @@ export declare namespace Types {
         SampleId?: string;
         Severity?: Enums.DistressSeverity;
     }
+    interface SavedQuery {
+        CreatedBySid?: number;
+        Id?: number;
+        Name?: string;
+        Query?: string;
+        QueryType?: string;
+    }
     interface SearchCustomField {
         AnswerList?: string[];
         Answers?: string;
@@ -3143,6 +4871,7 @@ export declare namespace Types {
         EnableEurl?: boolean;
         Keywords?: string;
         MapUrl?: string;
+        QueryId?: number;
         SearchFor?: Enums.SearchType;
         SearchId?: number;
         SearchName?: string;
@@ -3276,6 +5005,15 @@ export declare namespace Types {
         CanViewLaborCost?: boolean;
         RequestId?: number;
     }
+    interface ServiceRequestZoneValues {
+        DispatchTo?: string;
+        District?: string;
+        MapLayers?: Types.InstanceMapLayer[];
+        MapPage?: string;
+        Shop?: string;
+        SubmitTo?: string;
+        TileNo?: string;
+    }
     interface SimpleGisServiceInfo {
         Active?: boolean;
         DefinitionId?: number;
@@ -3292,11 +5030,53 @@ export declare namespace Types {
         SharingUrl?: string;
         TokenRequired?: boolean;
     }
+    interface SMhInspImg {
+        AttachedBy?: string;
+        AttachedBySid?: number;
+        Comments?: string;
+        DateTimeAttached?: Date;
+        Id?: number;
+        ImagePath?: string;
+        InspectionId?: number;
+    }
+    interface SMhiObserv {
+        Condition?: string;
+        ConditionScore?: number;
+        DistFromRim?: number;
+        EstMhIandI?: number;
+        InspectionId?: number;
+        LeakCategory?: string;
+        LeakCatScore?: number;
+        LeakType?: string;
+        LeakTypeScore?: number;
+        MhObservId?: number;
+        MhPart?: string;
+        Position?: string;
+        TestMethod?: string;
+    }
     interface SortData {
         Column?: string;
         Descending?: boolean;
     }
-    interface StandardInspBase extends Types.CustFieldsBase {
+    interface SPipeInManhole {
+        BypassPipe?: boolean;
+        Diameter?: number;
+        DropConnection?: boolean;
+        EstPipeIandI?: number;
+        FlowDepth?: number;
+        InOut?: Enums.PipeInOut;
+        InspectionId?: number;
+        Material?: string;
+        PipeCond?: string;
+        PipeCondScore?: number;
+        PipeDepth?: number;
+        PipeDirection?: string;
+        PipeElev?: number;
+        PipeId?: string;
+        PipeInMhId?: number;
+        PipeType?: string;
+    }
+    interface StandardInspBase extends Types.UniversalCustomFieldsBase {
     }
     interface StoreDomainBase {
         Description?: string;
@@ -3318,6 +5098,28 @@ export declare namespace Types {
         StockOnHand?: number;
         Storerm?: string;
     }
+    interface StoreroomAccessSecurity {
+        CanAddGroups?: boolean;
+        CanAddRequisitions?: boolean;
+        CanAddStoreGroupPermissions?: boolean;
+        CanAddStoreroomMaterial?: boolean;
+        CanAddStorerooms?: boolean;
+        CanDeleteGroups?: boolean;
+        CanDeleteRequisitions?: boolean;
+        CanDeleteStoreGroupPermissions?: boolean;
+        CanDeleteStoreroomMaterial?: boolean;
+        CanDeleteStorerooms?: boolean;
+        CanUpdateDefaultStoreroomDomain?: boolean;
+        CanUpdateGroups?: boolean;
+        CanUpdateRequisitions?: boolean;
+        CanUpdateStoreGroupPermissions?: boolean;
+        CanUpdateStoreroomMaterial?: boolean;
+        CanUpdateStorerooms?: boolean;
+        CanViewGroupConfigGroups?: boolean;
+        CanViewRequisitions?: boolean;
+        CanViewStoreroomConfigMaterials?: boolean;
+        CanViewStoreroomConfigStorerooms?: boolean;
+    }
     interface StoreroomSecurityBase {
         CanAudit?: boolean;
         CanIssue?: boolean;
@@ -3332,6 +5134,24 @@ export declare namespace Types {
         State?: string;
         StreetName?: string;
         Zone?: string;
+    }
+    interface SubTypeItem {
+        AnonymousFlag?: string;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        DefaultText?: string;
+        ExpiredFlag?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        RegisteredFlag?: string;
+        SubType?: string;
+        SubTypeDesc?: string;
+        SubTypeId?: number;
+        VersionNo?: string;
     }
     interface Supplier extends Types.SupplierBase {
         SupplierMaterials?: Types.SupplierMaterialBase[];
@@ -3358,6 +5178,7 @@ export declare namespace Types {
     interface SupplierMaterialBase {
         CatalogNum?: string;
         ContractNum?: string;
+        Description?: string;
         InfoDate?: Date;
         LeadTime?: number;
         LeadTimeUnit?: Enums.TimeIntervalUnit;
@@ -3369,6 +5190,7 @@ export declare namespace Types {
         PackCost?: number;
         PartNumber?: string;
         SupMatName?: string;
+        SupPartNumber?: string;
         SupplierMaterialId?: number;
         SupplierSid?: number;
         SupplierUid?: string;
@@ -3382,8 +5204,14 @@ export declare namespace Types {
         SupportsDaylightSavingTime?: boolean;
         TotalHoursBaseUtcOffset?: number;
     }
+    interface TableWidgetFormatOptions {
+        MainBackgroundColor?: string;
+        MainTextColor?: string;
+        NameColor?: string;
+    }
     interface TableWidgetOption extends Types.WidgetOptions {
         Columns?: string[];
+        FormatOptions?: Types.TableWidgetFormatOptions;
         GridSort?: Types.SortData;
         QueryId?: number;
     }
@@ -3411,6 +5239,43 @@ export declare namespace Types {
     }
     interface TaskNode extends Types.NodeBase {
     }
+    interface TaskReportItem {
+        CreatedBy?: number;
+        DateCreated?: Date;
+        DateModified?: Date;
+        FileName?: string;
+        ModifiedBy?: number;
+        OrgId?: number;
+        ReportId?: number;
+        ReportName?: string;
+        TaskId?: number;
+        TaskReportId?: number;
+    }
+    interface TaskResultDetailItem {
+        CaseStatus?: string;
+        CaseStatusId?: number;
+        CloseTaskFlag?: string;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateModified?: Date;
+        ExtendExpirationDateFlag?: string;
+        InsertFlag?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        NextTaskFlag?: string;
+        ReInsertFlag?: string;
+        ResultCode?: string;
+        ResultDesc?: string;
+        ResultDetailId?: number;
+        ResultDisplay?: string;
+        ResultId?: number;
+        ResultSequence?: number;
+        ResultSetDesc?: string;
+        ResultSetId?: number;
+        SkipTaskFlag?: string;
+        StatusCode?: string;
+    }
     interface TaskResultFeeInsertItem {
         FeeCode?: string;
         FeeDesc?: string;
@@ -3418,6 +5283,36 @@ export declare namespace Types {
         TaskId?: number;
         TaskResultFeeInsertId?: number;
         TaskResultId?: number;
+    }
+    interface TemplateMapLayer {
+        Id?: number;
+        MapLayer?: string;
+        MapLayerField?: string;
+        SourceType?: Enums.TemplateMapLayerSourceType;
+        TemplateId?: number;
+        TemplateUid?: string;
+    }
+    interface TenderTypeItem {
+        AccountCode?: string;
+        AnonymousFlag?: string;
+        CreatedBy?: number;
+        CreatedByLoginId?: string;
+        DateCreated?: Date;
+        DateExpired?: Date;
+        DateModified?: Date;
+        ExpiredFlag?: string;
+        ModifiedBy?: number;
+        ModifiedByLoginId?: string;
+        OrgId?: number;
+        OverPaymentFlag?: string;
+        PaymentGatewayFlag?: string;
+        PaymentGatewayId?: number;
+        RegisteredFlag?: string;
+        TableName?: string;
+        TenderDesc?: string;
+        TenderType?: string;
+        TenderTypeId?: number;
+        VersionNo?: string;
     }
     interface TestType {
         Code?: string;
@@ -3427,6 +5322,7 @@ export declare namespace Types {
     interface Transaction {
         Comments?: string;
         Description?: string;
+        MaterialSerials?: Types.MaterialSerial[];
         MaterialSid?: number;
         MaterialUid?: string;
         PartNumber?: string;
@@ -3447,6 +5343,10 @@ export declare namespace Types {
         RequestedBySid?: number;
         Source?: string;
     }
+    interface TvInspAttachment extends Types.AttachmentExtendedBase {
+        Id?: number;
+        TvId?: number;
+    }
     interface TvInspection extends Types.TvInspectionBase {
         InspCustFields?: Types.InspCustField[];
         TvObservations?: Types.TvObservation[];
@@ -3454,7 +5354,9 @@ export declare namespace Types {
     interface TvInspectionBase extends Types.StandardInspBase {
         CertificateNumber?: string;
         City?: string;
+        Coating_Method?: string;
         CondRating?: number;
+        Consequence_Of_Failure?: string;
         CounterStart?: string;
         CounterStop?: string;
         Customer?: string;
@@ -3462,6 +5364,9 @@ export declare namespace Types {
         Deterioration?: string;
         DeterScore?: number;
         Diameter?: number;
+        Down_Easting?: string;
+        Down_Elevation?: string;
+        Down_Northing?: string;
         DownLocation?: string;
         DownMh?: string;
         DownType?: string;
@@ -3471,19 +5376,27 @@ export declare namespace Types {
         FlowControl?: string;
         FlowDepth?: number;
         ForemanRecomnd?: string;
+        GPS_Accuracy?: string;
         GroundCond?: string;
         GroundCondScore?: number;
         HydRating?: number;
+        InitiatedByApp?: string;
         InspCustFieldCatId?: number;
         InspectedBy?: string;
         InspectedBySid?: number;
+        Inspection_Status?: string;
+        Inspection_Technology_Used?: string;
+        IsImperial?: boolean;
         JointLength?: number;
         JointType?: string;
         LiningMethod?: string;
         Location?: string;
+        Location_Code?: string;
+        Location_Details?: string;
         MapNumber?: string;
         MasterTapeNum?: string;
         Material?: string;
+        MH_Coordinate_System?: string;
         ObservationSum?: string;
         ObservMethod?: Enums.TvObservationMethod;
         OmRating?: number;
@@ -3495,9 +5408,14 @@ export declare namespace Types {
         PrecipType?: string;
         PrecipTypeScore?: number;
         PreCleaning?: string;
+        Pressure_Value?: number;
+        Project?: string;
         RehabStatus?: string;
         RepairsMade?: string;
+        Reverse_Setup_Flag?: number;
         ReverseSetup?: boolean;
+        ReviewedBySid?: number;
+        Reviewer_Certificate_Number?: string;
         RimToGradeD?: number;
         RimToGradeU?: number;
         RimToInvertD?: number;
@@ -3518,19 +5436,27 @@ export declare namespace Types {
         TvDate?: Date;
         TvId?: number;
         TvReason?: string;
+        Up_Easting?: string;
+        Up_Elevation?: string;
+        Up_Northing?: string;
         UpdateMap?: boolean;
         UpDepth?: number;
         UpLocation?: string;
         UpMh?: string;
         UpType?: string;
+        Vertical_Datum?: string;
         VideoLocation?: string;
         VideoTapeNum?: string;
         VtrFormat?: string;
+        Weather?: string;
         Width?: number;
         WorkOrderId?: string;
         WorkOrderSid?: number;
+        X?: number;
+        Y?: number;
         YearLaid?: number;
         YearRenewed?: number;
+        Z?: number;
     }
     interface TvInspectionCodeDescs {
         NodeTypeCodeDescs?: Types.CodeDesc[];
@@ -3557,6 +5483,7 @@ export declare namespace Types {
         Continuous?: string;
         DistFromDown?: number;
         DistFromUp?: number;
+        Grade?: number;
         Joint?: string;
         ObservationId?: number;
         ObservDesc?: string;
@@ -3571,6 +5498,52 @@ export declare namespace Types {
         ValueDimension1?: number;
         ValueDimension2?: number;
         ValuePercent?: number;
+        VCR_Time?: string;
+    }
+    interface TvObsvAttachment extends Types.AttachmentExtendedBase {
+        Id?: number;
+        ObservationId?: number;
+    }
+    interface UniversalCustomFieldsBase {
+        Date1?: Date;
+        Date2?: Date;
+        Date3?: Date;
+        Date4?: Date;
+        Date5?: Date;
+        Num1?: number;
+        Num2?: number;
+        Num3?: number;
+        Num4?: number;
+        Num5?: number;
+        Text1?: string;
+        Text10?: string;
+        Text2?: string;
+        Text3?: string;
+        Text4?: string;
+        Text5?: string;
+        Text6?: string;
+        Text7?: string;
+        Text8?: string;
+        Text9?: string;
+    }
+    interface UniversalCustomFieldsBase2 extends Types.UniversalCustomFieldsBase {
+        Text11?: string;
+        Text12?: string;
+        Text13?: string;
+        Text14?: string;
+        Text15?: string;
+        Text16?: string;
+        Text17?: string;
+        Text18?: string;
+        Text19?: string;
+        Text20?: string;
+    }
+    interface UniversalCustomFieldsBase3 extends Types.UniversalCustomFieldsBase2 {
+        Num10?: number;
+        Num6?: number;
+        Num7?: number;
+        Num8?: number;
+        Num9?: number;
     }
     interface UserMapExtent extends Types.MapViewExtent {
         DateTimeModified?: Date;
@@ -3615,18 +5588,22 @@ export declare namespace Types {
     interface ViewDataUploadFilesResult {
         AttachedBy?: string;
         CaObjectId?: number;
+        CaReceiptId?: number;
         CaTaskId?: number;
         Comments?: string;
         Date?: Date;
         DeleteType?: string;
         DeleteUrl?: string;
+        Description?: string;
         LabelText?: string;
         Name?: string;
         ReldocsId?: number;
         Size?: number;
+        Tags?: Types.AttachmentActivityTagsItem[];
         TaskCode?: string;
         TaskDesc?: string;
         ThumbnailUrl?: string;
+        Title?: string;
         Type?: string;
         Url?: string;
     }
@@ -3667,7 +5644,8 @@ export declare namespace Types {
     interface WidgetOptions {
         ActionIds?: string[];
     }
-    interface WOAttachment extends Types.AttachmentBase {
+    interface WOAttachment extends Types.AttachmentExtendedBase {
+        Id?: number;
         TaskName?: string;
         WorkOrderId?: string;
         WorkOrderSid?: number;
@@ -3677,7 +5655,14 @@ export declare namespace Types {
         WorkOrderId?: string;
         WorkOrderSid?: number;
     }
-    interface WorkOrderBase {
+    interface WOPermitBase {
+        PermitCost?: number;
+        PermitNumber?: string;
+        PermitSid?: number;
+        WorkOrderId?: string;
+        WorkOrderSid?: number;
+    }
+    interface WorkOrderBase extends Types.UniversalCustomFieldsBase2 {
         AcctNum?: string;
         ActivityZone?: string;
         ActualFinishDate?: Date;
@@ -3698,11 +5683,6 @@ export declare namespace Types {
         CycleIntervalNum?: number;
         CycleIntervalUnit?: Enums.RepeatIntervalUnit;
         CycleType?: Enums.RepeatType;
-        Date1?: Date;
-        Date2?: Date;
-        Date3?: Date;
-        Date4?: Date;
-        Date5?: Date;
         DateCancelled?: Date;
         DatePrinted?: Date;
         DateSubmitTo?: Date;
@@ -3714,6 +5694,7 @@ export declare namespace Types {
         DomainId?: number;
         Effort?: number;
         ExpenseType?: Enums.WOExpenseType;
+        Facility_Id?: string;
         FromDate?: Date;
         InitiateDate?: Date;
         InitiatedBy?: string;
@@ -3722,19 +5703,17 @@ export declare namespace Types {
         IsClosed?: boolean;
         IsReactive?: boolean;
         LegalBillable?: boolean;
+        Level_Id?: string;
         Location?: string;
         LockedByDesktopUser?: string;
         MapPage?: string;
         MapTemplateName?: string;
-        Num1?: number;
-        Num2?: number;
-        Num3?: number;
-        Num4?: number;
-        Num5?: number;
         NumDaysBefore?: number;
+        PerformanceBudgetId?: number;
         PrimaryContractId?: number;
         Priority?: string;
         ProjectName?: string;
+        ProjectPhaseId?: number;
         ProjectSid?: number;
         ProjFinishDate?: Date;
         ProjStartDate?: Date;
@@ -3753,26 +5732,6 @@ export declare namespace Types {
         SubmitToSid?: number;
         Supervisor?: string;
         SupervisorSid?: number;
-        Text1?: string;
-        Text10?: string;
-        Text11?: string;
-        Text12?: string;
-        Text13?: string;
-        Text14?: string;
-        Text15?: string;
-        Text16?: string;
-        Text17?: string;
-        Text18?: string;
-        Text19?: string;
-        Text2?: string;
-        Text20?: string;
-        Text3?: string;
-        Text4?: string;
-        Text5?: string;
-        Text6?: string;
-        Text7?: string;
-        Text8?: string;
-        Text9?: string;
         TileNo?: string;
         TransToWOId?: string;
         Unattached?: boolean;
@@ -3798,19 +5757,9 @@ export declare namespace Types {
         WOTemplateId?: string;
         WOXCoordinate?: number;
         WOYCoordinate?: number;
+        WOZCoordinate?: number;
     }
-    interface WorkOrderCostSummary {
-        ActivityType?: string;
-        AssetGroup?: string;
-        AssetId?: string;
-        AssetType?: string;
-        CloseDate?: Date;
-        EquipmentCost?: number;
-        LaborCost?: number;
-        LineItemCost?: number;
-        MaterialCost?: number;
-        StartDate?: Date;
-        TotalHours?: number;
+    interface WorkOrderCostSummary extends Types.CostSummaryBase {
         WOCategory?: string;
         WorkOrderId?: string;
         WorkOrderSid?: number;
@@ -3822,18 +5771,22 @@ export declare namespace Types {
         };
         AttributeUIDFieldName?: string;
         RelatedFeature?: Types.WorkOrderEntity;
-        Tag?: Object;
+        Tag?: {
+            [key: string]: Object;
+        };
     }
     interface WorkOrderEntityBase {
         Address?: string;
         EntitySid?: number;
         EntityType?: string;
         EntityUid?: string;
+        Facility_Id?: string;
         FeatureId?: number;
         FeatureType?: string;
         FeatureUid?: string;
         IsBlank?: boolean;
         LegacyId?: string;
+        Level_Id?: string;
         Location?: string;
         ObjectId?: number;
         TileNo?: string;
@@ -3843,8 +5796,9 @@ export declare namespace Types {
         WorkOrderSid?: number;
         X?: number;
         Y?: number;
+        Z?: number;
     }
-    interface WorkOrderEntityCostSummary {
+    interface WorkOrderEntityCostSummary extends Types.UniversalCustomFieldsBase2 {
         ActualFinishDate?: Date;
         ActualStartDate?: Date;
         Address?: string;
@@ -3852,11 +5806,6 @@ export declare namespace Types {
         CancelledBy?: string;
         CancelledBySid?: number;
         ClosedBySid?: number;
-        Date1?: Date;
-        Date2?: Date;
-        Date3?: Date;
-        Date4?: Date;
-        Date5?: Date;
         DateCancelled?: Date;
         DateSubmitTo?: Date;
         DateWoClosed?: Date;
@@ -3866,6 +5815,7 @@ export declare namespace Types {
         EntityType?: string;
         EntityUid?: string;
         EquipmentCost?: number;
+        Facility_Id?: string;
         FeatureId?: number;
         FeatureType?: string;
         FeatureUid?: string;
@@ -3873,14 +5823,10 @@ export declare namespace Types {
         IsReactive?: boolean;
         LaborCost?: number;
         LegacyId?: string;
+        Level_Id?: string;
         LineItemCost?: number;
         Location?: string;
         MaterialCost?: number;
-        Num1?: number;
-        Num2?: number;
-        Num3?: number;
-        Num4?: number;
-        Num5?: number;
         ObjectId?: number;
         Priority?: string;
         ProjFinishDate?: Date;
@@ -3889,26 +5835,6 @@ export declare namespace Types {
         Status?: string;
         SubmitTo?: string;
         SubmitToSid?: number;
-        Text1?: string;
-        Text10?: string;
-        Text11?: string;
-        Text12?: string;
-        Text13?: string;
-        Text14?: string;
-        Text15?: string;
-        Text16?: string;
-        Text17?: string;
-        Text18?: string;
-        Text19?: string;
-        Text2?: string;
-        Text20?: string;
-        Text3?: string;
-        Text4?: string;
-        Text5?: string;
-        Text6?: string;
-        Text7?: string;
-        Text8?: string;
-        Text9?: string;
         TileNo?: string;
         TotalCost?: number;
         TotalHours?: number;
@@ -3921,6 +5847,7 @@ export declare namespace Types {
         WoTemplateId?: string;
         X?: number;
         Y?: number;
+        Z?: number;
     }
     interface WorkOrderInspection {
         InspectionId?: number;
@@ -4009,6 +5936,13 @@ export declare namespace Types {
         IsTemplateClass?: boolean;
         WOTemplateId?: string;
     }
+    interface WorkOrderZoneValues {
+        District?: string;
+        MapLayers?: Types.InstanceMapLayer[];
+        MapPage?: string;
+        Shop?: string;
+        TileNo?: string;
+    }
     interface WOTask {
         ActFinishDate?: Date;
         ActStartDate?: Date;
@@ -4073,6 +6007,7 @@ export declare namespace Types {
         SupervisorEmployeeSid?: number;
         UnitsAccompDesc?: string;
         UnitsAccompDescLock?: boolean;
+        UpdateXY?: boolean;
         WarrantyDuration?: number;
         WarrantyDurationUnit?: Enums.RepeatIntervalUnit;
         WOCategory?: string;
@@ -4100,6 +6035,7 @@ export declare namespace Types {
     interface WOTemplateName {
         ApplyToEntity?: string;
         Description?: string;
+        DomainId?: number;
         IsTemplateClass?: boolean;
         WOCategory?: string;
         WOTemplateId?: string;

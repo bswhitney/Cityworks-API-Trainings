@@ -14,7 +14,12 @@ export declare class InspectionTemplateService implements IInspectionTemplateSer
     CreateSearchDefinition(request: Requests.CreateSearchDefinition): AbortablePromise<Responses.CreateSearchDefinition>;
     EntityTypes(request: Requests.EntityTypes): AbortablePromise<Responses.EntityTypes>;
     QA(request: Requests.QA): AbortablePromise<Responses.QA>;
+    QuestionConditions(request: Requests.QuestionConditions): AbortablePromise<Responses.QuestionConditions>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     Templates(request: Requests.Templates): AbortablePromise<Responses.Templates>;
     TestTypes(request: Requests.TestTypes): AbortablePromise<Responses.TestTypes>;
+    ErrorCodes: {
+        InvalidField: number;
+    };
+    WarningCodes: {};
 }

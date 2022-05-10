@@ -12,4 +12,6 @@ export declare class CostSummaryService implements ICostSummaryService {
     constructor(service: IApiService);
     WorkOrderEntity(request: Requests.WorkOrderEntity): AbortablePromise<Responses.WorkOrderEntity>;
     WorkOrderEntitySearch(request: Requests.WorkOrderEntitySearch): AbortablePromise<Responses.WorkOrderEntitySearch>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

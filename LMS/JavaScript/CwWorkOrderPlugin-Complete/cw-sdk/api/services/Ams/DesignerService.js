@@ -7,6 +7,24 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var DesignerService = /** @class */ (function () {
         function DesignerService(service) {
+            this.ErrorCodes = {
+                MustBeUniqueError: 1,
+                UnknownError: 10,
+                ErrorCannotBeNullOrEmpty: 17,
+                ErrorCannotBeNull: 18,
+                ErrorPreferenceCannotBeChanged: 19,
+                ErrorInvalidPreference: 20,
+                ErrorMustBeNumeric: 21,
+                ErrorNumericRange: 22,
+                ErrorNotInList: 23,
+                InvalidField: 30,
+                NotAuthorizedToViewPage: 33,
+                MustBeCityworksAdministrator: 34,
+                MustBeDomainAdministrator: 35
+            };
+            this.WarningCodes = {
+                WarningItemNotFound: 60
+            };
             this._service = service;
         }
         DesignerService.prototype.AddAttachmentMapping = function (request) {
@@ -125,6 +143,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         DesignerService.prototype.UpdateGroup = function (request) {
             return this._service.call(request, 'Ams/Designer/UpdateGroup');
+        };
+        DesignerService.prototype.UpdatePreference = function (request) {
+            return this._service.call(request, 'Ams/Designer/UpdatePreference');
         };
         DesignerService.prototype.UserRoles = function (request) {
             return this._service.call(request, 'Ams/Designer/UserRoles');

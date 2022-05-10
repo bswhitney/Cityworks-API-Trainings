@@ -11,7 +11,11 @@ export namespace WorkOrderTemplateServiceTypes {
             WOTemplateIds?: string[];
         }
         export interface ByProblemSids extends ServiceTypes.CoreRequestBase {
+            OnlyActiveTemplates?: boolean;
             ProblemSids: number[];
+        }
+        export interface ByTemplateClassIds extends ServiceTypes.CoreRequestBase {
+            TemplateClassIds: string[];
         }
         export interface CustomFieldCategories extends ServiceTypes.CoreRequestBase {
             IsActive?: boolean;
@@ -71,6 +75,7 @@ export namespace WorkOrderTemplateServiceTypes {
             SupervisorEmployeeSid?: number[];
             UnitsAccompDesc?: string[];
             UnitsAccompDescLock?: boolean;
+            UpdateXY?: boolean;
             WarrantyDuration?: number[];
             WarrantyDurationUnit?: number[];
             WOCategory?: string[];
@@ -87,6 +92,7 @@ export namespace WorkOrderTemplateServiceTypes {
         export interface TemplateNames extends ServiceTypes.CoreRequestBase {
             AllDomainTemplates?: boolean;
             Category?: string;
+            DomainId?: number;
             EntityTypes: string[];
             MaximumDateModified?: Date;
             MinimumDateModified?: Date;
@@ -97,6 +103,7 @@ export namespace WorkOrderTemplateServiceTypes {
     export namespace Responses {
         export interface ByIds extends ServiceTypes.CoreResponseBase_<CoreTypes.WOTemplateBase[]> {}
         export interface ByProblemSids extends ServiceTypes.CoreResponseBase_<CoreTypes.ProblemWOTemplateBase[]> {}
+        export interface ByTemplateClassIds extends ServiceTypes.CoreResponseBase_<{[key: string]: CoreTypes.WOTemplateName[]}> {}
         export interface CustomFieldCategories extends ServiceTypes.CoreResponseBase_<CoreTypes.CustFieldCategoryBase[]> {}
         export interface CustomFields extends ServiceTypes.CoreResponseBase_<{[key: string]: CoreTypes.CategoryCustField[]}> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<string[]> {}
@@ -106,6 +113,7 @@ export namespace WorkOrderTemplateServiceTypes {
     export interface IWorkOrderTemplateService {
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
         ByProblemSids?: (request: Requests.ByProblemSids) => AbortablePromise<Responses.ByProblemSids>;
+        ByTemplateClassIds?: (request: Requests.ByTemplateClassIds) => AbortablePromise<Responses.ByTemplateClassIds>;
         CustomFieldCategories?: (request: Requests.CustomFieldCategories) => AbortablePromise<Responses.CustomFieldCategories>;
         CustomFields?: (request: Requests.CustomFields) => AbortablePromise<Responses.CustomFields>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;

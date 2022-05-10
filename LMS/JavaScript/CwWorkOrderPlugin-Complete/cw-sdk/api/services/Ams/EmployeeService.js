@@ -7,6 +7,19 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var EmployeeService = /** @class */ (function () {
         function EmployeeService(service) {
+            this.ErrorCodes = {
+                UnknownError: 1,
+                NotAuthorizedToCreateEmployee: 5,
+                NotAuthorizedToUpdateDomain: 6,
+                UniqueNameIsNotUnique: 8,
+                InvalidField: 30,
+                ErrorCreatingEmployee: 31,
+                ErrorUpdatingEmployee: 32
+            };
+            this.WarningCodes = {
+                WarningItemNotFound: 60,
+                WarningEmptyOrNullField: 61
+            };
             this._service = service;
         }
         EmployeeService.prototype.Add = function (request) {
@@ -26,6 +39,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         EmployeeService.prototype.ByIds = function (request) {
             return this._service.call(request, 'Ams/Employee/ByIds');
+        };
+        EmployeeService.prototype.CustomDataFields = function (request) {
+            return this._service.call(request, 'Ams/Employee/CustomDataFields');
         };
         EmployeeService.prototype.Delete = function (request) {
             return this._service.call(request, 'Ams/Employee/Delete');

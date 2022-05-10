@@ -7,8 +7,16 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var RelatesService = /** @class */ (function () {
         function RelatesService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
+        RelatesService.prototype.AreContractPermissionsEnabled = function (request) {
+            return this._service.call(request, 'Ams/Relates/AreContractPermissionsEnabled');
+        };
+        RelatesService.prototype.AreProjectPermissionsEnabled = function (request) {
+            return this._service.call(request, 'Ams/Relates/AreProjectPermissionsEnabled');
+        };
         RelatesService.prototype.ByTableName = function (request) {
             return this._service.call(request, 'Ams/Relates/ByTableName');
         };
@@ -32,6 +40,12 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         RelatesService.prototype.InspectionSubmitTo = function (request) {
             return this._service.call(request, 'Ams/Relates/InspectionSubmitTo');
+        };
+        RelatesService.prototype.IsNegativeStockEnabled = function (request) {
+            return this._service.call(request, 'Ams/Relates/IsNegativeStockEnabled');
+        };
+        RelatesService.prototype.IsStoreroomEnabled = function (request) {
+            return this._service.call(request, 'Ams/Relates/IsStoreroomEnabled');
         };
         RelatesService.prototype.ProblemLeafDispatchTo = function (request) {
             return this._service.call(request, 'Ams/Relates/ProblemLeafDispatchTo');

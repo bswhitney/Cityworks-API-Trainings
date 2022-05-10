@@ -14,4 +14,6 @@ export declare class CaseAssetService implements ICaseAssetService {
     DeleteByCaObjectId(request: Requests.DeleteByCaObjectId): AbortablePromise<Responses.DeleteByCaObjectId>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     SearchObject(request: Requests.SearchObject): AbortablePromise<Responses.SearchObject>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

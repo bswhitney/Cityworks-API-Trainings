@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var ContractorService = /** @class */ (function () {
         function ContractorService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         ContractorService.prototype.Add = function (request) {
@@ -20,6 +22,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         ContractorService.prototype.ById = function (request) {
             return this._service.call(request, 'Ams/Contractor/ById');
+        };
+        ContractorService.prototype.CustomDataFields = function (request) {
+            return this._service.call(request, 'Ams/Contractor/CustomDataFields');
         };
         ContractorService.prototype.Delete = function (request) {
             return this._service.call(request, 'Ams/Contractor/Delete');

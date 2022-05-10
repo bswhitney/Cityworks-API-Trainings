@@ -13,4 +13,6 @@ export declare class CaseInstReleasesService implements ICaseInstReleasesService
     Add(request: Requests.Add): AbortablePromise<Responses.Add>;
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

@@ -16,4 +16,14 @@ export declare class ActivityLinkService implements IActivityLinkService {
     CloneByActivitySid(request: Requests.CloneByActivitySid): AbortablePromise<Responses.CloneByActivitySid>;
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     Remove(request: Requests.Remove): AbortablePromise<Responses.Remove>;
+    ErrorCodes: {
+        CannotLinkToSelf: number;
+        DeleteFailed: number;
+        MissingField: number;
+        ActivityDoesNotExist: number;
+        InvalidActivityId: number;
+        CannotAddParentLinks: number;
+        CannotDeleteParentLinks: number;
+    };
+    WarningCodes: {};
 }

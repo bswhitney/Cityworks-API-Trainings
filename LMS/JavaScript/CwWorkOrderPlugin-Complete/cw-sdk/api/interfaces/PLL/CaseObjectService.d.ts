@@ -13,6 +13,8 @@ export namespace CaseObjectServiceTypes {
             CaseTypeId: number;
             DateAccepted?: Date;
             Entities?: {[key: string]: string[]};
+            Facility_Id?: string;
+            Level_Id?: string;
             Location?: string;
             ProjectCode?: string;
             ProjectDesc?: string;
@@ -20,16 +22,19 @@ export namespace CaseObjectServiceTypes {
             SubTypeId?: number;
             X?: number;
             Y?: number;
+            Z?: number;
         }
         export interface DeleteCase extends ServiceTypes.CoreRequestBase {
             CaObjectId: number;
         }
         export interface Move extends ServiceTypes.CoreRequestBase {
             caObjectId: number;
+            VcsWKID?: number;
             WKID?: number;
             WKT?: string;
             X: number;
             Y: number;
+            Z?: number;
         }
         export interface Search extends ServiceTypes.CoreRequestBase {
             BusinessName?: string;
@@ -43,8 +48,10 @@ export namespace CaseObjectServiceTypes {
             CaseTypeId?: number;
             DateEnteredFrom?: Date;
             DateEnteredTo?: Date;
+            Facility_Id?: string;
             IssuedBy?: number;
             IssuedFlag?: string;
+            Level_Id?: string;
             Location?: string;
             ProjectCode?: string;
             ProjectDesc?: string;
@@ -57,14 +64,14 @@ export namespace CaseObjectServiceTypes {
     }
     export namespace Responses {
         export interface ByIds extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CaObjectItemBase[]> {}
-        export interface CreateCase extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CaObjectItem> {}
+        export interface CreateCaseFromServiceRequest extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CaObjectItem> {}
         export interface DeleteCase extends ServiceTypes.CoreResponseBase_obsolete_<number> {}
         export interface Move extends ServiceTypes.CoreResponseBase_<CoreTypes.GISPoint> {}
         export interface Search extends ServiceTypes.CoreResponseBase_obsolete_<number[]> {}
     }
     export interface ICaseObjectService {
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
-        CreateCaseFromServiceRequest?: (request: Requests.CreateCaseFromServiceRequest) => AbortablePromise<Responses.CreateCase>;
+        CreateCaseFromServiceRequest?: (request: Requests.CreateCaseFromServiceRequest) => AbortablePromise<Responses.CreateCaseFromServiceRequest>;
         DeleteCase?: (request: Requests.DeleteCase) => AbortablePromise<Responses.DeleteCase>;
         Move?: (request: Requests.Move) => AbortablePromise<Responses.Move>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;

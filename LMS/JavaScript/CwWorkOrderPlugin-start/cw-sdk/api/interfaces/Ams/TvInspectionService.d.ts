@@ -10,6 +10,7 @@ export namespace TvInspectionServiceTypes {
             Continuous?: string;
             DistFromDown?: number;
             DistFromUp?: number;
+            Grade?: number;
             Joint?: string;
             ObservDesc?: string;
             ObservDescScore?: number;
@@ -23,6 +24,7 @@ export namespace TvInspectionServiceTypes {
             ValueDimension1?: number;
             ValueDimension2?: number;
             ValuePercent?: number;
+            VCR_Time?: string;
         }
         export interface ById extends ServiceTypes.CoreRequestBase {
             TvId: number;
@@ -53,9 +55,12 @@ export namespace TvInspectionServiceTypes {
             TvId: number;
         }
         export interface Create extends ServiceTypes.CoreRequestBase {
+            CalculateRatings?: boolean;
             CertificateNumber?: string;
             City?: string;
+            Coating_Method?: string;
             CondRating?: number;
+            Consequence_Of_Failure?: string;
             CounterStart?: string;
             CounterStop?: string;
             Customer?: string;
@@ -69,6 +74,9 @@ export namespace TvInspectionServiceTypes {
             Deterioration?: string;
             DeterScore?: number;
             Diameter?: number;
+            Down_Easting?: string;
+            Down_Elevation?: string;
+            Down_Northing?: string;
             DownLocation?: string;
             DownMh?: string;
             DownType?: string;
@@ -78,18 +86,26 @@ export namespace TvInspectionServiceTypes {
             FlowControl?: string;
             FlowDepth?: number;
             ForemanRecomnd?: string;
+            GPS_Accuracy?: string;
             GroundCond?: string;
             GroundCondScore?: number;
             HydRating?: number;
+            InitiatedByApp?: string;
             InspCustFieldCatId?: number;
             InspectedBySid?: number;
+            Inspection_Status?: string;
+            Inspection_Technology_Used?: string;
+            IsImperial?: boolean;
             JointLength?: number;
             JointType?: string;
             LiningMethod?: string;
             Location?: string;
+            Location_Code?: string;
+            Location_Details?: string;
             MapNumber?: string;
             MasterTapeNum?: string;
             Material?: string;
+            MH_Coordinate_System?: string;
             Num1?: number;
             Num2?: number;
             Num3?: number;
@@ -106,9 +122,14 @@ export namespace TvInspectionServiceTypes {
             PrecipType?: string;
             PrecipTypeScore?: number;
             PreCleaning?: string;
+            Pressure_Value?: number;
+            Project?: string;
             RehabStatus?: string;
             RepairsMade?: string;
+            Reverse_Setup_Flag?: number;
             ReverseSetup?: boolean;
+            ReviewedBySid?: number;
+            Reviewer_Certificate_Number?: string;
             RimToGradeD?: number;
             RimToGradeU?: number;
             RimToInvertD?: number;
@@ -139,24 +160,32 @@ export namespace TvInspectionServiceTypes {
             TvDate?: Date;
             TvObservations?: CoreTypes.TvObservation[];
             TvReason?: string;
+            Up_Easting?: string;
+            Up_Elevation?: string;
+            Up_Northing?: string;
             UpdateGis?: boolean;
             UpdateMap?: boolean;
             UpDepth?: number;
             UpLocation?: string;
             UpMh?: string;
             UpType?: string;
+            Vertical_Datum?: string;
             VideoLocation?: string;
             VideoTapeNum?: string;
             VtrFormat?: string;
+            Weather?: string;
             Width?: number;
             WorkOrderId: string;
             YearLaid?: number;
             YearRenewed?: number;
         }
         export interface CreateFromPacp extends ServiceTypes.CoreRequestBase {
+            CalculateRatings?: boolean;
             CertificateNumber?: string;
             City?: string;
+            Coating_Method?: string;
             CondRating?: number;
+            Consequence_Of_Failure?: string;
             CounterStart?: string;
             CounterStop?: string;
             Customer?: string;
@@ -170,6 +199,9 @@ export namespace TvInspectionServiceTypes {
             Deterioration?: string;
             DeterScore?: number;
             Diameter?: number;
+            Down_Easting?: string;
+            Down_Elevation?: string;
+            Down_Northing?: string;
             DownLocation?: string;
             DownMh?: string;
             DownType?: string;
@@ -179,18 +211,26 @@ export namespace TvInspectionServiceTypes {
             FlowControl?: string;
             FlowDepth?: number;
             ForemanRecomnd?: string;
+            GPS_Accuracy?: string;
             GroundCond?: string;
             GroundCondScore?: number;
             HydRating?: number;
+            InitiatedByApp?: string;
             InspCustFieldCatId?: number;
             InspectedBySid?: number;
+            Inspection_Status?: string;
+            Inspection_Technology_Used?: string;
+            IsImperial?: boolean;
             JointLength?: number;
             JointType?: string;
             LiningMethod?: string;
             Location?: string;
+            Location_Code?: string;
+            Location_Details?: string;
             MapNumber?: string;
             MasterTapeNum?: string;
             Material?: string;
+            MH_Coordinate_System?: string;
             Num1?: number;
             Num2?: number;
             Num3?: number;
@@ -207,9 +247,14 @@ export namespace TvInspectionServiceTypes {
             PrecipType?: string;
             PrecipTypeScore?: number;
             PreCleaning?: string;
+            Pressure_Value?: number;
+            Project?: string;
             RehabStatus?: string;
             RepairsMade?: string;
+            Reverse_Setup_Flag?: number;
             ReverseSetup?: boolean;
+            ReviewedBySid?: number;
+            Reviewer_Certificate_Number?: string;
             RimToGradeD?: number;
             RimToGradeU?: number;
             RimToInvertD?: number;
@@ -240,15 +285,20 @@ export namespace TvInspectionServiceTypes {
             TvDate?: Date;
             TvObservations?: CoreTypes.TvObservation[];
             TvReason?: string;
+            Up_Easting?: string;
+            Up_Elevation?: string;
+            Up_Northing?: string;
             UpdateGis?: boolean;
             UpdateMap?: boolean;
             UpDepth?: number;
             UpLocation?: string;
             UpMh?: string;
             UpType?: string;
+            Vertical_Datum?: string;
             VideoLocation?: string;
             VideoTapeNum?: string;
             VtrFormat?: string;
+            Weather?: string;
             Width?: number;
             WorkOrderId: string;
             YearLaid?: number;
@@ -257,6 +307,7 @@ export namespace TvInspectionServiceTypes {
         export interface CreateSearchDefinition extends ServiceTypes.CoreRequestBase {
             CertificateNumber?: string[];
             City?: string[];
+            Coating_Method?: string[];
             CondRatingIncludeNulls?: boolean;
             CondRatingIsMaxValueExclusive?: boolean;
             CondRatingIsMinValueExclusive?: boolean;
@@ -264,6 +315,7 @@ export namespace TvInspectionServiceTypes {
             CondRatingMinValue?: number;
             CondRatingRangeType?: number;
             CondRatingValues?: number[];
+            Consequence_Of_Failure?: string[];
             CounterStart?: string[];
             CounterStop?: string[];
             Customer?: string[];
@@ -330,6 +382,9 @@ export namespace TvInspectionServiceTypes {
             DiameterMinValue?: number;
             DiameterRangeType?: number;
             DiameterValues?: number[];
+            Down_Easting?: string[];
+            Down_Elevation?: string[];
+            Down_Northing?: string[];
             DownLocation?: string[];
             DownMh?: string[];
             DownType?: string[];
@@ -352,6 +407,7 @@ export namespace TvInspectionServiceTypes {
             FlowDepthRangeType?: number;
             FlowDepthValues?: number[];
             ForemanRecomnd?: string[];
+            GPS_Accuracy?: string[];
             GroundCond?: string[];
             GroundCondScoreIncludeNulls?: boolean;
             GroundCondScoreIsMaxValueExclusive?: boolean;
@@ -367,11 +423,15 @@ export namespace TvInspectionServiceTypes {
             HydRatingMinValue?: number;
             HydRatingRangeType?: number;
             HydRatingValues?: number[];
+            InitiatedByApp?: string[];
             InspCustFieldCatId?: number[];
             InspCustFieldCatIdIsInList?: boolean;
             InspectedBy?: string[];
             InspectedBySid?: number[];
             InspectedBySidIsInList?: boolean;
+            Inspection_Status?: string[];
+            Inspection_Technology_Used?: string[];
+            IsImperial?: boolean;
             JointLengthIncludeNulls?: boolean;
             JointLengthIsMaxValueExclusive?: boolean;
             JointLengthIsMinValueExclusive?: boolean;
@@ -382,10 +442,13 @@ export namespace TvInspectionServiceTypes {
             JointType?: string[];
             LiningMethod?: string[];
             Location?: string[];
+            Location_Code?: string[];
+            Location_Details?: string[];
             MapNumber?: string[];
             MasterTapeNum?: string[];
             Material?: string[];
             MaxResults?: number;
+            MH_Coordinate_System?: string[];
             Num1IncludeNulls?: boolean;
             Num1IsMaxValueExclusive?: boolean;
             Num1IsMinValueExclusive?: boolean;
@@ -450,9 +513,27 @@ export namespace TvInspectionServiceTypes {
             PrecipTypeScoreRangeType?: number;
             PrecipTypeScoreValues?: number[];
             PreCleaning?: string[];
+            Pressure_ValueIncludeNulls?: boolean;
+            Pressure_ValueIsMaxValueExclusive?: boolean;
+            Pressure_ValueIsMinValueExclusive?: boolean;
+            Pressure_ValueMaxValue?: number;
+            Pressure_ValueMinValue?: number;
+            Pressure_ValueRangeType?: number;
+            Pressure_ValueValues?: number[];
+            Project?: string[];
             RehabStatus?: string[];
             RepairsMade?: string[];
+            Reverse_Setup_FlagIncludeNulls?: boolean;
+            Reverse_Setup_FlagIsMaxValueExclusive?: boolean;
+            Reverse_Setup_FlagIsMinValueExclusive?: boolean;
+            Reverse_Setup_FlagMaxValue?: number;
+            Reverse_Setup_FlagMinValue?: number;
+            Reverse_Setup_FlagRangeType?: number;
+            Reverse_Setup_FlagValues?: number[];
             ReverseSetup?: boolean;
+            ReviewedBySid?: number[];
+            ReviewedBySidIsInList?: boolean;
+            Reviewer_Certificate_Number?: string[];
             RimToGradeDIncludeNulls?: boolean;
             RimToGradeDIsMaxValueExclusive?: boolean;
             RimToGradeDIsMinValueExclusive?: boolean;
@@ -543,6 +624,9 @@ export namespace TvInspectionServiceTypes {
             TvId?: number[];
             TvIdIsInList?: boolean;
             TvReason?: string[];
+            Up_Easting?: string[];
+            Up_Elevation?: string[];
+            Up_Northing?: string[];
             UpdateMap?: boolean;
             UpDepthIncludeNulls?: boolean;
             UpDepthIsMaxValueExclusive?: boolean;
@@ -554,9 +638,11 @@ export namespace TvInspectionServiceTypes {
             UpLocation?: string[];
             UpMh?: string[];
             UpType?: string[];
+            Vertical_Datum?: string[];
             VideoLocation?: string[];
             VideoTapeNum?: string[];
             VtrFormat?: string[];
+            Weather?: string[];
             WidthIncludeNulls?: boolean;
             WidthIsMaxValueExclusive?: boolean;
             WidthIsMinValueExclusive?: boolean;
@@ -565,6 +651,13 @@ export namespace TvInspectionServiceTypes {
             WidthRangeType?: number;
             WidthValues?: number[];
             WorkOrderId?: string[];
+            XIncludeNulls?: boolean;
+            XIsMaxValueExclusive?: boolean;
+            XIsMinValueExclusive?: boolean;
+            XMaxValue?: number;
+            XMinValue?: number;
+            XRangeType?: number;
+            XValues?: number[];
             YearLaidIncludeNulls?: boolean;
             YearLaidIsMaxValueExclusive?: boolean;
             YearLaidIsMinValueExclusive?: boolean;
@@ -579,6 +672,13 @@ export namespace TvInspectionServiceTypes {
             YearRenewedMinValue?: number;
             YearRenewedRangeType?: number;
             YearRenewedValues?: number[];
+            YIncludeNulls?: boolean;
+            YIsMaxValueExclusive?: boolean;
+            YIsMinValueExclusive?: boolean;
+            YMaxValue?: number;
+            YMinValue?: number;
+            YRangeType?: number;
+            YValues?: number[];
         }
         export interface DescriptionScores extends ServiceTypes.CoreRequestBase {
         }
@@ -586,9 +686,20 @@ export namespace TvInspectionServiceTypes {
             EntityType: string;
             EntityUid: string;
         }
+        export interface EntityTypes extends ServiceTypes.CoreRequestBase {
+        }
         export interface InspectedBy extends ServiceTypes.CoreRequestBase {
             DomainId?: number;
             TvId?: number;
+        }
+        export interface Move extends ServiceTypes.CoreRequestBase {
+            TvId: number;
+            VcsWKID?: number;
+            WKID?: number;
+            WKT?: string;
+            X: number;
+            Y: number;
+            Z?: number;
         }
         export interface Observation extends ServiceTypes.CoreRequestBase {
             ObservationId?: number;
@@ -601,9 +712,14 @@ export namespace TvInspectionServiceTypes {
         export interface Observations extends ServiceTypes.CoreRequestBase {
             TvIds?: number[];
         }
+        export interface ReviewedBy extends ServiceTypes.CoreRequestBase {
+            DomainId?: number;
+            TvId?: number;
+        }
         export interface Search extends ServiceTypes.CoreRequestBase {
             CertificateNumber?: string[];
             City?: string[];
+            Coating_Method?: string[];
             CondRatingIncludeNulls?: boolean;
             CondRatingIsMaxValueExclusive?: boolean;
             CondRatingIsMinValueExclusive?: boolean;
@@ -611,6 +727,7 @@ export namespace TvInspectionServiceTypes {
             CondRatingMinValue?: number;
             CondRatingRangeType?: number;
             CondRatingValues?: number[];
+            Consequence_Of_Failure?: string[];
             CounterStart?: string[];
             CounterStop?: string[];
             Customer?: string[];
@@ -677,6 +794,9 @@ export namespace TvInspectionServiceTypes {
             DiameterMinValue?: number;
             DiameterRangeType?: number;
             DiameterValues?: number[];
+            Down_Easting?: string[];
+            Down_Elevation?: string[];
+            Down_Northing?: string[];
             DownLocation?: string[];
             DownMh?: string[];
             DownType?: string[];
@@ -699,6 +819,7 @@ export namespace TvInspectionServiceTypes {
             FlowDepthRangeType?: number;
             FlowDepthValues?: number[];
             ForemanRecomnd?: string[];
+            GPS_Accuracy?: string[];
             GroundCond?: string[];
             GroundCondScoreIncludeNulls?: boolean;
             GroundCondScoreIsMaxValueExclusive?: boolean;
@@ -714,11 +835,15 @@ export namespace TvInspectionServiceTypes {
             HydRatingMinValue?: number;
             HydRatingRangeType?: number;
             HydRatingValues?: number[];
+            InitiatedByApp?: string[];
             InspCustFieldCatId?: number[];
             InspCustFieldCatIdIsInList?: boolean;
             InspectedBy?: string[];
             InspectedBySid?: number[];
             InspectedBySidIsInList?: boolean;
+            Inspection_Status?: string[];
+            Inspection_Technology_Used?: string[];
+            IsImperial?: boolean;
             JointLengthIncludeNulls?: boolean;
             JointLengthIsMaxValueExclusive?: boolean;
             JointLengthIsMinValueExclusive?: boolean;
@@ -729,10 +854,13 @@ export namespace TvInspectionServiceTypes {
             JointType?: string[];
             LiningMethod?: string[];
             Location?: string[];
+            Location_Code?: string[];
+            Location_Details?: string[];
             MapNumber?: string[];
             MasterTapeNum?: string[];
             Material?: string[];
             MaxResults?: number;
+            MH_Coordinate_System?: string[];
             Num1IncludeNulls?: boolean;
             Num1IsMaxValueExclusive?: boolean;
             Num1IsMinValueExclusive?: boolean;
@@ -797,9 +925,27 @@ export namespace TvInspectionServiceTypes {
             PrecipTypeScoreRangeType?: number;
             PrecipTypeScoreValues?: number[];
             PreCleaning?: string[];
+            Pressure_ValueIncludeNulls?: boolean;
+            Pressure_ValueIsMaxValueExclusive?: boolean;
+            Pressure_ValueIsMinValueExclusive?: boolean;
+            Pressure_ValueMaxValue?: number;
+            Pressure_ValueMinValue?: number;
+            Pressure_ValueRangeType?: number;
+            Pressure_ValueValues?: number[];
+            Project?: string[];
             RehabStatus?: string[];
             RepairsMade?: string[];
+            Reverse_Setup_FlagIncludeNulls?: boolean;
+            Reverse_Setup_FlagIsMaxValueExclusive?: boolean;
+            Reverse_Setup_FlagIsMinValueExclusive?: boolean;
+            Reverse_Setup_FlagMaxValue?: number;
+            Reverse_Setup_FlagMinValue?: number;
+            Reverse_Setup_FlagRangeType?: number;
+            Reverse_Setup_FlagValues?: number[];
             ReverseSetup?: boolean;
+            ReviewedBySid?: number[];
+            ReviewedBySidIsInList?: boolean;
+            Reviewer_Certificate_Number?: string[];
             RimToGradeDIncludeNulls?: boolean;
             RimToGradeDIsMaxValueExclusive?: boolean;
             RimToGradeDIsMinValueExclusive?: boolean;
@@ -887,6 +1033,9 @@ export namespace TvInspectionServiceTypes {
             TvId?: number[];
             TvIdIsInList?: boolean;
             TvReason?: string[];
+            Up_Easting?: string[];
+            Up_Elevation?: string[];
+            Up_Northing?: string[];
             UpdateMap?: boolean;
             UpDepthIncludeNulls?: boolean;
             UpDepthIsMaxValueExclusive?: boolean;
@@ -898,9 +1047,11 @@ export namespace TvInspectionServiceTypes {
             UpLocation?: string[];
             UpMh?: string[];
             UpType?: string[];
+            Vertical_Datum?: string[];
             VideoLocation?: string[];
             VideoTapeNum?: string[];
             VtrFormat?: string[];
+            Weather?: string[];
             WidthIncludeNulls?: boolean;
             WidthIsMaxValueExclusive?: boolean;
             WidthIsMinValueExclusive?: boolean;
@@ -909,6 +1060,13 @@ export namespace TvInspectionServiceTypes {
             WidthRangeType?: number;
             WidthValues?: number[];
             WorkOrderId?: string[];
+            XIncludeNulls?: boolean;
+            XIsMaxValueExclusive?: boolean;
+            XIsMinValueExclusive?: boolean;
+            XMaxValue?: number;
+            XMinValue?: number;
+            XRangeType?: number;
+            XValues?: number[];
             YearLaidIncludeNulls?: boolean;
             YearLaidIsMaxValueExclusive?: boolean;
             YearLaidIsMinValueExclusive?: boolean;
@@ -923,13 +1081,22 @@ export namespace TvInspectionServiceTypes {
             YearRenewedMinValue?: number;
             YearRenewedRangeType?: number;
             YearRenewedValues?: number[];
+            YIncludeNulls?: boolean;
+            YIsMaxValueExclusive?: boolean;
+            YIsMinValueExclusive?: boolean;
+            YMaxValue?: number;
+            YMinValue?: number;
+            YRangeType?: number;
+            YValues?: number[];
         }
         export interface UnitsOfMeasure extends ServiceTypes.CoreRequestBase {
         }
         export interface Update extends ServiceTypes.CoreRequestBase {
             CertificateNumber?: string;
             City?: string;
+            Coating_Method?: string;
             CondRating?: number;
+            Consequence_Of_Failure?: string;
             CounterStart?: string;
             CounterStop?: string;
             Customer?: string;
@@ -943,6 +1110,9 @@ export namespace TvInspectionServiceTypes {
             Deterioration?: string;
             DeterScore?: number;
             Diameter?: number;
+            Down_Easting?: string;
+            Down_Elevation?: string;
+            Down_Northing?: string;
             DownLocation?: string;
             DownMh?: string;
             DownType?: string;
@@ -952,18 +1122,26 @@ export namespace TvInspectionServiceTypes {
             FlowControl?: string;
             FlowDepth?: number;
             ForemanRecomnd?: string;
+            GPS_Accuracy?: string;
             GroundCond?: string;
             GroundCondScore?: number;
             HydRating?: number;
+            InitiatedByApp?: string;
             InspCustFieldCatId?: number;
             InspectedBySid?: number;
+            Inspection_Status?: string;
+            Inspection_Technology_Used?: string;
+            IsImperial?: boolean;
             JointLength?: number;
             JointType?: string;
             LiningMethod?: string;
             Location?: string;
+            Location_Code?: string;
+            Location_Details?: string;
             MapNumber?: string;
             MasterTapeNum?: string;
             Material?: string;
+            MH_Coordinate_System?: string;
             Num1?: number;
             Num2?: number;
             Num3?: number;
@@ -980,9 +1158,14 @@ export namespace TvInspectionServiceTypes {
             PrecipType?: string;
             PrecipTypeScore?: number;
             PreCleaning?: string;
+            Pressure_Value?: number;
+            Project?: string;
             RehabStatus?: string;
             RepairsMade?: string;
+            Reverse_Setup_Flag?: number;
             ReverseSetup?: boolean;
+            ReviewedBySid?: number;
+            Reviewer_Certificate_Number?: string;
             RimToGradeD?: number;
             RimToGradeU?: number;
             RimToInvertD?: number;
@@ -1013,15 +1196,20 @@ export namespace TvInspectionServiceTypes {
             TvDate?: Date;
             TvId: number;
             TvReason?: string;
+            Up_Easting?: string;
+            Up_Elevation?: string;
+            Up_Northing?: string;
             UpdateGis?: boolean;
             UpdateMap?: boolean;
             UpDepth?: number;
             UpLocation?: string;
             UpMh?: string;
             UpType?: string;
+            Vertical_Datum?: string;
             VideoLocation?: string;
             VideoTapeNum?: string;
             VtrFormat?: string;
+            Weather?: string;
             Width?: number;
             WorkOrderId?: string;
             YearLaid?: number;
@@ -1034,6 +1222,7 @@ export namespace TvInspectionServiceTypes {
             Continuous?: string;
             DistFromDown?: number;
             DistFromUp?: number;
+            Grade?: number;
             Joint?: string;
             ObservationId: number;
             ObservDesc?: string;
@@ -1047,6 +1236,7 @@ export namespace TvInspectionServiceTypes {
             ValueDimension1?: number;
             ValueDimension2?: number;
             ValuePercent?: number;
+            VCR_Time?: string;
         }
         export interface UpstreamNode extends ServiceTypes.CoreRequestBase {
             EntityType: string;
@@ -1068,11 +1258,14 @@ export namespace TvInspectionServiceTypes {
         export interface CreateSearchDefinition extends ServiceTypes.CoreResponseBase_<CoreTypes.SearchDefinition> {}
         export interface DescriptionScores extends ServiceTypes.CoreResponseBase_<CoreTypes.TvInspectionDescScores> {}
         export interface DownstreamNode extends ServiceTypes.CoreResponseBase_<CoreTypes.WorkOrderEntity> {}
+        export interface EntityTypes extends ServiceTypes.CoreResponseBase_<string[]> {}
         export interface InspectedBy extends ServiceTypes.CoreResponseBase_<CoreTypes.RelEmpToField[]> {}
+        export interface Move extends ServiceTypes.CoreResponseBase_<CoreTypes.GISPoint> {}
         export interface Observation extends ServiceTypes.CoreResponseBase_<CoreTypes.TvObservation> {}
         export interface ObservationCauseCodeDescriptions extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDesc[]> {}
         export interface ObservationCodeTypes extends ServiceTypes.CoreResponseBase_<CoreTypes.CodeDescScore[]> {}
         export interface Observations extends ServiceTypes.CoreResponseBase_<CoreTypes.TvObservation[]> {}
+        export interface ReviewedBy extends ServiceTypes.CoreResponseBase_<CoreTypes.RelEmpToField[]> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface UnitsOfMeasure extends ServiceTypes.CoreResponseBase_<CoreTypes.TvInspectionFieldUnits> {}
         export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.TvInspectionBase> {}
@@ -1094,11 +1287,14 @@ export namespace TvInspectionServiceTypes {
         CreateSearchDefinition?: (request: Requests.CreateSearchDefinition) => AbortablePromise<Responses.CreateSearchDefinition>;
         DescriptionScores?: (request: Requests.DescriptionScores) => AbortablePromise<Responses.DescriptionScores>;
         DownstreamNode?: (request: Requests.DownstreamNode) => AbortablePromise<Responses.DownstreamNode>;
+        EntityTypes?: (request: Requests.EntityTypes) => AbortablePromise<Responses.EntityTypes>;
         InspectedBy?: (request: Requests.InspectedBy) => AbortablePromise<Responses.InspectedBy>;
+        Move?: (request: Requests.Move) => AbortablePromise<Responses.Move>;
         Observation?: (request: Requests.Observation) => AbortablePromise<Responses.Observation>;
         ObservationCauseCodeDescriptions?: (request: Requests.ObservationCauseCodeDescriptions) => AbortablePromise<Responses.ObservationCauseCodeDescriptions>;
         ObservationCodeTypes?: (request: Requests.ObservationCodeTypes) => AbortablePromise<Responses.ObservationCodeTypes>;
         Observations?: (request: Requests.Observations) => AbortablePromise<Responses.Observations>;
+        ReviewedBy?: (request: Requests.ReviewedBy) => AbortablePromise<Responses.ReviewedBy>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;
         UnitsOfMeasure?: (request: Requests.UnitsOfMeasure) => AbortablePromise<Responses.UnitsOfMeasure>;
         Update?: (request: Requests.Update) => AbortablePromise<Responses.Update>;

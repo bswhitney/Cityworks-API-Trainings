@@ -14,4 +14,6 @@ export declare class PluginLayoutService implements IPluginLayoutService {
     Definitions(request: Requests.Definitions): AbortablePromise<Responses.Definitions>;
     Public(request: Requests.Public): AbortablePromise<Responses.Definition>;
     PublicDefinitions(request: Requests.PublicDefinitions): AbortablePromise<Responses.Definitions>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

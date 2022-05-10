@@ -7,6 +7,15 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var CommentService = /** @class */ (function () {
         function CommentService(service) {
+            this.ErrorCodes = {
+                UnknownError: 1,
+                MissingComments: 3,
+                MissingActivityIds: 5,
+                InvalidActivityId: 6,
+                InvalidCommentId: 9,
+                MissingActivitySids: 14
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         CommentService.prototype.Add = function (request) {

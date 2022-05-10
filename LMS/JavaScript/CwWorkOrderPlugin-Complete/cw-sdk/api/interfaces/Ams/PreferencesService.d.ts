@@ -7,6 +7,10 @@ export namespace PreferencesServiceTypes {
             Categories?: string[];
             PreferenceNames?: string[];
         }
+        export interface Mobile extends ServiceTypes.CoreRequestBase {
+            DomainId?: number;
+            EmployeeSid?: number;
+        }
         export interface User extends ServiceTypes.CoreRequestBase {
             Categories?: string[];
             DomainId?: number;
@@ -22,11 +26,13 @@ export namespace PreferencesServiceTypes {
     }
     export namespace Responses {
         export interface Global extends ServiceTypes.CoreResponseBase_<CoreTypes.GlobalPreference[]> {}
+        export interface Mobile extends ServiceTypes.CoreResponseBase_<CoreTypes.MobilePreferences> {}
         export interface User extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.UserPreferences> {}
         export interface UserSave extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.UserPreference> {}
     }
     export interface IPreferencesService {
         Global?: (request: Requests.Global) => AbortablePromise<Responses.Global>;
+        Mobile?: (request: Requests.Mobile) => AbortablePromise<Responses.Mobile>;
         User?: (request: Requests.User) => AbortablePromise<Responses.User>;
         UserSave?: (request: Requests.UserSave) => AbortablePromise<Responses.UserSave>;
     }

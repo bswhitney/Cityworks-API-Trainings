@@ -31,4 +31,19 @@ export declare class InboxService implements IInboxService {
     UpdateWidgetContainer(request: Requests.UpdateWidgetContainer): AbortablePromise<Responses.UpdateWidgetContainer>;
     UpdateWidgetContainerTab(request: Requests.UpdateWidgetContainerTab): AbortablePromise<Responses.UpdateWidgetContainerTab>;
     UpdateWidgetZone(request: Requests.UpdateWidgetZone): AbortablePromise<Responses.UpdateWidgetZone>;
+    ErrorCodes: {
+        CannotUpdateDomainWidgetContainer: number;
+        CannotUpdateDomainWidgetContainerTab: number;
+        CannotUpdateUserWidgetContainer: number;
+        CannotUpdateUserWidgetContainerTab: number;
+        ErrorMovingWidget: number;
+        ErrorMovingWidgetContainerTab: number;
+        InvalidInboxDirection: number;
+        InvalidWidgetContainerId: number;
+        InvalidWidgetContainerTabId: number;
+        InvalidWidgetId: number;
+        InvalidWidgetType: number;
+        InvalidWidgetZoneId: number;
+    };
+    WarningCodes: {};
 }

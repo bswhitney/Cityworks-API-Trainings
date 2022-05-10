@@ -7,8 +7,26 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var ContractService = /** @class */ (function () {
         function ContractService(service) {
+            this.ErrorCodes = {
+                UnknownError: 1,
+                NotAuthorizedToViewItem: 2,
+                NotAuthorizedToCreateItem: 3,
+                NotAuthorizedToUpdateItem: 4,
+                NotAuthorizedToDeleteItem: 5,
+                InvalidField: 30
+            };
+            this.WarningCodes = {
+                WarningItemNotFound: 60,
+                WarningEmptyOrNullField: 61
+            };
             this._service = service;
         }
+        ContractService.prototype.AddInvoice = function (request) {
+            return this._service.call(request, 'Ams/Contract/AddInvoice');
+        };
+        ContractService.prototype.AddInvoiceItem = function (request) {
+            return this._service.call(request, 'Ams/Contract/AddInvoiceItem');
+        };
         ContractService.prototype.AddLineItem = function (request) {
             return this._service.call(request, 'Ams/Contract/AddLineItem');
         };
@@ -39,6 +57,12 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         ContractService.prototype.DeleteFundSource = function (request) {
             return this._service.call(request, 'Ams/Contract/DeleteFundSource');
         };
+        ContractService.prototype.DeleteInvoiceItems = function (request) {
+            return this._service.call(request, 'Ams/Contract/DeleteInvoiceItems');
+        };
+        ContractService.prototype.DeleteInvoices = function (request) {
+            return this._service.call(request, 'Ams/Contract/DeleteInvoices');
+        };
         ContractService.prototype.DeleteLineItems = function (request) {
             return this._service.call(request, 'Ams/Contract/DeleteLineItems');
         };
@@ -51,11 +75,20 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         ContractService.prototype.FundSources = function (request) {
             return this._service.call(request, 'Ams/Contract/FundSources');
         };
+        ContractService.prototype.InvoiceItems = function (request) {
+            return this._service.call(request, 'Ams/Contract/InvoiceItems');
+        };
+        ContractService.prototype.Invoices = function (request) {
+            return this._service.call(request, 'Ams/Contract/Invoices');
+        };
         ContractService.prototype.LineItems = function (request) {
             return this._service.call(request, 'Ams/Contract/LineItems');
         };
         ContractService.prototype.LineItemSummary = function (request) {
             return this._service.call(request, 'Ams/Contract/LineItemSummary');
+        };
+        ContractService.prototype.Move = function (request) {
+            return this._service.call(request, 'Ams/Contract/Move');
         };
         ContractService.prototype.Permits = function (request) {
             return this._service.call(request, 'Ams/Contract/Permits');
@@ -74,6 +107,15 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         ContractService.prototype.Update = function (request) {
             return this._service.call(request, 'Ams/Contract/Update');
+        };
+        ContractService.prototype.UpdateFundSource = function (request) {
+            return this._service.call(request, 'Ams/Contract/UpdateFundSource');
+        };
+        ContractService.prototype.UpdateInvoice = function (request) {
+            return this._service.call(request, 'Ams/Contract/UpdateInvoice');
+        };
+        ContractService.prototype.UpdateInvoiceItem = function (request) {
+            return this._service.call(request, 'Ams/Contract/UpdateInvoiceItem');
         };
         ContractService.prototype.UpdateLineItem = function (request) {
             return this._service.call(request, 'Ams/Contract/UpdateLineItem');

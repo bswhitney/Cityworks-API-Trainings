@@ -10,19 +10,26 @@ export * from '../../interfaces/Ams/SecurityService';
 export declare class SecurityService implements ISecurityService {
     private _service;
     constructor(service: IApiService);
+    AreContractPermissionsEnabled(request: Requests.AreContractPermissionsEnabled): AbortablePromise<Responses.AreContractPermissionsEnabled>;
+    AreProjectPermissionsEnabled(request: Requests.AreProjectPermissionsEnabled): AbortablePromise<Responses.AreProjectPermissionsEnabled>;
     Contract(request: Requests.Contract): AbortablePromise<Responses.Contract>;
     Contracts(request: Requests.Contracts): AbortablePromise<Responses.Contracts>;
+    Employee(request: Requests.Employee): AbortablePromise<Responses.Employee>;
     Inspection(request: Requests.Inspection): AbortablePromise<Responses.Inspection>;
     Inspections(request: Requests.Inspections): AbortablePromise<Responses.Inspections>;
     InspectionTemplate(request: Requests.InspectionTemplate): AbortablePromise<Responses.InspectionTemplate>;
     InspectionTemplates(request: Requests.InspectionTemplates): AbortablePromise<Responses.InspectionTemplates>;
     Problem(request: Requests.Problem): AbortablePromise<Responses.Problem>;
     Problems(request: Requests.Problems): AbortablePromise<Responses.Problems>;
+    Projects(request: Requests.Projects): AbortablePromise<Responses.Projects>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     ServiceRequest(request: Requests.ServiceRequest): AbortablePromise<Responses.ServiceRequest>;
     ServiceRequests(request: Requests.ServiceRequests): AbortablePromise<Responses.ServiceRequests>;
+    StoreroomAccess(request: Requests.StoreroomAccess): AbortablePromise<Responses.StoreroomAccess>;
     WorkOrder(request: Requests.WorkOrder): AbortablePromise<Responses.WorkOrder>;
     WorkOrderBySid(request: Requests.WorkOrderBySid): AbortablePromise<Responses.WorkOrderBySid>;
     WorkOrders(request: Requests.WorkOrders): AbortablePromise<Responses.WorkOrders>;
     WorkOrderTemplate(request: Requests.WorkOrderTemplate): AbortablePromise<Responses.WorkOrderTemplate>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

@@ -7,6 +7,15 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var UniversalCustomFieldService = /** @class */ (function () {
         function UniversalCustomFieldService(service) {
+            this.ErrorCodes = {
+                InvalidField: 30,
+                UnauthorizedUser: 40,
+                AddError: 50,
+                UpdateError: 51
+            };
+            this.WarningCodes = {
+                WarningEmptyOrNullField: 61
+            };
             this._service = service;
         }
         UniversalCustomFieldService.prototype.Add = function (request) {
@@ -32,6 +41,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         UniversalCustomFieldService.prototype.MoveField = function (request) {
             return this._service.call(request, 'Ams/UniversalCustomField/MoveField');
+        };
+        UniversalCustomFieldService.prototype.Project = function (request) {
+            return this._service.call(request, 'Ams/UniversalCustomField/Project');
         };
         UniversalCustomFieldService.prototype.ServiceRequest = function (request) {
             return this._service.call(request, 'Ams/UniversalCustomField/ServiceRequest');

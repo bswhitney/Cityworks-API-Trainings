@@ -6,6 +6,7 @@ export namespace CaseObjectCommentsServiceTypes {
         export interface Add extends ServiceTypes.CoreRequestBase {
             CaObjectId: number;
             CommentText: string;
+            PAVisibleFlag?: string;
         }
         export interface ByCaObjectId extends ServiceTypes.CoreRequestBase {
             CaObjectId?: number;
@@ -16,11 +17,12 @@ export namespace CaseObjectCommentsServiceTypes {
         export interface Update extends ServiceTypes.CoreRequestBase {
             CaObjectCommentId?: number;
             Commenttext?: string;
+            PAVisibleFlag?: string;
         }
     }
     export namespace Responses {
         export interface Add extends ServiceTypes.CoreResponseBase_<CoreTypes.CaObjectCommentsItemBase> {}
-        export interface ByCaObjectId extends ServiceTypes.CoreResponseBase_<CoreTypes.CommentRecord[]> {}
+        export interface ByCaObjectId extends ServiceTypes.CoreResponseBase_<CoreTypes.CaseCommentRecord[]> {}
         export interface Delete extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.CaObjectCommentsItemBase> {}
     }

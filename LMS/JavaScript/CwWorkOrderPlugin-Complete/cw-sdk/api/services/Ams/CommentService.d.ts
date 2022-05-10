@@ -16,4 +16,13 @@ export declare class CommentService implements ICommentService {
     ByActivityTypes(request: Requests.ByActivityTypes): AbortablePromise<Responses.ByActivityTypes>;
     ProblemComments(request: Requests.ProblemComments): AbortablePromise<Responses.ProblemComments>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {
+        UnknownError: number;
+        MissingComments: number;
+        MissingActivityIds: number;
+        InvalidActivityId: number;
+        InvalidCommentId: number;
+        MissingActivitySids: number;
+    };
+    WarningCodes: {};
 }

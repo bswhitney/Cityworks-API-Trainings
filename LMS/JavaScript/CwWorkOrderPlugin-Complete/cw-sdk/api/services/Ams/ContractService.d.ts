@@ -10,6 +10,8 @@ export * from '../../interfaces/Ams/ContractService';
 export declare class ContractService implements IContractService {
     private _service;
     constructor(service: IApiService);
+    AddInvoice(request: Requests.AddInvoice): AbortablePromise<Responses.AddInvoice>;
+    AddInvoiceItem(request: Requests.AddInvoiceItem): AbortablePromise<Responses.AddInvoiceItem>;
     AddLineItem(request: Requests.AddLineItem): AbortablePromise<Responses.AddLineItem>;
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
     Claims(request: Requests.Claims): AbortablePromise<Responses.Claims>;
@@ -20,20 +22,40 @@ export declare class ContractService implements IContractService {
     CreateSubmittal(request: Requests.CreateSubmittal): AbortablePromise<Responses.CreateSubmittal>;
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     DeleteFundSource(request: Requests.DeleteFundSource): AbortablePromise<Responses.DeleteFundSource>;
+    DeleteInvoiceItems(request: Requests.DeleteInvoiceItems): AbortablePromise<Responses.DeleteInvoiceItems>;
+    DeleteInvoices(request: Requests.DeleteInvoices): AbortablePromise<Responses.DeleteInvoices>;
     DeleteLineItems(request: Requests.DeleteLineItems): AbortablePromise<Responses.DeleteLineItems>;
     DeleteSubcontractor(request: Requests.DeleteSubcontractor): AbortablePromise<Responses.DeleteSubcontractor>;
     DeleteSubmittal(request: Requests.DeleteSubmittal): AbortablePromise<Responses.DeleteSubmittal>;
     FundSources(request: Requests.FundSources): AbortablePromise<Responses.FundSources>;
+    InvoiceItems(request: Requests.InvoiceItems): AbortablePromise<Responses.InvoiceItems>;
+    Invoices(request: Requests.Invoices): AbortablePromise<Responses.Invoices>;
     LineItems(request: Requests.LineItems): AbortablePromise<Responses.LineItems>;
     LineItemSummary(request: Requests.LineItemSummary): AbortablePromise<Responses.LineItemSummary>;
+    Move(request: Requests.Move): AbortablePromise<Responses.Move>;
     Permits(request: Requests.Permits): AbortablePromise<Responses.Permits>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     Subcontractors(request: Requests.Subcontractors): AbortablePromise<Responses.Subcontractors>;
     Submittals(request: Requests.Submittals): AbortablePromise<Responses.Submittals>;
     UninvoicedLineItemCosts(request: Requests.UninvoicedLineItemCosts): AbortablePromise<Responses.UninvoicedLineItemCosts>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    UpdateFundSource(request: Requests.UpdateFundSource): AbortablePromise<Responses.UpdateFundSource>;
+    UpdateInvoice(request: Requests.UpdateInvoice): AbortablePromise<Responses.UpdateInvoice>;
+    UpdateInvoiceItem(request: Requests.UpdateInvoiceItem): AbortablePromise<Responses.UpdateInvoiceItem>;
     UpdateLineItem(request: Requests.UpdateLineItem): AbortablePromise<Responses.UpdateLineItem>;
     UpdateSubcontractor(request: Requests.UpdateSubcontractor): AbortablePromise<Responses.UpdateSubcontractor>;
     UpdateSubmittal(request: Requests.UpdateSubmittal): AbortablePromise<Responses.UpdateSubmittal>;
     User(request: Requests.User): AbortablePromise<Responses.User>;
+    ErrorCodes: {
+        UnknownError: number;
+        NotAuthorizedToViewItem: number;
+        NotAuthorizedToCreateItem: number;
+        NotAuthorizedToUpdateItem: number;
+        NotAuthorizedToDeleteItem: number;
+        InvalidField: number;
+    };
+    WarningCodes: {
+        WarningItemNotFound: number;
+        WarningEmptyOrNullField: number;
+    };
 }

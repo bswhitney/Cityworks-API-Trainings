@@ -18,7 +18,17 @@ export declare class UniversalCustomFieldService implements IUniversalCustomFiel
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     Inspection(request: Requests.Inspection): AbortablePromise<Responses.Inspection>;
     MoveField(request: Requests.MoveField): AbortablePromise<Responses.MoveField>;
+    Project(request: Requests.Project): AbortablePromise<Responses.Project>;
     ServiceRequest(request: Requests.ServiceRequest): AbortablePromise<Responses.ServiceRequest>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
     WorkOrder(request: Requests.WorkOrder): AbortablePromise<Responses.WorkOrder>;
+    ErrorCodes: {
+        InvalidField: number;
+        UnauthorizedUser: number;
+        AddError: number;
+        UpdateError: number;
+    };
+    WarningCodes: {
+        WarningEmptyOrNullField: number;
+    };
 }

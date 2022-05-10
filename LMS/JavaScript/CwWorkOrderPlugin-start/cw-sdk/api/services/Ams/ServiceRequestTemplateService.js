@@ -7,6 +7,10 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var ServiceRequestTemplateService = /** @class */ (function () {
         function ServiceRequestTemplateService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {
+                WarningEmptyOrNullField: 61
+            };
             this._service = service;
         }
         ServiceRequestTemplateService.prototype.ByIds = function (request) {
@@ -23,6 +27,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         ServiceRequestTemplateService.prototype.Templates = function (request) {
             return this._service.call(request, 'Ams/ServiceRequestTemplate/Templates');
+        };
+        ServiceRequestTemplateService.prototype.WorkOrderTemplates = function (request) {
+            return this._service.call(request, 'Ams/ServiceRequestTemplate/WorkOrderTemplates');
         };
         return ServiceRequestTemplateService;
     }());

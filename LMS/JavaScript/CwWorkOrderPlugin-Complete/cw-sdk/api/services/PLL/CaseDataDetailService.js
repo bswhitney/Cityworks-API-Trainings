@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var CaseDataDetailService = /** @class */ (function () {
         function CaseDataDetailService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         CaseDataDetailService.prototype.Add = function (request) {
@@ -17,6 +19,12 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         CaseDataDetailService.prototype.SearchObject = function (request) {
             return this._service.call(request, 'PLL/CaseDataDetail/SearchObject');
+        };
+        CaseDataDetailService.prototype.Update = function (request) {
+            return this._service.call(request, 'PLL/CaseDataDetail/Update');
+        };
+        CaseDataDetailService.prototype.UpdateLock = function (request) {
+            return this._service.call(request, 'PLL/CaseDataDetail/UpdateLock');
         };
         CaseDataDetailService.prototype.WIPAdd = function (request) {
             return this._service.call(request, 'PLL/CaseDataDetail/WIPAdd');

@@ -7,6 +7,10 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var CustomerAccountService = /** @class */ (function () {
         function CustomerAccountService(service) {
+            this.ErrorCodes = {
+                UnknownError: 1
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         CustomerAccountService.prototype.Add = function (request) {

@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var QuickSearchService = /** @class */ (function () {
         function QuickSearchService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         QuickSearchService.prototype.QuickSearch = function (request) {

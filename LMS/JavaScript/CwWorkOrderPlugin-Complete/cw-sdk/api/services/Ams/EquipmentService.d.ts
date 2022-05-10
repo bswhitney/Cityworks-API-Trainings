@@ -14,7 +14,14 @@ export declare class EquipmentService implements IEquipmentService {
     All(request: Requests.All): AbortablePromise<Responses.All>;
     ById(request: Requests.ById): AbortablePromise<Responses.ById>;
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
+    CustomDataFields(request: Requests.CustomDataFields): AbortablePromise<Responses.CustomDataFields>;
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {
+        NotAuthorizedToCreateEquipment: number;
+        InvalidField: number;
+        ErrorCreatingEquipment: number;
+    };
+    WarningCodes: {};
 }

@@ -24,14 +24,25 @@ export declare class TvInspectionService implements ITvInspectionService {
     CreateSearchDefinition(request: Requests.CreateSearchDefinition): AbortablePromise<Responses.CreateSearchDefinition>;
     DescriptionScores(request: Requests.DescriptionScores): AbortablePromise<Responses.DescriptionScores>;
     DownstreamNode(request: Requests.DownstreamNode): AbortablePromise<Responses.DownstreamNode>;
+    EntityTypes(request: Requests.EntityTypes): AbortablePromise<Responses.EntityTypes>;
     InspectedBy(request: Requests.InspectedBy): AbortablePromise<Responses.InspectedBy>;
+    Move(request: Requests.Move): AbortablePromise<Responses.Move>;
     Observation(request: Requests.Observation): AbortablePromise<Responses.Observation>;
     ObservationCauseCodeDescriptions(request: Requests.ObservationCauseCodeDescriptions): AbortablePromise<Responses.ObservationCauseCodeDescriptions>;
     ObservationCodeTypes(request: Requests.ObservationCodeTypes): AbortablePromise<Responses.ObservationCodeTypes>;
     Observations(request: Requests.Observations): AbortablePromise<Responses.Observations>;
+    ReviewedBy(request: Requests.ReviewedBy): AbortablePromise<Responses.ReviewedBy>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     UnitsOfMeasure(request: Requests.UnitsOfMeasure): AbortablePromise<Responses.UnitsOfMeasure>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
     UpdateObservation(request: Requests.UpdateObservation): AbortablePromise<Responses.UpdateObservation>;
     UpstreamNode(request: Requests.UpstreamNode): AbortablePromise<Responses.UpstreamNode>;
+    ErrorCodes: {
+        NotAuthorizedToUpdateInspection: number;
+        InvalidActivityMapLogicXY: number;
+        InvalidField: number;
+        ErrorItemNotFound: number;
+        MoveInvalidCityworksWkid: number;
+    };
+    WarningCodes: {};
 }

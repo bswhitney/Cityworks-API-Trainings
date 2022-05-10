@@ -12,4 +12,6 @@ export declare class AppDataService implements IAppDataService {
     constructor(service: IApiService);
     CurrentLocation(request: Requests.CurrentLocation): AbortablePromise<Responses.CurrentLocation>;
     SelectedEntities(request: Requests.SelectedEntities): AbortablePromise<Responses.SelectedEntities>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

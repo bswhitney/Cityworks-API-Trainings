@@ -11,6 +11,11 @@ export declare class PreferencesService implements IPreferencesService {
     private _service;
     constructor(service: IApiService);
     Global(request: Requests.Global): AbortablePromise<Responses.Global>;
+    Mobile(request: Requests.Mobile): AbortablePromise<Responses.Mobile>;
     User(request: Requests.User): AbortablePromise<Responses.User>;
     UserSave(request: Requests.UserSave): AbortablePromise<Responses.UserSave>;
+    ErrorCodes: {
+        Unauthorized: number;
+    };
+    WarningCodes: {};
 }

@@ -15,4 +15,6 @@ export declare class CaseLicenseService implements ICaseLicenseService {
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     DeleteByCaObjectId(request: Requests.DeleteByCaObjectId): AbortablePromise<Responses.DeleteByCaObjectId>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

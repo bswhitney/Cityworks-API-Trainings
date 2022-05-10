@@ -19,4 +19,6 @@ export declare class BookmarkService implements IBookmarkService {
     SetInitialExtent(request: Requests.SetInitialExtent): AbortablePromise<Responses.SetInitialExtent>;
     UpdateBookmark(request: Requests.UpdateBookmark): AbortablePromise<Responses.UpdateBookmark>;
     UpdateScale(request: Requests.UpdateScale): AbortablePromise<Responses.UpdateScale>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

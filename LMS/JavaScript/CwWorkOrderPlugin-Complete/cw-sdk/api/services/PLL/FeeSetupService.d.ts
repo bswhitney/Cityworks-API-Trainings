@@ -12,4 +12,6 @@ export declare class FeeSetupService implements IFeeSetupService {
     constructor(service: IApiService);
     All(request: Requests.All): AbortablePromise<Responses.All>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

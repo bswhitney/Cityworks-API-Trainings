@@ -5,14 +5,20 @@ define(["require", "exports", "../core/promise"], function (require, exports, pr
         //Date format is YYYY-MM-DDThh:mm:ss
         //This is assumed to be local time and is only here for legacy reasons.
         var DATE_REGEX_LOCAL = /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})$/;
+        //Date format is YYYY-MM-DDThh:mm:ss.mmmZ
+        var ISO_8601_REGEX = /(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(.\d+)?(Z)$/;
         return JSON.parse(jsonText, function (key, value) {
             var retVal = value;
             var isString = (value) && (typeof value == 'string');
             var isStandardDate = isString && DATE_REGEX_LOCAL.test(value);
+            var isISODate = isString && ISO_8601_REGEX.test(value);
             //------------------------------------------------------------
             //  Try to parse dates
             //------------------------------------------------------------
-            if (isStandardDate) {
+            if (isISODate) {
+                retVal = new Date(value);
+            }
+            else if (isStandardDate) {
                 var result = DATE_REGEX_LOCAL.exec(value);
                 // Get all of the date's components.
                 var year = parseInt(result[1]);

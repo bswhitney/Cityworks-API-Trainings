@@ -7,6 +7,21 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var InboxService = /** @class */ (function () {
         function InboxService(service) {
+            this.ErrorCodes = {
+                CannotUpdateDomainWidgetContainer: 3,
+                CannotUpdateDomainWidgetContainerTab: 4,
+                CannotUpdateUserWidgetContainer: 5,
+                CannotUpdateUserWidgetContainerTab: 6,
+                ErrorMovingWidget: 7,
+                ErrorMovingWidgetContainerTab: 8,
+                InvalidInboxDirection: 9,
+                InvalidWidgetContainerId: 10,
+                InvalidWidgetContainerTabId: 11,
+                InvalidWidgetId: 12,
+                InvalidWidgetType: 13,
+                InvalidWidgetZoneId: 14
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         InboxService.prototype.CopyWidgetContainerTab = function (request) {

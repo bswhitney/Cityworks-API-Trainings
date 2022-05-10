@@ -16,6 +16,7 @@ export namespace CrewServiceTypes {
         }
         export interface Equipment extends ServiceTypes.CoreRequestBase {
             CrewIds: number[];
+            IncludeInactive?: boolean;
         }
         export interface Material extends ServiceTypes.CoreRequestBase {
             CrewIds: number[];
@@ -23,11 +24,11 @@ export namespace CrewServiceTypes {
         }
     }
     export namespace Responses {
-        export interface ByEmployee extends ServiceTypes.CoreResponseBase_obsolete_<number[]> {}
-        export interface ByIds extends ServiceTypes.CoreResponseBase_obsolete_<CoreTypes.CrewBase[]> {}
-        export interface Employees extends ServiceTypes.CoreResponseBase_obsolete_<{[key: number]: number[]}> {}
-        export interface Equipment extends ServiceTypes.CoreResponseBase_obsolete_<{[key: number]: number[]}> {}
-        export interface Material extends ServiceTypes.CoreResponseBase_obsolete_<{[key: number]: number[]}> {}
+        export interface ByEmployee extends ServiceTypes.CoreResponseBase_<number[]> {}
+        export interface ByIds extends ServiceTypes.CoreResponseBase_<CoreTypes.CrewBase[]> {}
+        export interface Employees extends ServiceTypes.CoreResponseBase_<{[key: number]: number[]}> {}
+        export interface Equipment extends ServiceTypes.CoreResponseBase_<{[key: number]: number[]}> {}
+        export interface Material extends ServiceTypes.CoreResponseBase_<{[key: number]: number[]}> {}
     }
     export interface ICrewService {
         ByEmployee?: (request: Requests.ByEmployee) => AbortablePromise<Responses.ByEmployee>;

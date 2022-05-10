@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var MapServiceService = /** @class */ (function () {
         function MapServiceService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         MapServiceService.prototype.Configuration = function (request) {

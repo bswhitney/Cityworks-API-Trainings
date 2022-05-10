@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var PluginLayoutService = /** @class */ (function () {
         function PluginLayoutService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         PluginLayoutService.prototype.Definition = function (request) {

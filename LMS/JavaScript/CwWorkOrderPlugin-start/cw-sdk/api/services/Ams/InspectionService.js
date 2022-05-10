@@ -7,6 +7,35 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var InspectionService = /** @class */ (function () {
         function InspectionService(service) {
+            this.ErrorCodes = {
+                UnknownError: 1,
+                InvalidInspectionId: 2,
+                NotAuthorizedToViewInspection: 3,
+                NotAuthorizedToUpdateInspection: 4,
+                NotAuthorizedToCreateInspection: 5,
+                NotAuthorizedToCancelInspection: 6,
+                NotAuthorizedToDeleteInspection: 7,
+                NotAuthorizedToCloseInspection: 8,
+                InvalidActivityMapLogicXY: 9,
+                ErrorNoUidSetForEntityType: 18,
+                ErrorProjectedFinishDateBeforeStartDate: 19,
+                ErrorUnknownEntityType: 21,
+                ErrorActivityFieldValidation: 22,
+                InvalidField: 30,
+                ErrorStatusCantBeClosed: 31,
+                ErrorStatusCantBeCanceled: 32,
+                ErrorItemNotFound: 35,
+                ErrorRequiredAttachedAsset: 41,
+                ErrorLinkToParentFailed: 42,
+                MoveInvalidCityworksWkid: 68
+            };
+            this.WarningCodes = {
+                WarningItemNotFound: 60,
+                WarningEmptyOrNullField: 61,
+                WarningLinkNotCreated: 63,
+                WarningGeocodeIssue: 67,
+                WarningActivityFieldValidation: 71
+            };
             this._service = service;
         }
         InspectionService.prototype.AddEntity = function (request) {
@@ -14,6 +43,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         InspectionService.prototype.Answers = function (request) {
             return this._service.call(request, 'Ams/Inspection/Answers');
+        };
+        InspectionService.prototype.AuditLog = function (request) {
+            return this._service.call(request, 'Ams/Inspection/AuditLog');
         };
         InspectionService.prototype.ById = function (request) {
             return this._service.call(request, 'Ams/Inspection/ById');
@@ -32,6 +64,12 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         InspectionService.prototype.Create = function (request) {
             return this._service.call(request, 'Ams/Inspection/Create');
+        };
+        InspectionService.prototype.CreateFromCase = function (request) {
+            return this._service.call(request, 'Ams/Inspection/CreateFromCase');
+        };
+        InspectionService.prototype.CreateFromEntities = function (request) {
+            return this._service.call(request, 'Ams/Inspection/CreateFromEntities');
         };
         InspectionService.prototype.CreateFromParent = function (request) {
             return this._service.call(request, 'Ams/Inspection/CreateFromParent');
@@ -84,6 +122,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         InspectionService.prototype.RemoveEntity = function (request) {
             return this._service.call(request, 'Ams/Inspection/RemoveEntity');
         };
+        InspectionService.prototype.Reopen = function (request) {
+            return this._service.call(request, 'Ams/Inspection/Reopen');
+        };
         InspectionService.prototype.Resolutions = function (request) {
             return this._service.call(request, 'Ams/Inspection/Resolutions');
         };
@@ -104,6 +145,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         InspectionService.prototype.Templates = function (request) {
             return this._service.call(request, 'Ams/Inspection/Templates');
+        };
+        InspectionService.prototype.Uncancel = function (request) {
+            return this._service.call(request, 'Ams/Inspection/Uncancel');
         };
         InspectionService.prototype.Update = function (request) {
             return this._service.call(request, 'Ams/Inspection/Update');

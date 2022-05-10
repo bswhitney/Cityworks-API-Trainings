@@ -7,6 +7,46 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var WorkOrderService = /** @class */ (function () {
         function WorkOrderService(service) {
+            this.ErrorCodes = {
+                UnknownError: 1,
+                InvalidWorkOrderId: 2,
+                NotAuthorizedToViewWorkOrder: 3,
+                NotAuthorizedToUpdateWorkOrder: 4,
+                NotAuthorizedToCreateWorkOrder: 5,
+                NotAuthorizedToCancelWorkOrder: 6,
+                NotAuthorizedToDeleteWorkOrder: 7,
+                NotAuthorizedToCloseWorkOrder: 8,
+                InvalidActivityMapLogicXY: 9,
+                WorkOrderIdIsRequired: 12,
+                ServiceRequestIdsAreRequired: 13,
+                ErrorSearchingForServiceRequests: 14,
+                InspectionIdsAreRequired: 15,
+                ErrorSearchingForInspections: 16,
+                DomainIdIsRequired: 17,
+                ErrorNoUidSetForEntityType: 18,
+                ErrorProjectedFinishDateBeforeStartDate: 19,
+                ErrorActualFinishDateBeforeActualDate: 20,
+                ErrorUnknownEntityType: 21,
+                ErrorActivityFieldValidation: 22,
+                WorkOrderSidIsRequired: 23,
+                InvalidField: 30,
+                ErrorStatusCantBeClosed: 31,
+                ErrorStatusCantBeCanceled: 32,
+                ErrorRequiredCustomFields: 34,
+                ErrorItemNotFound: 35,
+                ErrorIncompleteTasks: 36,
+                ErrorRequiredAttachedAsset: 39,
+                MoveInvalidCityworksWkid: 68,
+                CannotCombineToClosedWorkOrder: 90,
+                CannotCombineFromClosedWorkOrder: 92,
+                CannotCombineFromDifferentWoTemplates: 96
+            };
+            this.WarningCodes = {
+                WarningItemNotFound: 60,
+                WarningEmptyOrNullField: 61,
+                WarningInspectionAlreadyAssociatedToWorkOrder: 64,
+                WarningDeprecatedField: 65
+            };
             this._service = service;
         }
         WorkOrderService.prototype.AddComments = function (request) {
@@ -14,6 +54,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         WorkOrderService.prototype.AddEntities = function (request) {
             return this._service.call(request, 'Ams/WorkOrder/AddEntities');
+        };
+        WorkOrderService.prototype.AuditLog = function (request) {
+            return this._service.call(request, 'Ams/WorkOrder/AuditLog');
         };
         WorkOrderService.prototype.ById = function (request) {
             return this._service.call(request, 'Ams/WorkOrder/ById');
@@ -35,6 +78,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         WorkOrderService.prototype.ChangeCustomFieldCategory = function (request) {
             return this._service.call(request, 'Ams/WorkOrder/ChangeCustomFieldCategory');
+        };
+        WorkOrderService.prototype.ChangeWOTemplate = function (request) {
+            return this._service.call(request, 'Ams/WorkOrder/ChangeWOTemplate');
         };
         WorkOrderService.prototype.Close = function (request) {
             return this._service.call(request, 'Ams/WorkOrder/Close');

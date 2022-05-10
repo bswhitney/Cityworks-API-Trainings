@@ -14,10 +14,12 @@ export namespace CaseAddressServiceTypes {
             CrossStreet?: string;
             DateExpired?: Date;
             ExpiredFlag?: string;
+            Facility_Id?: string;
             FeatureAssetId?: string;
             FeatureClass?: string;
             FeatureObjectId?: number;
             LegacyId?: string;
+            Level_Id?: string;
             LndObjectId?: number;
             Location?: string;
             MasterFlag?: string;
@@ -31,9 +33,11 @@ export namespace CaseAddressServiceTypes {
             StreetType?: string;
             Suite?: string;
             TileNo?: string;
+            UpdateCaseData?: boolean;
             UpdateXY?: boolean;
             XCoord?: number;
             YCoord?: number;
+            ZCoord?: number;
             ZipCode?: string;
         }
         export interface ByCaObjectId extends ServiceTypes.CoreRequestBase {

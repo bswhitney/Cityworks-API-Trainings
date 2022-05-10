@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var CaseDataGroupService = /** @class */ (function () {
         function CaseDataGroupService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         CaseDataGroupService.prototype.Add = function (request) {
@@ -18,11 +20,17 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         CaseDataGroupService.prototype.ByCaObjectId = function (request) {
             return this._service.call(request, 'PLL/CaseDataGroup/ByCaObjectId');
         };
+        CaseDataGroupService.prototype.CheckGISChanges = function (request) {
+            return this._service.call(request, 'PLL/CaseDataGroup/CheckGISChanges');
+        };
         CaseDataGroupService.prototype.DeleteByCaObjectId = function (request) {
             return this._service.call(request, 'PLL/CaseDataGroup/DeleteByCaObjectId');
         };
         CaseDataGroupService.prototype.Search = function (request) {
             return this._service.call(request, 'PLL/CaseDataGroup/Search');
+        };
+        CaseDataGroupService.prototype.UpdateFromAsset = function (request) {
+            return this._service.call(request, 'PLL/CaseDataGroup/UpdateFromAsset');
         };
         return CaseDataGroupService;
     }());

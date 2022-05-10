@@ -26,6 +26,7 @@ export declare class StoreroomService implements IStoreroomService {
     RequisitionItems(request: Requests.RequisitionItems): AbortablePromise<Responses.RequisitionItems>;
     Requisitions(request: Requests.Requisitions): AbortablePromise<Responses.Requisitions>;
     SearchSuppliersByUid(request: Requests.SearchSuppliersByUid): AbortablePromise<Responses.SearchSuppliersByUid>;
+    StoreDomainsByEmployee(request: Requests.StoreDomainsByEmployee): AbortablePromise<Responses.StoreDomainsByEmployee>;
     Storerooms(request: Requests.Storerooms): AbortablePromise<Responses.Storerooms>;
     StoreroomSecurity(request: Requests.StoreroomSecurity): AbortablePromise<Responses.StoreroomSecurity>;
     StoreroomStocks(request: Requests.StoreroomStocks): AbortablePromise<Responses.StoreroomStocks>;
@@ -35,4 +36,15 @@ export declare class StoreroomService implements IStoreroomService {
     UpdateStoreroomStock(request: Requests.UpdateStoreroomStock): AbortablePromise<Responses.UpdateStoreroomStock>;
     UpdateSupplier(request: Requests.UpdateSupplier): AbortablePromise<Responses.UpdateSupplier>;
     UpdateSupplierMaterial(request: Requests.UpdateSupplierMaterial): AbortablePromise<Responses.UpdateSupplierMaterial>;
+    ErrorCodes: {
+        UnknownError: number;
+        StoreroomDisabled: number;
+        UserNotLicensed: number;
+        InvalidEmployeeSid: number;
+        InvalidRequisitionSid: number;
+        InvalidStoreroom: number;
+        SupplierMaterialIdRequired: number;
+        SupplierNameNotPopulated: number;
+    };
+    WarningCodes: {};
 }

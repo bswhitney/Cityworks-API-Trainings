@@ -17,4 +17,6 @@ export declare class MessageQueueService implements IMessageQueueService {
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
     UpdateMessageStatus(request: Requests.UpdateMessageStatus): AbortablePromise<Responses.UpdateMessageStatus>;
     WebHooks(request: Requests.WebHooks): AbortablePromise<Responses.WebHooks>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

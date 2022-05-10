@@ -11,6 +11,11 @@ export declare class WorkOrderEntityService implements IWorkOrderEntityService {
     private _service;
     constructor(service: IApiService);
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
+    ByWorkOrderIds(request: Requests.ByWorkOrderIds): AbortablePromise<Responses.ByWorkOrderIds>;
+    ByWorkOrderSids(request: Requests.ByWorkOrderSids): AbortablePromise<Responses.ByWorkOrderSids>;
     CreateSearchDefinition(request: Requests.CreateSearchDefinition): AbortablePromise<Responses.CreateSearchDefinition>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

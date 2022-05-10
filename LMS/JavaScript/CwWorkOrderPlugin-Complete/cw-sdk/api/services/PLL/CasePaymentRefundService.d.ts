@@ -13,4 +13,7 @@ export declare class CasePaymentRefundService implements ICasePaymentRefundServi
     Add(request: Requests.Add): AbortablePromise<Responses.Add>;
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var CasePaymentRefundService = /** @class */ (function () {
         function CasePaymentRefundService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         CasePaymentRefundService.prototype.Add = function (request) {
@@ -17,6 +19,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         CasePaymentRefundService.prototype.Search = function (request) {
             return this._service.call(request, 'PLL/CasePaymentRefund/Search');
+        };
+        CasePaymentRefundService.prototype.Update = function (request) {
+            return this._service.call(request, 'PLL/CasePaymentRefund/Update');
         };
         return CasePaymentRefundService;
     }());

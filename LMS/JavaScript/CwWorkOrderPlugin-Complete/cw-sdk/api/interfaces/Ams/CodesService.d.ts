@@ -10,7 +10,11 @@ export namespace CodesServiceTypes {
         export interface AllDescScore extends ServiceTypes.CoreRequestBase {
         }
         export interface ByCodeType extends ServiceTypes.CoreRequestBase {
+            AddEmptyItem?: boolean;
             CodeTypes?: string[];
+            EmptyItemText?: string;
+            IsActive?: Enums.IsActiveStatus;
+            OrderByDescription?: boolean;
         }
         export interface Export extends ServiceTypes.CoreRequestBase {
             CodeTypes?: string[];

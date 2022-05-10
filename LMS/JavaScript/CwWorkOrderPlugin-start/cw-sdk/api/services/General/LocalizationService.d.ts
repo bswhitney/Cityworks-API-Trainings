@@ -12,4 +12,6 @@ export declare class LocalizationService implements ILocalizationService {
     constructor(service: IApiService);
     LocalizationSettings(request: Requests.LocalizationSettings): AbortablePromise<Responses.LocalizationSettings>;
     TimeZones(request: Requests.TimeZones): AbortablePromise<Responses.TimeZones>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

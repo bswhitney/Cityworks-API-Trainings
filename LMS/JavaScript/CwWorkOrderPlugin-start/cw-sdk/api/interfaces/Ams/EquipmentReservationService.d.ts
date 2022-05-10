@@ -10,6 +10,7 @@ export namespace EquipmentReservationServiceTypes {
             EmployeeSid: number;
             EquipmentSid: number;
             WorkOrderId?: string;
+            WorkOrderSid?: number;
         }
         export interface CheckOut extends ServiceTypes.CoreRequestBase {
             Comments?: string;
@@ -17,6 +18,7 @@ export namespace EquipmentReservationServiceTypes {
             EquipmentSid: number;
             ReservedToDate: Date;
             WorkOrderId?: string;
+            WorkOrderSid?: number;
         }
         export interface CheckOutHistory extends ServiceTypes.CoreRequestBase {
             EmployeeSid?: number;
@@ -37,6 +39,7 @@ export namespace EquipmentReservationServiceTypes {
             ReservedToDate: Date;
             TransDateTime: Date;
             WorkOrderId?: string;
+            WorkOrderSid?: number;
         }
         export interface Status extends ServiceTypes.CoreRequestBase {
             EquipmentSids: number[];
@@ -48,6 +51,7 @@ export namespace EquipmentReservationServiceTypes {
             TransactionId: number;
             TransDateTime?: Date;
             WorkOrderId?: string;
+            WorkOrderSid?: number;
         }
     }
     export namespace Responses {

@@ -10,6 +10,7 @@ export namespace CustomerCallServiceTypes {
             CallerType?: string;
             Ccx?: number;
             Ccy?: number;
+            Ccz?: number;
             CellPhone?: string;
             Comments?: string;
             CustAddress?: string;
@@ -49,6 +50,9 @@ export namespace CustomerCallServiceTypes {
         export interface ByRequestId extends ServiceTypes.CoreRequestBase {
             RequestId: number;
         }
+        export interface ByRequestIds extends ServiceTypes.CoreRequestBase {
+            RequestIds: number[];
+        }
         export interface CallerQuestions extends ServiceTypes.CoreRequestBase {
             IncidentNums: number[];
         }
@@ -60,10 +64,12 @@ export namespace CustomerCallServiceTypes {
         }
         export interface Move extends ServiceTypes.CoreRequestBase {
             IncidentNum: number;
+            VcsWKID?: number;
             WKID?: number;
             WKT?: string;
             X: number;
             Y: number;
+            Z?: number;
         }
         export interface MoveToRequest extends ServiceTypes.CoreRequestBase {
             FromRequestId: number;
@@ -77,6 +83,7 @@ export namespace CustomerCallServiceTypes {
             CallerType?: string;
             Ccx?: number;
             Ccy?: number;
+            Ccz?: number;
             CellPhone?: string;
             Comments?: string;
             CustAddress?: string;
@@ -116,6 +123,7 @@ export namespace CustomerCallServiceTypes {
         export interface AddToRequest extends ServiceTypes.CoreResponseBase_<CoreTypes.CustomerCallBase> {}
         export interface ByIncidentNum extends ServiceTypes.CoreResponseBase_<CoreTypes.CustomerCallBase> {}
         export interface ByRequestId extends ServiceTypes.CoreResponseBase_<CoreTypes.CustomerCallBase[]> {}
+        export interface ByRequestIds extends ServiceTypes.CoreResponseBase_<CoreTypes.CustomerCallBase[]> {}
         export interface CallerQuestions extends ServiceTypes.CoreResponseBase_<CoreTypes.CustCallQuestionBase[]> {}
         export interface CallerQuestionsByRequestIds extends ServiceTypes.CoreResponseBase_<{[key: number]: CoreTypes.CustCallQuestionBase[]}> {}
         export interface Delete extends ServiceTypes.CoreResponseBase {}
@@ -127,6 +135,7 @@ export namespace CustomerCallServiceTypes {
         AddToRequest?: (request: Requests.AddToRequest) => AbortablePromise<Responses.AddToRequest>;
         ByIncidentNum?: (request: Requests.ByIncidentNum) => AbortablePromise<Responses.ByIncidentNum>;
         ByRequestId?: (request: Requests.ByRequestId) => AbortablePromise<Responses.ByRequestId>;
+        ByRequestIds?: (request: Requests.ByRequestIds) => AbortablePromise<Responses.ByRequestIds>;
         CallerQuestions?: (request: Requests.CallerQuestions) => AbortablePromise<Responses.CallerQuestions>;
         CallerQuestionsByRequestIds?: (request: Requests.CallerQuestionsByRequestIds) => AbortablePromise<Responses.CallerQuestionsByRequestIds>;
         Delete?: (request: Requests.Delete) => AbortablePromise<Responses.Delete>;

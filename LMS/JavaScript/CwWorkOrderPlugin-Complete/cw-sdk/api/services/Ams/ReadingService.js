@@ -7,6 +7,11 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var ReadingService = /** @class */ (function () {
         function ReadingService(service) {
+            this.ErrorCodes = {
+                ErrorDeletingReading: 2,
+                ReadingIdsRequired: 3
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         ReadingService.prototype.Add = function (request) {

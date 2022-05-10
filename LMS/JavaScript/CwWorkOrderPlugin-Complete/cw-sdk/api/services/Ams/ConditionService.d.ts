@@ -12,4 +12,6 @@ export declare class ConditionService implements IConditionService {
     constructor(service: IApiService);
     Current(request: Requests.Current): AbortablePromise<Responses.Current>;
     History(request: Requests.History): AbortablePromise<Responses.History>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

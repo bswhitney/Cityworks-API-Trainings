@@ -12,9 +12,14 @@ export declare class WorkOrderTemplateService implements IWorkOrderTemplateServi
     constructor(service: IApiService);
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
     ByProblemSids(request: Requests.ByProblemSids): AbortablePromise<Responses.ByProblemSids>;
+    ByTemplateClassIds(request: Requests.ByTemplateClassIds): AbortablePromise<Responses.ByTemplateClassIds>;
     CustomFieldCategories(request: Requests.CustomFieldCategories): AbortablePromise<Responses.CustomFieldCategories>;
     CustomFields(request: Requests.CustomFields): AbortablePromise<Responses.CustomFields>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     TemplateInspections(request: Requests.TemplateInspections): AbortablePromise<Responses.TemplateInspections>;
     TemplateNames(request: Requests.TemplateNames): AbortablePromise<Responses.TemplateNames>;
+    ErrorCodes: {
+        UnknownError: number;
+    };
+    WarningCodes: {};
 }

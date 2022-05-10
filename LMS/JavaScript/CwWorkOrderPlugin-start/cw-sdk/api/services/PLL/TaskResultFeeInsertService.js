@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var TaskResultFeeInsertService = /** @class */ (function () {
         function TaskResultFeeInsertService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         TaskResultFeeInsertService.prototype.Add = function (request) {

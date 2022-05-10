@@ -7,6 +7,10 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var EventLayerService = /** @class */ (function () {
         function EventLayerService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {
+                WarningItemNotFound: 60
+            };
             this._service = service;
         }
         EventLayerService.prototype.All = function (request) {

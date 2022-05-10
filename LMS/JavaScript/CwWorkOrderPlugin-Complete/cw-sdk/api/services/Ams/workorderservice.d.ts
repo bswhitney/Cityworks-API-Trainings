@@ -12,6 +12,7 @@ export declare class WorkOrderService implements IWorkOrderService {
     constructor(service: IApiService);
     AddComments(request: Requests.AddComments): AbortablePromise<Responses.AddComments>;
     AddEntities(request: Requests.AddEntities): AbortablePromise<Responses.AddEntities>;
+    AuditLog(request: Requests.AuditLog): AbortablePromise<Responses.AuditLog>;
     ById(request: Requests.ById): AbortablePromise<Responses.ById>;
     ByIds(request: Requests.ByIds): AbortablePromise<Responses.ByIds>;
     BySid(request: Requests.BySid): AbortablePromise<Responses.BySid>;
@@ -19,6 +20,7 @@ export declare class WorkOrderService implements IWorkOrderService {
     Cancel(request: Requests.Cancel): AbortablePromise<Responses.Cancel>;
     Categories(request: Requests.Categories): AbortablePromise<Responses.Categories>;
     ChangeCustomFieldCategory(request: Requests.ChangeCustomFieldCategory): AbortablePromise<Responses.ChangeCustomFieldCategory>;
+    ChangeWOTemplate(request: Requests.ChangeWOTemplate): AbortablePromise<Responses.ChangeWOTemplate>;
     Close(request: Requests.Close): AbortablePromise<Responses.Close>;
     Combine(request: Requests.Combine): AbortablePromise<Responses.Combine>;
     Comments(request: Requests.Comments): AbortablePromise<Responses.Comments>;
@@ -62,4 +64,44 @@ export declare class WorkOrderService implements IWorkOrderService {
     WorkOrderInspections(request: Requests.WorkOrderInspections): AbortablePromise<Responses.WorkOrderInspections>;
     WorkOrderServiceRequests(request: Requests.WorkOrderServiceRequests): AbortablePromise<Responses.WorkOrderServiceRequests>;
     WorkOrderWorkOrders(request: Requests.WorkOrderWorkOrders): AbortablePromise<Responses.WorkOrderWorkOrders>;
+    ErrorCodes: {
+        UnknownError: number;
+        InvalidWorkOrderId: number;
+        NotAuthorizedToViewWorkOrder: number;
+        NotAuthorizedToUpdateWorkOrder: number;
+        NotAuthorizedToCreateWorkOrder: number;
+        NotAuthorizedToCancelWorkOrder: number;
+        NotAuthorizedToDeleteWorkOrder: number;
+        NotAuthorizedToCloseWorkOrder: number;
+        InvalidActivityMapLogicXY: number;
+        WorkOrderIdIsRequired: number;
+        ServiceRequestIdsAreRequired: number;
+        ErrorSearchingForServiceRequests: number;
+        InspectionIdsAreRequired: number;
+        ErrorSearchingForInspections: number;
+        DomainIdIsRequired: number;
+        ErrorNoUidSetForEntityType: number;
+        ErrorProjectedFinishDateBeforeStartDate: number;
+        ErrorActualFinishDateBeforeActualDate: number;
+        ErrorUnknownEntityType: number;
+        ErrorActivityFieldValidation: number;
+        WorkOrderSidIsRequired: number;
+        InvalidField: number;
+        ErrorStatusCantBeClosed: number;
+        ErrorStatusCantBeCanceled: number;
+        ErrorRequiredCustomFields: number;
+        ErrorItemNotFound: number;
+        ErrorIncompleteTasks: number;
+        ErrorRequiredAttachedAsset: number;
+        MoveInvalidCityworksWkid: number;
+        CannotCombineToClosedWorkOrder: number;
+        CannotCombineFromClosedWorkOrder: number;
+        CannotCombineFromDifferentWoTemplates: number;
+    };
+    WarningCodes: {
+        WarningItemNotFound: number;
+        WarningEmptyOrNullField: number;
+        WarningInspectionAlreadyAssociatedToWorkOrder: number;
+        WarningDeprecatedField: number;
+    };
 }

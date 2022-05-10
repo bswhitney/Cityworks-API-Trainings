@@ -15,4 +15,7 @@ export declare class CasePeopleService implements ICasePeopleService {
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     DeleteByCaObjectId(request: Requests.DeleteByCaObjectId): AbortablePromise<Responses.DeleteByCaObjectId>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    SearchObject(request: Requests.SearchObject): AbortablePromise<Responses.SearchObject>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

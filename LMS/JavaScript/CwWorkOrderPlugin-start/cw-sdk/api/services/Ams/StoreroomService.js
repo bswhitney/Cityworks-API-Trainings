@@ -7,6 +7,17 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var StoreroomService = /** @class */ (function () {
         function StoreroomService(service) {
+            this.ErrorCodes = {
+                UnknownError: 1,
+                StoreroomDisabled: 3,
+                UserNotLicensed: 5,
+                InvalidEmployeeSid: 15,
+                InvalidRequisitionSid: 22,
+                InvalidStoreroom: 25,
+                SupplierMaterialIdRequired: 46,
+                SupplierNameNotPopulated: 47
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         StoreroomService.prototype.Accounts = function (request) {
@@ -56,6 +67,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         StoreroomService.prototype.SearchSuppliersByUid = function (request) {
             return this._service.call(request, 'Ams/Storeroom/SearchSuppliersByUid');
+        };
+        StoreroomService.prototype.StoreDomainsByEmployee = function (request) {
+            return this._service.call(request, 'Ams/Storeroom/StoreDomainsByEmployee');
         };
         StoreroomService.prototype.Storerooms = function (request) {
             return this._service.call(request, 'Ams/Storeroom/Storerooms');

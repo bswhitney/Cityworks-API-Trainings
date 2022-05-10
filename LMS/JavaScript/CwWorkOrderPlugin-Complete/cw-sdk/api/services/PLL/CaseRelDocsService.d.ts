@@ -16,4 +16,6 @@ export declare class CaseRelDocsService implements ICaseRelDocsService {
     DeleteByCaObjectId(request: Requests.DeleteByCaObjectId): AbortablePromise<Responses.DeleteByCaObjectId>;
     GetStoragePreferences(request: Requests.GetStoragePreferences): AbortablePromise<Responses.StoragePreferences>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

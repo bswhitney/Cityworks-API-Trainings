@@ -11,4 +11,6 @@ export declare class QuickSearchService implements IQuickSearchService {
     private _service;
     constructor(service: IApiService);
     QuickSearch(request: Requests.QuickSearch): AbortablePromise<Responses.QuickSearch>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

@@ -13,4 +13,22 @@ export declare class CaseTaskResultsService implements ICaseTaskResultsService {
     Add(request: Requests.Add): AbortablePromise<Responses.Add>;
     ByCaTaskIds(request: Requests.ByCaTaskIds): AbortablePromise<Responses.ByCaTaskIds>;
     SearchObject(request: Requests.SearchObject): AbortablePromise<Responses.SearchObject>;
+    ErrorCodes: {
+        ResultCodeIsNull: number;
+        StatusCodeIsInvalid: number;
+        CaseStatusIdIsInvalid: number;
+        SkipTaskFlagIsNull: number;
+        SkipTaskFlagIsInvalid: number;
+        NextTaskFlagIsNull: number;
+        NextTaskFlagIsInvalid: number;
+        ExtendExpirationDateFlagIsNull: number;
+        ExtendExpirationDateFlagIsInvalid: number;
+        CloseTaskFlagIsNull: number;
+        CloseTaskFlagIsInvalid: number;
+        ReInsertFlagIsNull: number;
+        ReInsertFlagIsInvalid: number;
+        InsertFlagIsNull: number;
+        InsertFlagIsInvalid: number;
+    };
+    WarningCodes: {};
 }

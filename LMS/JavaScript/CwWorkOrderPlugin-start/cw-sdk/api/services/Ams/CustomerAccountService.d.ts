@@ -17,4 +17,8 @@ export declare class CustomerAccountService implements ICustomerAccountService {
     Import(request: Requests.Import): AbortablePromise<Responses.Import>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {
+        UnknownError: number;
+    };
+    WarningCodes: {};
 }

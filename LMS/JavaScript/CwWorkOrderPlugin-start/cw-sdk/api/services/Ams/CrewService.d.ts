@@ -15,4 +15,6 @@ export declare class CrewService implements ICrewService {
     Employees(request: Requests.Employees): AbortablePromise<Responses.Employees>;
     Equipment(request: Requests.Equipment): AbortablePromise<Responses.Equipment>;
     Material(request: Requests.Material): AbortablePromise<Responses.Material>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

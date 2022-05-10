@@ -20,4 +20,6 @@ export declare class CodesService implements ICodesService {
     Import(request: Requests.Import): AbortablePromise<Responses.Import>;
     ImportCCTVCodeDescScore(request: Requests.ImportCCTVCodeDescScore): AbortablePromise<Responses.ImportCCTVCodeDescScore>;
     ImportDescScore(request: Requests.ImportDescScore): AbortablePromise<Responses.ImportDescScore>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

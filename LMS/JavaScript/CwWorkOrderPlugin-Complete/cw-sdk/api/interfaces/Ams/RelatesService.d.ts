@@ -3,6 +3,10 @@ import AbortablePromise = PromiseTypes.AbortablePromise;
 
 export namespace RelatesServiceTypes { 
     export namespace Requests {
+        export interface AreContractPermissionsEnabled extends ServiceTypes.CoreRequestBase {
+        }
+        export interface AreProjectPermissionsEnabled extends ServiceTypes.CoreRequestBase {
+        }
         export interface ByTableName extends ServiceTypes.CoreRequestBase {
             DomainId?: number;
             FieldNames?: string[];
@@ -36,6 +40,10 @@ export namespace RelatesServiceTypes {
         export interface InspectionSubmitTo extends ServiceTypes.CoreRequestBase {
             DomainId?: number;
             IncludeInactive?: boolean;
+        }
+        export interface IsNegativeStockEnabled extends ServiceTypes.CoreRequestBase {
+        }
+        export interface IsStoreroomEnabled extends ServiceTypes.CoreRequestBase {
         }
         export interface ProblemLeafDispatchTo extends ServiceTypes.CoreRequestBase {
             DomainId?: number;
@@ -132,11 +140,17 @@ export namespace RelatesServiceTypes {
         }
     }
     export namespace Responses {
+        export interface AreContractPermissionsEnabled extends ServiceTypes.CoreResponseBase_<boolean> {}
+        export interface AreProjectPermissionsEnabled extends ServiceTypes.CoreResponseBase_<boolean> {}
         export interface ByTableName extends ServiceTypes.CoreResponseBase_<CoreTypes.RelEmpToField[]> {}
         export interface EmployeeRelates extends ServiceTypes.CoreResponseBase_<CoreTypes.EmployeeRelate[]> {}
+        export interface IsNegativeStockEnabled extends ServiceTypes.CoreResponseBase_<boolean> {}
+        export interface IsStoreroomEnabled extends ServiceTypes.CoreResponseBase_<boolean> {}
         export interface TableFields extends ServiceTypes.CoreResponseBase_<CoreTypes.EmpRelTableField[]> {}
     }
     export interface IRelatesService {
+        AreContractPermissionsEnabled?: (request: Requests.AreContractPermissionsEnabled) => AbortablePromise<Responses.AreContractPermissionsEnabled>;
+        AreProjectPermissionsEnabled?: (request: Requests.AreProjectPermissionsEnabled) => AbortablePromise<Responses.AreProjectPermissionsEnabled>;
         ByTableName?: (request: Requests.ByTableName) => AbortablePromise<Responses.ByTableName>;
         EquipChangeOutChangedBy?: (request: Requests.EquipChangeOutChangedBy) => AbortablePromise<Responses.EmployeeRelates>;
         InspectionCancelledBy?: (request: Requests.InspectionCancelledBy) => AbortablePromise<Responses.EmployeeRelates>;
@@ -145,6 +159,8 @@ export namespace RelatesServiceTypes {
         InspectionInitiatedBy?: (request: Requests.InspectionInitiatedBy) => AbortablePromise<Responses.EmployeeRelates>;
         InspectionInspectedBy?: (request: Requests.InspectionInspectedBy) => AbortablePromise<Responses.EmployeeRelates>;
         InspectionSubmitTo?: (request: Requests.InspectionSubmitTo) => AbortablePromise<Responses.EmployeeRelates>;
+        IsNegativeStockEnabled?: (request: Requests.IsNegativeStockEnabled) => AbortablePromise<Responses.IsNegativeStockEnabled>;
+        IsStoreroomEnabled?: (request: Requests.IsStoreroomEnabled) => AbortablePromise<Responses.IsStoreroomEnabled>;
         ProblemLeafDispatchTo?: (request: Requests.ProblemLeafDispatchTo) => AbortablePromise<Responses.EmployeeRelates>;
         ProblemLeafSubmitTo?: (request: Requests.ProblemLeafSubmitTo) => AbortablePromise<Responses.EmployeeRelates>;
         ProjectApprovedBy?: (request: Requests.ProjectApprovedBy) => AbortablePromise<Responses.EmployeeRelates>;

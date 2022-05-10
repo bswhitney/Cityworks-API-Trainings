@@ -7,10 +7,24 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var AuthenticationService = /** @class */ (function () {
         function AuthenticationService(service) {
+            this.ErrorCodes = {
+                UnknownError: 1,
+                EmployeeNotFoundByLoginName: 2,
+                InactiveUser: 3,
+                InvalidCredentials: 4,
+                InvalidField: 30
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
+        AuthenticationService.prototype.ApiVersion = function (request) {
+            return this._service.call(request, 'General/Authentication/ApiVersion');
+        };
         AuthenticationService.prototype.Authenticate = function (request) {
             return this._service.call(request, 'General/Authentication/Authenticate');
+        };
+        AuthenticationService.prototype.AuthenticateGisToken = function (request) {
+            return this._service.call(request, 'General/Authentication/AuthenticateGisToken');
         };
         AuthenticationService.prototype.CityworksOnlineAuthenticate = function (request) {
             return this._service.call(request, 'General/Authentication/CityworksOnlineAuthenticate');
@@ -20,6 +34,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         AuthenticationService.prototype.Domains = function (request) {
             return this._service.call(request, 'General/Authentication/Domains');
+        };
+        AuthenticationService.prototype.Groups = function (request) {
+            return this._service.call(request, 'General/Authentication/Groups');
         };
         AuthenticationService.prototype.User = function (request) {
             return this._service.call(request, 'General/Authentication/User');

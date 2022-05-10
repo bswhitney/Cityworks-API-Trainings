@@ -7,10 +7,33 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var EntityService = /** @class */ (function () {
         function EntityService(service) {
+            this.ErrorCodes = {
+                UnknownError: 1,
+                ErrorUnknownEntityType: 2,
+                ErrorNoWorkHistory: 20,
+                ErrorUnknownDestinationEntity: 21,
+                ErrorIdentifierAlreadyInUse: 24,
+                InvalidField: 30
+            };
+            this.WarningCodes = {
+                WarningItemNotFound: 60,
+                WarningEmptyOrNullField: 61,
+                WarningNoUidSetForEntityType: 62,
+                WarningNoValidRelationships: 63
+            };
             this._service = service;
         }
         EntityService.prototype.AddAlias = function (request) {
             return this._service.call(request, 'Ams/Entity/AddAlias');
+        };
+        EntityService.prototype.AddGroupAlias = function (request) {
+            return this._service.call(request, 'Ams/Entity/AddGroupAlias');
+        };
+        EntityService.prototype.AddIdentifier = function (request) {
+            return this._service.call(request, 'Ams/Entity/AddIdentifier');
+        };
+        EntityService.prototype.AddIdentifiers = function (request) {
+            return this._service.call(request, 'Ams/Entity/AddIdentifiers');
         };
         EntityService.prototype.AddSplit = function (request) {
             return this._service.call(request, 'Ams/Entity/AddSplit');
@@ -24,8 +47,20 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         EntityService.prototype.AllAliases = function (request) {
             return this._service.call(request, 'Ams/Entity/AllAliases');
         };
+        EntityService.prototype.AllGroupAliases = function (request) {
+            return this._service.call(request, 'Ams/Entity/AllGroupAliases');
+        };
+        EntityService.prototype.AssetCostHistory = function (request) {
+            return this._service.call(request, 'Ams/Entity/AssetCostHistory');
+        };
         EntityService.prototype.Attributes = function (request) {
             return this._service.call(request, 'Ams/Entity/Attributes');
+        };
+        EntityService.prototype.ChildPaths = function (request) {
+            return this._service.call(request, 'Ams/Entity/ChildPaths');
+        };
+        EntityService.prototype.Children = function (request) {
+            return this._service.call(request, 'Ams/Entity/Children');
         };
         EntityService.prototype.CloneWorkOrderEntities = function (request) {
             return this._service.call(request, 'Ams/Entity/CloneWorkOrderEntities');
@@ -39,6 +74,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         EntityService.prototype.CostTotal = function (request) {
             return this._service.call(request, 'Ams/Entity/CostTotal');
         };
+        EntityService.prototype.DirectParent = function (request) {
+            return this._service.call(request, 'Ams/Entity/DirectParent');
+        };
         EntityService.prototype.DistinctValues = function (request) {
             return this._service.call(request, 'Ams/Entity/DistinctValues');
         };
@@ -48,17 +86,59 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         EntityService.prototype.EntityUidField = function (request) {
             return this._service.call(request, 'Ams/Entity/EntityUidField');
         };
+        EntityService.prototype.EntityUrlInfos = function (request) {
+            return this._service.call(request, 'Ams/Entity/EntityUrlInfos');
+        };
+        EntityService.prototype.FilterRecordToWorkOrderEntity = function (request) {
+            return this._service.call(request, 'Ams/Entity/FilterRecordToWorkOrderEntity');
+        };
         EntityService.prototype.FiveNumberSummary = function (request) {
             return this._service.call(request, 'Ams/Entity/FiveNumberSummary');
+        };
+        EntityService.prototype.GetByIdentifier = function (request) {
+            return this._service.call(request, 'Ams/Entity/GetByIdentifier');
+        };
+        EntityService.prototype.GetByIdentifiers = function (request) {
+            return this._service.call(request, 'Ams/Entity/GetByIdentifiers');
+        };
+        EntityService.prototype.GISAttributes = function (request) {
+            return this._service.call(request, 'Ams/Entity/GISAttributes');
+        };
+        EntityService.prototype.GroupAliases = function (request) {
+            return this._service.call(request, 'Ams/Entity/GroupAliases');
+        };
+        EntityService.prototype.GroupByType = function (request) {
+            return this._service.call(request, 'Ams/Entity/GroupByType');
         };
         EntityService.prototype.Groups = function (request) {
             return this._service.call(request, 'Ams/Entity/Groups');
         };
+        EntityService.prototype.InspectionCostHistory = function (request) {
+            return this._service.call(request, 'Ams/Entity/InspectionCostHistory');
+        };
+        EntityService.prototype.Orphans = function (request) {
+            return this._service.call(request, 'Ams/Entity/Orphans');
+        };
+        EntityService.prototype.ParentPaths = function (request) {
+            return this._service.call(request, 'Ams/Entity/ParentPaths');
+        };
+        EntityService.prototype.Parents = function (request) {
+            return this._service.call(request, 'Ams/Entity/Parents');
+        };
         EntityService.prototype.ProcessSplits = function (request) {
             return this._service.call(request, 'Ams/Entity/ProcessSplits');
         };
+        EntityService.prototype.PwEntities = function (request) {
+            return this._service.call(request, 'Ams/Entity/PwEntities');
+        };
         EntityService.prototype.RemoveAlias = function (request) {
             return this._service.call(request, 'Ams/Entity/RemoveAlias');
+        };
+        EntityService.prototype.RemoveGroupAlias = function (request) {
+            return this._service.call(request, 'Ams/Entity/RemoveGroupAlias');
+        };
+        EntityService.prototype.Resolve = function (request) {
+            return this._service.call(request, 'Ams/Entity/Resolve');
         };
         EntityService.prototype.Search = function (request) {
             return this._service.call(request, 'Ams/Entity/Search');

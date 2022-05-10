@@ -7,10 +7,17 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var PreferencesService = /** @class */ (function () {
         function PreferencesService(service) {
+            this.ErrorCodes = {
+                Unauthorized: 3
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         PreferencesService.prototype.Global = function (request) {
             return this._service.call(request, 'Ams/Preferences/Global');
+        };
+        PreferencesService.prototype.Mobile = function (request) {
+            return this._service.call(request, 'Ams/Preferences/Mobile');
         };
         PreferencesService.prototype.User = function (request) {
             return this._service.call(request, 'Ams/Preferences/User');

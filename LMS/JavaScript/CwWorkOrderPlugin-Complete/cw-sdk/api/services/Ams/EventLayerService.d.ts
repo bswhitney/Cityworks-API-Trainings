@@ -12,4 +12,8 @@ export declare class EventLayerService implements IEventLayerService {
     constructor(service: IApiService);
     All(request: Requests.All): AbortablePromise<Responses.All>;
     ById(request: Requests.ById): AbortablePromise<Responses.ById>;
+    ErrorCodes: {};
+    WarningCodes: {
+        WarningItemNotFound: number;
+    };
 }

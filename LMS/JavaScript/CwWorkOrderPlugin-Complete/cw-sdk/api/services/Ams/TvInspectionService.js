@@ -7,6 +7,14 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var TvInspectionService = /** @class */ (function () {
         function TvInspectionService(service) {
+            this.ErrorCodes = {
+                NotAuthorizedToUpdateInspection: 4,
+                InvalidActivityMapLogicXY: 9,
+                InvalidField: 30,
+                ErrorItemNotFound: 35,
+                MoveInvalidCityworksWkid: 68
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         TvInspectionService.prototype.AddObservation = function (request) {
@@ -51,8 +59,14 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         TvInspectionService.prototype.DownstreamNode = function (request) {
             return this._service.call(request, 'Ams/TvInspection/DownstreamNode');
         };
+        TvInspectionService.prototype.EntityTypes = function (request) {
+            return this._service.call(request, 'Ams/TvInspection/EntityTypes');
+        };
         TvInspectionService.prototype.InspectedBy = function (request) {
             return this._service.call(request, 'Ams/TvInspection/InspectedBy');
+        };
+        TvInspectionService.prototype.Move = function (request) {
+            return this._service.call(request, 'Ams/TvInspection/Move');
         };
         TvInspectionService.prototype.Observation = function (request) {
             return this._service.call(request, 'Ams/TvInspection/Observation');
@@ -65,6 +79,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         TvInspectionService.prototype.Observations = function (request) {
             return this._service.call(request, 'Ams/TvInspection/Observations');
+        };
+        TvInspectionService.prototype.ReviewedBy = function (request) {
+            return this._service.call(request, 'Ams/TvInspection/ReviewedBy');
         };
         TvInspectionService.prototype.Search = function (request) {
             return this._service.call(request, 'Ams/TvInspection/Search');

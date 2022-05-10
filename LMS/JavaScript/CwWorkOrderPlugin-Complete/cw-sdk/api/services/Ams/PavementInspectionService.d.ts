@@ -24,4 +24,6 @@ export declare class PavementInspectionService implements IPavementInspectionSer
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
     UpdateDistress(request: Requests.UpdateDistress): AbortablePromise<Responses.UpdateDistress>;
     UpdateSample(request: Requests.UpdateSample): AbortablePromise<Responses.UpdateSample>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

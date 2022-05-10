@@ -13,6 +13,10 @@ export declare class CaseDataGroupService implements ICaseDataGroupService {
     Add(request: Requests.Add): AbortablePromise<Responses.Add>;
     AddDefault(request: Requests.AddDefault): AbortablePromise<Responses.AddDefault>;
     ByCaObjectId(request: Requests.ByCaObjectId): AbortablePromise<Responses.ByCaObjectId>;
+    CheckGISChanges(request: Requests.CheckGISChanges): AbortablePromise<Responses.CheckGISChanges>;
     DeleteByCaObjectId(request: Requests.DeleteByCaObjectId): AbortablePromise<Responses.DeleteByCaObjectId>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
+    UpdateFromAsset(request: Requests.UpdateFromAsset): AbortablePromise<Responses.UpdateFromAsset>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

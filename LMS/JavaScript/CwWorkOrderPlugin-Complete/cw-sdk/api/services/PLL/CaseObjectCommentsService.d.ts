@@ -14,4 +14,6 @@ export declare class CaseObjectCommentsService implements ICaseObjectCommentsSer
     ByCaObjectId(request: Requests.ByCaObjectId): AbortablePromise<Responses.ByCaObjectId>;
     Delete(request: Requests.Delete): AbortablePromise<Responses.Delete>;
     Update(request: Requests.Update): AbortablePromise<Responses.Update>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

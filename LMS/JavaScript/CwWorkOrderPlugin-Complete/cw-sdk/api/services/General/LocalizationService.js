@@ -7,6 +7,8 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var LocalizationService = /** @class */ (function () {
         function LocalizationService(service) {
+            this.ErrorCodes = {};
+            this.WarningCodes = {};
             this._service = service;
         }
         LocalizationService.prototype.LocalizationSettings = function (request) {

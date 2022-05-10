@@ -7,6 +7,10 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
     __export(api_service_1);
     var WorkOrderTemplateService = /** @class */ (function () {
         function WorkOrderTemplateService(service) {
+            this.ErrorCodes = {
+                UnknownError: 1
+            };
+            this.WarningCodes = {};
             this._service = service;
         }
         WorkOrderTemplateService.prototype.ByIds = function (request) {
@@ -14,6 +18,9 @@ define(["require", "exports", "../../../http/api-service"], function (require, e
         };
         WorkOrderTemplateService.prototype.ByProblemSids = function (request) {
             return this._service.call(request, 'Ams/WorkOrderTemplate/ByProblemSids');
+        };
+        WorkOrderTemplateService.prototype.ByTemplateClassIds = function (request) {
+            return this._service.call(request, 'Ams/WorkOrderTemplate/ByTemplateClassIds');
         };
         WorkOrderTemplateService.prototype.CustomFieldCategories = function (request) {
             return this._service.call(request, 'Ams/WorkOrderTemplate/CustomFieldCategories');

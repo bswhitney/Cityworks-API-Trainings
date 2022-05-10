@@ -15,4 +15,6 @@ export declare class CaseChildObjectService implements ICaseChildObjectService {
     GetList(request: Requests.GetList): AbortablePromise<Responses.GetList>;
     Search(request: Requests.Search): AbortablePromise<Responses.Search>;
     SearchObject(request: Requests.SearchObject): AbortablePromise<Responses.SearchObject>;
+    ErrorCodes: {};
+    WarningCodes: {};
 }

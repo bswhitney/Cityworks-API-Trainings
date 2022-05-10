@@ -122,10 +122,15 @@ export namespace ServiceRequestTemplateServiceTypes {
         }
         export interface Templates extends ServiceTypes.CoreRequestBase {
             CanCreate?: boolean;
+            DomainId?: number;
             IncludeInactive?: boolean;
             MaximumDateModified?: Date;
             MinimumDateModified?: Date;
             TemplateIds?: number[];
+        }
+        export interface WorkOrderTemplates extends ServiceTypes.CoreRequestBase {
+            IncludeInactive?: boolean;
+            ProblemSids: number[];
         }
     }
     export namespace Responses {
@@ -134,6 +139,7 @@ export namespace ServiceRequestTemplateServiceTypes {
         export interface QA extends ServiceTypes.CoreResponseBase_<CoreTypes.ProblemQA[]> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface Templates extends ServiceTypes.CoreResponseBase_<CoreTypes.ProblemLeafBase[]> {}
+        export interface WorkOrderTemplates extends ServiceTypes.CoreResponseBase_<CoreTypes.ProblemWOTemplate[]> {}
     }
     export interface IServiceRequestTemplateService {
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
@@ -141,5 +147,6 @@ export namespace ServiceRequestTemplateServiceTypes {
         QA?: (request: Requests.QA) => AbortablePromise<Responses.QA>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;
         Templates?: (request: Requests.Templates) => AbortablePromise<Responses.Templates>;
+        WorkOrderTemplates?: (request: Requests.WorkOrderTemplates) => AbortablePromise<Responses.WorkOrderTemplates>;
     }
 }

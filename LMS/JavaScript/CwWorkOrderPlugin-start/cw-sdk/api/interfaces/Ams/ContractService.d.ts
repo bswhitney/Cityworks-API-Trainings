@@ -3,11 +3,36 @@ import AbortablePromise = PromiseTypes.AbortablePromise;
 
 export namespace ContractServiceTypes { 
     export namespace Requests {
+        export interface AddInvoice extends ServiceTypes.CoreRequestBase {
+            AccountingDate?: Date;
+            Attachment?: string;
+            CheckIssuedDate?: Date;
+            Comments?: string;
+            ContractId: number;
+            CoverSentDate?: Date;
+            Description?: string;
+            EAODate?: Date;
+            InvoiceItems?: CoreTypes.InvoiceItem[];
+            InvoiceNumber: string;
+            OffialInvoiceReceivedDate?: Date;
+            PencilInvoiceReceivedDate?: Date;
+            PencilInvoiceReviewedDate?: Date;
+            ValidateInvoiceDate?: Date;
+        }
+        export interface AddInvoiceItem extends ServiceTypes.CoreRequestBase {
+            InvoiceId: number;
+            LineItemCostId: number;
+        }
         export interface AddLineItem extends ServiceTypes.CoreRequestBase {
             ContractId: number;
+            ContractorSid?: number;
             ContractPeriod?: number;
+            EmployeeSid?: number;
+            FundSourceId?: number;
+            ItemNumber?: string;
             LineItemId: number;
             PrjUnitPrice?: number;
+            PrjUnits?: number;
             UnitPrice?: number;
             Units?: number;
             UnitsUsed?: number;
@@ -30,17 +55,19 @@ export namespace ContractServiceTypes {
             BidDepositPercent?: number;
             BondReleased?: boolean;
             BondReleaseDate?: Date;
+            Category?: string;
             City?: string;
             Comments?: string;
             ContractClaims?: CoreTypes.ContractClaimBase[];
             ContractFundSources?: CoreTypes.ContractFundSource[];
             ContractLineItems?: CoreTypes.ContractLineItem[];
-            ContractNumber?: string;
+            ContractNumber: string;
             ContractorSid?: number;
             ContractSubcontractors?: CoreTypes.ContractSubcontractor[];
             ContractSubmittals?: CoreTypes.ContractSubmittal[];
             ContractTemplateId?: number;
             ContractType?: string;
+            CustFieldCatId?: number;
             Date1?: Date;
             Date2?: Date;
             Date3?: Date;
@@ -58,6 +85,7 @@ export namespace ContractServiceTypes {
             FundingSource?: string;
             GuaranteeInspDate?: Date;
             GuaranteePLInspDate?: Date;
+            InitiatedBySid?: number;
             IsTemplate?: boolean;
             Location?: string;
             NextWOSeqId?: number;
@@ -91,12 +119,18 @@ export namespace ContractServiceTypes {
             UsePLInspDate?: Date;
             Viewable?: boolean;
             WOPrefix?: string;
+            X?: number;
+            Y?: number;
+            Z?: number;
             Zip?: string;
         }
         export interface CreateFundSource extends ServiceTypes.CoreRequestBase {
+            Amount?: number;
             ContractId: number;
             Description?: string;
+            FiscalYear?: number;
             FundSource?: string;
+            Notes?: string;
         }
         export interface CreateSearchDefinition extends ServiceTypes.CoreRequestBase {
             Accountant?: string[];
@@ -441,12 +475,19 @@ export namespace ContractServiceTypes {
             ContractId: number;
             Description?: string;
             ReceiveDate?: Date;
+            SubmittalType?: string;
         }
         export interface Delete extends ServiceTypes.CoreRequestBase {
             ContractIds?: number[];
         }
         export interface DeleteFundSource extends ServiceTypes.CoreRequestBase {
             FundSourceIds: number[];
+        }
+        export interface DeleteInvoiceItems extends ServiceTypes.CoreRequestBase {
+            InvoiceItemIds: number[];
+        }
+        export interface DeleteInvoices extends ServiceTypes.CoreRequestBase {
+            InvoiceIds: number[];
         }
         export interface DeleteLineItems extends ServiceTypes.CoreRequestBase {
             ContractLineItemIds: number[];
@@ -460,11 +501,26 @@ export namespace ContractServiceTypes {
         export interface FundSources extends ServiceTypes.CoreRequestBase {
             ContractIds: number[];
         }
+        export interface InvoiceItems extends ServiceTypes.CoreRequestBase {
+            InvoiceIds: number[];
+        }
+        export interface Invoices extends ServiceTypes.CoreRequestBase {
+            ContractIds: number[];
+        }
         export interface LineItems extends ServiceTypes.CoreRequestBase {
             ContractIds: number[];
         }
         export interface LineItemSummary extends ServiceTypes.CoreRequestBase {
             ContractIds: number[];
+        }
+        export interface Move extends ServiceTypes.CoreRequestBase {
+            ContractId: number;
+            VcsWKID?: number;
+            WKID?: number;
+            WKT?: string;
+            X: number;
+            Y: number;
+            Z?: number;
         }
         export interface Permits extends ServiceTypes.CoreRequestBase {
             ContractIds: number[];
@@ -812,6 +868,7 @@ export namespace ContractServiceTypes {
             BidDepositPercent?: number;
             BondReleased?: boolean;
             BondReleaseDate?: Date;
+            Category?: string;
             City?: string;
             Comments?: string;
             ContractId: number;
@@ -819,6 +876,7 @@ export namespace ContractServiceTypes {
             ContractorSid?: number;
             ContractTemplateId?: number;
             ContractType?: string;
+            CustFieldCatId?: number;
             Date1?: Date;
             Date2?: Date;
             Date3?: Date;
@@ -870,10 +928,46 @@ export namespace ContractServiceTypes {
             WOPrefix?: string;
             Zip?: string;
         }
+        export interface UpdateFundSource extends ServiceTypes.CoreRequestBase {
+            Amount?: number;
+            ContractId?: number;
+            Description?: string;
+            FiscalYear?: number;
+            FundSource?: string;
+            FundSourceId: number;
+            Notes?: string;
+        }
+        export interface UpdateInvoice extends ServiceTypes.CoreRequestBase {
+            AccountingDate?: Date;
+            Attachment?: string;
+            CheckIssuedDate?: Date;
+            Comments?: string;
+            ContractId?: number;
+            CoverSentDate?: Date;
+            Description?: string;
+            EAODate?: Date;
+            InvoiceId: number;
+            InvoiceNumber?: string;
+            OffialInvoiceReceivedDate?: Date;
+            PencilInvoiceReceivedDate?: Date;
+            PencilInvoiceReviewedDate?: Date;
+            ValidateInvoiceDate?: Date;
+        }
+        export interface UpdateInvoiceItem extends ServiceTypes.CoreRequestBase {
+            InvoiceId?: number;
+            InvoiceItemId: number;
+            LineItemCostId?: number;
+        }
         export interface UpdateLineItem extends ServiceTypes.CoreRequestBase {
             ContractLineItemId: number;
+            ContractorSid?: number;
             ContractPeriod?: number;
+            EmployeeSid?: number;
+            FundSourceId?: number;
+            ItemNumber?: string;
+            LineItemId?: number;
             PrjUnitPrice?: number;
+            PrjUnits?: number;
             UnitPrice?: number;
             Units?: number;
             UnitsUsed?: number;
@@ -896,11 +990,14 @@ export namespace ContractServiceTypes {
             Description?: string;
             ReceiveDate?: Date;
             SubmittalId: number;
+            SubmittalType?: string;
         }
         export interface User extends ServiceTypes.CoreRequestBase {
         }
     }
     export namespace Responses {
+        export interface AddInvoice extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractInvoice> {}
+        export interface AddInvoiceItem extends ServiceTypes.CoreResponseBase_<CoreTypes.InvoiceItem> {}
         export interface AddLineItem extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractLineItem> {}
         export interface ByIds extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractBase[]> {}
         export interface Claims extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractClaimBase[]> {}
@@ -911,24 +1008,34 @@ export namespace ContractServiceTypes {
         export interface CreateSubmittal extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractSubmittal> {}
         export interface Delete extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface DeleteFundSource extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
+        export interface DeleteInvoiceItems extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
+        export interface DeleteInvoices extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface DeleteLineItems extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface DeleteSubcontractor extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface DeleteSubmittal extends ServiceTypes.CoreResponseBase_<{[key: number]: boolean}> {}
         export interface FundSources extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractFundSource[]> {}
+        export interface InvoiceItems extends ServiceTypes.CoreResponseBase_<CoreTypes.InvoiceItem[]> {}
+        export interface Invoices extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractInvoice[]> {}
         export interface LineItems extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractLineItem[]> {}
         export interface LineItemSummary extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractLineItemSummary[]> {}
+        export interface Move extends ServiceTypes.CoreResponseBase_<CoreTypes.GISPoint> {}
         export interface Permits extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractPermit[]> {}
         export interface Search extends ServiceTypes.CoreResponseBase_<number[]> {}
         export interface Subcontractors extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractSubcontractor[]> {}
         export interface Submittals extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractSubmittal[]> {}
         export interface UninvoicedLineItemCosts extends ServiceTypes.CoreResponseBase_<CoreTypes.LineItemCost[]> {}
         export interface Update extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractBase> {}
+        export interface UpdateFundSource extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractFundSource> {}
+        export interface UpdateInvoice extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractInvoice> {}
+        export interface UpdateInvoiceItem extends ServiceTypes.CoreResponseBase_<CoreTypes.InvoiceItem> {}
         export interface UpdateLineItem extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractLineItem> {}
         export interface UpdateSubcontractor extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractSubcontractor> {}
         export interface UpdateSubmittal extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractSubmittal> {}
         export interface User extends ServiceTypes.CoreResponseBase_<CoreTypes.ContractBase[]> {}
     }
     export interface IContractService {
+        AddInvoice?: (request: Requests.AddInvoice) => AbortablePromise<Responses.AddInvoice>;
+        AddInvoiceItem?: (request: Requests.AddInvoiceItem) => AbortablePromise<Responses.AddInvoiceItem>;
         AddLineItem?: (request: Requests.AddLineItem) => AbortablePromise<Responses.AddLineItem>;
         ByIds?: (request: Requests.ByIds) => AbortablePromise<Responses.ByIds>;
         Claims?: (request: Requests.Claims) => AbortablePromise<Responses.Claims>;
@@ -939,18 +1046,26 @@ export namespace ContractServiceTypes {
         CreateSubmittal?: (request: Requests.CreateSubmittal) => AbortablePromise<Responses.CreateSubmittal>;
         Delete?: (request: Requests.Delete) => AbortablePromise<Responses.Delete>;
         DeleteFundSource?: (request: Requests.DeleteFundSource) => AbortablePromise<Responses.DeleteFundSource>;
+        DeleteInvoiceItems?: (request: Requests.DeleteInvoiceItems) => AbortablePromise<Responses.DeleteInvoiceItems>;
+        DeleteInvoices?: (request: Requests.DeleteInvoices) => AbortablePromise<Responses.DeleteInvoices>;
         DeleteLineItems?: (request: Requests.DeleteLineItems) => AbortablePromise<Responses.DeleteLineItems>;
         DeleteSubcontractor?: (request: Requests.DeleteSubcontractor) => AbortablePromise<Responses.DeleteSubcontractor>;
         DeleteSubmittal?: (request: Requests.DeleteSubmittal) => AbortablePromise<Responses.DeleteSubmittal>;
         FundSources?: (request: Requests.FundSources) => AbortablePromise<Responses.FundSources>;
+        InvoiceItems?: (request: Requests.InvoiceItems) => AbortablePromise<Responses.InvoiceItems>;
+        Invoices?: (request: Requests.Invoices) => AbortablePromise<Responses.Invoices>;
         LineItems?: (request: Requests.LineItems) => AbortablePromise<Responses.LineItems>;
         LineItemSummary?: (request: Requests.LineItemSummary) => AbortablePromise<Responses.LineItemSummary>;
+        Move?: (request: Requests.Move) => AbortablePromise<Responses.Move>;
         Permits?: (request: Requests.Permits) => AbortablePromise<Responses.Permits>;
         Search?: (request: Requests.Search) => AbortablePromise<Responses.Search>;
         Subcontractors?: (request: Requests.Subcontractors) => AbortablePromise<Responses.Subcontractors>;
         Submittals?: (request: Requests.Submittals) => AbortablePromise<Responses.Submittals>;
         UninvoicedLineItemCosts?: (request: Requests.UninvoicedLineItemCosts) => AbortablePromise<Responses.UninvoicedLineItemCosts>;
         Update?: (request: Requests.Update) => AbortablePromise<Responses.Update>;
+        UpdateFundSource?: (request: Requests.UpdateFundSource) => AbortablePromise<Responses.UpdateFundSource>;
+        UpdateInvoice?: (request: Requests.UpdateInvoice) => AbortablePromise<Responses.UpdateInvoice>;
+        UpdateInvoiceItem?: (request: Requests.UpdateInvoiceItem) => AbortablePromise<Responses.UpdateInvoiceItem>;
         UpdateLineItem?: (request: Requests.UpdateLineItem) => AbortablePromise<Responses.UpdateLineItem>;
         UpdateSubcontractor?: (request: Requests.UpdateSubcontractor) => AbortablePromise<Responses.UpdateSubcontractor>;
         UpdateSubmittal?: (request: Requests.UpdateSubmittal) => AbortablePromise<Responses.UpdateSubmittal>;
