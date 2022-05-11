@@ -41,7 +41,7 @@ function validate() {
     
 }
 
-// Callback function for the AuthenticationService/Authenticate API call.
+// Callback function for the AuthenticationService/Validate API call.
 function validateCallback(response) {
     // Check the status and value of the response.
     if (!response.Value || response.Status !== 0) {
