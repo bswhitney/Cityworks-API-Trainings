@@ -33,14 +33,14 @@ if auth_response['Status'] != 0:
     input('Authentication failure. Check credentials in config.json. Hit enter to quit...')
     sys.exit()
 else:
-    input('You have been signed in as {}. Hit enter to continue...'.format(username))
+    input(f'You have been signed in as {username}. Hit enter to continue...')
 
 # While loop to select an entity type.
 while True:
     clear_console()
     print('Select an entity type by its number.')
     for index, value in enumerate(entities):
-        print('\t{}:  {}'.format(index, value['desc']))
+        print(f'\t{index}:  {value["desc"]}')
     select_type = input('Your selection: ')
     if select_type in [str(x) for x in range(len(entities))]:
         entity_type = entities[int(select_type)]['code']
@@ -72,7 +72,7 @@ while True:
     clear_console()
     print('Select an entity type by its code.')
     for t in templates:
-        print('\t{}: {}'.format(t, templates[t]))
+        print(f'\t{t}: {templates[t]}')
     try:
         select_temp = int(input('Your Inspection Template Selection: '))
         if select_temp in templates:
@@ -97,7 +97,7 @@ print(len(records))
 
 # Generate a log file.
 now = datetime.datetime.now().strftime('%d%b%Y_%H%M%S')
-log_path += 'InspLog_{}_{}.txt'.format(entity_type, now)
+log_path += f'InspLog_{entity_type}_{now}.txt'
 open(log_path, 'w+').close()
 
 # Function to add information to a log file.
@@ -116,10 +116,10 @@ def inspection_create(asset_id):
     request.GetGisData = True
     request.Entity = {'EntityType': entity_type, 'EntitySid': asset_id}
     response = services.ams.Inspection_create(request)
-    r_value = 'FAILURE — EntitySid: {}'.format(asset_id)
+    r_value = f'FAILURE — EntitySid: {asset_id}'
     if response['Status'] == 0:
         insp_id = response['Value']['InspectionId']
-        r_value = 'SUCCESS — EntitySid: {} — InspectionId: {}'.format(asset_id, insp_id)
+        r_value = f'SUCCESS — EntitySid: {asset_id} — InspectionId: {insp_id}'
     return r_value
 
 # Initialize a timer, inspection creation count.
@@ -132,10 +132,10 @@ for asset in records:
     log_info(result)
     insp_count += 1
     clear_console()
-    print('{}/{}\n{}%'.format(insp_count, len(records), round(100 * insp_count / len(records), 2)))
+    print(f'{insp_count}/{len(records)}\n{round(100 * insp_count / len(records), 2)}%')
 log_info('Runtime:\t' + str(datetime.datetime.now() - start_time))
 
 # Inform user of the log location.
 clear_console()
 print('Mass inspection creation complete. Your log file can be found at the following location:')
-input('\t{}\nHit enter to continue...'.format(log_path))
+input(f'\t{log_path}\nHit enter to continue...')
