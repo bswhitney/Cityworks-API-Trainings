@@ -40,13 +40,13 @@ def clear_console():
 # Populate a list with the OBJECTID of each asset.
 
 
+# Function to create an inspection using an asset's OBJECTID.
+
+
 # Generate a log file.
 
 
 # Function to add information to a log file.
-
-
-# Function to create an inspection using an asset's OBJECTID.
 
 
 # Initialize a timer, inspection creation count.

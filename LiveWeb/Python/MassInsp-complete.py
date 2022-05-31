@@ -57,14 +57,14 @@ if cw_token == '':
     input('Failed to authenticate user. Check credentials. Hit enter to quit...')
     sys.exit()
 else:
-    input('You have been signed in as {}. Hit enter to continue...'.format(username))
+    input(f'You have been signed in as {username}. Hit enter to continue...')
 
 # While loop to select an entity type.
 while True:
     clear_console()
     print('Select an entity type by its number.')
     for index, value in enumerate(entities):
-        print('\t{}:  {}'.format(index, value['desc']))
+        print(f'\t{index}: {value["desc"]}')
     select_type = input('Your selection: ')
     if select_type in [str(x) for x in range(len(entities))]:
         entity_type = entities[int(select_type)]['code']
@@ -115,7 +115,7 @@ while True:
     clear_console()
     print('Select an entity type by its code.')
     for t in templates:
-        print('\t{}: {}'.format(t, templates[t]))
+        print(f'\t{t}: {templates[t]}')
     try:
         select_temp = int(input('Your Inspection Template Selection: '))
         if select_temp in templates:
@@ -137,20 +137,37 @@ def entity_search():
     return r_value
 
 # Call the entity_search function. Quit if failed.
-records = [{'attributes': {'OBJECTID': 48}},{'attributes': {'OBJECTID': 49}},{'attributes': {'OBJECTID': 50}}] #entity_search()
+records = entity_search()
 if records == '':
     print('There was an error loading assets from the GIS.')
     input('Hit enter to stop the script...')
     sys.exit()
-
 
 # Initialize a start time.
 now = datetime.datetime.now()
 now_short = now.strftime('%d%b%Y_%H%M%S')
 now_long = now.strftime('%d %b %Y @ %H:%M:%S')
 
+# Function to create an inspection using an asset's OBJECTID.
+def inspection_create(entity_sid):
+    """Function to create an inspection using an asset's OBJECTID."""
+    data = {
+        'InspTemplateId': insp_template_id,
+        'EntityType': entity_type,
+        'GetGisData': True,
+        'Entity':{'EntityType': entity_type, 'EntitySid': entity_sid}
+    }
+    parameters = data_to_json(data)
+    url = base_url + 'ams/inspection/create'
+    response = make_request(url, parameters)
+    r_value = f'FAILURE — EntitySid: {entity_sid}'
+    if response['Status'] == 0:
+        insp_id = response['Value']['InspectionId']
+        r_value = f'SUCCESS — EntitySid: {entity_sid} — InspectionId: {insp_id}'
+    return r_value
+
 # Generate a log file 
-log_path += 'InspLog_{}_{}.txt'.format(entity_type, now)
+log_path += f'InspLog_{entity_type}_{now}.txt'
 open(log_path, 'w+').close()
 
 # Function to add information to the log file.
@@ -165,24 +182,6 @@ log_info(now_long + '\n')
 log_info('EntityType:     ' + entity_type + '\n')
 log_info('InspTemplateId: ' + str(insp_template_id) + '\n\n')
 
-# Function to create an inspection using an asset's OBJECTID.
-def inspection_create(entity_sid):
-    """Function to create an inspection using an asset's OBJECTID."""
-    data = {
-        'InspTemplateId': insp_template_id,
-        'EntityType': entity_type,
-        'GetGisData': True,
-        'Entity':{'EntityType': entity_type, 'EntitySid': entity_sid}
-    }
-    parameters = data_to_json(data)
-    url = base_url + 'ams/inspection/create'
-    response = make_request(url, parameters)
-    r_value = 'FAILURE — EntitySid: {}'.format(entity_sid)
-    if response['Status'] == 0:
-        insp_id = response['Value']['InspectionId']
-        r_value = 'SUCCESS — EntitySid: {} — InspectionId: {}'.format(entity_sid, insp_id)
-    return r_value
-
 # Start a counter to keep track of completed inspections. Set start time.
 insp_count = 0
 start_time = datetime.datetime.now()
@@ -194,11 +193,11 @@ for asset in records:
     insp_count += 1
     clear_console()
     perc_complete = round(100 * insp_count / len(records), 2)
-    print('{}/{}\n{}%'.format(insp_count, len(records), perc_complete))
-log_info('\nRuntime:\t' + str(datetime.datetime.now() - start_time))
+    print(f'{insp_count}/{len(records)}\n{perc_complete}%')
+log_info(f'\nRuntime:\t{datetime.datetime.now() - start_time}')
 
 # Inform the user of the log location.
 clear_console()
 print('Mass inspection creation complete. Your log')
 print('file can be found at the following location:')
-input('\t{}\nHit enter to continue...'.format(log_path))
+input(f'\t{log_path}\nHit enter to continue...')

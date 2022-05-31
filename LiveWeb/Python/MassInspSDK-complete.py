@@ -95,18 +95,6 @@ for item in entity_search_response['Value']['Records']:
     records.append(item['attributes']['OBJECTID'])
 print(len(records))
 
-# Generate a log file.
-now = datetime.datetime.now().strftime('%d%b%Y_%H%M%S')
-log_path += f'InspLog_{entity_type}_{now}.txt'
-open(log_path, 'w+').close()
-
-# Function to add information to a log file.
-def log_info(info):
-    """Function to add information to the log file."""
-    log = open(log_path, "a+")
-    log.write(info + '\n')
-    log.close()
-
 # Function to create an inspection using an asset's OBJECTID.
 def inspection_create(asset_id):
     """Function to create an inspection using an asset's OBJECTID."""
@@ -121,6 +109,18 @@ def inspection_create(asset_id):
         insp_id = response['Value']['InspectionId']
         r_value = f'SUCCESS — EntitySid: {asset_id} — InspectionId: {insp_id}'
     return r_value
+
+# Generate a log file.
+now = datetime.datetime.now().strftime('%d%b%Y_%H%M%S')
+log_path += f'InspLog_{entity_type}_{now}.txt'
+open(log_path, 'w+').close()
+
+# Function to add information to a log file.
+def log_info(info):
+    """Function to add information to the log file."""
+    log = open(log_path, "a+")
+    log.write(info + '\n')
+    log.close()
 
 # Initialize a timer, inspection creation count.
 start_time = datetime.datetime.now()

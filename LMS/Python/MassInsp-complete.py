@@ -57,14 +57,14 @@ if cw_token == '':
     input('Failed to authenticate user. Check credentials. Hit enter to quit...')
     sys.exit()
 else:
-    input('You have been signed in as {}. Hit enter to continue...'.format(username))
+    input(f'You have been signed in as {username}. Hit enter to continue...')
 
 # While loop to select an entity type.
 while True:
     clear_console()
     print('Select an entity type by its number.')
     for index, value in enumerate(entities):
-        print('\t{}:  {}'.format(index, value['desc']))
+        print(f'\t{index}:  {value["desc"]}')
     select_type = input('Your selection: ')
     if select_type in [str(x) for x in range(len(entities))]:
         entity_type = entities[int(select_type)]['code']
@@ -94,7 +94,7 @@ while True:
     clear_console()
     print('Select an inspection template by its ID.')
     for t in templates:
-        print('\t{}: {}'.format(t['InspTemplateId'], t['InspTemplateName']))
+        print(f'\t{t["InspTemplateId"]}: {t["InspTemplateName"]}')
     try:
         select_temp = int(input('Your Inspection Template Selection: '))
         if select_temp in [t['InspTemplateId'] for t in templates]:
@@ -134,10 +134,10 @@ def inspection_create(entity_sid):
     parameters = data_to_json(data)
     url = base_url + 'ams/inspection/create'
     response = make_request(url, parameters)
-    r_value = 'FAILURE — EntitySid: {}'.format(entity_sid)
+    r_value = f'FAILURE — EntitySid: {entity_sid}'
     if response['Status'] == 0:
         insp_id = response['Value']['InspectionId']
-        r_value = 'SUCCESS — EntitySid: {} — InspectionId: {}'.format(entity_sid, insp_id)
+        r_value = f'SUCCESS — EntitySid: {entity_sid} — InspectionId: {insp_id}'
     return r_value
     
 # Initialize a start time.
@@ -145,7 +145,7 @@ now = datetime.datetime.now()
 now_short = now.strftime('%d%b%Y_%H%M%S')
 
 # Generate a log file 
-log_path += 'InspLog_{}_{}.txt'.format(entity_type, now_short)
+log_path += f'InspLog_{entity_type}_{now_short}.txt'
 open(log_path, 'w+').close()
 
 # Function to add information to the log file.
@@ -160,8 +160,6 @@ log_info(now + '\n')
 log_info('EntityType:     ' + entity_type + '\n')
 log_info('InspTemplateId: ' + str(insp_template_id) + '\n\n')
 
-
-
 # Start a counter to keep track of completed inspections. Set start time.
 insp_count = 0
 start_time = datetime.datetime.now()
@@ -173,11 +171,11 @@ for asset in records:
     insp_count += 1
     clear_console()
     perc_complete = round(100 * insp_count / len(records), 2)
-    print('{}/{}\n{}%'.format(insp_count, len(records), perc_complete))
+    print(f'{insp_count}/{len(records)}\n{perc_complete}%')
 log_info('\nRuntime:\t' + str(datetime.datetime.now() - start_time))
 
 # Inform the user of the log location.
 clear_console()
 print('Mass inspection creation complete. Your log')
 print('file can be found at the following location:')
-input('\t{}\nHit enter to continue...'.format(log_path))
+input(f'\t{log_path}\nHit enter to continue...')

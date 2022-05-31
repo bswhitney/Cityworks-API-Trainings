@@ -60,3 +60,32 @@ Example:
         if (response.Status === 0) { ... }
     }
 ```
+
+## Python SDK
+**1. Initialize the request object.**
+``` 
+Format:
+    <RequestVariable> = cwpy.cwMessages<ServiceGroup>.<Service>Service.<Method>()
+Example:
+    inspection_search = cwpy.cwMessagesAMS.InspectionService.Search()
+```
+**2. Add any needed parameters to the request object.**
+```
+Format:
+    <RequestVariable>.<Parameter> = <ParameterValue>
+Example:
+    inspection_search.Status = ['open']
+```
+**3. Use the services object to make the API call and add the request object as an argument.**
+```
+Format:
+    <ResponseVariable> = <ServicesVariable>.<ServiceGroup>.<Service>_<method>(<RequestVariable>)
+Example:
+    inspection_search_response = services.ams.Inspection_search(inspection_search)
+```
+**4. Work with the response as needed.**
+```
+Example:
+    if inspection_search_response["Status"] == 0:
+        ...
+```
