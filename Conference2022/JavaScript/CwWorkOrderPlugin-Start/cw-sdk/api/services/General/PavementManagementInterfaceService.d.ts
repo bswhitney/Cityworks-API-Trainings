@@ -1,0 +1,30 @@
+import { PromiseTypes } from '../../../core/promise';
+import { IApiService } from '../../../http/api-service';
+import { PavementManagementInterfaceServiceTypes as SvcDef } from '../../interfaces/General/PavementManagementInterfaceService';
+import AbortablePromise = PromiseTypes.AbortablePromise;
+import Requests = SvcDef.Requests;
+import Responses = SvcDef.Responses;
+import IPavementManagementInterfaceService = SvcDef.IPavementManagementInterfaceService;
+export * from '../../../http/api-service';
+export * from '../../interfaces/General/PavementManagementInterfaceService';
+export declare class PavementManagementInterfaceService implements IPavementManagementInterfaceService {
+    private _service;
+    constructor(service: IApiService);
+    ExportInspections(request: Requests.ExportInspections): AbortablePromise<Responses.ExportInspections>;
+    ExportInventory(request: Requests.ExportInventory): AbortablePromise<Responses.ExportInventory>;
+    ExportWorkHistory(request: Requests.ExportWorkHistory): AbortablePromise<Responses.ExportWorkHistory>;
+    GeneratePaverData(request: Requests.GeneratePaverData): AbortablePromise<Responses.GeneratePaverData>;
+    GetPavementInspectionsByIds(request: Requests.GetPavementInspectionsByIds): AbortablePromise<Responses.GetPavementInspectionsByIds>;
+    GISSavedSearches(request: Requests.GISSavedSearches): AbortablePromise<Responses.GISSavedSearches>;
+    ImportInspection(request: Requests.ImportInspection): AbortablePromise<Responses.ImportInspection>;
+    ImportInspections(request: Requests.ImportInspections): AbortablePromise<Responses.ImportInspections>;
+    PavementInspectionSearch(request: Requests.PavementInspectionSearch): AbortablePromise<Responses.PavementInspectionSearch>;
+    ProcessInspectionXmlFile(request: Requests.ProcessInspectionXmlFile): AbortablePromise<Responses.ProcessInspectionXmlFile>;
+    ProcessInventoryXmlFile(request: Requests.ProcessInventoryXmlFile): AbortablePromise<Responses.ProcessInventoryXmlFile>;
+    ProcessProjectXmlFile(request: Requests.ProcessProjectXmlFile): AbortablePromise<Responses.ProcessProjectXmlFile>;
+    ProcessRecommendedWorkCsvFile(request: Requests.ProcessRecommendedWorkCsvFile): AbortablePromise<Responses.ProcessRecommendedWorkCsvFile>;
+    ProcessRecommendedWorkXmlFile(request: Requests.ProcessRecommendedWorkXmlFile): AbortablePromise<Responses.ProcessRecommendedWorkXmlFile>;
+    TemplateMapping(request: Requests.TemplateMapping): AbortablePromise<Responses.TemplateMapping>;
+    ErrorCodes: {};
+    WarningCodes: {};
+}

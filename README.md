@@ -13,6 +13,7 @@ Current Cityworks API training samples for the Cityworks API courses.
 * **QuestionsFromCourses.md** is a resource to help answer questions that havw been asked before in training and required research to answer.
 * **SDK-Formats.md** is a resource giving basic API call formats using the .NET and JavaScript SDKs.
 * **Conference2019** is specific to the API courses offered during the 2019 Cityworks User Conference in Salt Lake City, Utah.
+* **Conference2022** is specific to the API courses offered during the 2022 Cityworks User Conference in Salt Lake City, Utah.
 
 ## Version
 These samples are up to date with Cityworks 15.8. Note that projects may or may not work for other versions of the software. The content for The Cityworks Conference 2019 will remain at the 15.5 version of the software.

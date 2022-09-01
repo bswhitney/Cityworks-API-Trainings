@@ -51,7 +51,7 @@ templates_request = cwpy.cwMessagesAMS.InspectionTemplateService.Templates()
 templates_request.EntityTypes = [entity_type]
 templates_response = services.ams.InspectionTemplate_templates(templates_request)
 if templates_response['Status'] != 0:
-    input('Failed to make InspectionTemplate/ByIds API call. Hit enter to quit...')
+    input('Failed to make InspectionTemplate/Templates API call. Hit enter to quit...')
     sys.exit()
 
 # Populate a dictionary with InspTemplateId/InspTemplateName pairs.
