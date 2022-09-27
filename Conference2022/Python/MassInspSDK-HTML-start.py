@@ -25,9 +25,6 @@ def clear_console():
 # Using the selected entity type, search for inspection template IDs.
 
 
-# Using the inspection template IDs, get inspection template details.
-
-
 # Populate a dictionary with InspTemplateId/InspTemplateName pairs.
 
 
