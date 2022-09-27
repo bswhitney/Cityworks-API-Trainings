@@ -56,7 +56,7 @@ if templates_response['Status'] != 0:
 
 # Populate a dictionary with InspTemplateId/InspTemplateName pairs.
 templates = {}
-for temp in temp_byids_response['Value']:
+for temp in templates_response['Value']:
     templates[temp['InspTemplateId']] = temp['InspTemplateName']
 
 # While loop to select an inspection template.
