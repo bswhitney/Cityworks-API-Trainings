@@ -47,19 +47,11 @@ while True:
         break
 
 # Using the selected entity type, search for inspection template IDs.
-temp_search_request = cwpy.cwMessagesAMS.InspectionTemplateService.Search()
-temp_search_request.EntityType = [entity_type]
-temp_search_response = services.ams.InspectionTemplate_search(temp_search_request)
-if temp_search_response['Status'] != 0:
-    input('Failed to make InspectionTemplate/Search API call. Hit enter to quit...')
-    sys.exit()
-
-# Using the inspection template IDs, get inspection template details.
-temp_byids_request = cwpy.cwMessagesAMS.InspectionTemplateService.ByIds()
-temp_byids_request.InspTemplateIds = temp_search_response['Value']
-temp_byids_response = services.ams.InspectionTemplate_by_ids(temp_byids_request)
-if temp_byids_response['Status'] != 0:
-    input('Failed to make InspectionTemplate/ByIds API call. Hit enter to quit...')
+templates_request = cwpy.cwMessagesAMS.InspectionTemplateService.Templates()
+templates_request.EntityTypes = [entity_type]
+templates_response = services.ams.InspectionTemplate_templates(templates_request)
+if templates_response['Status'] != 0:
+    input('Failed to make InspectionTemplate/Templates API call. Hit enter to quit...')
     sys.exit()
 
 # Populate a dictionary with InspTemplateId/InspTemplateName pairs.
