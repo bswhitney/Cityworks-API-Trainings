@@ -10,7 +10,7 @@ namespace TaskDateMaker
     {
         #region Initialization and Authentication
         // Initialize the Services Object.
-        static string siteAddress = "https://training.cityworks.com/cityworks";
+        static string siteAddress = "https://training.cityworks.com/cityworks/";
         private Services services;
 
         public Form1()
